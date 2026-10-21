@@ -179,5 +179,24 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
 </script>
+<script>
+(() => {   // embed mode: ?ui=0 hides the panels (main.js); play=1 loops the motion given by ?motion=, centre-of-mass marker off
+  const q = new URLSearchParams(location.search);
+  if (q.get('ui') !== '0') return;
+  document.documentElement.classList.add('embed');
+  const go = (n = 0) => {
+    const ready = document.querySelector('#loading').classList.contains('hidden') && (!q.get('motion') || document.querySelector('#presets').value);
+    if (!ready) { if (n < 160) setTimeout(() => go(n + 1), 250); return; }
+    const com = document.querySelector('#showCom');
+    if (com && com.checked) com.click();
+    if (q.get('play') === '1') {
+      const lp = document.querySelector('#loop');
+      if (lp && !lp.checked) lp.click();
+      setTimeout(() => document.querySelector('#play').click(), 400);
+    }
+  };
+  addEventListener('load', () => go());
+})();
+</script>
 </body>
 </html>
