@@ -1,0 +1,145 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "stand_shy_look_away",
+ "revision": "mech_M4",
+ "loop": false,
+ "meta": {
+  "intent": "bashful: breaks eye contact first",
+  "status": "re-based mechanically by the lead; NOT run on hardware; pilot values",
+  "source": "08_Docs/Research/_parts/ROLE_HRI_round2_character.md",
+  "set": "v11_stand",
+  "rebased_from": "shy_look_away by scripts/rebase_motions_stand.py: J2 - 20 (min -35), J5 + 18 (max +30)"
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 0.5,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 4.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 4.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 2.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -21.6,
+    "J3": 6.0,
+    "J4": -5.0,
+    "J5": 17.5,
+    "J6": 38.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 3.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -21.6,
+    "J3": 6.0,
+    "J4": -5.0,
+    "J5": 17.5,
+    "J6": 38.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 4.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.8,
+    "J3": 2.0,
+    "J4": -3.0,
+    "J5": 24.7,
+    "J6": 27.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 4.7,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.8,
+    "J3": 2.0,
+    "J4": -3.0,
+    "J5": 24.7,
+    "J6": 27.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 6.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0.0,
+   "face": "neutral"
+  },
+  {
+   "t": 0.3,
+   "face": "look_left"
+  },
+  {
+   "t": 0.5,
+   "face": "neutral"
+  },
+  {
+   "t": 1.0,
+   "face": "blink"
+  },
+  {
+   "t": 1.15,
+   "face": "look_right"
+  },
+  {
+   "t": 2.0,
+   "face": "happy"
+  },
+  {
+   "t": 4.0,
+   "face": "look_left"
+  },
+  {
+   "t": 4.7,
+   "face": "neutral"
+  }
+ ]
+}

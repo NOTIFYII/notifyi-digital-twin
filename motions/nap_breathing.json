@@ -1,0 +1,100 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "nap_breathing",
+ "revision": "worm_C4",
+ "loop": true,
+ "meta": {
+  "set": "v10",
+  "status": "authored by the lead from the design jury's notes; NOT by the animation team; NOT run on hardware; pilot values",
+  "source": "08_Docs/Research/_parts/JURY_motion_fit_round3.md",
+  "intent": "asleep on the book: slow breathing",
+  "special_pose": "dock",
+  "dock_retargeted": "[-33.9, -56.1] -> [-36.2, -53.8] by scripts/retarget_dock.py"
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -36.2,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -53.8,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -34.6,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -55.4,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 5.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -36.2,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -53.8,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 7.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -34.6,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -55.4,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 10.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -36.2,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -53.8,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 12.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -34.6,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -55.4,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 15.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -36.2,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -53.8,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  }
+ ]
+}

@@ -1,0 +1,200 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "char_sprout_wilt_perk",
+ "revision": "char_sprout",
+ "loop": false,
+ "meta": {
+  "intent": "posture cue in character: wilt with the person, peek up, perk toward the light, sway",
+  "status": "character study (round 24); checked in the twin only; NOT run on hardware; pilot values",
+  "source": "08_Docs/CHARACTER_STUDIES_M8.md",
+  "set": "round24_characters",
+  "check": {
+   "duration_s": 11.0,
+   "peak_speed_deg_s": {
+    "J1": 0.0,
+    "J2": 63.7,
+    "J3": 46.8,
+    "J4": 28.1,
+    "J5": 85.7,
+    "J6": 18.7
+   },
+   "too_fast": [],
+   "outside_soft_limits": [],
+   "coupled_limit_violations": [],
+   "special_pose_exemption": [],
+   "ok": true
+  }
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 20.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -30,
+    "J3": 0.0,
+    "J4": 8,
+    "J5": -10,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 3.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -34,
+    "J3": 6,
+    "J4": 14,
+    "J5": -36,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 4.4,
+   "q": {
+    "J1": 0.0,
+    "J2": -34,
+    "J3": 6,
+    "J4": 14,
+    "J5": -36,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 5.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -34,
+    "J3": 6,
+    "J4": 8,
+    "J5": 28,
+    "J6": -10
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 6.4,
+   "q": {
+    "J1": 0.0,
+    "J2": -34,
+    "J3": 6,
+    "J4": 8,
+    "J5": 28,
+    "J6": -10
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 7.4,
+   "q": {
+    "J1": 0.0,
+    "J2": 0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 26,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 8.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -4,
+    "J3": 10,
+    "J4": -6,
+    "J5": 24,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 9.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -4,
+    "J3": -10,
+    "J4": 6,
+    "J5": 24,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 9.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -4,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 24,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 11.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 20.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0.0,
+   "face": "neutral"
+  },
+  {
+   "t": 1.0,
+   "face": "sleepy"
+  },
+  {
+   "t": 2.4,
+   "face": "concerned"
+  },
+  {
+   "t": 4.7,
+   "face": "curious"
+  },
+  {
+   "t": 6.5,
+   "face": "surprised"
+  },
+  {
+   "t": 7.2,
+   "face": "happy"
+  },
+  {
+   "t": 10.0,
+   "face": "blink"
+  },
+  {
+   "t": 10.15,
+   "face": "happy"
+  },
+  {
+   "t": 10.6,
+   "face": "neutral"
+  }
+ ]
+}

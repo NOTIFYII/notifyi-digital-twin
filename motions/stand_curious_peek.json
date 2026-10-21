@@ -1,0 +1,113 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "stand_curious_peek",
+ "revision": "mech_M4",
+ "loop": false,
+ "meta": {
+  "intent": "curious peek when looked at",
+  "status": "re-based mechanically by the lead; NOT run on hardware; pilot values",
+  "source": "08_Docs/Research/_parts/ROLE_HRI_round2_character.md",
+  "set": "v11_stand",
+  "rebased_from": "curious_peek by scripts/rebase_motions_stand.py: J2 - 20 (min -35), J5 + 18 (max +30)"
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 0.35,
+   "q": {
+    "J1": 0.0,
+    "J2": -19.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 28.0,
+    "J6": 23.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.05,
+   "q": {
+    "J1": 0.0,
+    "J2": -23.2,
+    "J3": 0.0,
+    "J4": 8.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.25,
+   "q": {
+    "J1": 0.0,
+    "J2": -23.2,
+    "J3": 0.0,
+    "J4": 8.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 3.45,
+   "q": {
+    "J1": 0.0,
+    "J2": -19.0,
+    "J3": 0.0,
+    "J4": -1.0,
+    "J5": 29.0,
+    "J6": 22.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 4.05,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0.0,
+   "face": "neutral"
+  },
+  {
+   "t": 0.25,
+   "face": "look_left"
+  },
+  {
+   "t": 1.0,
+   "face": "curious"
+  },
+  {
+   "t": 2.9,
+   "face": "neutral"
+  },
+  {
+   "t": 3.0,
+   "face": "look_right"
+  },
+  {
+   "t": 3.9,
+   "face": "neutral"
+  }
+ ]
+}

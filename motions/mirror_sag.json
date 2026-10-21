@@ -1,0 +1,99 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "mirror_sag",
+ "revision": "worm_C4",
+ "loop": false,
+ "meta": {
+  "intent": "posture mirror: slow sag with holds at L1 and L2",
+  "status": "keyframes by the animation/HRI team (round 2), mechanically re-based by the lead for R6; NOT run on hardware; pilot values",
+  "source": "08_Docs/Research/_parts/ROLE_HRI_round2_character.md",
+  "set": "v10",
+  "rebased_from": "v3 (cairn_R4) by scripts/rebase_motions_v4.py: J5 +12 deg look-up offset, lean-back <= +2 deg, dock re-targeted"
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": 0.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 12.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 10.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -0.8,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 6.7,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 30.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -4.8,
+    "J3": 0.0,
+    "J4": 2.0,
+    "J5": 4.4,
+    "J6": 22.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 40.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -4.8,
+    "J3": 0.0,
+    "J4": 2.0,
+    "J5": 4.4,
+    "J6": 22.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 60.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -8.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 0.3,
+    "J6": 24.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 70.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -8.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 0.3,
+    "J6": 24.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 78.0,
+   "q": {
+    "J1": 0.0,
+    "J2": 0.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 12.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "stand_perk_up",
+ "revision": "mech_M4",
+ "loop": false,
+ "meta": {
+  "intent": "rise with the user, small proud chin-up",
+  "status": "re-based mechanically by the lead; NOT run on hardware; pilot values",
+  "source": "08_Docs/Research/_parts/ROLE_HRI_round2_character.md",
+  "set": "v11_stand",
+  "rebased_from": "perk_up by scripts/rebase_motions_stand.py: J2 - 20 (min -35), J5 + 18 (max +30)"
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 0.4,
+   "q": {
+    "J1": 0.0,
+    "J2": -21.6,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 29.5,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -18.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 25.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -18.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -18.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 3.5,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 29.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 4.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 4.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 5.9,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0.0,
+   "face": "neutral"
+  },
+  {
+   "t": 0.4,
+   "face": "surprised"
+  },
+  {
+   "t": 1.8,
+   "face": "happy"
+  },
+  {
+   "t": 3.5,
+   "face": "blink"
+  },
+  {
+   "t": 3.65,
+   "face": "happy"
+  },
+  {
+   "t": 4.6,
+   "face": "neutral"
+  },
+  {
+   "t": 4.8,
+   "face": "look_right"
+  },
+  {
+   "t": 5.8,
+   "face": "neutral"
+  }
+ ]
+}

@@ -1,0 +1,241 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "stand_wiggle_wave",
+ "revision": "mech_M4",
+ "loop": false,
+ "meta": {
+  "set": "v11_stand",
+  "status": "re-based mechanically by the lead; NOT run on hardware; pilot values",
+  "source": "08_Docs/Research/_parts/JURY_motion_fit_round3.md",
+  "intent": "happy: a wave up the body - twist leads roll by a quarter cycle, head counter-turns",
+  "rebased_from": "wiggle_wave by scripts/rebase_motions_stand.py: J2 - 20 (min -35), J5 + 18 (max +30)"
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 0.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.1,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 22.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": -15.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 18.0,
+    "J5": 28.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.1,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": -22.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 15.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": -18.0,
+    "J5": 28.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 3.1,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 22.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": -15.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 3.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 18.0,
+    "J5": 28.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 4.1,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": -22.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 15.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 4.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": -18.0,
+    "J5": 28.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 5.1,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 22.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": -15.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 5.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 18.0,
+    "J5": 28.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 6.1,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": -22.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 15.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 6.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": -18.0,
+    "J5": 28.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 7.3,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 8.1,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0.0,
+   "face": "neutral"
+  },
+  {
+   "t": 0.3,
+   "face": "look_left"
+  },
+  {
+   "t": 0.6,
+   "face": "happy"
+  },
+  {
+   "t": 4.0,
+   "face": "blink"
+  },
+  {
+   "t": 4.15,
+   "face": "happy"
+  },
+  {
+   "t": 7.3,
+   "face": "neutral"
+  },
+  {
+   "t": 7.5,
+   "face": "look_right"
+  },
+  {
+   "t": 8.0,
+   "face": "neutral"
+  }
+ ]
+}

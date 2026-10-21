@@ -1,0 +1,98 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "reading",
+ "revision": "worm_C4",
+ "loop": true,
+ "meta": {
+  "set": "v10",
+  "status": "authored by the lead from the design jury's notes; NOT by the animation team; NOT run on hardware; pilot values",
+  "source": "08_Docs/Research/_parts/JURY_motion_fit_round3.md",
+  "intent": "reads its open book: slow sweep along the line, quick return"
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -25.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -50.0,
+    "J6": -12.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 5.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -25.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -50.0,
+    "J6": 12.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 5.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -25.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -49.0,
+    "J6": -12.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 10.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -25.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -50.0,
+    "J6": 12.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 11.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -25.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -49.0,
+    "J6": -12.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 16.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -25.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -50.0,
+    "J6": 12.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 16.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -25.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": -50.0,
+    "J6": -12.0
+   },
+   "ease": "minjerk"
+  }
+ ]
+}

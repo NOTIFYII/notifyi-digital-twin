@@ -1,0 +1,94 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "stand_glance",
+ "revision": "mech_M4",
+ "loop": false,
+ "meta": {
+  "intent": "look (attending now)",
+  "notes": "Closes the 20 deg rest offset toward the user, short hold, returns. Head only.",
+  "status": "re-based mechanically by the lead; NOT run on hardware; pilot values",
+  "source": "HRI role review round 1 (08_Docs/Research/_parts/ROLE_HRI_round1.md)",
+  "set": "v11_stand",
+  "rebased_from": "glance by scripts/rebase_motions_stand.py: J2 - 20 (min -35), J5 + 18 (max +30)"
+ },
+ "keyframes": [
+  {
+   "t": 0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 3.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0.0,
+   "face": "neutral"
+  },
+  {
+   "t": 0.2,
+   "face": "look_left"
+  },
+  {
+   "t": 1.2,
+   "face": "neutral"
+  },
+  {
+   "t": 2.3,
+   "face": "blink"
+  },
+  {
+   "t": 2.45,
+   "face": "neutral"
+  },
+  {
+   "t": 2.6,
+   "face": "look_right"
+  },
+  {
+   "t": 3.7,
+   "face": "neutral"
+  }
+ ]
+}

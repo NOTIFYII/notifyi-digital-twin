@@ -1,0 +1,192 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "char_hop_hop",
+ "revision": "char_hop",
+ "loop": false,
+ "meta": {
+  "intent": "greeting in character: two small hops with a level head, then an ear-swinging tilt",
+  "status": "character study (round 24); checked in the twin only; NOT run on hardware; pilot values",
+  "source": "08_Docs/CHARACTER_STUDIES_M8.md",
+  "set": "round24_characters",
+  "check": {
+   "duration_s": 6.2,
+   "peak_speed_deg_s": {
+    "J1": 0.0,
+    "J2": 82.4,
+    "J3": 0.0,
+    "J4": 70.2,
+    "J5": 52.4,
+    "J6": 56.2
+   },
+   "too_fast": [],
+   "outside_soft_limits": [],
+   "coupled_limit_violations": [],
+   "special_pose_exemption": [],
+   "ok": true
+  }
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 20.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 0.5,
+   "q": {
+    "J1": 0.0,
+    "J2": -30,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 28,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -8,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 14,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.5,
+   "q": {
+    "J1": 0.0,
+    "J2": -30,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 28,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -8,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 14,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 20.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 3.4,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 22,
+    "J5": 20.0,
+    "J6": 10
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 4.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 22,
+    "J5": 20.0,
+    "J6": 10
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 4.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": -8,
+    "J5": 20.0,
+    "J6": -14
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 5.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 20.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 6.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 20.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0.0,
+   "face": "neutral"
+  },
+  {
+   "t": 0.4,
+   "face": "happy"
+  },
+  {
+   "t": 1.9,
+   "face": "wink"
+  },
+  {
+   "t": 2.3,
+   "face": "happy"
+  },
+  {
+   "t": 4.4,
+   "face": "blink"
+  },
+  {
+   "t": 4.55,
+   "face": "happy"
+  },
+  {
+   "t": 5.8,
+   "face": "neutral"
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "curious_peek",
+ "revision": "worm_C4",
+ "loop": false,
+ "meta": {
+  "intent": "curious peek when looked at",
+  "status": "keyframes by the animation/HRI team (round 2), mechanically re-based by the lead for R6; NOT run on hardware; pilot values",
+  "source": "08_Docs/Research/_parts/ROLE_HRI_round2_character.md",
+  "set": "v10",
+  "rebased_from": "v3 (cairn_R4) by scripts/rebase_motions_v4.py: J5 +12 deg look-up offset, lean-back <= +2 deg, dock re-targeted"
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": 0.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 12.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 0.35,
+   "q": {
+    "J1": 0.0,
+    "J2": 1.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 10.0,
+    "J6": 23.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.05,
+   "q": {
+    "J1": 0.0,
+    "J2": -3.2,
+    "J3": 0.0,
+    "J4": 8.0,
+    "J5": 15.9,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.25,
+   "q": {
+    "J1": 0.0,
+    "J2": -3.2,
+    "J3": 0.0,
+    "J4": 8.0,
+    "J5": 15.9,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 3.45,
+   "q": {
+    "J1": 0.0,
+    "J2": 1.0,
+    "J3": 0.0,
+    "J4": -1.0,
+    "J5": 11.0,
+    "J6": 22.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 4.05,
+   "q": {
+    "J1": 0.0,
+    "J2": 0.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 12.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  }
+ ]
+}

@@ -1,0 +1,137 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "stand_mirror_sag",
+ "revision": "mech_M4",
+ "loop": false,
+ "meta": {
+  "intent": "posture mirror: slow sag with holds at L1 and L2",
+  "status": "re-based mechanically by the lead; NOT run on hardware; pilot values",
+  "source": "08_Docs/Research/_parts/ROLE_HRI_round2_character.md",
+  "set": "v11_stand",
+  "rebased_from": "mirror_sag by scripts/rebase_motions_stand.py: J2 - 20 (min -35), J5 + 18 (max +30)"
+ },
+ "keyframes": [
+  {
+   "t": 0.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 10.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.8,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 24.7,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 30.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -24.8,
+    "J3": 0.0,
+    "J4": 2.0,
+    "J5": 22.4,
+    "J6": 22.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 40.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -24.8,
+    "J3": 0.0,
+    "J4": 2.0,
+    "J5": 22.4,
+    "J6": 22.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 60.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -28.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 18.3,
+    "J6": 24.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 70.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -28.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 18.3,
+    "J6": 24.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 78.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0.0,
+   "face": "neutral"
+  },
+  {
+   "t": 12.0,
+   "face": "blink"
+  },
+  {
+   "t": 12.15,
+   "face": "neutral"
+  },
+  {
+   "t": 28.0,
+   "face": "concerned"
+  },
+  {
+   "t": 44.0,
+   "face": "blink"
+  },
+  {
+   "t": 44.15,
+   "face": "concerned"
+  },
+  {
+   "t": 58.0,
+   "face": "sleepy"
+  },
+  {
+   "t": 71.0,
+   "face": "concerned"
+  },
+  {
+   "t": 76.0,
+   "face": "neutral"
+  }
+ ]
+}

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Notifyi Digital Twin</title>
+<style>
+  :root { color-scheme:dark; --bg:#16181c; --panel:rgba(26,29,34,.92); --line:#343a43; --ink:#e7e9ec; --mute:#9aa3ad; --acc:#e8843c; --ok:#58c48a; --bad:#f0625d; --warn:#e8b23c; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font:13px/1.35 system-ui,Segoe UI,Roboto,sans-serif; overflow:hidden; }
+  canvas { display:block; }
+  .panel { position:absolute; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px 12px; backdrop-filter:blur(6px); }
+  #left { top:10px; left:10px; width:330px; max-height:calc(100% - 210px); overflow:auto; }
+  #right { top:10px; right:10px; width:250px; }
+  #bottom { left:10px; right:10px; bottom:10px; height:178px; }
+  h1 { font-size:14px; margin:0 0 2px; letter-spacing:.02em; }
+  h2 { font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--mute); margin:10px 0 6px; }
+  .sub { color:var(--mute); font-size:11.5px; }
+  .joint { border-top:1px solid var(--line); padding:7px 0 5px; }
+  .joint .hd { display:flex; justify-content:space-between; align-items:baseline; gap:6px; }
+  .joint .nm { font-weight:600; }
+  .joint .role { color:var(--mute); font-size:11.5px; }
+  .joint .row { display:flex; align-items:center; gap:8px; margin-top:3px; }
+  .joint input[type=range] { flex:1; accent-color:var(--acc); }
+  .joint input[type=number] { width:62px; }
+  .badge { font-size:10.5px; padding:1px 6px; border-radius:9px; border:1px solid var(--line); color:var(--mute); white-space:nowrap; }
+  .badge.warn { color:var(--warn); border-color:#6b5520; }
+  .badge.bad { color:var(--bad); border-color:#6e2d2b; }
+  .badge.ok { color:var(--ok); border-color:#2c5c43; }
+  input[type=number], input[type=text], select { background:#0f1114; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:3px 6px; font:inherit; }
+  button { background:#262b33; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:4px 9px; font:inherit; cursor:pointer; }
+  button:hover { border-color:#56606d; }
+  button.on { background:var(--acc); border-color:var(--acc); color:#1a1205; font-weight:600; }
+  .btns { display:flex; flex-wrap:wrap; gap:5px; }
+  label.chk { display:flex; align-items:center; gap:6px; margin:2px 0; cursor:pointer; }
+  #status { margin-top:6px; font-size:12px; }
+  #status .line { margin:2px 0; }
+  #warnings { font-size:11.5px; color:var(--warn); margin-top:6px; max-height:150px; overflow:auto; }
+  #warnings li { margin:2px 0 2px -18px; }
+  #track { position:relative; height:34px; margin:6px 0 4px; background:#0f1114; border:1px solid var(--line); border-radius:6px; cursor:pointer; }
+  #track .kf { position:absolute; top:5px; width:12px; height:22px; margin-left:-6px; background:var(--acc); border-radius:3px; }
+  #track .kf.sel { outline:2px solid #fff; }
+  #track .head { position:absolute; top:0; bottom:0; width:2px; background:#fff; pointer-events:none; }
+  #track .hit { position:absolute; top:0; bottom:0; background:rgba(240,98,93,.35); pointer-events:none; }
+  .tl { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  #report { font-size:11.5px; color:var(--mute); margin-top:4px; white-space:pre-wrap; max-height:42px; overflow:auto; }
+  .hidden { display:none !important; }
+  #loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--mute); font-size:15px; }
+  .note { margin:6px 0; color:var(--mute); font-size:11.5px; }
+  #faceExport, #save, #export { display:none; }
+  @media (max-width: 760px) {
+    #left { width:auto; right:10px; max-height:38%; }
+    #right { display:none; }
+    #bottom { height:auto; max-height:34%; overflow:auto; }
+  }
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/" } }
+</script>
+
+</head>
+<body>
+<div id="loading">Loading CAD assembly…</div>
+
+<div id="left" class="panel ui">
+  <h1>Notifyi digital twin</h1>
+  <p class="note">Published snapshot · CAD only, not a built robot · drag to orbit, pick a revision, play a motion. Saving and exporting are off here.</p>
+  <div class="sub"><span id="revname"></span> · <span id="gen"></span></div>
+  <div class="row" style="display:flex;gap:6px;margin-top:6px;align-items:center">
+    <select id="rev"></select>
+    <button id="home">Home</button>
+    <label class="chk" title="Sliders show -1..+1 mapped onto the configured soft range around home"><input type="checkbox" id="norm"> normalised −1…+1</label>
+  </div>
+  <h2>Poses from CAD</h2>
+  <div class="btns" id="poses"></div>
+  <div id="joints"></div>
+  <h2>Do-not-command axes</h2>
+  <div class="sub" id="inactive"></div>
+</div>
+
+<div id="right" class="panel ui">
+  <h2 style="margin-top:0">View</h2>
+  <div class="btns" id="views">
+    <button data-v="front">Front</button><button data-v="side">Side</button><button data-v="rear">Rear</button>
+    <button data-v="three_quarter">3/4</button><button data-v="top">Top</button>
+  </div>
+  <h2>Show</h2>
+  <label class="chk"><input type="checkbox" data-kind="motor" checked> Actuators (vendor STEP mesh)</label>
+  <label class="chk"><input type="checkbox" data-kind="frame" checked> Structural frames</label>
+  <label class="chk"><input type="checkbox" data-kind="enclosure" checked> Enclosure</label>
+  <label class="chk"><input type="checkbox" data-kind="electronics" checked> Electronics / envelopes</label>
+  <label class="chk"><input type="checkbox" id="showAxes" checked> Joint axes</label>
+  <label class="chk"><input type="checkbox" id="showBoxes"> Collision boxes</label>
+  <label class="chk"><input type="checkbox" id="showCom" checked> Centre of mass</label>
+  <h2>Status</h2>
+  <div id="status"></div>
+  <ul id="warnings"></ul>
+</div>
+
+<div id="bottom" class="panel ui">
+  <div class="tl">
+    <strong>Motion</strong>
+    <select id="presets"><option value="">— presets —</option></select>
+    <select id="face" title="what the display shows: alive (eyes follow the pointer; click the head to poke, double-click to wink, hold to pat) or one expression"><option value="">— face —</option></select>
+    <select id="eyes" title="eye style"></select>
+    <label class="chk"><input type="checkbox" id="faceFollow" checked> eyes follow</label>
+    <label class="chk"><input type="checkbox" id="faceBlink" checked> blink</label>
+    <button id="faceExport" title="write the still pictures the CAD build and the renders use (06_Viewer/faces)">export faces</button>
+    <input type="text" id="mname" value="untitled" size="16" title="motion name">
+    <button id="play">▶ Play</button><button id="stop">■</button>
+    <label class="chk"><input type="checkbox" id="loop"> loop</label>
+    <span class="sub">t = <span id="tnow">0.00</span> / <span id="tdur">0.00</span> s</span>
+    <span style="flex:1"></span>
+    <button id="addkf" title="Insert/replace a keyframe at the current time with the current pose">+ Key</button>
+    <button id="delkf">− Key</button>
+    <label class="sub">key t <input type="number" id="kft" step="0.1" min="0" style="width:64px"></label>
+    <select id="kfease"><option>minjerk</option><option>linear</option><option>hold</option></select>
+    <button id="check" title="Sample the motion at 50 Hz: joint speed, soft limits, box collisions">Check</button>
+    <button id="retime" title="Stretch segments so no joint exceeds its speed limit">Retime</button>
+    <button id="save">Save</button><button id="export">Export</button><button id="import">Import</button>
+    <input type="file" id="file" accept=".json" class="hidden">
+  </div>
+  <div id="track"><div class="head" id="head"></div></div>
+  <div id="report">No motion loaded. Pose the robot, press “+ Key”, move the playhead (click the track), pose again, “+ Key”.</div>
+</div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
