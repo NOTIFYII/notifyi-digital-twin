@@ -1,0 +1,4640 @@
+{
+ "schema": "notifyi.joint_config/1",
+ "revision": "worm_B7",
+ "generated": "2026-10-11T17:35:34",
+ "units": {
+  "length": "mm",
+  "angle": "deg",
+  "mass": "g"
+ },
+ "world": {
+  "up": "+Z",
+  "front": "-Y",
+  "origin": "desk plane, on the J1 axis",
+  "note": "all link frames are parallel to world at home (all joints 0)"
+ },
+ "source_step": {
+  "file": "2XL-430.stp",
+  "sha256": "ffac59d032bcd8242ca32c42841c35a25c3f8ffd6d0a41099afcb48cdfc50851"
+ },
+ "params": {
+  "yoke_inner_width": 38.2,
+  "yoke_leg_t": 4.0,
+  "yoke_axis_to_base": 23.0,
+  "yoke_base_t": 4.0,
+  "yoke_depth_base": 26.0,
+  "yoke_depth_hub": 26.0,
+  "yoke_top": 12.0,
+  "yoke_chamfer": 6.0,
+  "hub_centre_hole_d": 11.0,
+  "base_centre_hole_d": 8.3,
+  "m2_clear_d": 2.4,
+  "horn_pcd": 16.0,
+  "p1_centre_z": 24.5,
+  "soft_limits": {
+   "J1": [
+    -90,
+    90
+   ],
+   "J2": [
+    -35,
+    2
+   ],
+   "J3": [
+    -60,
+    60
+   ],
+   "J4": [
+    -25,
+    25
+   ],
+   "J5": [
+    -60,
+    30
+   ],
+   "J6": [
+    -90,
+    90
+   ]
+  },
+  "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+  "yoke_base_disc_d": null,
+  "yoke_overrides": {
+   "yoke0": {
+    "yoke_axis_to_base": 23.0
+   }
+  },
+  "yoke_material": "yoke_black",
+  "yoke_fill": 1.0,
+  "fork_slot_w": 9.0,
+  "hub_recess_d": 23.0,
+  "hub_recess_depth": 1.0,
+  "base_cbore_d": 4.4,
+  "base_cbore_depth": 1.0,
+  "base_cable_window": [
+   7.0,
+   9.0,
+   14.5
+  ],
+  "yoke_base_corner_r": 4.0,
+  "product": {
+   "floor_t": 3.0,
+   "p1_floor_gap": 1.5,
+   "yoke_base_disc_d": null,
+   "yoke_material": "yoke_black",
+   "clear": 1.5,
+   "wall": 1.2,
+   "sweep_step_deg": 8.0,
+   "soft_limits": {
+    "J1": [
+     -90,
+     90
+    ],
+    "J2": [
+     -35,
+     2
+    ],
+    "J3": [
+     -60,
+     60
+    ],
+    "J4": [
+     -25,
+     25
+    ],
+    "J5": [
+     -60,
+     30
+    ],
+    "J6": [
+     -90,
+     90
+    ]
+   },
+   "base": {
+    "half_w": 62.0,
+    "y_front": -152.5,
+    "y_rear": 44.5,
+    "deck_z": null,
+    "equator_z": 14.0,
+    "n_plan": 6.0,
+    "n_side": 5.0,
+    "flat_top": 0.9,
+    "flat_bot": 0.93,
+    "turret_gap": 1.0,
+    "ballast_g": 0.0,
+    "form": "books",
+    "r_plan": 6.0,
+    "r_edge": 12.0,
+    "r_edge_bot": 2.0,
+    "books": [
+     {
+      "z0": 0.0,
+      "z1": 24.0,
+      "pad": [
+       8.0,
+       2.0,
+       9.0,
+       3.0
+      ],
+      "mat": "navy",
+      "page_lines": [
+       0.3,
+       0.55,
+       0.8
+      ]
+     },
+     {
+      "z0": 24.0,
+      "z1": null,
+      "pad": [
+       0.5,
+       0.5,
+       0.5,
+       0.5
+      ],
+      "mat": "book_red",
+      "page_lines": [
+       0.35,
+       0.7
+      ]
+     }
+    ],
+    "chew": {
+     "r": 35.0,
+     "bites": 13,
+     "bite_r": 5.0
+    }
+   },
+   "stone2": {
+    "a": 29.0,
+    "b_rear": 27.0,
+    "b_front": 32.0,
+    "cy": 12.0,
+    "cz": 0.0,
+    "top": 20.4,
+    "bottom": -24.5,
+    "n_plan": 5.0,
+    "n_side": 5.0,
+    "flat_top": 0.92,
+    "flat_bot": 0.92,
+    "skew": [
+     0.0,
+     0.0
+    ],
+    "lobes": {
+     "r": 21.5,
+     "z_keep": -9.0,
+     "hole_d": 23.4
+    },
+    "form": "box",
+    "r_plan": 13.0,
+    "r_edge": 10.0,
+    "top_skin": true,
+    "apron": true,
+    "rear_skirt": {
+     "y0": 15.0,
+     "z": -18.0
+    },
+    "bands": [
+     [
+      15.4,
+      20.4
+     ]
+    ]
+   },
+   "stone3": {
+    "a": 29.0,
+    "b": 29.0,
+    "cz": 12.0,
+    "top": 48.5,
+    "bottom": -24.5,
+    "n_plan": 5.0,
+    "n_side": 5.0,
+    "flat_top": 0.92,
+    "flat_bot": 0.92,
+    "skew": [
+     0.0,
+     0.0
+    ],
+    "lobes": {
+     "r_bot": 21.5,
+     "r_top": 21.5,
+     "z_keep_bot": -6.0,
+     "z_keep_top": 30.0,
+     "hole_d": 23.4
+    },
+    "form": "box",
+    "r_plan": 24.0,
+    "r_edge": 12.0,
+    "bands": [
+     [
+      -6.0,
+      -1.0
+     ],
+     [
+      25.0,
+      30.0
+     ]
+    ]
+   },
+   "head": {
+    "a": 24.0,
+    "y_rear": 14.0,
+    "y_front": -40.0,
+    "cz": 22.0,
+    "top": 41.4,
+    "bottom": 2.0,
+    "n_plan": 5.0,
+    "n_side": 5.0,
+    "flat_top": 0.92,
+    "flat_bot": 0.92,
+    "skew": [
+     0.0,
+     0.0
+    ],
+    "lens_d": 14.0,
+    "face_tilt_deg": 0.0,
+    "style": "worm",
+    "helmet_wall": 1.6,
+    "front_open_y": -36.0,
+    "skirt_z": 6.0,
+    "brow_half_w": 41.0,
+    "brow_y_front": -70.0,
+    "brow_corner_r": 13.0,
+    "form": "ball_band",
+    "r_plan": 20.0,
+    "r_edge": 3.0,
+    "brow_lip": 4.5,
+    "x0": -46.0,
+    "x1": 46.0,
+    "y0": -76.0,
+    "y1": 17.0,
+    "z0": 1.0,
+    "z1": 60.0,
+    "r_top": 19.5,
+    "r_bot": 12.0,
+    "wall": 1.0,
+    "split_y": -30.5,
+    "bottom_lip": 5.0,
+    "nose_d": 24.0,
+    "nose_proud": 2.0,
+    "eye_x": 24.0,
+    "eye_z": 35.5,
+    "eye_d": 12.0,
+    "socket_d": 16.0,
+    "socket_depth": 4.5,
+    "chin_screws": [
+     [
+      -17.0,
+      -60.0
+     ],
+     [
+      17.0,
+      -60.0
+     ]
+    ],
+    "web": {
+     "y0": -6.0,
+     "z": 40.0,
+     "t": 1.6
+    },
+    "tongue": {
+     "w": 16.0,
+     "len": 5.0
+    },
+    "nape_cut": null,
+    "nose_mask_d": 9.0,
+    "ear_screws": [
+     [
+      -42.5,
+      -50.0
+     ],
+     [
+      42.5,
+      -50.0
+     ]
+    ],
+    "ball": {
+     "c": [
+      0.0,
+      -12.0,
+      21.0
+     ],
+     "r": 40.0
+    },
+    "band": {
+     "half_w": 42.6,
+     "y_rear": -31.0,
+     "r_plan": 10.0,
+     "r_edge": 7.0,
+     "screw": [
+      -52.0,
+      20.0
+     ],
+     "closed": true
+    }
+   },
+   "camera": {
+    "size": [
+     75.0,
+     28.0,
+     28.0
+    ],
+    "centre": [
+     0.0,
+     -51.75,
+     21.0
+    ],
+    "tilt_up_deg": 0.0,
+    "lens_offset_x": -22.0,
+    "mass_g": 60.0,
+    "back_plate": true
+   },
+   "opencr": {
+    "size": [
+     105.0,
+     75.0,
+     14.0
+    ],
+    "centre_xy": [
+     0.0,
+     -59.5
+    ],
+    "z0": 6.0,
+    "mass_g": 60.0
+   },
+   "pi3b": {
+    "size": [
+     56.0,
+     85.0,
+     18.0
+    ],
+    "centre_xy": [
+     3.0,
+     -58.5
+    ],
+    "z0": 24.5,
+    "mass_g": 45.0,
+    "usb_front": true
+   },
+   "shell_density": 1.27,
+   "shell_fill": 1.0,
+   "yoke_params": {
+    "fork_slot_w": 9.0,
+    "hub_recess_d": 23.0,
+    "hub_recess_depth": 1.0,
+    "base_cbore_d": 4.4,
+    "base_cbore_depth": 1.0,
+    "base_centre_hole_d": 8.3,
+    "base_cable_window": [
+     7.0,
+     9.0,
+     14.5
+    ],
+    "yoke_depth_base": 26.0,
+    "yoke_depth_hub": 26.0,
+    "yoke_base_corner_r": 4.0
+   },
+   "turntable_ring_d": 58.0,
+   "materials": {
+    "base_cover": "navy",
+    "stone2": "worm_teal",
+    "stone3": "worm_teal",
+    "head": "worm_teal",
+    "caps": "stone_c",
+    "caps_turret": "worm_teal_dark",
+    "caps_mid_yoke": "worm_teal_dark",
+    "caps_neck_yoke": "worm_teal_dark",
+    "lid": "accent_warm",
+    "nest": "soft_white",
+    "face": "worm_teal",
+    "eyes": "gloss_black",
+    "nose": "gloss_black",
+    "tuft": "skin",
+    "accent": "coral",
+    "feelers": "worm_green",
+    "glasses": "walnut",
+    "open_book": "pages",
+    "eye_white": "eye_white",
+    "bands": "worm_teal_dark"
+   },
+   "base_wall": 2.4,
+   "yoke_fill": 1.0,
+   "pivot_caps": true,
+   "cradle": true,
+   "chassis": {
+    "cover_bosses": [
+     [
+      -30.0,
+      -146.0
+     ],
+     [
+      30.0,
+      -146.0
+     ],
+     [
+      -55.5,
+      20.0
+     ],
+     [
+      55.5,
+      20.0
+     ]
+    ],
+    "port_notch": [
+     -30.0,
+     -4.0,
+     6.0,
+     20.0
+    ]
+   },
+   "envelope_v2": true,
+   "lens_lid": null,
+   "carve_limits": {
+    "J2": [
+     -55,
+     5
+    ]
+   },
+   "constraints": [
+    {
+     "type": "sum_min",
+     "joints": [
+      "J2",
+      "J5"
+     ],
+     "min": -75.0,
+     "why": "deep bow and deep nod together put the head on the deck and J2 at its torque ceiling (CAD sampling)",
+     "exception": "the named pose 'dock' (J1 = J3 = J4 = J6 = 0), checked on its own and along its approach path"
+    }
+   ],
+   "allowed_contacts": [
+    [
+     "open_book",
+     "glasses"
+    ],
+    [
+     "open_book",
+     "head_face"
+    ],
+    [
+     "open_book",
+     "eye_lens"
+    ],
+    [
+     "open_book",
+     "eye_twin"
+    ]
+   ],
+   "nest": null,
+   "special_poses": {
+    "dock": {
+     "outside_soft_limits": [
+      "J2"
+     ],
+     "requires_zero": [
+      "J1",
+      "J3",
+      "J4",
+      "J6"
+     ],
+     "status": "asleep on the open book. CAD: spectacle rims 1.5 mm above the pages, lens axis straight down; collision-free with +/-1.5 deg on J2 and J5 and along a straight approach from home; head stays over the base; NOT run on hardware; resting with torque off is NOT TESTED"
+    }
+   },
+   "named_poses": {
+    "home": {},
+    "rest": {
+     "J6": 20.0,
+     "J5": 12.0
+    },
+    "mirror_L1": {
+     "J2": -5.0,
+     "J5": 7.0
+    },
+    "mirror_L2": {
+     "J2": -10.0,
+     "J5": 3.0
+    },
+    "dock": {
+     "J2": -36.2,
+     "J5": -53.8
+    },
+    "attend": {
+     "J5": 15.0
+    },
+    "read": {
+     "J2": -25.0,
+     "J5": -50.0
+    }
+   },
+   "cap_styles": null,
+   "tuft": null,
+   "nose_cap": null,
+   "glasses": {
+    "rim_d": 27.0,
+    "rim_w": 2.8,
+    "t": 2.0,
+    "standoff": 0.4,
+    "dz": 0.0,
+    "temple_y": -8.0,
+    "whites": true,
+    "temples": 2.5
+   },
+   "feelers": [],
+   "open_book": {
+    "x": 0.0,
+    "y": -74.0,
+    "w": 96.0,
+    "d": 62.0,
+    "t": 20.0,
+    "yaw": 5.0
+   },
+   "feeler_z": 57.5,
+   "bookmark": {
+    "x": 38.0,
+    "w": 7.0,
+    "out": 12.0,
+    "below": 6.0
+   },
+   "dock_contact": {
+    "head_visual": "glasses",
+    "pad_visual": "open_book"
+   },
+   "real_parts": true,
+   "pi_plugs": {
+    "usb_ports": [
+     0,
+     1
+    ],
+    "power": true
+   }
+  }
+ },
+ "root_link": "base",
+ "links": [
+  {
+   "name": "base",
+   "parent": null
+  },
+  {
+   "name": "turret",
+   "parent": "base"
+  },
+  {
+   "name": "lower",
+   "parent": "turret"
+  },
+  {
+   "name": "mid_yoke",
+   "parent": "lower"
+  },
+  {
+   "name": "upper",
+   "parent": "mid_yoke"
+  },
+  {
+   "name": "neck_yoke",
+   "parent": "upper"
+  },
+  {
+   "name": "head",
+   "parent": "neck_yoke"
+  }
+ ],
+ "joints": [
+  {
+   "name": "J1",
+   "module": "P1",
+   "module_axis": "A",
+   "dxl_id": {
+    "hypothesis": 2,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "base yaw - turns the whole body",
+   "moving_side": "horn",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -90.0,
+    90.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "carries all moving mass axially on a single horn bearing; no idler support",
+   "parent": "base",
+   "child": "turret",
+   "origin_mm": [
+    0.0,
+    0.0,
+    43.5
+   ],
+   "axis": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "name": "J2",
+   "module": "P2",
+   "module_axis": "A",
+   "dxl_id": {
+    "hypothesis": 3,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "body pitch - lean forward(-) / back(+)",
+   "moving_side": "body",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -35.0,
+    2.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "hinge with horn + idler support; highest gravity torque in the chain",
+   "parent": "turret",
+   "child": "lower",
+   "origin_mm": [
+    0.0,
+    0.0,
+    27.0
+   ],
+   "axis": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "J3",
+   "module": "P2",
+   "module_axis": "B",
+   "dxl_id": {
+    "hypothesis": 4,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "torso twist about the body axis",
+   "moving_side": "horn",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -60.0,
+    60.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "single horn bearing carries the upper column in bending when leaned",
+   "parent": "lower",
+   "child": "mid_yoke",
+   "origin_mm": [
+    0.0,
+    24.0,
+    19.0
+   ],
+   "axis": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "name": "J4",
+   "module": "P3",
+   "module_axis": "B",
+   "dxl_id": {
+    "hypothesis": 5,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "roll - side tilt",
+   "moving_side": "body",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -25.0,
+    25.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "hinge with horn + idler support",
+   "parent": "mid_yoke",
+   "child": "upper",
+   "origin_mm": [
+    0.0,
+    0.0,
+    27.0
+   ],
+   "axis": [
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "name": "J5",
+   "module": "P3",
+   "module_axis": "A",
+   "dxl_id": {
+    "hypothesis": 6,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "neck pitch - nod forward(-) / back(+)",
+   "moving_side": "horn",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -60.0,
+    30.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "hinge with horn + idler support",
+   "parent": "upper",
+   "child": "neck_yoke",
+   "origin_mm": [
+    0.0,
+    0.0,
+    24.0
+   ],
+   "axis": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "J6",
+   "module": "P4",
+   "module_axis": "B",
+   "dxl_id": {
+    "hypothesis": 7,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "head pan",
+   "moving_side": "body",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -90.0,
+    90.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "single horn bearing carries the head",
+   "parent": "neck_yoke",
+   "child": "head",
+   "origin_mm": [
+    0.0,
+    0.0,
+    27.0
+   ],
+   "axis": [
+    0,
+    0,
+    1
+   ]
+  }
+ ],
+ "modules": {
+  "P1": {
+   "link": "base",
+   "T_link_module": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     24.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  "P2": {
+   "link": "lower",
+   "T_link_module": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  "P3": {
+   "link": "upper",
+   "T_link_module": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  "P4": {
+   "link": "head",
+   "T_link_module": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "visuals": [
+  {
+   "link": "base",
+   "mesh": "2XL430/body",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     24.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.body",
+   "module": "P1"
+  },
+  {
+   "link": "base",
+   "mesh": "2XL430/plugs",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     24.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.plugs",
+   "module": "P1"
+  },
+  {
+   "link": "base",
+   "mesh": "2XL430/idler_A",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     24.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.idler_A",
+   "module": "P1"
+  },
+  {
+   "link": "base",
+   "mesh": "2XL430/idler_B",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     24.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.idler_B",
+   "module": "P1"
+  },
+  {
+   "link": "base",
+   "mesh": "2XL430/horn_B",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     24.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.horn_B",
+   "module": "P1"
+  },
+  {
+   "link": "turret",
+   "mesh": "2XL430/horn_A",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     -19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.horn_A",
+   "module": "P1"
+  },
+  {
+   "link": "turret",
+   "mesh": "part/yoke",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "yoke0",
+   "module": null
+  },
+  {
+   "link": "lower",
+   "mesh": "2XL430/body",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.body",
+   "module": "P2"
+  },
+  {
+   "link": "lower",
+   "mesh": "2XL430/plugs",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.plugs",
+   "module": "P2"
+  },
+  {
+   "link": "lower",
+   "mesh": "2XL430/idler_B",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.idler_B",
+   "module": "P2"
+  },
+  {
+   "link": "turret",
+   "mesh": "2XL430/horn_A",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.horn_A",
+   "module": "P2"
+  },
+  {
+   "link": "turret",
+   "mesh": "2XL430/idler_A",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.idler_A",
+   "module": "P2"
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "2XL430/horn_B",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     -19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.horn_B",
+   "module": "P2"
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "part/yoke",
+   "T": [
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "yoke1",
+   "module": null
+  },
+  {
+   "link": "upper",
+   "mesh": "2XL430/body",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.body",
+   "module": "P3"
+  },
+  {
+   "link": "upper",
+   "mesh": "2XL430/plugs",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.plugs",
+   "module": "P3"
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "2XL430/horn_B",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     39.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.horn_B",
+   "module": "P3"
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "2XL430/idler_B",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     39.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.idler_B",
+   "module": "P3"
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "2XL430/horn_A",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.horn_A",
+   "module": "P3"
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "2XL430/idler_A",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.idler_A",
+   "module": "P3"
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/yoke",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     -0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "yoke2",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "2XL430/body",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.body",
+   "module": "P4"
+  },
+  {
+   "link": "head",
+   "mesh": "2XL430/plugs",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.plugs",
+   "module": "P4"
+  },
+  {
+   "link": "head",
+   "mesh": "2XL430/horn_A",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.horn_A",
+   "module": "P4"
+  },
+  {
+   "link": "head",
+   "mesh": "2XL430/idler_A",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.idler_A",
+   "module": "P4"
+  },
+  {
+   "link": "head",
+   "mesh": "2XL430/idler_B",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.idler_B",
+   "module": "P4"
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "2XL430/horn_B",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     46.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.horn_B",
+   "module": "P4"
+  },
+  {
+   "link": "base",
+   "mesh": "part/book1_cover",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "book1_cover",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/book1_pages",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "book1_pages",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/book2_cover",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "book2_cover",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/book2_pages",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "book2_pages",
+   "module": null
+  },
+  {
+   "link": "turret",
+   "mesh": "part/turntable_ring",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "turntable_ring",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/base_chassis",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "base_chassis",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi3b_pcb",
+   "T": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     -25.0
+    ],
+    [
+     -1.0,
+     0.0,
+     0.0,
+     -16.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     24.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "Raspberry Pi 3 B (pcb)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi3b_parts",
+   "T": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     -25.0
+    ],
+    [
+     -1.0,
+     0.0,
+     0.0,
+     -16.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     24.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "Raspberry Pi 3 B (parts)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi3b_sockets",
+   "T": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     -25.0
+    ],
+    [
+     -1.0,
+     0.0,
+     0.0,
+     -16.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     24.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "Raspberry Pi 3 B (sockets)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi3b_plugs",
+   "T": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     -25.0
+    ],
+    [
+     -1.0,
+     0.0,
+     0.0,
+     -16.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     24.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "envelope",
+   "name": "Raspberry Pi plugs (keep-out)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/opencr_pcb",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -52.5
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -97.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     6.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "OpenCR 1.0 (pcb)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/opencr_component",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -52.5
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -97.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     6.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "envelope",
+   "name": "OpenCR 1.0 (component keep-out)",
+   "module": null
+  },
+  {
+   "link": "lower",
+   "mesh": "part/stone2_band0",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "stone2_band0",
+   "module": null
+  },
+  {
+   "link": "lower",
+   "mesh": "part/stone2",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "stone2",
+   "module": null
+  },
+  {
+   "link": "upper",
+   "mesh": "part/stone3_band0",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "stone3_band0",
+   "module": null
+  },
+  {
+   "link": "upper",
+   "mesh": "part/stone3_band1",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "stone3_band1",
+   "module": null
+  },
+  {
+   "link": "upper",
+   "mesh": "part/stone3",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "stone3",
+   "module": null
+  },
+  {
+   "link": "turret",
+   "mesh": "part/pivot_cap_4p7_worm_teal_dark",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     23.1
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_turret_p",
+   "module": null
+  },
+  {
+   "link": "turret",
+   "mesh": "part/pivot_cap_4p7_worm_teal_dark",
+   "T": [
+    [
+     -1.0,
+     -0.0,
+     0.0,
+     -23.1
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_turret_n",
+   "module": null
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "part/pivot_cap_4p7_worm_teal_dark",
+   "T": [
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     23.1
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_mid_yoke_p",
+   "module": null
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "part/pivot_cap_4p7_worm_teal_dark",
+   "T": [
+    [
+     -0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    [
+     -1.0,
+     -0.0,
+     0.0,
+     -23.1
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_mid_yoke_n",
+   "module": null
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/pivot_cap_4p7_worm_teal_dark",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     23.1
+    ],
+    [
+     0.0,
+     -1.0,
+     -0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_neck_yoke_p",
+   "module": null
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/pivot_cap_4p7_worm_teal_dark",
+   "T": [
+    [
+     -1.0,
+     -0.0,
+     0.0,
+     -23.1
+    ],
+    [
+     -0.0,
+     1.0,
+     -0.0,
+     0.0
+    ],
+    [
+     0.0,
+     -0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_neck_yoke_n",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/head_rear",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "head_rear",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/head_face",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "head_face",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/eye_hood",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -22.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -69.75
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     21.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "eye_lens",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/eye_hood",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     22.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -69.75
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     21.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "eye_twin",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/eye_plug",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     22.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -67.15
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     21.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "eye_plug",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/eye_white",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -22.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -69.75
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     21.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "eye_white_0",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/eye_white",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     22.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -69.75
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     21.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "eye_white_1",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/glasses",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "glasses",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/camera_cradle",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "camera_cradle",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/webcam_body",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.5
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -51.75
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     21.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "webcam",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/webcam_trim",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.5
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -51.75
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     21.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "webcam trim",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/webcam_lens",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.5
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -51.75
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     21.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "webcam lens",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/open_book",
+   "T": [
+    [
+     0.996195,
+     -0.087156,
+     0.0,
+     0.0
+    ],
+    [
+     0.087156,
+     0.996195,
+     0.0,
+     -74.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     47.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "open_book",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/bookmark",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "bookmark",
+   "module": null,
+   "no_collide": true
+  }
+ ],
+ "collision_boxes": {
+  "base": [
+   {
+    "name": "P1.body",
+    "T": [
+     [
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      12.0
+     ],
+     [
+      1.0,
+      0.0,
+      0.0,
+      24.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     18.0,
+     23.25,
+     18.0
+    ]
+   },
+   {
+    "name": "base_cover.wall_l",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -60.8
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -54.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      23.75
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     1.2,
+     98.5,
+     23.75
+    ]
+   },
+   {
+    "name": "base_cover.wall_r",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      60.8
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -54.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      23.75
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     1.2,
+     98.5,
+     23.75
+    ]
+   },
+   {
+    "name": "base_cover.wall_f",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -151.3
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      23.75
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     62.0,
+     1.2,
+     23.75
+    ]
+   },
+   {
+    "name": "base_cover.wall_b",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      43.3
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      23.75
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     62.0,
+     1.2,
+     23.75
+    ]
+   },
+   {
+    "name": "base_cover.deck_f",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -91.5
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      46.3
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     62.0,
+     61.0,
+     1.2
+    ]
+   },
+   {
+    "name": "base_cover.deck_b",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      37.5
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      46.3
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     62.0,
+     7.0,
+     1.2
+    ]
+   },
+   {
+    "name": "base_cover.deck_l",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -46.25
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      46.3
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     15.75,
+     30.5,
+     1.2
+    ]
+   },
+   {
+    "name": "base_cover.deck_r",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      46.25
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      46.3
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     15.75,
+     30.5,
+     1.2
+    ]
+   }
+  ],
+  "lower": [
+   {
+    "name": "P2.body",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      12.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     18.0,
+     23.25,
+     18.0
+    ]
+   }
+  ],
+  "upper": [
+   {
+    "name": "P3.body",
+    "T": [
+     [
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+     ],
+     [
+      0.0,
+      -1.0,
+      0.0,
+      12.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     18.0,
+     23.25,
+     18.0
+    ]
+   }
+  ],
+  "head": [
+   {
+    "name": "P4.body",
+    "T": [
+     [
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -12.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0,
+      19.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     18.0,
+     23.25,
+     18.0
+    ]
+   },
+   {
+    "name": "head_shell.x+",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      41.977581
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -50.216454
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      20.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     0.622,
+     13.872,
+     14.037
+    ]
+   },
+   {
+    "name": "head_shell.x-",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -41.977581
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -50.216454
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      20.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     0.622,
+     13.872,
+     14.037
+    ]
+   },
+   {
+    "name": "head_shell.y+",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      27.416408
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      16.511626
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     10.379,
+     0.584,
+     15.512
+    ]
+   },
+   {
+    "name": "head_shell.y-",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -69.137176
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      20.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     36.939,
+     0.613,
+     14.037
+    ]
+   },
+   {
+    "name": "head_shell.z+",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -12.068354
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      60.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     11.023,
+     11.092,
+     0.5
+    ]
+   }
+  ],
+  "turret": [
+   {
+    "name": "yoke0.base",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      2.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     23.1,
+     13.0,
+     2.0
+    ]
+   },
+   {
+    "name": "yoke0.leg+",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      21.1
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      19.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   },
+   {
+    "name": "yoke0.leg-",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -21.1
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      19.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   }
+  ],
+  "mid_yoke": [
+   {
+    "name": "yoke1.base",
+    "T": [
+     [
+      0.0,
+      -1.0,
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      2.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     23.1,
+     13.0,
+     2.0
+    ]
+   },
+   {
+    "name": "yoke1.leg+",
+    "T": [
+     [
+      0.0,
+      -1.0,
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0,
+      0.0,
+      21.1
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      19.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   },
+   {
+    "name": "yoke1.leg-",
+    "T": [
+     [
+      0.0,
+      -1.0,
+      0.0,
+      -0.0
+     ],
+     [
+      1.0,
+      0.0,
+      0.0,
+      -21.1
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      19.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   }
+  ],
+  "neck_yoke": [
+   {
+    "name": "yoke2.base",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      -1.0,
+      -0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0,
+      25.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     23.1,
+     13.0,
+     2.0
+    ]
+   },
+   {
+    "name": "yoke2.leg+",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      21.1
+     ],
+     [
+      0.0,
+      -1.0,
+      -0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0,
+      7.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   },
+   {
+    "name": "yoke2.leg-",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -21.1
+     ],
+     [
+      0.0,
+      -1.0,
+      -0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0,
+      7.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   }
+  ]
+ },
+ "masses": [
+  {
+   "link": "base",
+   "name": "P1 2XL430",
+   "mass_g": 98.2,
+   "p": [
+    0.0,
+    12.0,
+    24.5
+   ],
+   "source": "e-Manual 98.2 g, lumped at module centre (ASSUMPTION)"
+  },
+  {
+   "link": "turret",
+   "name": "yoke0",
+   "mass_g": 11.61,
+   "p": [
+    -0.0,
+    0.0,
+    10.931
+   ],
+   "source": "hinge yoke; print on its side (U profile on the bed) so layers run along the legs"
+  },
+  {
+   "link": "lower",
+   "name": "P2 2XL430",
+   "mass_g": 98.2,
+   "p": [
+    0.0,
+    12.0,
+    0.0
+   ],
+   "source": "e-Manual 98.2 g, lumped at module centre (ASSUMPTION)"
+  },
+  {
+   "link": "mid_yoke",
+   "name": "yoke1",
+   "mass_g": 11.61,
+   "p": [
+    -0.0,
+    -0.0,
+    10.931
+   ],
+   "source": "hinge yoke; print on its side (U profile on the bed) so layers run along the legs"
+  },
+  {
+   "link": "upper",
+   "name": "P3 2XL430",
+   "mass_g": 98.2,
+   "p": [
+    0.0,
+    0.0,
+    12.0
+   ],
+   "source": "e-Manual 98.2 g, lumped at module centre (ASSUMPTION)"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "yoke2",
+   "mass_g": 11.61,
+   "p": [
+    -0.0,
+    0.0,
+    16.069
+   ],
+   "source": "hinge yoke; print on its side (U profile on the bed) so layers run along the legs"
+  },
+  {
+   "link": "head",
+   "name": "P4 2XL430",
+   "mass_g": 98.2,
+   "p": [
+    0.0,
+    -12.0,
+    19.0
+   ],
+   "source": "e-Manual 98.2 g, lumped at module centre (ASSUMPTION)"
+  },
+  {
+   "link": "base",
+   "name": "book1_cover",
+   "mass_g": 45.82,
+   "p": [
+    11.782,
+    -63.855,
+    12.0
+   ],
+   "source": "part of the book-stack base (one shell printed in colours, or stacked pieces)"
+  },
+  {
+   "link": "base",
+   "name": "book1_pages",
+   "mass_g": 132.96,
+   "p": [
+    -15.949,
+    -72.321,
+    11.888
+   ],
+   "source": "part of the book-stack base (one shell printed in colours, or stacked pieces)"
+  },
+  {
+   "link": "base",
+   "name": "book2_cover",
+   "mass_g": 71.89,
+   "p": [
+    11.886,
+    -61.392,
+    42.164
+   ],
+   "source": "part of the book-stack base (one shell printed in colours, or stacked pieces)"
+  },
+  {
+   "link": "base",
+   "name": "book2_pages",
+   "mass_g": 61.87,
+   "p": [
+    0.126,
+    -55.754,
+    38.134
+   ],
+   "source": "part of the book-stack base (one shell printed in colours, or stacked pieces)"
+  },
+  {
+   "link": "turret",
+   "name": "turntable_ring",
+   "mass_g": 7.14,
+   "p": [
+    -0.0,
+    -0.0,
+    2.0
+   ],
+   "source": "ring pressed around the turret yoke base; flush with the deck"
+  },
+  {
+   "link": "base",
+   "name": "base_chassis",
+   "mass_g": 98.3,
+   "p": [
+    0.222,
+    -51.018,
+    3.523
+   ],
+   "source": "chassis: floor, P1 cradle, board posts"
+  },
+  {
+   "link": "base",
+   "name": "Raspberry Pi 3 B (pcb)",
+   "mass_g": 45.0,
+   "p": [
+    3.0,
+    -58.55,
+    25.2
+   ],
+   "source": "Raspberry Pi 3 Model B: outline, holes and big sockets from the published drawing AS RECALLED - not measured"
+  },
+  {
+   "link": "base",
+   "name": "Raspberry Pi 3 B (parts)",
+   "mass_g": 0.0,
+   "p": [
+    11.864,
+    -47.636,
+    29.031
+   ],
+   "source": "Raspberry Pi 3 Model B: outline, holes and big sockets from the published drawing AS RECALLED - not measured"
+  },
+  {
+   "link": "base",
+   "name": "Raspberry Pi 3 B (sockets)",
+   "mass_g": 0.0,
+   "p": [
+    0.173,
+    -89.034,
+    32.997
+   ],
+   "source": "Raspberry Pi 3 Model B: outline, holes and big sockets from the published drawing AS RECALLED - not measured"
+  },
+  {
+   "link": "base",
+   "name": "Raspberry Pi plugs (keep-out)",
+   "mass_g": 0.0,
+   "p": [
+    8.16,
+    -113.941,
+    33.516
+   ],
+   "source": "keep-out for the plugs and first cable bend at the Pi (typical lengths, not measured)"
+  },
+  {
+   "link": "base",
+   "name": "OpenCR 1.0 (pcb)",
+   "mass_g": 60.0,
+   "p": [
+    -0.0,
+    -59.5,
+    6.8
+   ],
+   "source": "OpenCR: only the 105 x 75 mm outline is trusted; component layout and holes UNVERIFIED"
+  },
+  {
+   "link": "base",
+   "name": "OpenCR 1.0 (component keep-out)",
+   "mass_g": 0.0,
+   "p": [
+    0.0,
+    -59.5,
+    13.1
+   ],
+   "source": "OpenCR: only the 105 x 75 mm outline is trusted; component layout and holes UNVERIFIED"
+  },
+  {
+   "link": "lower",
+   "name": "stone2_band0",
+   "mass_g": 2.1,
+   "p": [
+    -0.0,
+    -0.784,
+    18.2
+   ],
+   "source": "colour band at a segment edge (same shell, second colour)"
+  },
+  {
+   "link": "lower",
+   "name": "stone2",
+   "mass_g": 9.63,
+   "p": [
+    -0.0,
+    11.13,
+    -0.047
+   ],
+   "source": "lower body shell"
+  },
+  {
+   "link": "upper",
+   "name": "stone3_band0",
+   "mass_g": 1.06,
+   "p": [
+    0.003,
+    0.0,
+    -3.492
+   ],
+   "source": "colour band at a segment edge (same shell, second colour)"
+  },
+  {
+   "link": "upper",
+   "name": "stone3_band1",
+   "mass_g": 0.62,
+   "p": [
+    0.0,
+    16.548,
+    27.492
+   ],
+   "source": "colour band at a segment edge (same shell, second colour)"
+  },
+  {
+   "link": "upper",
+   "name": "stone3",
+   "mass_g": 8.02,
+   "p": [
+    0.0,
+    1.093,
+    11.509
+   ],
+   "source": "upper body shell"
+  },
+  {
+   "link": "turret",
+   "name": "pivot_cap_turret_p",
+   "mass_g": 1.98,
+   "p": [
+    27.435,
+    0.0,
+    27.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "turret",
+   "name": "pivot_cap_turret_n",
+   "mass_g": 1.98,
+   "p": [
+    -27.435,
+    0.0,
+    27.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "mid_yoke",
+   "name": "pivot_cap_mid_yoke_p",
+   "mass_g": 1.98,
+   "p": [
+    0.0,
+    27.435,
+    27.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "mid_yoke",
+   "name": "pivot_cap_mid_yoke_n",
+   "mass_g": 1.98,
+   "p": [
+    -0.0,
+    -27.435,
+    27.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "pivot_cap_neck_yoke_p",
+   "mass_g": 1.98,
+   "p": [
+    27.435,
+    -0.0,
+    -0.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "pivot_cap_neck_yoke_n",
+   "mass_g": 1.98,
+   "p": [
+    -27.435,
+    -0.0,
+    -0.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "head",
+   "name": "head_rear",
+   "mass_g": 18.09,
+   "p": [
+    -0.0,
+    2.388,
+    34.814
+   ],
+   "source": "head shell, rear part of the cranium: drops over P4, web screwed to its two top inserts"
+  },
+  {
+   "link": "head",
+   "name": "head_face",
+   "mass_g": 13.45,
+   "p": [
+    -0.0,
+    -53.483,
+    23.974
+   ],
+   "source": "head shell, face part: brow band with two eye ports, held by two screws into the cradle"
+  },
+  {
+   "link": "head",
+   "name": "eye_lens",
+   "mass_g": 0.33,
+   "p": [
+    -22.0,
+    -68.833,
+    21.0
+   ],
+   "source": "gloss-black eye port pressed into the face; both eyes are the same part"
+  },
+  {
+   "link": "head",
+   "name": "eye_twin",
+   "mass_g": 0.33,
+   "p": [
+    22.0,
+    -68.833,
+    21.0
+   ],
+   "source": "gloss-black eye port pressed into the face; both eyes are the same part"
+  },
+  {
+   "link": "head",
+   "name": "eye_plug",
+   "mass_g": 0.11,
+   "p": [
+    22.0,
+    -66.75,
+    21.0
+   ],
+   "source": "disc closing the back of the right eye port, so both eyes look alike from outside"
+  },
+  {
+   "link": "head",
+   "name": "eye_white_0",
+   "mass_g": 0.12,
+   "p": [
+    -22.0,
+    -70.05,
+    21.0
+   ],
+   "source": "white of the eye: a thin ring on the face inside the spectacle rim"
+  },
+  {
+   "link": "head",
+   "name": "eye_white_1",
+   "mass_g": 0.12,
+   "p": [
+    22.0,
+    -70.05,
+    21.0
+   ],
+   "source": "white of the eye: a thin ring on the face inside the spectacle rim"
+  },
+  {
+   "link": "head",
+   "name": "glasses",
+   "mass_g": 1.93,
+   "p": [
+    0.0,
+    -42.089,
+    21.325
+   ],
+   "source": "round spectacles: clip on at the temples (clip not detailed); the eyes look through the rims"
+  },
+  {
+   "link": "head",
+   "name": "camera_cradle",
+   "mass_g": 10.75,
+   "p": [
+    -0.0,
+    -45.233,
+    12.942
+   ],
+   "source": "camera shelf with strap slots on the four free A-end inserts of P4, with two ears for the face-half screws; camera size UNMEASURED"
+  },
+  {
+   "link": "head",
+   "name": "webcam",
+   "mass_g": 60.0,
+   "p": [
+    0.58,
+    -51.701,
+    21.0
+   ],
+   "source": "USB webcam, shape from the owner's photo; every dimension MEASUREMENT_REQUIRED; mass assumed"
+  },
+  {
+   "link": "head",
+   "name": "webcam trim",
+   "mass_g": 0.0,
+   "p": [
+    0.5,
+    -51.75,
+    21.0
+   ],
+   "source": "USB webcam, shape from the owner's photo; every dimension MEASUREMENT_REQUIRED; mass assumed"
+  },
+  {
+   "link": "head",
+   "name": "webcam lens",
+   "mass_g": 0.0,
+   "p": [
+    -22.0,
+    -64.905,
+    21.0
+   ],
+   "source": "USB webcam, shape from the owner's photo; every dimension MEASUREMENT_REQUIRED; mass assumed"
+  },
+  {
+   "link": "base",
+   "name": "open_book",
+   "mass_g": 148.18,
+   "p": [
+    0.0,
+    -74.0,
+    57.421
+   ],
+   "source": "open book lying on the stack: the lens looks at its pages in the reading pose"
+  },
+  {
+   "link": "base",
+   "name": "bookmark",
+   "mass_g": 0.12,
+   "p": [
+    38.0,
+    -155.5,
+    41.1
+   ],
+   "source": "ribbon bookmark (soft) pushed into a slot between the pages"
+  }
+ ],
+ "notes": [
+  "Revision intent: Bookworm: the B5 head (cranium 80 mm again) in teal, no antennae, thinner spectacle temples. Camera in the head.",
+  "Inactive axes: P1.B (hypothesis ID 1) and P4.A (hypothesis ID 8) drive nothing and must not be commanded. With torque OFF they are free to spin but carry no load in this topology.",
+  "Joint sign: positive = direction of an increasing DYNAMIXEL position (CCW seen facing the horn, per e-Manual convention) - NOT verified on hardware.",
+  "The STEP does not model the output shaft; horn/idler meshes are excluded from collision proxies.",
+  "Electronics and camera are ENVELOPES with PRELIMINARY (UNMEASURED) sizes and assumed masses.",
+  "Shell masses assume PETG 1.27 g/cc printed solid at the stated wall (ASSUMPTION until weighed)."
+ ],
+ "support_polygon_mm": [
+  [
+   58.3,
+   -149.8
+  ],
+  [
+   59.3,
+   -148.8
+  ],
+  [
+   59.3,
+   40.8
+  ],
+  [
+   58.3,
+   41.8
+  ],
+  [
+   -58.3,
+   41.8
+  ],
+  [
+   -59.3,
+   40.8
+  ],
+  [
+   -59.3,
+   -148.8
+  ],
+  [
+   -58.3,
+   -149.8
+  ]
+ ],
+ "live_check_excluded": [
+  "stone2",
+  "stone3",
+  "pivot caps",
+  "camera cradle",
+  "lens lid",
+  "cables",
+  "plugs",
+  "screw heads"
+ ],
+ "lens": {
+  "link": "head",
+  "p": [
+   -22.0,
+   -65.75,
+   21.0
+  ],
+  "axis": [
+   0.0,
+   -1.0,
+   0.0
+  ],
+  "status": "PRELIMINARY - camera not measured"
+ },
+ "deck_z": 47.5,
+ "open_book": {
+  "centre_xy": [
+   0.0,
+   -74.0
+  ],
+  "w": 96.0,
+  "d": 62.0,
+  "top_z": 67.5,
+  "yaw": 5.0
+ },
+ "dock_contact": {
+  "head_visual": "glasses",
+  "pad_visual": "open_book"
+ },
+ "constraints": [
+  {
+   "type": "sum_min",
+   "joints": [
+    "J2",
+    "J5"
+   ],
+   "min": -75.0,
+   "why": "deep bow and deep nod together put the head on the deck and J2 at its torque ceiling (CAD sampling)",
+   "exception": "the named pose 'dock' (J1 = J3 = J4 = J6 = 0), checked on its own and along its approach path"
+  }
+ ],
+ "named_poses": {
+  "home": {},
+  "rest": {
+   "J6": 20.0,
+   "J5": 12.0
+  },
+  "mirror_L1": {
+   "J2": -5.0,
+   "J5": 7.0
+  },
+  "mirror_L2": {
+   "J2": -10.0,
+   "J5": 3.0
+  },
+  "dock": {
+   "J2": -36.2,
+   "J5": -53.8
+  },
+  "attend": {
+   "J5": 15.0
+  },
+  "read": {
+   "J2": -25.0,
+   "J5": -50.0
+  }
+ },
+ "special_poses": {
+  "dock": {
+   "outside_soft_limits": [
+    "J2"
+   ],
+   "requires_zero": [
+    "J1",
+    "J3",
+    "J4",
+    "J6"
+   ],
+   "status": "asleep on the open book. CAD: spectacle rims 1.5 mm above the pages, lens axis straight down; collision-free with +/-1.5 deg on J2 and J5 and along a straight approach from home; head stays over the base; NOT run on hardware; resting with torque off is NOT TESTED"
+  }
+ },
+ "allowed_contacts": [
+  [
+   "open_book",
+   "glasses"
+  ],
+  [
+   "open_book",
+   "head_face"
+  ],
+  [
+   "open_book",
+   "eye_lens"
+  ],
+  [
+   "open_book",
+   "eye_twin"
+  ]
+ ],
+ "sweep_pieces_dropped_mm3": {
+  "stone2": [
+   93.8
+  ],
+  "stone3": [
+   745.6
+  ]
+ }
+}
