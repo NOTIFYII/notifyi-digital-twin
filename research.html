@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Notifyi Research Drafts</title>
+<style>
+  :root { color-scheme:dark; --bg:#16181c; --panel:rgba(26,29,34,.92); --line:#343a43; --ink:#e7e9ec; --mute:#9aa3ad; --acc:#e8843c; --ok:#58c48a; --bad:#f0625d; --warn:#e8b23c; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font:13px/1.35 system-ui,Segoe UI,Roboto,sans-serif; overflow:hidden; }
+  canvas { display:block; }
+  .panel { position:absolute; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px 12px; backdrop-filter:blur(6px); }
+  #left { top:10px; left:10px; width:330px; max-height:calc(100% - 210px); overflow:auto; }
+  #right { top:10px; right:10px; width:250px; }
+  #bottom { left:10px; right:10px; bottom:10px; height:178px; }
+  h1 { font-size:14px; margin:0 0 2px; letter-spacing:.02em; }
+  h2 { font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--mute); margin:10px 0 6px; }
+  .sub { color:var(--mute); font-size:11.5px; }
+  .joint { border-top:1px solid var(--line); padding:7px 0 5px; }
+  .joint .hd { display:flex; justify-content:space-between; align-items:baseline; gap:6px; }
+  .joint .nm { font-weight:600; }
+  .joint .role { color:var(--mute); font-size:11.5px; }
+  .joint .row { display:flex; align-items:center; gap:8px; margin-top:3px; }
+  .joint input[type=range] { flex:1; accent-color:var(--acc); }
+  .joint input[type=number] { width:62px; }
+  .badge { font-size:10.5px; padding:1px 6px; border-radius:9px; border:1px solid var(--line); color:var(--mute); white-space:nowrap; }
+  .badge.warn { color:var(--warn); border-color:#6b5520; }
+  .badge.bad { color:var(--bad); border-color:#6e2d2b; }
+  .badge.ok { color:var(--ok); border-color:#2c5c43; }
+  input[type=number], input[type=text], select { background:#0f1114; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:3px 6px; font:inherit; }
+  button { background:#262b33; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:4px 9px; font:inherit; cursor:pointer; }
+  button:hover { border-color:#56606d; }
+  button.on { background:var(--acc); border-color:var(--acc); color:#1a1205; font-weight:600; }
+  .btns { display:flex; flex-wrap:wrap; gap:5px; }
+  label.chk { display:flex; align-items:center; gap:6px; margin:2px 0; cursor:pointer; }
+  #status { margin-top:6px; font-size:12px; }
+  #status .line { margin:2px 0; }
+  #warnings { font-size:11.5px; color:var(--warn); margin-top:6px; max-height:150px; overflow:auto; }
+  #warnings li { margin:2px 0 2px -18px; }
+  #track { position:relative; height:34px; margin:6px 0 4px; background:#0f1114; border:1px solid var(--line); border-radius:6px; cursor:pointer; }
+  #track .kf { position:absolute; top:5px; width:12px; height:22px; margin-left:-6px; background:var(--acc); border-radius:3px; }
+  #track .kf.sel { outline:2px solid #fff; }
+  #track .head { position:absolute; top:0; bottom:0; width:2px; background:#fff; pointer-events:none; }
+  #track .hit { position:absolute; top:0; bottom:0; background:rgba(240,98,93,.35); pointer-events:none; }
+  .tl { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  #report { font-size:11.5px; color:var(--mute); margin-top:4px; white-space:pre-wrap; max-height:42px; overflow:auto; }
+  .hidden { display:none !important; }
+  #loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--mute); font-size:15px; }
+  .note { margin:6px 0; color:var(--mute); font-size:11.5px; }
+  #faceExport, #save, #export { display:none; }
+  @media (max-width: 760px) {
+    #left { width:auto; right:10px; max-height:38%; }
+    #right { display:none; }
+    #bottom { height:auto; max-height:34%; overflow:auto; }
+  }
+  /* published copy: page tabs and the parts / power sheet */
+  nav.tabs { display:flex; flex-wrap:wrap; gap:4px; margin:6px 0 4px; }
+  nav.tabs .tab { font:inherit; font-size:12px; padding:4px 10px; border:1px solid var(--line); border-radius:6px; background:#20242b; color:var(--ink); text-decoration:none; cursor:pointer; }
+  nav.tabs .tab:hover { border-color:#56606d; }
+  nav.tabs .tab.on { background:var(--acc); border-color:var(--acc); color:#1a1205; font-weight:600; }
+  nav.tabs .tab.info { color:var(--warn); border-color:#6b5520; }
+  .overlay { position:fixed; inset:0; z-index:50; background:rgba(8,9,11,.62); display:flex; align-items:flex-start; justify-content:center; overflow:auto;
+             padding:max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); }
+  .overlay[hidden] { display:none; }
+  .sheet { background:#1d2026; border:1px solid var(--line); border-radius:12px; width:100%; max-width:700px; padding:16px 20px 20px; font-size:13.5px; line-height:1.55; }
+  .sheet-hd { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .sheet h2 { font-size:16px; text-transform:none; letter-spacing:0; color:var(--ink); margin:0; }
+  .sheet h3 { font-size:13px; color:var(--acc); margin:16px 0 6px; }
+  .sheet dl { display:grid; grid-template-columns:max-content 1fr; gap:7px 14px; margin:0; }
+  .sheet dt { color:var(--mute); }
+  .sheet dd { margin:0; min-width:0; }
+  .sheet ul { margin:0; padding-left:18px; }
+  .sheet li { margin:5px 0; }
+  .sheet .close { background:none; border:none; font-size:18px; color:var(--mute); padding:2px 6px; }
+  .sheet .close:hover { color:var(--ink); }
+  @media (max-width: 560px) { .sheet dl { grid-template-columns:1fr; gap:2px; } .sheet dd { margin-bottom:8px; } }
+
+  /* research page: a readable document on the site's dark ground */
+  html, body { overflow:auto; height:auto; }
+  #researchPage { min-height:100%; }
+  .rhead { position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--line);
+           padding:10px max(16px, env(safe-area-inset-right, 0px)) 6px max(16px, env(safe-area-inset-left, 0px)); }
+  .rhead h1 { margin:0; }
+  .doc { max-width:880px; margin:0 auto; padding:18px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px));
+         font-size:14.5px; line-height:1.65; }
+  .doc p { margin:8px 0; max-width:72ch; }
+  .kicker { color:var(--warn); font-size:12px; letter-spacing:.06em; text-transform:uppercase; margin:6px 0 2px; }
+  .title { font-size:24px; line-height:1.25; text-transform:none; letter-spacing:0; color:var(--ink); margin:2px 0 12px; text-wrap:balance; }
+  .ko { background:#1d2026; border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin:10px 0 14px; }
+  .ko p { max-width:none; }
+  .toc { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 10px; }
+  .toc a { font-size:12px; color:var(--mute); border:1px solid var(--line); border-radius:999px; padding:2px 10px; text-decoration:none; }
+  .toc a:hover { color:var(--ink); border-color:#56606d; }
+  .doc section { border-top:1px solid var(--line); padding-top:14px; margin-top:22px; scroll-margin-top:90px; }
+  .doc h3 { font-size:15px; color:var(--acc); margin:0 0 8px; text-wrap:balance; }
+  .chip { font-size:11px; color:var(--mute); border:1px solid var(--line); border-radius:9px; padding:1px 8px; margin-left:6px; font-weight:400; vertical-align:2px; }
+  .ptitle { font-weight:650; color:var(--ink); font-size:15px; line-height:1.4; margin-top:10px; }
+  .why { color:#c9ced4; }
+  .sub { color:var(--mute); font-size:12.5px; }
+  .ph { color:var(--warn); background:rgba(232,178,60,.08); border:1px dashed #6b5520; border-radius:4px; padding:0 4px; white-space:normal; }
+  .tablewrap { overflow-x:auto; margin:10px 0; }
+  .doc table { border-collapse:collapse; width:100%; font-size:13px; }
+  .doc th, .doc td { border-bottom:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
+  .doc th { color:var(--mute); font-weight:600; font-size:12px; }
+  .doc table.num td, .doc table.num th { font-variant-numeric:tabular-nums; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start; }
+  .grid2 > * { min-width:0; }
+  ul.plain { padding-left:18px; margin:4px 0; }
+  ul.plain li { margin:4px 0; }
+  .matrix { display:grid; grid-template-columns:auto 1fr 1fr; gap:4px; font-size:12.5px; }
+  .m-h { color:var(--mute); text-align:center; padding:4px; }
+  .m-r { color:var(--mute); padding:12px 6px; }
+  .m-c { border:1px solid var(--line); border-radius:6px; text-align:center; padding:12px 6px; color:var(--mute); }
+  .m-c.yes { border-color:var(--ok); color:var(--ok); font-weight:600; }
+  .m-note { grid-column:1 / -1; color:var(--mute); font-size:12px; margin:4px 0 0; }
+  figure { margin:10px 0; }
+  figure img { width:100%; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--line); display:block; }
+  figcaption { color:var(--mute); font-size:12.5px; margin-top:6px; }
+  article { margin:12px 0 18px; }
+  .v { font-size:11.5px; border-radius:9px; padding:1px 8px; white-space:nowrap; border:1px solid; }
+  .v.ok { color:var(--ok); border-color:#2c5c43; }
+  .v.no { color:var(--bad); border-color:#6e2d2b; }
+  .v.warn { color:var(--warn); border-color:#6b5520; }
+  ul.refs { padding-left:18px; font-size:13px; color:#c9ced4; }
+  ul.refs li { margin:5px 0; }
+  .foot { color:var(--mute); font-size:12px; margin-top:28px; }
+  @media (max-width: 720px) { .grid2 { grid-template-columns:1fr; } .title { font-size:20px; } }
+
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="researchPage">
+  <header class="rhead">
+    <h1>Notifyi digital twin</h1>
+    <nav class="tabs"><a class="tab" href="index.html">3D 모델</a><a class="tab" href="print.html">출력 도면</a><a class="tab on" href="research.html">연구 · 논문</a><button type="button" class="tab info" data-open="infoOverlay">기준 부품 · 전원 안내</button></nav>
+  </header>
+  <main class="doc">
+    <p class="kicker">Research drafts · 2026-10-21 · no human data yet</p>
+    <h2 class="title">Fits in, stands out? What a desk robot's fit with its workspace costs and buys</h2>
+    <div class="ko">
+      <p><b>한 줄 요약.</b> 책상과 잘 어울리는 로봇은 <b>천천히 처지는 신호</b>를 더 늦게 알아차리게 하지만, 알아차린 뒤에는 <b>더 잘 따르게</b> 한다. 그리고 <b>움직임을 갑자기 시작하면</b> 늦게 알아차리는 비용이 사라진다 — 이것이 첫 논문(P1)의 논지입니다.</p>
+      <p>이 페이지의 초록은 실험 전에 쓴 초안입니다. <span class="ph"><span class="ph">[RESULT …]</span></span> 표시는 아직 측정하지 않은 자리입니다. 아래의 계산(자극 점검, 검정력 시뮬레이션)은 사람 실험이 아니라 디지털 트윈과 가정에 기반한 계산입니다.</p>
+    </div>
+    <nav class="toc" aria-label="On this page">
+      <a href="#p1">P1 abstract</a><a href="#hypotheses">Hypotheses</a><a href="#design">Design</a><a href="#stimuli">Stimuli</a><a href="#study0">Study 0</a><a href="#power">Sample size</a><a href="#others">P2–P4</a><a href="#review">Self-review</a><a href="#refs">References</a>
+    </nav>
+
+    <section id="p1">
+      <h3>P1 · Abstract <span class="chip">target: ACM/IEEE HRI or CHI</span></h3>
+      <p class="ptitle">Fits In, Stands Out? Workspace Congruence Trades the Noticeability of a Desk Robot's Posture Cues for Their Uptake</p>
+      <p>A desk robot that coaches posture faces two demands that may pull against each other: it should belong in a person's workspace for weeks, and its cues should be noticed while the person is busy with something else. Research on scene perception suggests that objects which fit their surroundings attract less attention, and that slow changes can go unnoticed altogether; research on human–robot interaction suggests that robots whose appearance fits the task and setting are trusted and obeyed more. We bring these together in one prediction: <b>a robot whose form is congruent with its workspace is noticed later when it cues gradually, but its cues are followed more often — and an abrupt onset of motion removes the noticing cost.</b> A six-joint desk robot with identical joints, motions and display face wore either a botanical skin or a technical skin (between participants) and stood on a plant-rich desk and on a device-heavy desk (within participants), so that congruence is the skin × desk interaction rather than a property of either skin. While participants transcribed text, the robot answered their slouching with gradual or abrupt cues. <span class="ph">[RESULT: N = …; congruent pairings were noticed … s later for gradual cues (gaze to robot), not for abrupt cues; cues were followed in …% vs …%; typing speed …]</span>. We argue that spatial harmony is a design dimension with a measurable attentional price, and that the timing of motion onset is the lever that lets a designer keep the harmony and pay the price only when a cue matters.</p>
+      <p class="why"><b>Why the prediction goes both ways.</b> Objects that do not fit a scene draw more and longer fixations (Loftus &amp; Mackworth, 1978; Henderson et al., 1999), and changes slow enough to make no transient can go unnoticed (Simons, Franconeri &amp; Reimer, 2000) — so a robot that blends in should be noticed later. People comply more with a robot whose demeanour matches the task (Goetz, Kiesler &amp; Powers, 2003) — so it should be followed more. The onset of motion captures attention automatically (Abrams &amp; Christ, 2003) — so an abrupt start should remove the noticing cost.</p>
+    </section>
+
+    <section id="hypotheses">
+      <h3>Hypotheses (pre-registration draft)</h3>
+      <p class="sub">Congruent pairings: botanical skin on the plant-rich desk, technical skin on the device-heavy desk.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th></th><th>Prediction</th><th>Refuted if</th></tr></thead>
+        <tbody>
+          <tr><td><b>H1</b> noticing cost</td><td>For gradual cues, time-to-notice is longer in congruent than in incongruent pairings.</td><td>The congruence contrast on log time-to-notice of gradual cues is ≤ 0 or not significant (α = .05).</td></tr>
+          <tr><td><b>H2</b> onset removes it</td><td>The congruence effect is larger for gradual than for abrupt cues; for abrupt cues it is practically zero.</td><td>Congruence × onset is not significant, or the abrupt-cue effect lies outside ±0.10 log units in an equivalence test.</td></tr>
+          <tr><td><b>H3</b> uptake benefit</td><td>Once noticed, cues are followed (posture corrected within 60 s) more often in congruent pairings, and the robot is rated less annoying.</td><td>The congruence contrast on the proportion followed is ≤ 0 or not significant.</td></tr>
+          <tr><td><b>H4</b> exploratory</td><td>Abrupt cues cost more typing in the 30 s after the cue than gradual cues.</td><td>— reported, not confirmatory</td></tr>
+        </tbody>
+      </table></div>
+      <p>Each part can fail on its own, and each failure says something to designers: H1 without H3 means fitting in only hides the robot; H3 without H1 means fitting in is free; H1 without H2 means the cost must be bought back with amplitude, light or sound.</p>
+    </section>
+
+    <section id="design">
+      <h3>Design</h3>
+      <div class="grid2">
+        <div>
+          <ul class="plain">
+            <li><b>Skin</b> (botanical / technical) — between participants: the same body, joints, motions and face, only the exchangeable shell parts differ.</li>
+            <li><b>Desk</b> (plant-rich / device-heavy) — within participants, two 25-min blocks, order counterbalanced.</li>
+            <li><b>Cue onset</b> (gradual sag / abrupt start then sag) — within blocks, 8 cues per block, triggered by the participant's slouch.</li>
+            <li><b>Measures:</b> time to the first glance at the robot (webcam gaze), posture correction within 60 s, annoyance and perceived fit, typing speed, and the robot's colour contrast and saliency in each pairing as covariates.</li>
+            <li><b>N = 100</b> (50 per skin), pre-registered analysis with mixed models.</li>
+          </ul>
+        </div>
+        <div class="matrix" role="table" aria-label="Congruence is the skin by desk interaction">
+          <div class="m-h"></div><div class="m-h">Plant-rich desk</div><div class="m-h">Device-heavy desk</div>
+          <div class="m-r">Botanical skin</div><div class="m-c yes">congruent</div><div class="m-c">incongruent</div>
+          <div class="m-r">Technical skin</div><div class="m-c">incongruent</div><div class="m-c yes">congruent</div>
+          <p class="m-note">Congruence is the interaction, so the greenness, size or motion of one skin cancels out.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stimuli">
+      <h3>Study 1 stimuli (renders of the digital twin)</h3>
+      <figure><img src="assets/research/study1_context_2x2.jpg" alt="Two robot skins on two desks: botanical and technical skins on a plant-rich and a device-heavy desk" loading="lazy"><figcaption>Rows: skin. Columns: desk. Congruent pairings on the diagonal. Study 1 asks 80 people online how well each robot fits each desk before any lab work; the lab study goes ahead only if the predicted skin × desk pattern appears.</figcaption></figure>
+    </section>
+
+    <section id="study0">
+      <h3>Study 0 · Does visual similarity sneak in with congruence?</h3>
+      <p>A congruent robot might be noticed later simply because it has less colour contrast with its desk. We measured, in the seated view, the robot's contrast with its surroundings and its spectral-residual saliency.</p>
+      <div class="tablewrap"><table class="num">
+        <thead><tr><th>Pairing</th><th>Congruent</th><th>Silhouette px</th><th>ΔE vs ring</th><th>Palette overlap</th><th>Saliency ×</th></tr></thead>
+        <tbody>
+          <tr><td>botanical / plant-rich</td><td>yes</td><td>36,720</td><td>26.9</td><td>0.44</td><td>9.4</td></tr>
+          <tr><td>botanical / device-heavy</td><td>no</td><td>36,720</td><td>20.9</td><td>0.45</td><td>5.2</td></tr>
+          <tr><td>technical / plant-rich</td><td>no</td><td>36,397</td><td>21.4</td><td>0.45</td><td>10.7</td></tr>
+          <tr><td>technical / device-heavy</td><td>yes</td><td>36,397</td><td>14.6</td><td>0.59</td><td>6.3</td></tr>
+        </tbody>
+      </table></div>
+      <p><b>Reading.</b> The two skins' silhouettes differ by 0.9 %. Congruent minus incongruent: ΔE −0.4, saliency −0.12, palette overlap +0.07 — near zero, while the desk itself changes saliency by about 4×. In these stimuli low-level similarity is <b>not</b> confounded with congruence, so a noticing effect could not be explained by contrast alone; the price is that they test only the semantic route of H1.</p>
+    </section>
+
+    <section id="power">
+      <h3>Sample size (simulation under assumed effects)</h3>
+      <div class="grid2">
+        <figure><img src="assets/research/power_curves_mixed.png" alt="Simulated power against total N for H1, H2 and H3 with desk within participants" loading="lazy"><figcaption>Desk within participants, assumed effects.</figcaption></figure>
+        <figure><img src="assets/research/power_curves_scale0.5_mixed.png" alt="Simulated power with all effects halved" loading="lazy"><figcaption>The same with every effect halved.</figcaption></figure>
+      </div>
+      <div class="tablewrap"><table class="num">
+        <thead><tr><th>Total N</th><th>Between-subjects 2 × 2<br>H1 / H2 / H3</th><th>Desk within<br>H1 / H2 / H3</th><th>Desk within, effects halved<br>H1 / H2 / H3</th></tr></thead>
+        <tbody>
+          <tr><td>60</td><td>.66 / .65 / .59</td><td>1.00 / .91 / .79</td><td>.70 / .34 / .28</td></tr>
+          <tr><td>100</td><td>.88 / .85 / .82</td><td>1.00 / .99 / .94</td><td>.91 / .55 / .43</td></tr>
+          <tr><td>200</td><td>.99 / .99 / .98</td><td>1.00 / 1.00 / 1.00</td><td>.99 / .85 / .70</td></tr>
+        </tbody>
+      </table></div>
+      <p class="sub">Assumptions, not data: gradual-cue median time-to-notice 15 s, abrupt 2.5 s; congruence +42 % on gradual noticing; uptake 55 % → 68 %. A fully between-subjects design was rejected: with half-size effects even N = 200 reaches only .5–.6.</p>
+    </section>
+
+    <section id="others">
+      <h3>Three more papers the robot can carry</h3>
+      <article>
+        <p class="ptitle">P2 · Expressing Big Emotions in a Small Range: Constraint-Aware Flow Matching Keeps a Desk Robot Legible Where Clipping Does Not</p>
+        <p>Low-cost desk robots must express emotion within joint ranges far smaller than the motions animators or demonstrators produce. The usual remedy — clip or scale the motion to the limits — is safe but may destroy what the motion was meant to say. We study this trade-off on a six-joint desk robot with a parametric display face. Building on flow-matching expression generators (Wang et al., 2025; ProAct, 2026) and on constraint-satisfying sampling (SafeDiffuser), we train a few-step flow model on <span class="ph">[RESULT: n]</span> demonstrated and authored motions and compare four ways of meeting the robot's joint, combined-pose and torque limits: hard clipping, uniform time-and-amplitude scaling, guidance during sampling, and guidance with a final projection. <span class="ph">[RESULT: x % of demonstrated frames exceeded the everyday range.]</span> In an online study (N = <span class="ph">[RESULT]</span>) with twin renders, and a lab study with the robot (N = <span class="ph">[RESULT]</span>), recognition of six target emotions was <span class="ph">[RESULT]</span> for guided samples, <span class="ph">[RESULT]</span> for clipped and <span class="ph">[RESULT]</span> for scaled ones, against <span class="ph">[RESULT]</span> for the unconstrained motion in simulation; face-only and body-only conditions separate the two channels. All constrained methods had zero limit violations by construction. We report which emotions survive a small range and which do not.</p>
+      </article>
+      <article>
+        <p class="ptitle">P3 · Tracking Error Is Not What People See: A Perceptual Error Metric for Expressive Motion on Low-Cost Servos</p>
+        <p>Character robots are animated in simulation and played on hobby-grade actuators that lag, overshoot and oscillate. Engineers minimise tracking error; observers judge whether the motion still means what the animator intended. Following Reitsma and Pollard's perceptual metrics for animation, we measure observers' thresholds for three actuator artefacts — latency, overshoot and residual head oscillation — on expressive motions of a six-joint desk robot built from dual-axis smart servos, first with controlled degradations in a calibrated digital twin (N = <span class="ph">[RESULT]</span>) and then live on the robot (N = <span class="ph">[RESULT]</span>). From the thresholds we build a perceptually weighted error. Across <span class="ph">[RESULT: n]</span> motion × controller conditions, the weighted error explained <span class="ph">[RESULT: R²]</span> of the variance in "as intended" ratings against <span class="ph">[RESULT: R²]</span> for RMS tracking error. Compensating only the supra-threshold components recovered <span class="ph">[RESULT %]</span> of intended readings at <span class="ph">[RESULT]</span> of the effort of full compensation.</p>
+      </article>
+      <article>
+        <p class="ptitle">P4 · Does a Robot's Nudge Wear Off? A Micro-Randomised Trial of a Desk Character's Posture Cues</p>
+        <p>Embodied coaches are often assumed to keep their effect better than phone notifications, but the claim is rarely tested at the level of single prompts over weeks. We ran a micro-randomised trial with one six-joint desk robot moved between <span class="ph">[RESULT: n]</span> participants' desks for <span class="ph">[RESULT: k]</span> weeks each. At every decision point at which the on-device pose estimate showed a slouch, the robot was randomised to cue with an expressive body-and-face motion, cue with the face only, or not cue; a second randomisation chose between a moment predicted to be interruptible and a random moment. The proximal outcome was a posture correction within five minutes. Across <span class="ph">[RESULT: N]</span> decision points, a body-and-face cue raised the probability of correction by <span class="ph">[RESULT]</span> over no cue; the effect <span class="ph">[RESULT: decayed by x % per week / did not decay]</span>. Images were never stored. We discuss what an embodied cue adds to just-in-time interventions and the ethics of a cute agent that nudges.</p>
+      </article>
+    </section>
+
+    <section id="review">
+      <h3>Self-review · are these valid theses?</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th></th><th>As first proposed</th><th>Verdict</th><th>What changed</th></tr></thead>
+        <tbody>
+          <tr><td><b>P1</b></td><td>Form–space congruence changes how fast a posture cue is noticed and followed</td><td><span class="v ok">valid</span></td><td>Congruence became the skin × desk interaction; two competing predictions; then motion onset added as the lever (H2), desk moved within participants after the power simulation, and colour contrast measured as a covariate.</td></tr>
+          <tr><td><b>P2</b></td><td>The first few-step flow model for a low-cost robot's body and face that never breaks its limits</td><td><span class="v no">not valid as written</span></td><td>"First" is false: flow matching for robot emotional expression incl. the face (Wang et al., 2025), streaming flow gestures (ProAct, 2026) and constraint-guaranteed sampling (SafeDiffuser) exist. Narrowed to: in a small range, constraint handling inside the sampler keeps emotions legible where clipping does not.</td></tr>
+          <tr><td><b>P3</b></td><td>At what lag, overshoot and wobble does a cheap-servo character stop reading as intended?</td><td><span class="v no">a question, not a thesis</span></td><td>Timing, jitter and delay perception are each studied. Reframed as a claim that can fail: a perceptually weighted error predicts what people see better than tracking error.</td></tr>
+          <tr><td><b>P4</b></td><td>Predicting slouch and interruptibility beats reacting, and lasts past novelty</td><td><span class="v warn">too big and costly</span></td><td>Needs 8–12 robots and wearables. Reframed as a single-robot micro-randomised trial with one primary claim.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="sub">Recommended order: P1 → P3 → P2 → P4. Prior work was checked from abstracts and publisher pages; each "we did not find" must be re-searched before submission.</p>
+    </section>
+
+    <section id="refs">
+      <h3>Key references</h3>
+      <ul class="refs">
+        <li>Abrams, R. A., &amp; Christ, S. E. (2003). Motion onset captures attention. <i>Psychological Science</i>, 14(5).</li>
+        <li>Simons, D. J., Franconeri, S. L., &amp; Reimer, R. L. (2000). Change blindness in the absence of a visual disruption. <i>Perception</i>, 29.</li>
+        <li>Goetz, J., Kiesler, S., &amp; Powers, A. (2003). Matching robot appearance and behavior to tasks to improve human-robot cooperation. <i>RO-MAN</i>.</li>
+        <li>Loftus, G. R., &amp; Mackworth, N. H. (1978); Henderson, J. M., Weeks, P. A., &amp; Hollingworth, A. (1999) — semantic consistency and eye movements in scenes.</li>
+        <li>Wang, C.-A., et al. (2026). SitBot: A posture-mimicking robot to reduce slouching. <i>ICSR 2025</i>, LNCS. · Owro (2022), a robot for sitting posture training, UTS.</li>
+        <li>Wang, C., Gienger, M., &amp; Zhang, F. (2025). Generation of real-time robotic emotional expressions learning from human demonstration in mixed reality. arXiv 2508.08999. · ProAct (2026), arXiv 2602.14048. · Xiao et al., SafeDiffuser, ICLR 2025.</li>
+        <li>Reitsma, P. S. A., &amp; Pollard, N. S. (2003). Perceptual metrics for character animation. <i>SIGGRAPH</i>. · Zhou, A., et al. (2017). Expressive robot motion timing. <i>HRI</i>.</li>
+        <li>Klasnja, P., et al. (2015). Microrandomized trials. · Nahum-Shani, I., et al. (2018). Just-in-time adaptive interventions. · Lacey, C., &amp; Caudwell, C. (2019). Cuteness as a 'dark pattern' in home robots. <i>HRI</i>.</li>
+        <li>Hou, X., &amp; Zhang, L. (2007). Saliency detection: a spectral residual approach. <i>CVPR</i>.</li>
+      </ul>
+    </section>
+    <p class="foot">Drafts written by the Notifyi project's AI lead for the team. Not peer-reviewed. No participant has been run; the robot has not been built.</p>
+  </main>
+</div>
+
+<div id="infoOverlay" class="overlay" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+    <div class="sheet-hd"><h2 id="infoTitle">기준 부품 · 전원 안내</h2><button type="button" class="close" data-close="infoOverlay" aria-label="닫기">✕</button></div>
+    <h3>모델링 기준 부품 (RC3와 캐릭터 스킨 Sprout · Tech · Hop · Dial)</h3>
+    <dl>
+      <dt>디스플레이</dt>
+      <dd><b>Adafruit 1.9" 320 × 170 IPS TFT (ST7789)</b>, Adafruit 제품 5394. 표시 영역 42.72 × 22.70 mm, 보드 57.2 × 36.6 × 5.2 mm, 장착 구멍 간격 52.0 × 31.7 mm. Raspberry Pi에서 SPI로 구동. 얼굴은 2 mm 스모크 아크릴판과 0.2 mm 검은 마스크 뒤에 있습니다.</dd>
+      <dt>카메라</dt>
+      <dd><b>Adafruit Ultra Tiny USB Camera</b>, Adafruit 제품 5733. 26 × 8 × 10 mm 외형으로 모델링했고, 얼굴판 아래쪽 Ø 6.5 mm 렌즈 구멍으로 봅니다. 일체형 USB-A 케이블(Ø 2.1 mm)로 Pi에 연결.</dd>
+      <dt>제어 · 모터</dt>
+      <dd>ROBOTIS OpenCR 1.0 (공식 RevH STEP 형상) + Raspberry Pi 3 Model B+. 모터는 ROBOTIS DYNAMIXEL 2XL430-W250-T 4개 = 관절 6개 (공식 STEP 형상).</dd>
+      <dt>책벌레 (worm_C4, worm_B7)</dt>
+      <dd>이전 단계의 연구 모델입니다. 보유 중인 USB 웹캠(모델 미확인, 72 × 25 × 27 mm 막대형으로 근사)을 기준으로 했고 디스플레이는 없습니다.</dd>
+    </dl>
+    <h3>전원과 하단 베이스</h3>
+    <ul>
+      <li>현재 베이스의 배터리 칸은 <b>2S LiPo 7.4 V 1500 mAh</b> (70 × 35 × 18 mm, 70 g, Deans T 플러그) 기준입니다. 일부 배선 표기에는 3S 11.1 V가 남아 있어 <b>전원 방식은 아직 확정되지 않았습니다.</b></li>
+      <li>7.4 V는 모터 입력 범위(6.5–12 V)와 OpenCR 입력 범위(5–24 V) 안에 있지만, 모듈 4개를 동시에 구동할 때 감당하는지는 측정하지 않았습니다.</li>
+      <li><b>배터리 종류 · 크기, DC 어댑터 사용 여부, 충전 잭 위치</b>에 따라 하단 베이스의 세부 출력 부품 — 베이스 섀시, 배터리 트레이, 포트판(Ø 8.4 mm 잭 구멍, 판 뒤 여유 4.5 mm), 전면판, Pi 브리지, 베이스 커버 — 의 형상이 바뀔 수 있습니다. 출력 도면 탭에서 이 부품들에 표시해 두었습니다.</li>
+      <li>실물 출력, 조립 맞춤, 전체 동작, 전기 결선은 아직 검증되지 않았습니다 (RC3 기록 기준).</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+document.addEventListener('click', e => {
+  const o = e.target.closest('[data-open]'); if (o) { document.getElementById(o.dataset.open).hidden = false; return; }
+  const c = e.target.closest('[data-close]'); if (c) { document.getElementById(c.dataset.close).hidden = true; return; }
+  if (e.target.classList && e.target.classList.contains('overlay')) e.target.hidden = true;
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
+</script>
+</body>
+</html>
