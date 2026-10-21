@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Notifyi Print Parts</title>
+<style>
+  :root { color-scheme:dark; --bg:#16181c; --panel:rgba(26,29,34,.92); --line:#343a43; --ink:#e7e9ec; --mute:#9aa3ad; --acc:#e8843c; --ok:#58c48a; --bad:#f0625d; --warn:#e8b23c; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font:13px/1.35 system-ui,Segoe UI,Roboto,sans-serif; overflow:hidden; }
+  canvas { display:block; }
+  .panel { position:absolute; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px 12px; backdrop-filter:blur(6px); }
+  #left { top:10px; left:10px; width:330px; max-height:calc(100% - 210px); overflow:auto; }
+  #right { top:10px; right:10px; width:250px; }
+  #bottom { left:10px; right:10px; bottom:10px; height:178px; }
+  h1 { font-size:14px; margin:0 0 2px; letter-spacing:.02em; }
+  h2 { font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--mute); margin:10px 0 6px; }
+  .sub { color:var(--mute); font-size:11.5px; }
+  .joint { border-top:1px solid var(--line); padding:7px 0 5px; }
+  .joint .hd { display:flex; justify-content:space-between; align-items:baseline; gap:6px; }
+  .joint .nm { font-weight:600; }
+  .joint .role { color:var(--mute); font-size:11.5px; }
+  .joint .row { display:flex; align-items:center; gap:8px; margin-top:3px; }
+  .joint input[type=range] { flex:1; accent-color:var(--acc); }
+  .joint input[type=number] { width:62px; }
+  .badge { font-size:10.5px; padding:1px 6px; border-radius:9px; border:1px solid var(--line); color:var(--mute); white-space:nowrap; }
+  .badge.warn { color:var(--warn); border-color:#6b5520; }
+  .badge.bad { color:var(--bad); border-color:#6e2d2b; }
+  .badge.ok { color:var(--ok); border-color:#2c5c43; }
+  input[type=number], input[type=text], select { background:#0f1114; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:3px 6px; font:inherit; }
+  button { background:#262b33; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:4px 9px; font:inherit; cursor:pointer; }
+  button:hover { border-color:#56606d; }
+  button.on { background:var(--acc); border-color:var(--acc); color:#1a1205; font-weight:600; }
+  .btns { display:flex; flex-wrap:wrap; gap:5px; }
+  label.chk { display:flex; align-items:center; gap:6px; margin:2px 0; cursor:pointer; }
+  #status { margin-top:6px; font-size:12px; }
+  #status .line { margin:2px 0; }
+  #warnings { font-size:11.5px; color:var(--warn); margin-top:6px; max-height:150px; overflow:auto; }
+  #warnings li { margin:2px 0 2px -18px; }
+  #track { position:relative; height:34px; margin:6px 0 4px; background:#0f1114; border:1px solid var(--line); border-radius:6px; cursor:pointer; }
+  #track .kf { position:absolute; top:5px; width:12px; height:22px; margin-left:-6px; background:var(--acc); border-radius:3px; }
+  #track .kf.sel { outline:2px solid #fff; }
+  #track .head { position:absolute; top:0; bottom:0; width:2px; background:#fff; pointer-events:none; }
+  #track .hit { position:absolute; top:0; bottom:0; background:rgba(240,98,93,.35); pointer-events:none; }
+  .tl { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  #report { font-size:11.5px; color:var(--mute); margin-top:4px; white-space:pre-wrap; max-height:42px; overflow:auto; }
+  .hidden { display:none !important; }
+  #loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--mute); font-size:15px; }
+  .note { margin:6px 0; color:var(--mute); font-size:11.5px; }
+  #faceExport, #save, #export { display:none; }
+  @media (max-width: 760px) {
+    #left { width:auto; right:10px; max-height:38%; }
+    #right { display:none; }
+    #bottom { height:auto; max-height:34%; overflow:auto; }
+  }
+  /* published copy: page tabs and the parts / power sheet */
+  nav.tabs { display:flex; flex-wrap:wrap; gap:4px; margin:6px 0 4px; }
+  nav.tabs .tab { font:inherit; font-size:12px; padding:4px 10px; border:1px solid var(--line); border-radius:6px; background:#20242b; color:var(--ink); text-decoration:none; cursor:pointer; }
+  nav.tabs .tab:hover { border-color:#56606d; }
+  nav.tabs .tab.on { background:var(--acc); border-color:var(--acc); color:#1a1205; font-weight:600; }
+  nav.tabs .tab.info { color:var(--warn); border-color:#6b5520; }
+  .overlay { position:fixed; inset:0; z-index:50; background:rgba(8,9,11,.62); display:flex; align-items:flex-start; justify-content:center; overflow:auto;
+             padding:max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); }
+  .overlay[hidden] { display:none; }
+  .sheet { background:#1d2026; border:1px solid var(--line); border-radius:12px; width:100%; max-width:700px; padding:16px 20px 20px; font-size:13.5px; line-height:1.55; }
+  .sheet-hd { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .sheet h2 { font-size:16px; text-transform:none; letter-spacing:0; color:var(--ink); margin:0; }
+  .sheet h3 { font-size:13px; color:var(--acc); margin:16px 0 6px; }
+  .sheet dl { display:grid; grid-template-columns:max-content 1fr; gap:7px 14px; margin:0; }
+  .sheet dt { color:var(--mute); }
+  .sheet dd { margin:0; min-width:0; }
+  .sheet ul { margin:0; padding-left:18px; }
+  .sheet li { margin:5px 0; }
+  .sheet .close { background:none; border:none; font-size:18px; color:var(--mute); padding:2px 6px; }
+  .sheet .close:hover { color:var(--ink); }
+  @media (max-width: 560px) { .sheet dl { grid-template-columns:1fr; gap:2px; } .sheet dd { margin-bottom:8px; } }
+
+  /* print tab layout: list on the left, the sprue in 3D on the right */
+  #printPage { display:grid; grid-template-columns:360px 1fr; height:100%; }
+  #printSide { position:static; border-radius:0; border-width:0 1px 0 0; max-height:none; overflow:auto; backdrop-filter:none; padding:12px 14px 18px; }
+  #view { position:relative; min-height:320px; min-width:0; }
+  #status { position:absolute; left:12px; right:12px; bottom:12px; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:8px 10px; font-size:12px; color:var(--mute); }
+  .packs { display:grid; grid-template-columns:repeat(3, 1fr); gap:5px; margin:8px 0 4px; }
+  .packs button { text-align:left; }
+  .packs button i { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:-1px; border:1px solid rgba(0,0,0,.4); }
+  .packs button.on { outline:2px solid var(--acc); outline-offset:-1px; }
+  #packname { font-size:13px; color:var(--ink); text-transform:none; letter-spacing:0; margin:12px 0 4px; }
+  .facts { display:grid; font-variant-numeric:tabular-nums; }
+  .facts div { display:flex; justify-content:space-between; gap:10px; border-bottom:1px solid var(--line); padding:4px 0; }
+  .facts span { color:var(--mute); white-space:nowrap; }
+  .facts b { text-align:right; font-weight:600; }
+  #printSide .btns { margin:8px 0; align-items:center; }
+  a.btn { display:inline-block; background:#262b33; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:4px 10px; text-decoration:none; }
+  a.btn:hover { border-color:#56606d; }
+  #parts { padding-left:18px; margin:4px 0 8px; }
+  #parts li { margin:3px 0; }
+  #parts code { color:var(--mute); font-size:11px; margin-right:4px; }
+  .pw { font-size:10.5px; color:var(--warn); border:1px solid #6b5520; border-radius:9px; padding:0 6px; white-space:nowrap; }
+  #printSide .sub { margin:8px 0; line-height:1.5; }
+  @media (max-width: 760px) {
+    html, body { overflow:auto; height:auto; }
+    #printPage { display:flex; flex-direction:column; height:auto; }
+    #view { height:58vh; order:-1; }
+    #printSide { border-width:1px 0 0; }
+  }
+
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="printPage">
+  <aside class="panel" id="printSide">
+    <h1>Notifyi digital twin</h1>
+    <nav class="tabs"><a class="tab" href="index.html">3D 모델</a><a class="tab on" href="print.html">출력 도면</a><button type="button" class="tab info" data-open="infoOverlay">기준 부품 · 전원 안내</button></nav>
+    <p class="note">RC3에서 실제로 출력할 부품입니다. 부품 30개를 색 · 재질별로 연결한 STL 6개 파일(런너식)이며, 받은 뒤 탭을 잘라 씁니다.</p>
+    <p class="sub" id="summary">불러오는 중…</p>
+    <div class="packs" id="packs"></div>
+    <h2 id="packname">–</h2>
+    <div class="facts" id="facts"></div>
+    <div class="btns">
+      <button type="button" data-view="three_quarter">입체</button><button type="button" data-view="top">위</button><button type="button" data-view="side">옆</button>
+      <label class="chk"><input type="checkbox" id="tabs" checked> 절단 탭 주황 표시</label>
+    </div>
+    <p class="btns"><a id="stl" class="btn" href="#">STL 받기</a> <a id="cutmap" class="btn" href="#" target="_blank" rel="noopener">절단 위치 그림</a></p>
+    <h2>이 판의 부품</h2>
+    <ul id="parts"></ul>
+    <p class="sub">수량은 각 파일 1개. 주황색은 화면에서 탭을 구분한 표시이며 실제 출력은 판별 단색입니다. 예상 시간 · 무게는 PrusaSlicer 해석값(0.2 mm, 256 mm 베드)이라 업체 견적과 다릅니다. 색 표기는 RC3 원본 기준이고, 옆의 3DFARM 재고 색은 제안입니다. 조립 STEP(115 MB)은 용량 때문에 이 사이트에 없습니다.</p>
+    <p class="sub">드래그: 회전 · 휠: 확대 · 우클릭: 이동</p>
+  </aside>
+  <div id="view"><div id="status" role="status">CAD 메쉬를 불러오는 중…</div></div>
+</div>
+
+<div id="infoOverlay" class="overlay" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+    <div class="sheet-hd"><h2 id="infoTitle">기준 부품 · 전원 안내</h2><button type="button" class="close" data-close="infoOverlay" aria-label="닫기">✕</button></div>
+    <h3>모델링 기준 부품 (RC3와 캐릭터 스킨 Sprout · Tech · Hop · Dial)</h3>
+    <dl>
+      <dt>디스플레이</dt>
+      <dd><b>Adafruit 1.9" 320 × 170 IPS TFT (ST7789)</b>, Adafruit 제품 5394. 표시 영역 42.72 × 22.70 mm, 보드 57.2 × 36.6 × 5.2 mm, 장착 구멍 간격 52.0 × 31.7 mm. Raspberry Pi에서 SPI로 구동. 얼굴은 2 mm 스모크 아크릴판과 0.2 mm 검은 마스크 뒤에 있습니다.</dd>
+      <dt>카메라</dt>
+      <dd><b>Adafruit Ultra Tiny USB Camera</b>, Adafruit 제품 5733. 26 × 8 × 10 mm 외형으로 모델링했고, 얼굴판 아래쪽 Ø 6.5 mm 렌즈 구멍으로 봅니다. 일체형 USB-A 케이블(Ø 2.1 mm)로 Pi에 연결.</dd>
+      <dt>제어 · 모터</dt>
+      <dd>ROBOTIS OpenCR 1.0 (공식 RevH STEP 형상) + Raspberry Pi 3 Model B+. 모터는 ROBOTIS DYNAMIXEL 2XL430-W250-T 4개 = 관절 6개 (공식 STEP 형상).</dd>
+      <dt>책벌레 (worm_C4, worm_B7)</dt>
+      <dd>이전 단계의 연구 모델입니다. 보유 중인 USB 웹캠(모델 미확인, 72 × 25 × 27 mm 막대형으로 근사)을 기준으로 했고 디스플레이는 없습니다.</dd>
+    </dl>
+    <h3>전원과 하단 베이스</h3>
+    <ul>
+      <li>현재 베이스의 배터리 칸은 <b>2S LiPo 7.4 V 1500 mAh</b> (70 × 35 × 18 mm, 70 g, Deans T 플러그) 기준입니다. 일부 배선 표기에는 3S 11.1 V가 남아 있어 <b>전원 방식은 아직 확정되지 않았습니다.</b></li>
+      <li>7.4 V는 모터 입력 범위(6.5–12 V)와 OpenCR 입력 범위(5–24 V) 안에 있지만, 모듈 4개를 동시에 구동할 때 감당하는지는 측정하지 않았습니다.</li>
+      <li><b>배터리 종류 · 크기, DC 어댑터 사용 여부, 충전 잭 위치</b>에 따라 하단 베이스의 세부 출력 부품 — 베이스 섀시, 배터리 트레이, 포트판(Ø 8.4 mm 잭 구멍, 판 뒤 여유 4.5 mm), 전면판, Pi 브리지, 베이스 커버 — 의 형상이 바뀔 수 있습니다. 출력 도면 탭에서 이 부품들에 표시해 두었습니다.</li>
+      <li>실물 출력, 조립 맞춤, 전체 동작, 전기 결선은 아직 검증되지 않았습니다 (RC3 기록 기준).</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+document.addEventListener('click', e => {
+  const o = e.target.closest('[data-open]'); if (o) { document.getElementById(o.dataset.open).hidden = false; return; }
+  const c = e.target.closest('[data-close]'); if (c) { document.getElementById(c.dataset.close).hidden = true; return; }
+  if (e.target.classList && e.target.classList.contains('overlay')) e.target.hidden = true;
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
+</script>
+<script type="module" src="./src/print.js"></script>
+</body>
+</html>
