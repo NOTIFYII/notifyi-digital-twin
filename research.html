@@ -6,352 +6,362 @@
 <title>Fits In, Stands Out? · Notifyi</title>
 <meta name="description" content="Does a desk robot that fits its workspace get noticed later but followed more? Notifyi research drafts (pre-data).">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
-/* Research project page. Layout: one centred reading column (max 960 px) under a slim top bar; the teaser demo is the first
-   thing after the title, as on recent paper project pages. Colours: paper white and ink, the robot's leaf green as the accent,
-   terracotta for the abrupt cue, amber for placeholders. */
+/* Research project page in the manner of recent paper project pages (e.g. PERSIST, Nerfies): a full-bleed hero of the
+   project's own renders under a dark veil with the title in white, then a white reading column with centred section
+   titles, side-by-side comparisons labelled like figures, italic captions. Light only, by design. */
 :root {
-  --bg: #f6f7f4; --surface: #ffffff; --ink: #1b2421; --mute: #5b6661; --line: #dde2dc;
-  --acc: #4c7a37; --acc-ink: #ffffff; --acc2: #b8582c; --warn: #9a6a12; --warn-bg: #fff6e0; --ok: #2f7a4f; --bad: #b23b33;
-  --code: #f0f2ee;
-  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --ink: #363636; --text: #4a4a4a; --mute: #7a7a7a; --line: #e6e6e6; --soft: #f5f5f5; --bg: #ffffff;
+  --leaf: #4c7a37; --terra: #b8582c; --amber: #9a6a12; --amber-bg: #fff7e2; --ok: #2f7a4f; --bad: #b23b33;
+  --f-head: "Google Sans", "Noto Sans KR", "Noto Sans", system-ui, sans-serif;
+  --f-body: "Noto Sans", "Noto Sans KR", system-ui, sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #111513; --surface: #181d1a; --ink: #e5ebe6; --mute: #9aa6a0; --line: #2a322e;
-          --acc: #8cbf6c; --acc-ink: #10140f; --acc2: #e38a5c; --warn: #e2b558; --warn-bg: #2a2412; --ok: #6cc08f; --bad: #e57a70;
-          --code: #1e2420; color-scheme: dark; }
-}
 html[data-ui="ko"] .en, html[data-ui="en"] .ko { display: none !important; }
 html, body { height: auto; overflow: auto; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.7 var(--f-body); -webkit-text-size-adjust: 100%; }
-a { color: var(--acc); }
-b { font-weight: 650; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 var(--f-body); -webkit-text-size-adjust: 100%; }
+a { color: #2f6db5; }
+b, strong { color: var(--ink); font-weight: 600; }
 
-.topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: color-mix(in srgb, var(--bg) 92%, transparent);
-          backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
-          padding: 8px max(16px, env(safe-area-inset-right, 0px)) 8px max(16px, env(safe-area-inset-left, 0px)); }
-.brand { font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: .01em; }
-nav.tabs { display: flex; flex-wrap: wrap; gap: 4px; margin: 0; flex: 1; }
-nav.tabs .tab { font: 500 13px/1.4 var(--f-body); padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
-                color: var(--ink); text-decoration: none; cursor: pointer; }
-nav.tabs .tab:hover { border-color: var(--mute); }
-nav.tabs .tab.on { background: var(--acc); border-color: var(--acc); color: var(--acc-ink); font-weight: 600; }
-nav.tabs .tab.info { color: var(--warn); }
-.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
-.lang button { font: 500 12.5px/1 var(--f-body); padding: 6px 11px; border: 0; background: var(--surface); color: var(--mute); cursor: pointer; }
-.lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+/* ---------- hero ---------- */
+.hero { position: relative; overflow: hidden; color: #fff; text-align: center; background: #1d201f; }
+.mosaic { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; }
+.mosaic img { width: 100%; height: 100%; object-fit: cover; display: block; animation: drift 26s ease-in-out infinite alternate; }
+.mosaic img:nth-child(2n) { animation-duration: 31s; animation-direction: alternate-reverse; }
+.mosaic img:nth-child(3n) { animation-duration: 37s; }
+@keyframes drift { from { transform: scale(1.02) translate(0, 0); } to { transform: scale(1.12) translate(-2%, 1.5%); } }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,12,11,.62) 0%, rgba(10,12,11,.48) 45%, rgba(10,12,11,.70) 100%); }
+.hero-in { position: relative; z-index: 1; max-width: 980px; margin: 0 auto;
+           padding: 14px max(16px, env(safe-area-inset-right, 0px)) 56px max(16px, env(safe-area-inset-left, 0px)); }
+.hero-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: space-between; margin-bottom: 64px; }
+.brand { font: 600 15px var(--f-head); color: #fff; text-decoration: none; letter-spacing: .02em; }
+nav.tabs { display: flex; flex-wrap: wrap; gap: 4px; margin: 0; }
+nav.tabs .tab { font: 500 13px/1.4 var(--f-head); padding: 4px 11px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; background: rgba(0,0,0,.25);
+                color: #fff; text-decoration: none; cursor: pointer; }
+nav.tabs .tab:hover { background: rgba(255,255,255,.14); }
+nav.tabs .tab.on { background: #fff; color: #222; border-color: #fff; font-weight: 600; }
+nav.tabs .tab.info { color: #ffd88a; }
+.lang { display: inline-flex; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; overflow: hidden; }
+.lang button { font: 500 12.5px/1 var(--f-head); padding: 6px 12px; border: 0; background: rgba(0,0,0,.25); color: #fff; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: #fff; color: #222; }
+.ttl { font: 600 clamp(34px, 5.6vw, 52px)/1.12 var(--f-head); letter-spacing: -.01em; margin: 0 auto; max-width: 18ch; text-shadow: 0 2px 10px rgba(0,0,0,.55); text-wrap: balance; color: #fff; }
+.ttl-sub { display: block; font: 500 clamp(17px, 2.4vw, 23px)/1.35 var(--f-head); margin: 14px auto 0; max-width: 34ch; opacity: .95; text-wrap: balance; }
+.authors { font: 400 18px/1.5 var(--f-head); margin: 22px 0 6px; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+.venue { font: 500 26px/1.2 var(--f-head); margin: 18px 0 6px; text-shadow: 0 2px 8px rgba(0,0,0,.6); color: #fff; }
+.affil { font-size: 14.5px; margin: 0; opacity: .92; text-shadow: 0 1px 5px rgba(0,0,0,.6); }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 22px; }
+.pill { display: inline-flex; align-items: center; gap: 8px; font: 500 15px/1 var(--f-head); padding: 11px 18px; border-radius: 999px; background: #363636; color: #fff; text-decoration: none; }
+.pill svg { width: 15px; height: 15px; fill: currentColor; }
+.pill:hover { background: #222; }
+.pill.off { background: rgba(54,54,54,.55); color: rgba(255,255,255,.75); cursor: default; }
 
-.hero { text-align: center; max-width: 960px; margin: 0 auto; padding: 42px max(16px, env(safe-area-inset-right, 0px)) 8px max(16px, env(safe-area-inset-left, 0px)); }
-.venue { color: var(--mute); font-size: 13px; letter-spacing: .04em; margin: 0 0 6px; }
-.ttl { font-size: clamp(34px, 6vw, 54px); line-height: 1.08; letter-spacing: -.02em; margin: 0; font-weight: 700; text-wrap: balance; }
-.subttl { font-size: clamp(17px, 2.4vw, 21px); color: var(--ink); opacity: .86; margin: 10px auto 12px; max-width: 46ch; text-wrap: balance; line-height: 1.45; }
-.authors { margin: 4px 0; font-weight: 500; }
-.status { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--warn); background: var(--warn-bg); border-radius: 999px; padding: 4px 12px; margin: 8px 0 4px; }
-.status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warn); flex: none; }
-.links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 16px 0 6px; }
-.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; padding: 7px 16px; border-radius: 999px; background: var(--ink); color: var(--bg);
-        text-decoration: none; }
-.pill:hover { opacity: .88; }
-.pill.off { background: var(--surface); color: var(--mute); border: 1px dashed var(--line); font-weight: 500; cursor: default; }
+/* ---------- body ---------- */
+.page { max-width: 760px; margin: 0 auto; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 64px max(16px, env(safe-area-inset-left, 0px)); }
+.wide { max-width: 980px; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); box-sizing: border-box; }
+section { padding-top: 40px; scroll-margin-top: 10px; }
+h2.sec { font: 500 clamp(26px, 3.4vw, 32px)/1.25 var(--f-head); color: var(--ink); text-align: center; margin: 0 0 18px; text-wrap: balance; }
+h3.sub { font: 500 21px/1.35 var(--f-head); color: var(--ink); text-align: center; margin: 28px 0 10px; text-wrap: balance; }
+h4.lab { font: 600 15px/1.35 var(--f-head); color: var(--ink); text-align: center; margin: 14px 0 8px; }
+.just { text-align: justify; hyphens: auto; }
+p { margin: 10px 0; }
+.cap { font-style: italic; color: var(--mute); text-align: center; font-size: 14.5px; margin: 8px 0 0; }
+.status { display: inline-flex; gap: 8px; align-items: center; font-size: 13.5px; color: #fff; background: rgba(154,106,18,.85); border-radius: 999px; padding: 5px 13px; margin-top: 16px; }
+.ph { color: var(--amber); background: var(--amber-bg); border: 1px dashed var(--amber); border-radius: 5px; padding: 0 4px; font-style: normal; }
 
-.page { max-width: 960px; margin: 0 auto; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 56px max(16px, env(safe-area-inset-left, 0px)); }
-.page section { padding-top: 26px; margin-top: 22px; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
-.page section.teaser { border-top: 0; margin-top: 10px; padding-top: 6px; }
-.page h2 { font-size: 24px; line-height: 1.25; margin: 0 0 12px; letter-spacing: -.01em; text-wrap: balance; }
-.page h3 { font-size: 17px; margin: 0 0 8px; text-wrap: balance; }
-.page p { margin: 8px 0; }
-.page p, .page li { max-width: 72ch; }
-.sub { color: var(--mute); font-size: 14px; }
-.note { color: var(--mute); font-size: 13.5px; text-align: center; margin: 10px auto 0 !important; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.compare > * { min-width: 0; }
+.frame { aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; background: #16181c; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.toggle { display: flex; justify-content: center; margin: 4px 0 14px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.seg button { font: 500 14px/1 var(--f-head); padding: 9px 16px; border: 0; background: #fff; color: var(--mute); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: #363636; color: #fff; }
+.dotg::before, .dota::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 7px; }
+.dotg::before { background: var(--leaf); } .dota::before { background: var(--terra); }
 
-.demo-hd { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
-.demo-hd h2 { margin: 0; }
-.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); }
-.seg button { font: 500 14px/1 var(--f-body); padding: 9px 14px; border: 0; background: transparent; color: var(--mute); cursor: pointer; }
-.seg button[aria-pressed="true"] { background: var(--acc); color: var(--acc-ink); }
-.demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.demo { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; min-width: 0; }
-.demo .frame { aspect-ratio: 4 / 3; background: #16181c; }
-.demo iframe { width: 100%; height: 100%; border: 0; display: block; }
-.demo figcaption { padding: 10px 14px 14px; font-size: 14px; color: var(--mute); }
-.tag { display: block; font-size: 15px; color: var(--ink); margin-bottom: 4px; }
-.tag::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 8px; vertical-align: 0; }
-.tag.g::before { background: var(--acc); }
-.tag.a::before { background: var(--acc2); }
-
-.tldr { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px !important; }
-.tldr h2 { font-size: 15px; letter-spacing: .08em; color: var(--acc); margin-bottom: 6px; }
-.tldr p { font-size: 17px; line-height: 1.75; max-width: none !important; }
-
-.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; min-width: 0; }
-.card .k { font: 600 12px/1 var(--f-mono); color: var(--acc); margin: 0 0 8px; }
-.card p { font-size: 14.5px; }
-.card .ref { color: var(--mute); font-size: 12.5px; }
-details.en-abs { margin-top: 8px; font-size: 14px; }
-details.en-abs summary { cursor: pointer; color: var(--acc); font-weight: 600; }
-
-.tablewrap { overflow-x: auto; margin: 10px 0; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
-.page table { border-collapse: collapse; width: 100%; font-size: 14px; }
-.page th, .page td { padding: 9px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
-.page tr:last-child td { border-bottom: 0; }
-.page th { color: var(--mute); font-weight: 600; font-size: 13px; background: var(--code); }
-table.num td, table.num th { font-variant-numeric: tabular-nums; white-space: nowrap; }
-.split { display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; align-items: start; }
-.split > * { min-width: 0; }
-ul.plain { padding-left: 18px; margin: 0; }
-ul.plain li { margin: 6px 0; }
-.matrix { display: grid; grid-template-columns: auto 1fr 1fr; gap: 6px; font-size: 14px; align-self: center; }
+.quote { border-left: 3px solid var(--leaf); padding: 6px 0 6px 16px; margin: 16px 0; color: var(--ink); font-size: 17px; }
+.matrix { display: grid; grid-template-columns: auto 1fr 1fr; gap: 6px; max-width: 520px; margin: 14px auto; font-size: 14px; }
 .mh { color: var(--mute); text-align: center; font-size: 13px; }
-.mr { color: var(--mute); padding: 18px 4px; font-size: 13px; }
-.mc { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); text-align: center; padding: 18px 6px; color: var(--mute); }
-.mc.yes { border-color: var(--acc); color: var(--acc); font-weight: 650; }
-.mnote { grid-column: 1 / -1; color: var(--mute); font-size: 13px; margin: 6px 0 0 !important; }
+.mr { color: var(--mute); padding: 16px 6px; font-size: 13px; }
+.mc { border: 1px solid var(--line); border-radius: 10px; text-align: center; padding: 16px 6px; color: var(--mute); }
+.mc.yes { border-color: var(--leaf); color: var(--leaf); font-weight: 600; }
+.stim { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.stim figure { margin: 0; min-width: 0; }
+.stim button { padding: 0; border: 0; background: none; cursor: zoom-in; width: 100%; display: block; }
+.stim img { width: 100%; max-width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; display: block; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.stim figure.yes img { outline: 3px solid var(--leaf); outline-offset: 2px; }
 
-.stim { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.stim .cell { display: flex; flex-direction: column; gap: 6px; text-align: left; padding: 0 0 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface);
-              color: var(--ink); font: 500 14px/1.4 var(--f-body); cursor: zoom-in; overflow: hidden; }
-.stim .cell.yes { border-color: var(--acc); }
-.stim .cell img { width: 100%; max-width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
-.stim .cell > span, .stim .cell small { padding: 0 12px; }
-.stim .cell small { color: var(--mute); font: 12px var(--f-mono); }
-figure.plain { margin: 6px 0; }
-figure.plain img { width: 100%; max-width: 100%; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+.tablewrap { overflow-x: auto; margin: 12px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th, td { padding: 9px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { color: var(--ink); font-weight: 600; border-bottom: 2px solid #dbdbdb; }
+table.num td, table.num th { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.steps { list-style: none; counter-reset: s; padding: 0; margin: 14px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.steps li { counter-increment: s; background: var(--soft); border-radius: 10px; padding: 10px 12px; font-size: 14px; min-width: 0; }
+.steps li::before { content: counter(s); display: block; font: 600 12px var(--f-mono); color: var(--leaf); margin-bottom: 2px; }
 
+/* survey preview */
+.svtabs { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 6px 0 16px; }
+.svtabs button { font: 500 14px/1 var(--f-head); padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--text); cursor: pointer; }
+.svtabs button[aria-selected="true"] { background: #363636; color: #fff; border-color: #363636; }
+.survey { border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px 20px; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+.svnote { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--amber); background: var(--amber-bg); border-radius: 8px; padding: 6px 10px; margin: 0 0 14px; }
+.svpick { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0 10px; }
+.svpick button { padding: 0; border: 2px solid transparent; border-radius: 8px; background: none; cursor: pointer; width: 84px; }
+.svpick button[aria-pressed="true"] { border-color: #363636; }
+.svpick img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; display: block; }
+.svimg { width: 100%; max-width: 100%; border-radius: 10px; display: block; margin-bottom: 8px; }
+.q { border: 0; border-top: 1px solid var(--line); margin: 0; padding: 12px 0 10px; min-width: 0; }
+.q legend { float: left; width: 100%; padding: 0; font-weight: 500; color: var(--ink); font-size: 15px; }
+.q legend + * { clear: both; }
+.q .code { font: 600 11.5px var(--f-mono); color: var(--leaf); margin-right: 6px; }
+.q .rev { font-size: 12px; color: var(--mute); margin-left: 4px; }
+.scale { display: grid; grid-template-columns: auto repeat(var(--n), minmax(28px, 1fr)) auto; align-items: center; gap: 4px; margin-top: 8px; font-size: 12.5px; color: var(--mute); }
+.scale label { display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; font-variant-numeric: tabular-nums; }
+.scale input { accent-color: #363636; width: 18px; height: 18px; margin: 0; }
+.scale .lo { text-align: right; } .scale .hi { text-align: left; }
+.q textarea, .q input[type=number] { width: 100%; max-width: 100%; box-sizing: border-box; margin-top: 8px; font: inherit; font-size: 14px; border: 1px solid #dbdbdb; border-radius: 8px; padding: 8px 10px; }
+.q input[type=number] { width: 120px; }
+.choices { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; font-size: 14px; }
+.choices label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.svgroup { font: 500 16px var(--f-head); color: var(--ink); margin: 16px 0 2px; }
+.svgroup small { color: var(--mute); font: 400 13px var(--f-body); margin-left: 6px; }
+.measured { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.measured li { background: var(--soft); border-radius: 10px; padding: 10px 12px; font-size: 14.5px; }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; min-width: 0; font-size: 14.5px; }
+.card .k { font: 600 12px var(--f-mono); color: var(--leaf); margin: 0 0 6px; }
+.card h4 { font: 600 15px/1.35 var(--f-head); color: var(--ink); margin: 0 0 6px; }
+details summary { cursor: pointer; color: #2f6db5; font-weight: 500; margin-top: 6px; }
 .v { font-size: 12.5px; border-radius: 999px; padding: 2px 9px; white-space: nowrap; border: 1px solid; }
-.v.ok { color: var(--ok); }
-.v.no { color: var(--bad); }
-.v.warn { color: var(--warn); }
-pre.bib { background: var(--code); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; overflow-x: auto; font: 13px/1.6 var(--f-mono); margin: 0; }
+.v.ok { color: var(--ok); } .v.no { color: var(--bad); } .v.warn { color: var(--amber); }
+pre.bib { background: var(--soft); border-radius: 10px; padding: 14px 16px; overflow-x: auto; font: 13px/1.6 var(--f-mono); color: var(--ink); margin: 0; }
 ul.refs { padding-left: 18px; font-size: 14px; color: var(--mute); }
-ul.refs li { margin: 6px 0; }
-.foot { color: var(--mute); font-size: 13px; margin-top: 36px !important; text-align: center; max-width: none !important; }
-.ph { color: var(--warn); background: var(--warn-bg); border: 1px dashed var(--warn); border-radius: 5px; padding: 0 4px; }
-
-.overlay { position: fixed; inset: 0; z-index: 50; background: rgba(10, 12, 11, .62); display: flex; align-items: flex-start; justify-content: center; overflow: auto;
+.foot { text-align: center; color: var(--mute); font-size: 13px; margin-top: 44px; }
+.overlay { position: fixed; inset: 0; z-index: 50; background: rgba(10,12,11,.7); display: flex; align-items: flex-start; justify-content: center; overflow: auto;
            padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); }
 .overlay[hidden] { display: none; }
 .overlay.lb { align-items: center; }
 .overlay.lb img { max-width: min(1400px, 100%); max-height: 88vh; border-radius: 10px; }
-.overlay.lb .close { position: fixed; top: max(14px, env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); background: #fff; color: #111;
-                     border: 0; border-radius: 999px; width: 36px; height: 36px; font-size: 16px; cursor: pointer; }
-.sheet { background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 14px; width: 100%; max-width: 720px; padding: 18px 22px 22px; font-size: 14.5px; line-height: 1.6; }
+.overlay.lb .close { position: fixed; top: max(14px, env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); background: #fff; color: #111; border: 0; border-radius: 999px; width: 36px; height: 36px; font-size: 16px; cursor: pointer; }
+.sheet { background: #fff; color: var(--text); border-radius: 14px; width: 100%; max-width: 720px; padding: 18px 22px 22px; font-size: 14.5px; line-height: 1.6; }
 .sheet-hd { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-.sheet h2 { font-size: 18px; margin: 0; }
-.sheet h3 { font-size: 14px; color: var(--acc); margin: 16px 0 6px; }
+.sheet h2 { font: 500 19px var(--f-head); color: var(--ink); margin: 0; }
+.sheet h3 { font: 600 14px var(--f-head); color: var(--leaf); margin: 16px 0 6px; }
 .sheet dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 14px; margin: 0; }
-.sheet dt { color: var(--mute); }
-.sheet dd { margin: 0; min-width: 0; }
-.sheet ul { margin: 0; padding-left: 18px; }
-.sheet li { margin: 5px 0; }
+.sheet dt { color: var(--mute); } .sheet dd { margin: 0; min-width: 0; }
+.sheet ul { margin: 0; padding-left: 18px; } .sheet li { margin: 5px 0; }
 .sheet .close { background: none; border: none; font-size: 18px; color: var(--mute); cursor: pointer; }
-:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+:focus-visible { outline: 2px solid #2f6db5; outline-offset: 2px; }
 
 @media (max-width: 760px) {
-  .topbar { gap: 8px; }
-  .lang { margin-left: auto; }
-  nav.tabs { order: 3; flex: 0 0 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .mosaic { grid-template-columns: repeat(2, 1fr); }
+  .hero-top { margin-bottom: 40px; }
+  nav.tabs { order: 3; flex: 0 0 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   nav.tabs .tab { white-space: nowrap; }
-  .demo-grid, .cards, .split, .stim { grid-template-columns: 1fr; }
-  .hero { padding-top: 26px; }
+  .compare, .stim, .cards { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .just { text-align: left; }
   .sheet dl { grid-template-columns: 1fr; gap: 2px; }
-  .sheet dd { margin-bottom: 8px; }
+  .scale { font-size: 11.5px; }
 }
-@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+@media (prefers-reduced-motion: reduce) { .mosaic img { animation: none; } }
 
 </style>
 </head>
 <body>
-<div class="topbar">
-  <a class="brand" href="index.html">Notifyi</a>
-  <nav class="tabs"><a class="tab" href="index.html">3D 모델</a><a class="tab" href="print.html">출력 도면</a><a class="tab on" href="research.html">연구 · 논문</a><button type="button" class="tab info" data-open="infoOverlay">기준 부품 · 전원 안내</button></nav>
-  <div class="lang" role="group" aria-label="Language">
-    <button type="button" data-lang="ko" aria-pressed="true">한국어</button><button type="button" data-lang="en" aria-pressed="false">English</button>
-  </div>
-</div>
-
 <header class="hero">
-  <p class="venue"><span class="ko">초안 · 2026년 10월 · 목표 학회 ACM/IEEE HRI</span><span class="en">Draft · October 2026 · target: ACM/IEEE HRI</span></p>
-  <h1 class="ttl">Fits In, Stands Out?</h1>
-  <p class="subttl"><span class="ko">책상과 어울리는 로봇은 덜 눈에 띄지만, 더 잘 따르게 할까?</span><span class="en">Workspace congruence trades the noticeability of a desk robot's posture cues for their uptake</span></p>
-  <p class="authors">Notifyi Team · <a href="https://github.com/NOTIFYII">NOTIFYII</a></p>
-  <p class="status"><span class="dot"></span><span class="ko">실험 전 단계 — 아래의 결과 자리 <b><span class="ph">[결과]</span></b>는 아직 측정하지 않았습니다</span><span class="en">Pre-data — every <b><span class="ph">[RESULT]</span></b> below is a placeholder; nothing has been measured yet</span></p>
-  <nav class="links" aria-label="Links">
-    <a class="pill" href="#abstract"><span class="ko">초록</span><span class="en">Abstract</span></a>
-    <a class="pill" href="#demo"><span class="ko">데모</span><span class="en">Demo</span></a>
-    <a class="pill" href="index.html"><span class="ko">3D 트윈</span><span class="en">3D twin</span></a>
-    <a class="pill" href="print.html"><span class="ko">출력 도면</span><span class="en">Print parts</span></a>
-    <a class="pill" href="https://github.com/NOTIFYII/notifyi-digital-twin"><span class="ko">코드</span><span class="en">Code</span></a>
-    <span class="pill off" title="not yet"><span class="ko">arXiv (예정)</span><span class="en">arXiv (soon)</span></span>
-  </nav>
+  <div class="mosaic" aria-hidden="true"><img src="assets/research/hero/t00.jpg" alt=""><img src="assets/research/hero/t01.jpg" alt=""><img src="assets/research/hero/t02.jpg" alt=""><img src="assets/research/hero/t03.jpg" alt=""><img src="assets/research/hero/t04.jpg" alt=""><img src="assets/research/hero/t05.jpg" alt=""><img src="assets/research/hero/t06.jpg" alt=""><img src="assets/research/hero/t07.jpg" alt=""><img src="assets/research/hero/t08.jpg" alt=""><img src="assets/research/hero/t09.jpg" alt=""><img src="assets/research/hero/t10.jpg" alt=""><img src="assets/research/hero/t11.jpg" alt=""></div>
+  <div class="hero-in">
+    <div class="hero-top">
+      <a class="brand" href="index.html">Notifyi</a>
+      <nav class="tabs"><a class="tab" href="index.html">3D 모델</a><a class="tab" href="print.html">출력 도면</a><a class="tab on" href="research.html">연구 · 논문</a><button type="button" class="tab info" data-open="infoOverlay">기준 부품 · 전원 안내</button></nav>
+      <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ko" aria-pressed="true">한국어</button><button type="button" data-lang="en" aria-pressed="false">English</button></div>
+    </div>
+    <h1 class="ttl">Fits In, Stands Out?<span class="ttl-sub"><span class="en">Workspace Congruence and the Noticeability of a Desk Robot's Posture Cues</span><span class="ko">책상과 어울리는 로봇은 덜 눈에 띄지만, 더 잘 따르게 할까?</span></span></h1>
+    <p class="authors">Notifyi Team</p>
+    <h2 class="venue"><span class="en">Draft · Pre-data</span><span class="ko">초안 · 실험 전</span></h2>
+    <p class="affil">NOTIFYII · <span class="en">target venue ACM/IEEE HRI</span><span class="ko">목표 학회 ACM/IEEE HRI</span></p>
+    <p class="status"><span class="en">Every <span class="ph">[RESULT]</span> on this page is a placeholder — nothing has been measured yet</span><span class="ko">이 페이지의 모든 <span class="ph">[결과]</span>는 빈자리입니다 — 아직 아무것도 측정하지 않았습니다</span></p>
+    <div class="pills">
+      <a class="pill" href="#abstract"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1h7l3 3v11H3zM9.5 1.8V4.5h2.7"/></svg><span class="en">Paper (draft)</span><span class="ko">논문 초안</span></a>
+      <a class="pill" href="#survey"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2h12v3H2zm0 4.5h12v3H2zM2 11h12v3H2z"/></svg><span class="en">Survey</span><span class="ko">설문 문항</span></a>
+      <a class="pill" href="index.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 14 4.5v7L8 15 2 11.5v-7zm0 1.7L3.6 5.2 8 7.7l4.4-2.5z"/></svg><span class="en">3D Twin</span><span class="ko">3D 트윈</span></a>
+      <a class="pill" href="https://github.com/NOTIFYII/notifyi-digital-twin"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .3a8 8 0 0 0-2.5 15.6c.4 0 .5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.4 7.4 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.8-3.6 4 .3.3.5.8.5 1.5v2.2c0 .2.1.5.6.4A8 8 0 0 0 8 .3z"/></svg>Code</a>
+      <span class="pill off" title="not yet">arXiv <span class="en">(soon)</span><span class="ko">(예정)</span></span>
+    </div>
+  </div>
 </header>
 
-<main class="page">
-  <section id="demo" class="teaser">
-    <div class="demo-hd">
-      <h2><span class="ko">같은 로봇, 두 가지 신호</span><span class="en">One robot, two kinds of cue</span></h2>
-      <div class="seg" role="group" aria-label="Skin">
-        <button type="button" data-skin="char_sprout_c" aria-pressed="true"><span class="ko">식물형 외형</span><span class="en">Botanical skin</span></button><button type="button" data-skin="char_tech" aria-pressed="false"><span class="ko">기계형 외형</span><span class="en">Technical skin</span></button>
-      </div>
-    </div>
-    <div class="demo-grid">
-      <figure class="demo">
-        <div class="frame"><iframe title="Gradual cue" data-motion="p1_cue_gradual.json" allowfullscreen></iframe></div>
-        <figcaption><b class="tag g"><span class="ko">천천히 처지는 신호</span><span class="en">Gradual cue</span></b><span class="ko">8초 동안 사람처럼 구부정해진 뒤 걱정스러운 얼굴로 올려다봅니다. 관절 속도 10°/s 이하 — 끊김 없이 변해서 놓치기 쉬운 신호입니다.</span><span class="en">An 8-second slump under 10°/s, then a concerned look up — a change with no transient, easy to miss.</span></figcaption>
-      </figure>
-      <figure class="demo">
-        <div class="frame"><iframe title="Abrupt cue" data-motion="p1_cue_abrupt.json" allowfullscreen></iframe></div>
-        <figcaption><b class="tag a"><span class="ko">갑자기 시작하는 신호</span><span class="en">Abrupt cue</span></b><span class="ko">0.4초 동안 고개를 번쩍 든 뒤 같은 동작을 합니다. 움직임이 "시작되는 순간"은 주의를 자동으로 끕니다.</span><span class="en">A 0.4-second head lift first, then the same slump. The onset of motion captures attention automatically.</span></figcaption>
-      </figure>
-    </div>
-    <p class="note"><span class="ko">실제 디지털 트윈이 반복 재생됩니다. 드래그해서 돌려 볼 수 있습니다. 두 동작 모두 관절 한계 · 속도 · 충돌 검사를 통과했지만, 실물 로봇에서 돌린 것은 아닙니다.</span><span class="en">The live digital twin, looping; drag to orbit. Both motions pass the twin's limit, speed and collision checks; neither has run on hardware.</span></p>
-  </section>
-
-  <section class="tldr">
-    <h2>TL;DR</h2>
-    <p class="ko">책상 로봇은 그 공간에 <b>어울려야</b> 하고(몇 주를 함께 지내야 하니까), 동시에 바쁜 사람이 신호를 <b>알아차려야</b> 합니다. 우리는 이 둘이 서로 부딪친다고 봅니다. <b>공간과 어울리는 로봇은 천천히 처지는 신호를 늦게 알아차리게 하지만, 알아차린 뒤에는 더 잘 따르게 한다.</b> 그리고 <b>움직임을 갑자기 시작하면</b> 늦게 알아차리는 비용이 사라진다 — 디자이너가 어울림은 지키고, 꼭 필요할 때만 눈에 띄게 할 수 있는 손잡이입니다.</p>
-    <p class="en">A desk robot must <b>belong</b> in a workspace for weeks and still be <b>noticed</b> by someone busy. We predict the two collide: <b>a robot that fits its workspace is noticed later when it cues gradually, but followed more once noticed</b> — and an <b>abrupt onset of motion</b> removes the noticing cost, a lever that lets designers keep the harmony and stand out only when it matters.</p>
-  </section>
-
+<main>
+<div class="page">
   <section id="abstract">
-    <h2><span class="ko">초록</span><span class="en">Abstract</span></h2>
-    <p class="en">A desk robot that coaches posture faces two demands that may pull against each other: it should belong in a person's workspace for weeks, and its cues should be noticed while the person is busy with something else. Research on scene perception suggests that objects which fit their surroundings attract less attention, and that slow changes can go unnoticed altogether; research on human–robot interaction suggests that robots whose appearance fits the task and setting are trusted and obeyed more. We bring these together in one prediction: <b>a robot whose form is congruent with its workspace is noticed later when it cues gradually, but its cues are followed more often — and an abrupt onset of motion removes the noticing cost.</b> A six-joint desk robot with identical joints, motions and display face wore either a botanical skin or a technical skin (between participants) and stood on a plant-rich desk and on a device-heavy desk (within participants), so that congruence is the skin × desk interaction rather than a property of either skin. While participants transcribed text, the robot answered their slouching with gradual or abrupt cues. <span class="ph">[RESULT: N = …; congruent pairings were noticed … s later for gradual cues, not for abrupt cues; cues were followed in …% vs …%; typing speed …]</span>. We argue that spatial harmony is a design dimension with a measurable attentional price, and that the timing of motion onset is the lever that lets a designer keep the harmony and pay the price only when a cue matters.</p>
-    <p class="ko">자세를 코칭하는 책상 로봇에게는 서로 부딪칠 수 있는 두 가지 요구가 있습니다. 몇 주 동안 사람의 작업 공간에 자연스럽게 어울려야 하고, 동시에 사람이 다른 일에 몰두해 있을 때도 그 신호가 눈에 띄어야 합니다. 장면 지각 연구에 따르면 주변과 어울리는 물체는 주의를 덜 끌고, 천천히 일어나는 변화는 아예 알아차리지 못할 수도 있습니다. 반면 인간–로봇 상호작용 연구는 과업과 환경에 어울리는 외형의 로봇을 사람들이 더 신뢰하고 더 잘 따른다고 말합니다. 우리는 이를 하나의 예측으로 묶습니다. <b>작업 공간과 어울리는 로봇은 천천히 신호할 때 더 늦게 알아차려지지만, 그 신호는 더 자주 지켜지며, 움직임을 갑자기 시작하면 늦게 알아차리는 비용이 사라진다.</b> 관절 · 동작 · 화면 얼굴이 모두 같은 6관절 책상 로봇이 식물형 또는 기계형 외형을 입고(참가자 간), 식물이 많은 책상과 기기가 많은 책상에 놓입니다(참가자 내). 그래서 "어울림"은 어느 한 외형의 성질이 아니라 외형 × 책상의 상호작용이 됩니다. 참가자가 글을 옮겨 치는 동안, 로봇은 참가자가 구부정해지면 천천히 또는 갑자기 신호합니다. <span class="ph">[결과: N = …; 어울리는 조합은 천천히 하는 신호에서 … 초 늦게 알아차려졌고 갑작스러운 신호에서는 차이가 없었다; 신호를 따른 비율 …% 대 …%; 타자 속도 …]</span>. 공간 조화성은 주의라는 대가를 측정할 수 있는 디자인 차원이며, 움직임을 시작하는 타이밍은 디자이너가 조화를 유지하면서 꼭 필요한 신호에만 그 대가를 치르게 해 주는 손잡이라고 주장합니다.</p>
+    <h2 class="sec">Abstract</h2>
+    <p class="just en">A desk robot that coaches posture faces two demands that may pull against each other: it should belong in a person's workspace for weeks, and its cues should be noticed while the person is busy with something else. Research on scene perception suggests that objects which fit their surroundings attract less attention, and that slow changes can go unnoticed altogether; research on human–robot interaction suggests that robots whose appearance fits the task and setting are trusted and obeyed more. We bring these together in one prediction: <b>a robot whose form is congruent with its workspace is noticed later when it cues gradually, but its cues are followed more often — and an abrupt onset of motion removes the noticing cost.</b> A six-joint desk robot with identical joints, motions and display face wears either a botanical or a technical skin (between participants) and stands on a plant-rich and on a device-heavy desk (within participants), so that congruence is the skin × desk interaction rather than a property of either skin. While participants transcribe text, the robot answers their slouching with gradual or abrupt cues. <span class="ph">[RESULT: N = …; congruent pairings were noticed … s later for gradual cues, not for abrupt cues; cues were followed in …% vs …%]</span>. We argue that spatial harmony is a design dimension with a measurable attentional price, and that the timing of motion onset is the lever that lets a designer keep the harmony and pay the price only when a cue matters.</p>
+    <p class="just ko">자세를 코칭하는 책상 로봇에게는 서로 부딪칠 수 있는 두 가지 요구가 있습니다. 몇 주 동안 사람의 작업 공간에 어울려야 하고, 동시에 사람이 다른 일에 몰두해 있을 때도 신호가 눈에 띄어야 합니다. 장면 지각 연구에 따르면 주변과 어울리는 물체는 주의를 덜 끌고, 천천히 일어나는 변화는 아예 알아차리지 못할 수도 있습니다. 반면 인간–로봇 상호작용 연구는 과업과 환경에 어울리는 외형의 로봇을 사람들이 더 신뢰하고 더 잘 따른다고 말합니다. 우리는 이를 하나의 예측으로 묶습니다. <b>작업 공간과 어울리는 로봇은 천천히 신호할 때 더 늦게 알아차려지지만 그 신호는 더 자주 지켜지며, 움직임을 갑자기 시작하면 늦게 알아차리는 비용이 사라진다.</b> 관절 · 동작 · 화면 얼굴이 모두 같은 6관절 책상 로봇이 식물형 또는 기계형 외형을 입고(참가자 간), 식물이 많은 책상과 기기가 많은 책상에 놓입니다(참가자 내). 그래서 "어울림"은 어느 한 외형의 성질이 아니라 외형 × 책상의 상호작용이 됩니다. 참가자가 글을 옮겨 치는 동안 로봇은 참가자가 구부정해지면 천천히 또는 갑자기 신호합니다. <span class="ph">[결과: N = …; 어울리는 조합은 천천히 하는 신호에서 … 초 늦게 알아차려졌고 갑작스러운 신호에서는 차이가 없었다; 신호를 따른 비율 …% 대 …%]</span>. 공간 조화성은 측정 가능한 주의의 대가를 지닌 디자인 차원이며, 움직임을 시작하는 타이밍은 디자이너가 조화를 지키면서 꼭 필요한 신호에만 그 대가를 치르게 해 주는 손잡이라고 주장합니다.</p>
   </section>
 
-  <section id="why">
-    <h2><span class="ko">왜 양쪽으로 예측하나</span><span class="en">Why the prediction goes both ways</span></h2>
-    <div class="cards">
-      <div class="card"><p class="k">H1</p><h3><span class="ko">어울리면 늦게 본다</span><span class="en">Fitting in hides</span></h3><p><span class="ko">장면과 어울리지 않는 물체는 더 많이, 더 오래 시선을 받습니다. 끊김 없이 천천히 바뀌면 큰 변화도 놓칩니다.</span><span class="en">Objects that do not fit a scene draw more and longer fixations; changes slow enough to make no transient can go unnoticed.</span></p><p class="ref">Loftus &amp; Mackworth 1978 · Henderson et al. 1999 · Simons, Franconeri &amp; Reimer 2000</p></div>
-      <div class="card"><p class="k">H3</p><h3><span class="ko">어울리면 더 따른다</span><span class="en">Fitting in persuades</span></h3><p><span class="ko">과업에 맞는 태도의 로봇에게 사람들은 더 잘 순응합니다(매칭 가설).</span><span class="en">People comply more with a robot whose demeanour matches the task — the matching hypothesis.</span></p><p class="ref">Goetz, Kiesler &amp; Powers 2003</p></div>
-      <div class="card"><p class="k">H2</p><h3><span class="ko">갑작스런 시작은 누구나 본다</span><span class="en">Onset cuts through</span></h3><p><span class="ko">움직임 자체가 아니라 움직임의 "시작"이 자동으로 주의를 끕니다 — 어울림과 무관하게.</span><span class="en">Not motion, but the onset of motion captures attention — whatever the object fits.</span></p><p class="ref">Abrams &amp; Christ 2003</p></div>
+  <section id="demo">
+    <h2 class="sec"><span class="en">A robot that fits in may be seen later</span><span class="ko">어울리는 로봇은 늦게 보일 수 있다</span></h2>
+    <p class="just"><span class="en">Changes slow enough to make no transient can go unnoticed (Simons, Franconeri &amp; Reimer, 2000), and objects that fit a scene draw fewer fixations. But the <i>onset</i> of motion captures attention automatically (Abrams &amp; Christ, 2003). The robot therefore cues in two ways — the same slump, with and without a sudden start. Both are the live digital twin; drag to orbit.</span><span class="ko">끊김 없이 천천히 바뀌는 변화는 놓칠 수 있고(Simons, Franconeri &amp; Reimer, 2000), 장면과 어울리는 물체는 시선을 덜 받습니다. 하지만 움직임이 <i>시작되는 순간</i>은 자동으로 주의를 끕니다(Abrams &amp; Christ, 2003). 그래서 로봇은 두 가지로 신호합니다 — 같은 처짐 동작을, 갑작스러운 시작 없이 / 있이. 둘 다 실제 디지털 트윈이며 드래그해서 돌려 볼 수 있습니다.</span></p>
+    <div class="toggle"><div class="seg" role="group" aria-label="Skin"><button type="button" data-skin="char_sprout_c" aria-pressed="true"><span class="en">Botanical skin</span><span class="ko">식물형 외형</span></button><button type="button" data-skin="char_tech" aria-pressed="false"><span class="en">Technical skin</span><span class="ko">기계형 외형</span></button></div></div>
+  </section>
+</div>
+  <div class="wide compare">
+    <figure style="margin:0">
+      <h4 class="lab dotg"><span class="en">Gradual cue</span><span class="ko">천천히 처지는 신호</span></h4>
+      <div class="frame"><iframe title="Gradual cue" data-motion="p1_cue_gradual.json" allowfullscreen></iframe></div>
+      <p class="cap"><span class="en">An 8-second slump under 10°/s, then a concerned look up — no transient to catch the eye.</span><span class="ko">8초 동안 초당 10° 이하로 구부정해진 뒤 걱정스러운 얼굴로 올려다봅니다 — 눈길을 끌 순간이 없습니다.</span></p>
+    </figure>
+    <figure style="margin:0">
+      <h4 class="lab dota"><span class="en">Abrupt cue</span><span class="ko">갑자기 시작하는 신호</span></h4>
+      <div class="frame"><iframe title="Abrupt cue" data-motion="p1_cue_abrupt.json" allowfullscreen></iframe></div>
+      <p class="cap"><span class="en">A 0.4-second head lift first, then the same slump — the onset itself is the signal.</span><span class="ko">0.4초 동안 고개를 번쩍 든 뒤 같은 동작 — 시작하는 순간 자체가 신호입니다.</span></p>
+    </figure>
+  </div>
+  <div class="page" style="padding-bottom:0">
+    <p class="cap"><span class="en">Both motions pass the twin's joint-limit, speed and collision checks; neither has run on hardware.</span><span class="ko">두 동작 모두 트윈의 관절 한계 · 속도 · 충돌 검사를 통과했고, 실물 로봇에서는 아직 돌리지 않았습니다.</span></p>
+
+  <section id="congruence">
+    <h2 class="sec"><span class="en">Congruence is an interaction, not a look</span><span class="ko">어울림은 외형이 아니라 조합이다</span></h2>
+    <p class="just"><span class="en">If we only compared a plant-like robot with a mechanical one, any difference could come from its colour, leaves or size. So each skin stands on both desks: congruence is the skin × desk interaction, and everything that belongs to one skin cancels out.</span><span class="ko">식물 같은 로봇과 기계 같은 로봇만 비교하면, 차이가 색 · 잎 · 크기 때문인지 알 수 없습니다. 그래서 각 외형을 두 책상 모두에 놓습니다. 어울림은 외형 × 책상의 상호작용이 되고, 한 외형에만 속한 차이는 상쇄됩니다.</span></p>
+    <div class="matrix" role="table" aria-label="Congruence is the skin by desk interaction">
+      <div></div><div class="mh"><span class="en">Plant-rich desk</span><span class="ko">식물이 많은 책상</span></div><div class="mh"><span class="en">Device-heavy desk</span><span class="ko">기기가 많은 책상</span></div>
+      <div class="mr"><span class="en">Botanical</span><span class="ko">식물형</span></div><div class="mc yes"><span class="en">congruent</span><span class="ko">어울림</span></div><div class="mc"><span class="en">incongruent</span><span class="ko">안 어울림</span></div>
+      <div class="mr"><span class="en">Technical</span><span class="ko">기계형</span></div><div class="mc"><span class="en">incongruent</span><span class="ko">안 어울림</span></div><div class="mc yes"><span class="en">congruent</span><span class="ko">어울림</span></div>
     </div>
   </section>
+  </div>
+  <div class="wide stim">
+    <figure class="yes"><h4 class="lab"><span class="en">Botanical · plant-rich (congruent)</span><span class="ko">식물형 · 식물 책상 (어울림)</span></h4><button type="button" data-img="assets/research/botanical_plant.jpg"><img src="assets/research/botanical_plant.jpg" alt="Botanical robot on the plant-rich desk" loading="lazy"></button><p class="cap">ΔE 26.9 · saliency ×9.4</p></figure>
+    <figure><h4 class="lab"><span class="en">Botanical · device-heavy</span><span class="ko">식물형 · 기기 책상</span></h4><button type="button" data-img="assets/research/botanical_device.jpg"><img src="assets/research/botanical_device.jpg" alt="Botanical robot on the device-heavy desk" loading="lazy"></button><p class="cap">ΔE 20.9 · saliency ×5.2</p></figure>
+    <figure><h4 class="lab"><span class="en">Technical · plant-rich</span><span class="ko">기계형 · 식물 책상</span></h4><button type="button" data-img="assets/research/technical_plant.jpg"><img src="assets/research/technical_plant.jpg" alt="Technical robot on the plant-rich desk" loading="lazy"></button><p class="cap">ΔE 21.4 · saliency ×10.7</p></figure>
+    <figure class="yes"><h4 class="lab"><span class="en">Technical · device-heavy (congruent)</span><span class="ko">기계형 · 기기 책상 (어울림)</span></h4><button type="button" data-img="assets/research/technical_device.jpg"><img src="assets/research/technical_device.jpg" alt="Technical robot on the device-heavy desk" loading="lazy"></button><p class="cap">ΔE 14.6 · saliency ×6.3</p></figure>
+  </div>
 
+  <div class="page">
   <section id="hypotheses">
-    <h2><span class="ko">가설 (사전등록 초안)</span><span class="en">Hypotheses (pre-registration draft)</span></h2>
-    <p class="sub"><span class="ko">어울리는 조합: 식물형 외형 + 식물이 많은 책상, 기계형 외형 + 기기가 많은 책상.</span><span class="en">Congruent pairings: botanical skin on the plant-rich desk, technical skin on the device-heavy desk.</span></p>
+    <h2 class="sec"><span class="en">Hypotheses</span><span class="ko">가설</span></h2>
     <div class="tablewrap"><table>
-      <thead><tr><th></th><th><span class="ko">예측</span><span class="en">Prediction</span></th><th><span class="ko">반박 조건</span><span class="en">Refuted if</span></th></tr></thead>
+      <thead><tr><th></th><th><span class="en">Prediction</span><span class="ko">예측</span></th><th><span class="en">Refuted if</span><span class="ko">반박 조건</span></th></tr></thead>
       <tbody>
-        <tr><td><b>H1</b></td><td><span class="ko">천천히 하는 신호는 어울리는 조합에서 더 늦게 알아차린다.</span><span class="en">Gradual cues are noticed later in congruent pairings.</span></td><td><span class="ko">천천히 하는 신호의 알아차림 시간(로그)에서 어울림 대비가 0 이하이거나 유의하지 않음 (α = .05)</span><span class="en">The congruence contrast on log time-to-notice of gradual cues is ≤ 0 or not significant (α = .05)</span></td></tr>
-        <tr><td><b>H2</b></td><td><span class="ko">어울림 효과는 천천히 하는 신호에서 더 크고, 갑작스러운 신호에서는 사실상 0이다.</span><span class="en">The congruence effect is larger for gradual than abrupt cues, and practically zero for abrupt ones.</span></td><td><span class="ko">어울림 × 시작 방식 상호작용이 유의하지 않거나, 갑작스러운 신호의 효과가 동등성 범위 ±0.10(로그) 밖</span><span class="en">Congruence × onset not significant, or the abrupt-cue effect falls outside ±0.10 log units (equivalence test)</span></td></tr>
-        <tr><td><b>H3</b></td><td><span class="ko">알아차린 뒤에는 어울리는 조합에서 더 자주 따르고(60초 안에 자세 교정), 덜 귀찮게 느낀다.</span><span class="en">Once noticed, cues are followed more often (posture corrected within 60 s) and judged less annoying in congruent pairings.</span></td><td><span class="ko">따른 비율의 어울림 대비가 0 이하이거나 유의하지 않음</span><span class="en">The congruence contrast on the proportion followed is ≤ 0 or not significant</span></td></tr>
-        <tr><td><b>H4</b></td><td><span class="ko">(탐색) 갑작스러운 신호는 직후 30초의 타자 속도를 더 떨어뜨린다.</span><span class="en">(Exploratory) Abrupt cues cost more typing in the next 30 s.</span></td><td>—</td></tr>
+        <tr><td><b>H1</b></td><td><span class="en">Gradual cues are noticed later in congruent pairings.</span><span class="ko">천천히 하는 신호는 어울리는 조합에서 더 늦게 알아차린다.</span></td><td><span class="en">Congruence contrast on log time-to-notice ≤ 0 or not significant (α = .05)</span><span class="ko">알아차림 시간(로그)의 어울림 대비가 0 이하이거나 유의하지 않음 (α = .05)</span></td></tr>
+        <tr><td><b>H2</b></td><td><span class="en">The effect is larger for gradual than abrupt cues, and practically zero for abrupt ones.</span><span class="ko">그 효과는 천천히 하는 신호에서 더 크고, 갑작스러운 신호에서는 사실상 0이다.</span></td><td><span class="en">Congruence × onset not significant, or the abrupt effect outside ±0.10 log (equivalence test)</span><span class="ko">어울림 × 시작 방식 상호작용이 유의하지 않거나, 갑작스러운 신호의 효과가 ±0.10(로그) 밖</span></td></tr>
+        <tr><td><b>H3</b></td><td><span class="en">Once noticed, cues are followed more often (posture corrected within 60 s) and found less annoying in congruent pairings.</span><span class="ko">알아차린 뒤에는 어울리는 조합에서 더 자주 따르고(60초 안 자세 교정) 덜 귀찮게 느낀다.</span></td><td><span class="en">Congruence contrast on the proportion followed ≤ 0 or not significant</span><span class="ko">따른 비율의 어울림 대비가 0 이하이거나 유의하지 않음</span></td></tr>
+        <tr><td><b>H4</b></td><td><span class="en">(Exploratory) Abrupt cues cost more typing in the next 30 s.</span><span class="ko">(탐색) 갑작스러운 신호가 직후 30초 타자 속도를 더 떨어뜨린다.</span></td><td>—</td></tr>
       </tbody>
     </table></div>
-    <p><span class="ko">각 가설은 따로 깨질 수 있고, 어떻게 깨지든 디자이너에게 의미가 있습니다. H1만 맞으면 어울림은 로봇을 숨길 뿐이고, H3만 맞으면 어울림은 공짜이며, H2가 틀리면 그 비용은 진폭 · 빛 · 소리로 되사야 합니다.</span><span class="en">Each part can fail on its own, and each failure tells designers something: H1 alone means fitting in only hides the robot; H3 alone means fitting in is free; without H2 the cost must be bought back with amplitude, light or sound.</span></p>
   </section>
 
-  <section id="design">
-    <h2><span class="ko">실험 설계</span><span class="en">Study design</span></h2>
-    <div class="split">
-      <ul class="plain">
-        <li><b><span class="ko">외형</span><span class="en">Skin</span></b> <span class="ko">(식물형 / 기계형) — 참가자 간. 몸 · 관절 · 동작 · 얼굴은 같고, 갈아 끼우는 외피 부품만 다릅니다.</span><span class="en">(botanical / technical) — between participants; same body, joints, motions and face, only the swappable shell parts differ.</span></li>
-        <li><b><span class="ko">책상</span><span class="en">Desk</span></b> <span class="ko">(식물이 많은 / 기기가 많은) — 참가자 내, 25분 블록 2개, 순서 상쇄.</span><span class="en">(plant-rich / device-heavy) — within participants, two 25-min blocks, counterbalanced.</span></li>
-        <li><b><span class="ko">신호 시작</span><span class="en">Cue onset</span></b> <span class="ko">(천천히 / 갑자기) — 블록 안에서 8회, 참가자가 구부정해지면 발생.</span><span class="en">(gradual / abrupt) — 8 cues per block, triggered by the participant's slouch.</span></li>
-        <li><b><span class="ko">측정</span><span class="en">Measures</span></b> <span class="ko">로봇을 처음 쳐다보기까지의 시간(웹캠 시선), 60초 안 자세 교정, 귀찮음 · 어울림 평가, 타자 속도, 조합별 색 대비 · 눈에 띄는 정도(공변량).</span><span class="en">time to first glance at the robot (webcam gaze), posture correction within 60 s, annoyance and fit ratings, typing speed, colour contrast and saliency per pairing (covariates).</span></li>
-        <li><b>N = 100</b> <span class="ko">(외형당 50명), 혼합효과 모형으로 사전등록 분석.</span><span class="en">(50 per skin), pre-registered mixed-model analysis.</span></li>
-      </ul>
-      <div class="matrix" role="table" aria-label="Congruence is the skin by desk interaction">
-        <div></div><div class="mh"><span class="ko">식물이 많은 책상</span><span class="en">Plant-rich desk</span></div><div class="mh"><span class="ko">기기가 많은 책상</span><span class="en">Device-heavy desk</span></div>
-        <div class="mr"><span class="ko">식물형</span><span class="en">Botanical</span></div><div class="mc yes"><span class="ko">어울림</span><span class="en">congruent</span></div><div class="mc"><span class="ko">안 어울림</span><span class="en">incongruent</span></div>
-        <div class="mr"><span class="ko">기계형</span><span class="en">Technical</span></div><div class="mc"><span class="ko">안 어울림</span><span class="en">incongruent</span></div><div class="mc yes"><span class="ko">어울림</span><span class="en">congruent</span></div>
-        <p class="mnote"><span class="ko">어울림은 상호작용이라서, 한 외형의 초록색 · 크기 · 움직임 같은 차이는 상쇄됩니다.</span><span class="en">Congruence is the interaction, so the greenness, size or motion of one skin cancels out.</span></p>
-      </div>
+  <section id="method">
+    <h2 class="sec">Method</h2>
+    <p class="just"><span class="en"><b>Design.</b> Skin (botanical / technical) between participants; desk (plant-rich / device-heavy) within, two 25-minute blocks in counterbalanced order; cue onset (gradual / abrupt) within blocks, 8 cues per block triggered by the participant's own slouch. <b>N = 100</b> (50 per skin), pre-registered mixed models.</span><span class="ko"><b>설계.</b> 외형(식물형 / 기계형)은 참가자 간, 책상(식물이 많은 / 기기가 많은)은 참가자 내로 25분 블록 2개(순서 상쇄), 신호 시작(천천히 / 갑자기)은 블록 안에서 참가자가 실제로 구부정해질 때 8회. <b>N = 100</b>(외형당 50명), 혼합효과 모형으로 사전등록 분석.</span></p>
+    <h3 class="sub"><span class="en">One session</span><span class="ko">한 세션의 흐름</span></h3>
+    <ol class="steps">
+      <li><span class="en">Consent, posture and gaze calibration</span><span class="ko">동의, 자세 · 시선 보정</span></li>
+      <li><span class="en">Block 1 · 25 min typing on desk A</span><span class="ko">블록 1 · 책상 A에서 25분 타자</span></li>
+      <li><span class="en">Questionnaire · 10 min break</span><span class="ko">블록 후 설문 · 10분 휴식</span></li>
+      <li><span class="en">Block 2 · 25 min on desk B, questionnaire, end probe, debrief</span><span class="ko">블록 2 · 책상 B 25분, 설문, 종료 질문, 사후 설명</span></li>
+    </ol>
+  </section>
+
+  <section id="survey">
+    <h2 class="sec"><span class="en">Survey instruments</span><span class="ko">설문 문항</span></h2>
+    <p class="just"><span class="en">The exact wording participants will see (draft v1). Try them: the forms below are a preview — nothing is sent or saved. Korean is the participant language; the Godspeed items still need back-translation.</span><span class="ko">참가자가 실제로 보게 될 문구입니다(초안 v1). 아래 양식은 직접 눌러 볼 수 있는 미리보기이며, 아무것도 전송하거나 저장하지 않습니다. 참가자 언어는 한국어이고, Godspeed 문항은 역번역 검증이 남아 있습니다.</span></p>
+    <div class="svtabs" role="tablist">
+      <button type="button" role="tab" aria-selected="true" data-sv="s1"><span class="en">Study 1 · online</span><span class="ko">Study 1 · 온라인</span></button>
+      <button type="button" role="tab" aria-selected="false" data-sv="blk"><span class="en">Lab · after each block</span><span class="ko">실험실 · 블록마다</span></button>
+      <button type="button" role="tab" aria-selected="false" data-sv="end"><span class="en">Lab · end of session</span><span class="ko">실험실 · 종료</span></button>
+      <button type="button" role="tab" aria-selected="false" data-sv="meas"><span class="en">Measured, not asked</span><span class="ko">묻지 않고 측정</span></button>
     </div>
-  </section>
-
-  <section id="stimuli">
-    <h2><span class="ko">자극 (Study 1)</span><span class="en">Stimuli (Study 1)</span></h2>
-    <p class="sub"><span class="ko">디지털 트윈 렌더. 누르면 크게 봅니다. 실험실 연구 전에 온라인에서 80명에게 "이 로봇이 이 책상에 어울리는가"를 묻고, 예측한 외형 × 책상 패턴이 나올 때만 진행합니다.</span><span class="en">Renders of the digital twin; click to enlarge. Before any lab work, 80 people online rate how well each robot fits each desk; the lab study goes ahead only if the predicted skin × desk pattern appears.</span></p>
-    <div class="stim">
-      <button type="button" class="cell yes" data-img="assets/research/botanical_plant.jpg"><img src="assets/research/botanical_plant.jpg" alt="Botanical robot on the plant-rich desk" loading="lazy"><span><span class="ko">식물형 · 식물 책상 — 어울림</span><span class="en">Botanical · plant-rich — congruent</span></span><small>ΔE 26.9 · saliency ×9.4</small></button>
-      <button type="button" class="cell" data-img="assets/research/botanical_device.jpg"><img src="assets/research/botanical_device.jpg" alt="Botanical robot on the device-heavy desk" loading="lazy"><span><span class="ko">식물형 · 기기 책상</span><span class="en">Botanical · device-heavy</span></span><small>ΔE 20.9 · saliency ×5.2</small></button>
-      <button type="button" class="cell" data-img="assets/research/technical_plant.jpg"><img src="assets/research/technical_plant.jpg" alt="Technical robot on the plant-rich desk" loading="lazy"><span><span class="ko">기계형 · 식물 책상</span><span class="en">Technical · plant-rich</span></span><small>ΔE 21.4 · saliency ×10.7</small></button>
-      <button type="button" class="cell yes" data-img="assets/research/technical_device.jpg"><img src="assets/research/technical_device.jpg" alt="Technical robot on the device-heavy desk" loading="lazy"><span><span class="ko">기계형 · 기기 책상 — 어울림</span><span class="en">Technical · device-heavy — congruent</span></span><small>ΔE 14.6 · saliency ×6.3</small></button>
+    <form class="survey" id="sv-s1" onsubmit="return false">
+      <p class="svnote"><span class="en">Preview — answers are not recorded.</span><span class="ko">미리보기 — 응답은 기록되지 않습니다.</span></p>
+      <p style="margin:0"><span class="en">Each participant rates all four images in random order. Image:</span><span class="ko">참가자는 네 장을 무작위 순서로 모두 평가합니다. 이미지:</span></p>
+      <div class="svpick" role="group" aria-label="Stimulus">
+        <button type="button" aria-pressed="true" data-img="assets/research/botanical_plant.jpg"><img src="assets/research/botanical_plant.jpg" alt="botanical, plant-rich"></button>
+        <button type="button" aria-pressed="false" data-img="assets/research/botanical_device.jpg"><img src="assets/research/botanical_device.jpg" alt="botanical, device-heavy"></button>
+        <button type="button" aria-pressed="false" data-img="assets/research/technical_plant.jpg"><img src="assets/research/technical_plant.jpg" alt="technical, plant-rich"></button>
+        <button type="button" aria-pressed="false" data-img="assets/research/technical_device.jpg"><img src="assets/research/technical_device.jpg" alt="technical, device-heavy"></button>
+      </div>
+      <img class="svimg" id="svimg" src="assets/research/botanical_plant.jpg" alt="The image being rated">
+      <div data-items="s1"></div>
+    </form>
+    <form class="survey" id="sv-blk" onsubmit="return false" hidden>
+      <p class="svnote"><span class="en">Preview — answers are not recorded.</span><span class="ko">미리보기 — 응답은 기록되지 않습니다.</span></p>
+      <div data-items="blk"></div>
+    </form>
+    <form class="survey" id="sv-end" onsubmit="return false" hidden>
+      <p class="svnote"><span class="en">Preview — answers are not recorded.</span><span class="ko">미리보기 — 응답은 기록되지 않습니다.</span></p>
+      <div data-items="end"></div>
+    </form>
+    <div class="survey" id="sv-meas" hidden>
+      <ul class="measured">
+        <li><b><span class="en">Time to notice</span><span class="ko">알아차림 시간</span></b> — <span class="en">from cue onset to the first glance at the robot (webcam gaze; the robot is a 7–10° target). Censored at 180 s.</span><span class="ko">신호 시작부터 로봇을 처음 쳐다보기까지(웹캠 시선 추정, 로봇은 시야각 7–10°의 큰 표적). 180초에서 중단.</span></li>
+        <li><b><span class="en">Uptake</span><span class="ko">따름</span></b> — <span class="en">posture back within 2° of the participant's own upright baseline within 60 s of the first glance (second camera, keypoints only).</span><span class="ko">처음 쳐다본 뒤 60초 안에 자세가 본인의 바른 자세 기준 2° 이내로 돌아왔는지(두 번째 카메라, 관절점만 사용).</span></li>
+        <li><b><span class="en">Typing</span><span class="ko">타자</span></b> — <span class="en">words per minute and errors in 30-s windows before and after each cue.</span><span class="ko">각 신호 전후 30초 구간의 분당 단어 수와 오타.</span></li>
+        <li><b><span class="en">Visual covariates</span><span class="ko">시각 공변량</span></b> — <span class="en">the robot's colour contrast (CIELAB ΔE) and saliency in each pairing, from a photo at the participant's eye position.</span><span class="ko">참가자 눈 위치에서 찍은 사진으로 조합별 로봇의 색 대비(CIELAB ΔE)와 saliency.</span></li>
+        <li><b><span class="en">Privacy</span><span class="ko">개인정보</span></b> — <span class="en">images are never stored; only gaze angles, keypoints and timestamps.</span><span class="ko">영상은 저장하지 않고 시선 각도 · 관절점 · 시각만 남깁니다.</span></li>
+      </ul>
     </div>
   </section>
 
   <section id="checks">
-    <h2><span class="ko">사전 점검</span><span class="en">Preliminary checks</span></h2>
-    <div class="split">
-      <div>
-        <h3>Study 0 · <span class="ko">어울림에 시각적 대비가 섞여 들어갔나?</span><span class="en">Does visual similarity sneak in?</span></h3>
-        <p><span class="ko">어울리는 로봇이 늦게 보이는 이유가 단지 "색이 비슷해서"일 수도 있습니다. 앉은 시점 렌더에서 로봇과 주변의 색 대비(ΔE)와 스펙트럼 잔차 saliency를 쟀습니다.</span><span class="en">A congruent robot might be noticed later just because its colours match the desk. In the seated-view renders we measured the robot's colour contrast (ΔE) with its surroundings and its spectral-residual saliency.</span></p>
-        <div class="tablewrap"><table class="num">
-          <thead><tr><th><span class="ko">조합</span><span class="en">Pairing</span></th><th><span class="ko">어울림</span><span class="en">Cong.</span></th><th>ΔE</th><th><span class="ko">팔레트 겹침</span><span class="en">Palette</span></th><th>Saliency</th></tr></thead>
-          <tbody>
-            <tr><td><span class="ko">식물형 / 식물</span><span class="en">botanical / plant</span></td><td>✓</td><td>26.9</td><td>0.44</td><td>×9.4</td></tr>
-            <tr><td><span class="ko">식물형 / 기기</span><span class="en">botanical / device</span></td><td></td><td>20.9</td><td>0.45</td><td>×5.2</td></tr>
-            <tr><td><span class="ko">기계형 / 식물</span><span class="en">technical / plant</span></td><td></td><td>21.4</td><td>0.45</td><td>×10.7</td></tr>
-            <tr><td><span class="ko">기계형 / 기기</span><span class="en">technical / device</span></td><td>✓</td><td>14.6</td><td>0.59</td><td>×6.3</td></tr>
-          </tbody>
-        </table></div>
-        <p><span class="ko">두 외형의 실루엣 면적 차이는 0.9%. 어울림 − 안 어울림 차이는 ΔE −0.4, saliency −0.12로 거의 0인 반면, 책상 자체는 saliency를 약 4배 바꿉니다. 즉 이 자극에서는 저수준 대비가 어울림과 섞이지 않았습니다 — 효과가 나오면 "덜 보여서"가 아니라 의미상 어울림 때문이라고 해석할 수 있습니다.</span><span class="en">Silhouettes differ by 0.9 %. Congruent minus incongruent: ΔE −0.4, saliency −0.12 — near zero, while the desk changes saliency about 4×. Low-level contrast is not confounded with congruence here, so a noticing effect could not be explained by contrast alone.</span></p>
-      </div>
-      <div>
-        <h3><span class="ko">표본 크기 (가정 효과 크기로 시뮬레이션)</span><span class="en">Sample size (simulation under assumed effects)</span></h3>
-        <figure class="plain"><img src="assets/research/power_curves_mixed.png" alt="Simulated power against total N" loading="lazy"></figure>
-        <div class="tablewrap"><table class="num">
-          <thead><tr><th>N</th><th><span class="ko">전부 참가자 간</span><span class="en">All between</span></th><th><span class="ko">책상 참가자 내</span><span class="en">Desk within</span></th><th><span class="ko">효과 절반</span><span class="en">Effects halved</span></th></tr></thead>
-          <tbody>
-            <tr><td>60</td><td>.66 / .65 / .59</td><td>1.00 / .91 / .79</td><td>.70 / .34 / .28</td></tr>
-            <tr><td>100</td><td>.88 / .85 / .82</td><td>1.00 / .99 / .94</td><td>.91 / .55 / .43</td></tr>
-            <tr><td>200</td><td>.99 / .99 / .98</td><td>1.00 / 1.00 / 1.00</td><td>.99 / .85 / .70</td></tr>
-          </tbody>
-        </table></div>
-        <p class="sub"><span class="ko">H1 / H2 / H3의 검정력. 가정(측정 아님): 천천히 하는 신호의 알아차림 중앙값 15초, 갑작스러운 신호 2.5초, 어울림이 천천히 하는 신호를 +42% 늦춤, 따름 55% → 68%. 전부 참가자 간 설계는 효과가 절반이면 200명으로도 0.5–0.6이라 버렸습니다.</span><span class="en">Power for H1 / H2 / H3. Assumptions, not data: gradual median time-to-notice 15 s, abrupt 2.5 s; congruence +42 % on gradual noticing; uptake 55 % → 68 %. The all-between design was dropped: at half-size effects even N = 200 reaches only .5–.6.</span></p>
-      </div>
-    </div>
+    <h2 class="sec"><span class="en">Preliminary checks</span><span class="ko">사전 점검</span></h2>
+    <h3 class="sub"><span class="en">Does visual similarity sneak in with congruence?</span><span class="ko">어울림에 색 대비가 섞여 들어갔나?</span></h3>
+    <div class="tablewrap"><table class="num">
+      <thead><tr><th><span class="en">Pairing</span><span class="ko">조합</span></th><th><span class="en">Congruent</span><span class="ko">어울림</span></th><th>ΔE</th><th><span class="en">Palette overlap</span><span class="ko">팔레트 겹침</span></th><th>Saliency</th></tr></thead>
+      <tbody>
+        <tr><td><span class="en">botanical / plant</span><span class="ko">식물형 / 식물</span></td><td>✓</td><td>26.9</td><td>0.44</td><td>×9.4</td></tr>
+        <tr><td><span class="en">botanical / device</span><span class="ko">식물형 / 기기</span></td><td></td><td>20.9</td><td>0.45</td><td>×5.2</td></tr>
+        <tr><td><span class="en">technical / plant</span><span class="ko">기계형 / 식물</span></td><td></td><td>21.4</td><td>0.45</td><td>×10.7</td></tr>
+        <tr><td><span class="en">technical / device</span><span class="ko">기계형 / 기기</span></td><td>✓</td><td>14.6</td><td>0.59</td><td>×6.3</td></tr>
+      </tbody>
+    </table></div>
+    <p class="cap"><span class="en">Congruent minus incongruent: ΔE −0.4, saliency −0.12 — near zero, while the desk changes saliency about 4×. A noticing effect could not be explained by contrast alone.</span><span class="ko">어울림 − 안 어울림: ΔE −0.4, saliency −0.12로 거의 0. 반면 책상은 saliency를 약 4배 바꿉니다. 알아차림 효과가 나와도 색 대비만으로는 설명되지 않습니다.</span></p>
+    <h3 class="sub"><span class="en">How many participants?</span><span class="ko">몇 명이 필요한가?</span></h3>
+    <img src="assets/research/power_curves_mixed.png" alt="Simulated power against total N for H1, H2 and H3" loading="lazy" style="width:100%;max-width:100%;display:block;border-radius:8px">
+    <div class="tablewrap"><table class="num">
+      <thead><tr><th>N</th><th><span class="en">All between</span><span class="ko">전부 참가자 간</span></th><th><span class="en">Desk within</span><span class="ko">책상 참가자 내</span></th><th><span class="en">Effects halved</span><span class="ko">효과 절반</span></th></tr></thead>
+      <tbody>
+        <tr><td>60</td><td>.66 / .65 / .59</td><td>1.00 / .91 / .79</td><td>.70 / .34 / .28</td></tr>
+        <tr><td>100</td><td>.88 / .85 / .82</td><td>1.00 / .99 / .94</td><td>.91 / .55 / .43</td></tr>
+        <tr><td>200</td><td>.99 / .99 / .98</td><td>1.00 / 1.00 / 1.00</td><td>.99 / .85 / .70</td></tr>
+      </tbody>
+    </table></div>
+    <p class="cap"><span class="en">Simulated power for H1 / H2 / H3 under assumed effects (not data): gradual median time-to-notice 15 s, abrupt 2.5 s, +42 % when congruent; uptake 55 % → 68 %.</span><span class="ko">가정한 효과(측정 아님)로 시뮬레이션한 H1 / H2 / H3 검정력: 천천히 하는 신호 알아차림 중앙값 15초, 갑작스러운 신호 2.5초, 어울릴 때 +42%; 따름 55% → 68%.</span></p>
   </section>
 
   <section id="agenda">
-    <h2><span class="ko">이 로봇이 이어서 답할 수 있는 질문들</span><span class="en">What else this robot can answer</span></h2>
-    <div class="cards">
-      <article class="card">
-        <p class="k">P2</p>
-        <h3>Expressing Big Emotions in a Small Range</h3>
-        <p class="ko">값싼 책상 로봇은 관절 범위가 좁아서, 애니메이터가 만든 큰 감정 동작을 그대로 못 합니다. 흔한 해법(범위 밖을 잘라내기 · 축소)은 안전하지만 뜻을 망칠 수 있습니다. 흐름 정합(flow matching) 생성 모델 안에서 제약을 다루면, 잘라낼 때 무너지는 감정 인식이 유지되는지 비교합니다.</p>
-        <details class="en-abs"><summary><span class="ko">영문 초록</span><span class="en">Abstract</span></summary><p>Low-cost desk robots must express emotion within joint ranges far smaller than the motions animators or demonstrators produce. The usual remedy — clip or scale the motion to the limits — is safe but may destroy what the motion was meant to say. Building on flow-matching expression generators (Wang et al., 2025; ProAct, 2026) and on constraint-satisfying sampling (SafeDiffuser), we train a few-step flow model on <span class="ph">[RESULT: n]</span> motions and compare clipping, scaling, guidance during sampling, and guidance with a final projection. Recognition of six target emotions was <span class="ph">[RESULT]</span> for guided samples against <span class="ph">[RESULT]</span> for clipped ones; all constrained methods had zero limit violations by construction.</p></details>
-      </article>
-      <article class="card">
-        <p class="k">P3</p>
-        <h3>Tracking Error Is Not What People See</h3>
-        <p class="ko">값싼 서보는 늦고, 넘치고, 흔들립니다. 엔지니어는 추종 오차를 줄이지만 사람은 "의도한 뜻으로 보이는가"를 봅니다. 지연 · 오버슈트 · 머리 흔들림의 지각 문턱을 재서, 추종 오차보다 사람의 판단을 더 잘 예측하는 지각 가중 오차를 만듭니다.</p>
-        <details class="en-abs"><summary><span class="ko">영문 초록</span><span class="en">Abstract</span></summary><p>Character robots are animated in simulation and played on hobby-grade actuators that lag, overshoot and oscillate. Following Reitsma and Pollard's perceptual metrics for animation, we measure observers' thresholds for latency, overshoot and residual head oscillation, first in a calibrated digital twin (N = <span class="ph">[RESULT]</span>) and then live (N = <span class="ph">[RESULT]</span>), and build a perceptually weighted error that explained <span class="ph">[RESULT: R²]</span> of "as intended" ratings against <span class="ph">[RESULT: R²]</span> for RMS tracking error.</p></details>
-      </article>
-      <article class="card">
-        <p class="k">P4</p>
-        <h3>Does a Robot's Nudge Wear Off?</h3>
-        <p class="ko">로봇 한 대를 여러 사람의 책상에 몇 주씩 옮겨 가며, 구부정해질 때마다 무작위로 "몸+얼굴 신호 / 얼굴만 / 신호 없음"을 고르는 마이크로 무작위 시험입니다. 신호의 즉각 효과가 주가 지나며 줄어드는지, 방해해도 될 순간을 예측하면 더 커지는지 봅니다.</p>
-        <details class="en-abs"><summary><span class="ko">영문 초록</span><span class="en">Abstract</span></summary><p>We ran a micro-randomised trial with one six-joint desk robot moved between <span class="ph">[RESULT: n]</span> participants' desks for <span class="ph">[RESULT: k]</span> weeks each. At every detected slouch the robot was randomised to cue with an expressive body-and-face motion, the face only, or not at all, at a predicted-interruptible or a random moment. A body-and-face cue raised the probability of correction by <span class="ph">[RESULT]</span> over no cue; the effect <span class="ph">[RESULT: decayed / did not decay]</span> over weeks. Images were never stored.</p></details>
-      </article>
-    </div>
+    <h2 class="sec"><span class="en">What else this robot can answer</span><span class="ko">이 로봇이 이어서 답할 질문들</span></h2>
   </section>
+  </div>
+  <div class="wide cards">
+    <article class="card"><p class="k">P2</p><h4>Expressing Big Emotions in a Small Range</h4><p><span class="en">Cheap desk robots have small joint ranges. Clipping an animator's big motion keeps it safe but may destroy what it meant; we test whether handling the limits inside a flow-matching sampler keeps emotions recognisable.</span><span class="ko">값싼 책상 로봇은 관절 범위가 좁아, 큰 감정 동작을 잘라내면 안전하지만 뜻이 망가질 수 있습니다. 흐름 정합(flow matching) 샘플러 안에서 제약을 다루면 감정 인식이 유지되는지 시험합니다.</span></p></article>
+    <article class="card"><p class="k">P3</p><h4>Tracking Error Is Not What People See</h4><p><span class="en">Cheap servos lag, overshoot and wobble. We measure the perceptual thresholds of these artefacts and build an error metric that predicts "as intended" judgements better than tracking error.</span><span class="ko">값싼 서보는 늦고, 넘치고, 흔들립니다. 이 결함의 지각 문턱을 재서, 추종 오차보다 "의도대로 보이는가"를 더 잘 예측하는 오차 지표를 만듭니다.</span></p></article>
+    <article class="card"><p class="k">P4</p><h4>Does a Robot's Nudge Wear Off?</h4><p><span class="en">One robot moved between people's desks for weeks; at every slouch it is randomised to cue with body and face, face only, or not at all — does the effect fade?</span><span class="ko">로봇 한 대를 몇 주씩 여러 사람 책상에 두고, 구부정해질 때마다 몸+얼굴 / 얼굴만 / 신호 없음을 무작위로 고릅니다 — 효과가 시간이 지나며 줄어드는가?</span></p></article>
+  </div>
 
-  <section id="review">
-    <h2><span class="ko">자체 검토 — 유효한 논지인가?</span><span class="en">Self-review — are these valid theses?</span></h2>
-    <div class="tablewrap"><table>
-      <thead><tr><th></th><th><span class="ko">판정</span><span class="en">Verdict</span></th><th><span class="ko">무엇을 바꿨나</span><span class="en">What changed</span></th></tr></thead>
-      <tbody>
-        <tr><td><b>P1</b></td><td><span class="v ok"><span class="ko">유효</span><span class="en">valid</span></span></td><td><span class="ko">어울림을 외형 × 책상 상호작용으로 정의, 양방향 예측 명시, 움직임 시작(H2) 추가, 검정력 결과로 책상을 참가자 내로, 색 대비를 공변량으로.</span><span class="en">Congruence as skin × desk interaction; two competing predictions; motion onset added (H2); desk moved within participants after the power simulation; colour contrast as covariate.</span></td></tr>
-        <tr><td><b>P2</b></td><td><span class="v no"><span class="ko">처음 주장 그대로는 무효</span><span class="en">not valid as written</span></span></td><td><span class="ko">"최초"가 틀림 — 얼굴 포함 로봇 감정 표현의 flow matching(Wang 외 2025), 스트리밍 제스처(ProAct 2026), 제약 보장 샘플링(SafeDiffuser)이 이미 있음. "좁은 범위에서 샘플러 안의 제약 처리가 감정 인식을 지킨다"로 좁힘.</span><span class="en">"First" is false — flow matching for robot emotional expression incl. the face (Wang et al. 2025), streaming gestures (ProAct 2026) and constraint-guaranteed sampling (SafeDiffuser) exist. Narrowed to: in a small range, constraint handling inside the sampler keeps emotions legible where clipping does not.</span></td></tr>
-        <tr><td><b>P3</b></td><td><span class="v no"><span class="ko">질문이지 논지가 아님</span><span class="en">a question, not a thesis</span></span></td><td><span class="ko">타이밍 · 떨림 · 지연 지각은 각각 연구됨. "지각 가중 오차가 추종 오차보다 사람의 판단을 더 잘 예측한다"는 깨질 수 있는 주장으로 바꿈.</span><span class="en">Timing, jitter and delay perception are each studied; reframed as a claim that can fail: a perceptually weighted error predicts what people see better than tracking error.</span></td></tr>
-        <tr><td><b>P4</b></td><td><span class="v warn"><span class="ko">너무 크고 비쌈</span><span class="en">too big and costly</span></span></td><td><span class="ko">로봇 8–12대와 웨어러블이 필요. 로봇 한 대의 마이크로 무작위 시험, 주장 하나로 축소.</span><span class="en">Needed 8–12 robots and wearables; reframed as a single-robot micro-randomised trial with one primary claim.</span></td></tr>
-      </tbody>
-    </table></div>
-    <p class="sub"><span class="ko">권장 순서: P1 → P3 → P2 → P4. 선행연구는 초록과 출판사 페이지로 확인했고, 제출 전 원문 확인이 필요합니다.</span><span class="en">Recommended order: P1 → P3 → P2 → P4. Prior work was checked from abstracts and publisher pages and must be read in full before submission.</span></p>
+  <div class="page">
+  <section id="limits">
+    <h2 class="sec"><span class="en">Current limitations</span><span class="ko">현재의 한계</span></h2>
+    <ul>
+      <li><span class="en">No data yet: the robot has not been built and no participant has been run.</span><span class="ko">아직 데이터가 없습니다. 로봇을 만들지 않았고 참가자 실험도 하지 않았습니다.</span></li>
+      <li><span class="en">Effect sizes are assumed; at half the assumed size, H2 and H3 are under-powered at N = 100.</span><span class="ko">효과 크기는 가정입니다. 가정의 절반이면 N = 100에서 H2 · H3의 검정력이 부족합니다.</span></li>
+      <li><span class="en">The lab desk is not the participant's own desk, and 2 × 25 minutes says nothing about weeks.</span><span class="ko">실험실 책상은 참가자 자신의 책상이 아니고, 25분 두 번으로는 몇 주 뒤를 말할 수 없습니다.</span></li>
+      <li><span class="en">These stimuli test only the semantic route of congruence; colour contrast was deliberately not confounded with it.</span><span class="ko">이 자극은 어울림의 의미적 경로만 시험합니다. 색 대비는 일부러 섞지 않았습니다.</span></li>
+      <li><span class="en">Self-review of the other three papers: P2's "first" claim was false and narrowed; P3 was a question and became a falsifiable claim; P4 was too costly and became a single-robot trial.</span><span class="ko">나머지 세 논문의 자체검토: P2의 "최초" 주장은 틀려서 좁혔고, P3은 질문이라 반박 가능한 주장으로 바꿨으며, P4는 너무 비싸 로봇 한 대 시험으로 줄였습니다.</span></li>
+    </ul>
   </section>
 
   <section id="bibtex">
-    <h2>BibTeX</h2>
+    <h2 class="sec">BibTeX</h2>
     <pre class="bib"><code>@misc{notifyi2026fitsin,
-  title  = {Fits In, Stands Out? Workspace Congruence Trades the
-            Noticeability of a Desk Robot's Posture Cues for Their Uptake},
+  title  = {Fits In, Stands Out? Workspace Congruence and the
+            Noticeability of a Desk Robot's Posture Cues},
   author = {{Notifyi Team}},
   year   = {2026},
   note   = {Draft, pre-data},
@@ -360,20 +370,19 @@ ul.refs li { margin: 6px 0; }
   </section>
 
   <section id="refs">
-    <h2><span class="ko">주요 참고문헌</span><span class="en">Key references</span></h2>
+    <h2 class="sec"><span class="en">References</span><span class="ko">참고문헌</span></h2>
     <ul class="refs">
       <li>Abrams &amp; Christ (2003). Motion onset captures attention. <i>Psychological Science</i>.</li>
       <li>Simons, Franconeri &amp; Reimer (2000). Change blindness in the absence of a visual disruption. <i>Perception</i>.</li>
       <li>Goetz, Kiesler &amp; Powers (2003). Matching robot appearance and behavior to tasks to improve human-robot cooperation. <i>RO-MAN</i>.</li>
       <li>Loftus &amp; Mackworth (1978); Henderson, Weeks &amp; Hollingworth (1999). Semantic consistency and eye movements in scenes.</li>
-      <li>Wang et al. (2026). SitBot: a posture-mimicking robot to reduce slouching. <i>ICSR 2025</i>. · Owro (2022), UTS.</li>
-      <li>Wang, Gienger &amp; Zhang (2025), arXiv 2508.08999 · ProAct (2026), arXiv 2602.14048 · Xiao et al., SafeDiffuser, <i>ICLR 2025</i>.</li>
-      <li>Reitsma &amp; Pollard (2003). Perceptual metrics for character animation. <i>SIGGRAPH</i> · Zhou et al. (2017). Expressive robot motion timing. <i>HRI</i>.</li>
-      <li>Klasnja et al. (2015). Microrandomized trials · Nahum-Shani et al. (2018). JITAIs · Lacey &amp; Caudwell (2019). Cuteness as a dark pattern in home robots. <i>HRI</i>.</li>
+      <li>Bartneck, Kulić, Croft &amp; Zoghbi (2009). Measurement instruments for the anthropomorphism, animacy, likeability, perceived intelligence and perceived safety of robots. <i>Int. J. Social Robotics</i>.</li>
+      <li>Wang et al. (2026). SitBot: a posture-mimicking robot to reduce slouching. <i>ICSR 2025</i> · Owro (2022), UTS.</li>
       <li>Hou &amp; Zhang (2007). Saliency detection: a spectral residual approach. <i>CVPR</i>.</li>
     </ul>
   </section>
-  <p class="foot"><span class="ko">Notifyi 프로젝트의 AI 리드가 팀을 위해 쓴 초안입니다. 동료 평가 전이며, 참가자 실험도 로봇 제작도 아직 하지 않았습니다.</span><span class="en">Drafts written by the Notifyi project's AI lead for the team. Not peer-reviewed; no participant has been run and the robot has not been built.</span></p>
+  <p class="foot"><span class="en">Drafts by the Notifyi project's AI lead for the team. Not peer-reviewed.</span><span class="ko">Notifyi 프로젝트의 AI 리드가 팀을 위해 쓴 초안입니다. 동료 평가 전입니다.</span></p>
+  </div>
 </main>
 
 <div id="lightbox" class="overlay lb" hidden><img alt=""><button type="button" class="close" data-close="lightbox" aria-label="Close">✕</button></div>
@@ -389,15 +398,86 @@ ul.refs li { margin: 6px 0; }
   let saved = null; try { saved = localStorage.getItem('notifyi-lang'); } catch (e) {}
   setLang(saved === 'en' ? 'en' : 'ko');
   document.querySelectorAll('.lang button').forEach(b => { b.onclick = () => setLang(b.dataset.lang); });
-  const frames = [...document.querySelectorAll('.demo iframe')];
+
+  // live twin demo
+  const frames = [...document.querySelectorAll('.frame iframe')];
   const setSkin = rev => {
     frames.forEach(f => { f.src = `index.html?rev=${rev}&motion=${f.dataset.motion}&ui=0&axes=0&play=1`; });
     document.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.skin === rev)));
   };
   document.querySelectorAll('.seg button').forEach(b => { b.onclick = () => setSkin(b.dataset.skin); });
   setSkin('char_sprout_c');
+
+  // stimuli lightbox
   const lb = document.getElementById('lightbox');
-  document.querySelectorAll('.stim .cell').forEach(c => { c.onclick = () => { lb.querySelector('img').src = c.dataset.img; lb.querySelector('img').alt = c.querySelector('img').alt; lb.hidden = false; }; });
+  document.querySelectorAll('.stim button').forEach(c => { c.onclick = () => { const i = lb.querySelector('img'); i.src = c.dataset.img; i.alt = c.querySelector('img').alt; lb.hidden = false; }; });
+
+  // survey instruments: one list, rendered as forms (preview only)
+  const AG = { lo: ['전혀 그렇지 않다', 'Strongly disagree'], hi: ['매우 그렇다', 'Strongly agree'] };
+  const T = (ko, en) => `<span class="ko">${ko}</span><span class="en">${en}</span>`;
+  const ITEMS = {
+    s1: [
+      { c: 'F1', ko: '이 로봇은 이 책상에 어울린다.', en: 'This robot fits this desk.', n: 7, a: AG },
+      { c: 'F2', ko: '이 로봇은 이 책상에서 어색해 보인다.', en: 'The robot looks out of place here.', n: 7, a: AG, rev: true },
+      { c: 'F3', ko: '이 로봇과 책상은 원래 함께 있던 것처럼 보인다.', en: 'The robot and the desk look like they belong together.', n: 7, a: AG },
+      { c: 'N1', ko: '이 사진에서 로봇이 얼마나 눈에 띄나요?', en: 'How noticeable is the robot in this picture?', n: 7, a: { lo: ['전혀', 'Not at all'], hi: ['매우', 'Very'] } },
+      { c: 'L1', ko: '이 로봇을 이 책상에 두고 싶은 정도는?', en: 'How much would you like to have this robot on this desk?', n: 7, a: { lo: ['전혀', 'Not at all'], hi: ['매우', 'Very much'] } },
+      { g: ['네 장을 모두 평가한 뒤', 'After all four images'] },
+      { c: 'AC', ko: "이 문항에는 '약간 그렇다'를 선택해 주세요.", en: 'Please select "somewhat agree" for this item.', n: 7, a: AG, note: ['주의 확인', 'attention check'] },
+      { c: 'O1', ko: '어떤 점 때문에 로봇이 책상에 어울리거나 어울리지 않는다고 느꼈나요?', en: 'What made a robot fit or not fit a desk?', open: true },
+    ],
+    blk: [
+      { g: ['어울림 — 방금 사용한 책상', 'Perceived fit — the desk you just used'] },
+      { c: 'F1', ko: '이 로봇은 방금 사용한 책상에 어울렸다.', en: 'This robot fitted the desk you just used.', n: 7, a: AG },
+      { c: 'F2', ko: '이 로봇은 그 책상에서 어색해 보였다.', en: 'The robot looked out of place on that desk.', n: 7, a: AG, rev: true },
+      { c: 'F3', ko: '이 로봇과 그 책상은 원래 함께 있던 것처럼 보였다.', en: 'The robot and that desk looked like they belonged together.', n: 7, a: AG },
+      { g: ['귀찮음', 'Annoyance'] },
+      { c: 'A1', ko: '로봇의 움직임이 귀찮았다.', en: "The robot's movements were annoying.", n: 7, a: AG },
+      { c: 'A2', ko: '로봇 때문에 하던 일에 집중하기 어려웠다.', en: 'The robot made it hard to concentrate on my task.', n: 7, a: AG },
+      { c: 'A3', ko: '이 로봇을 내 책상에서 치우고 싶다.', en: 'I would like to remove this robot from my desk.', n: 7, a: AG },
+      { g: ['호감 — Godspeed IV (Bartneck 외, 2009), 5점 의미분별', 'Likeability — Godspeed IV (Bartneck et al., 2009), 5-point'] },
+      { c: 'G1', ko: '이 로봇은…', en: 'This robot is…', n: 5, a: { lo: ['싫다', 'Dislike'], hi: ['좋다', 'Like'] } },
+      { c: 'G2', ko: '이 로봇은…', en: 'This robot is…', n: 5, a: { lo: ['비우호적이다', 'Unfriendly'], hi: ['우호적이다', 'Friendly'] } },
+      { c: 'G3', ko: '이 로봇은…', en: 'This robot is…', n: 5, a: { lo: ['불친절하다', 'Unkind'], hi: ['친절하다', 'Kind'] } },
+      { c: 'G4', ko: '이 로봇은…', en: 'This robot is…', n: 5, a: { lo: ['불쾌하다', 'Unpleasant'], hi: ['유쾌하다', 'Pleasant'] } },
+      { c: 'G5', ko: '이 로봇은…', en: 'This robot is…', n: 5, a: { lo: ['끔찍하다', 'Awful'], hi: ['멋지다', 'Nice'] } },
+      { g: ['스스로 알아차린 정도', 'Self-reported noticing'] },
+      { c: 'S1', ko: '이번 블록에서 로봇이 몇 번 움직였다고 생각하나요?', en: 'How many times do you think the robot moved in this block?', num: true },
+      { c: 'S2', ko: '로봇이 움직였을 때 주로 무엇을 했나요?', en: 'When the robot moved, what did you mostly do?', choice: [['자세를 고쳤다', 'Sat up'], ['로봇을 쳐다봤다', 'Looked at it'], ['하던 일을 계속했다', 'Kept working'], ['기억나지 않는다', "Don't remember"]] },
+    ],
+    end: [
+      { c: 'E1', ko: '세션 동안 로봇이 무엇인가를 했나요? 했다면 무엇이었나요?', en: 'Did the robot do anything during the session? If so, what?', open: true },
+      { c: 'E2', ko: '두 책상에서 로봇이 다르게 느껴졌나요? 어떻게요?', en: 'Did the robot feel different on the two desks? How?', open: true },
+      { c: 'E3', ko: '이 연구가 무엇을 알아보려 했다고 생각하나요?', en: 'What do you think this study was about?', open: true, note: ['인식 확인 — 가설을 말하면 제외', 'awareness probe — excluded if the hypothesis is stated'] },
+      { c: 'E4', ko: '평소 하루에 몇 시간 책상에서 일하나요?', en: 'How many hours a day do you usually work at a desk?', num: true },
+    ],
+  };
+  const render = (key, host) => {
+    host.innerHTML = ITEMS[key].map((it, k) => {
+      if (it.g) return `<p class="svgroup">${T(it.g[0], it.g[1])}</p>`;
+      const id = `${key}-${it.c}-${k}`;
+      const lg = `<legend><span class="code">${it.c}</span>${T(it.ko, it.en)}${it.rev ? `<span class="rev">${T('(역문항)', '(reversed)')}</span>` : ''}${it.note ? `<span class="rev">${T('· ' + it.note[0], '· ' + it.note[1])}</span>` : ''}</legend>`;
+      if (it.open) return `<fieldset class="q">${lg}<textarea id="${id}" rows="2" aria-label="${it.en}"></textarea></fieldset>`;
+      if (it.num) return `<fieldset class="q">${lg}<input id="${id}" type="number" min="0" aria-label="${it.en}"></fieldset>`;
+      if (it.choice) return `<fieldset class="q">${lg}<div class="choices">${it.choice.map((c, j) => `<label><input type="radio" name="${id}" value="${j}">${T(c[0], c[1])}</label>`).join('')}</div></fieldset>`;
+      const pts = Array.from({ length: it.n }, (_, j) => `<label><input type="radio" name="${id}" value="${j + 1}" aria-label="${j + 1}">${j + 1}</label>`).join('');
+      return `<fieldset class="q">${lg}<div class="scale" style="--n:${it.n}"><span class="lo">${T(it.a.lo[0], it.a.lo[1])}</span>${pts}<span class="hi">${T(it.a.hi[0], it.a.hi[1])}</span></div></fieldset>`;
+    }).join('');
+  };
+  document.querySelectorAll('[data-items]').forEach(h => render(h.dataset.items, h));
+  document.querySelectorAll('.svtabs button').forEach(b => {
+    b.onclick = () => {
+      document.querySelectorAll('.svtabs button').forEach(x => x.setAttribute('aria-selected', String(x === b)));
+      ['s1', 'blk', 'end', 'meas'].forEach(k => { document.getElementById('sv-' + k).hidden = k !== b.dataset.sv; });
+    };
+  });
+  document.querySelectorAll('.svpick button').forEach(b => {
+    b.onclick = () => {
+      document.getElementById('svimg').src = b.dataset.img;
+      document.querySelectorAll('.svpick button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      document.querySelectorAll('#sv-s1 input[type=radio]').forEach(r => { r.checked = false; });
+    };
+  });
 })();
 </script>
 
