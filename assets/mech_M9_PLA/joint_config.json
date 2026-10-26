@@ -1,7 +1,7 @@
 {
  "schema": "notifyi.joint_config/1",
  "revision": "mech_M9_PLA",
- "generated": "2026-10-26T22:30:10",
+ "generated": "2026-10-27T06:53:20",
  "units": {
   "length": "mm",
   "angle": "deg",
@@ -64,7 +64,7 @@
     "yoke_axis_to_base": 23.0
    }
   },
-  "yoke_material": "pla_matte_charcoal",
+  "yoke_material": "cream",
   "yoke_fill": 1.0,
   "fork_slot_w": 9.0,
   "hub_recess_d": 23.0,
@@ -82,7 +82,7 @@
    "floor_t": 3.0,
    "p1_floor_gap": 47.5,
    "yoke_base_disc_d": null,
-   "yoke_material": "pla_matte_charcoal",
+   "yoke_material": "cream",
    "clear": 1.5,
    "wall": 1.2,
    "sweep_step_deg": 8.0,
@@ -152,7 +152,7 @@
      ],
      "t": 1.2,
      "r": 7.0,
-     "material": "pla_black"
+     "material": "gloss_black"
     },
     "cable_holes": null,
     "deck_screws": null,
@@ -545,17 +545,17 @@
    },
    "turntable_ring_d": 58.0,
    "materials": {
-    "base_cover": "pla_matte_ivory_white",
-    "stone2": "pla_matte_ivory_white",
-    "stone3": "pla_matte_ivory_white",
-    "head": "pla_matte_ivory_white",
-    "caps": "pla_matte_charcoal",
-    "caps_turret": "pla_matte_charcoal",
-    "caps_mid_yoke": "pla_matte_charcoal",
-    "caps_neck_yoke": "pla_matte_charcoal",
+    "base_cover": "cream",
+    "stone2": "cream",
+    "stone3": "cream",
+    "head": "cream",
+    "caps": "frame_dark",
+    "caps_turret": "frame_dark",
+    "caps_mid_yoke": "frame_dark",
+    "caps_neck_yoke": "frame_dark",
     "lid": "accent_warm",
     "nest": "moss_deep",
-    "face": "pla_matte_ivory_white",
+    "face": "cream",
     "eyes": "eye_glow",
     "nose": "frame_dark",
     "tuft": "skin",
@@ -565,19 +565,18 @@
     "leaf": "sage_pale",
     "arms": "oak",
     "led_band": "led_glow",
-    "skins": "pla_matte_ivory_white",
+    "skins": "cream",
     "waist": "sage",
-    "plinth": "pla_matte_charcoal",
-    "hip_ball": "pla_matte_ivory_white",
+    "plinth": "frame_dark",
+    "hip_ball": "cream",
     "body_leaf": "cream",
-    "neck_ball": "pla_matte_ivory_white",
+    "neck_ball": "cream",
     "neck_cap": "cream",
-    "accent2": "pla_matte_army_green",
-    "antenna_tips": "pla_matte_army_green",
-    "shoulder": "pla_matte_ivory_white",
-    "frame_m9": "pla_matte_charcoal",
-    "antenna_rods": "pla_matte_charcoal",
-    "face_ring": "pla_natural",
+    "accent2": "sage",
+    "antenna_tips": "sage",
+    "frame_m9": "frame_dark",
+    "turntable": "sage",
+    "bushing": "sage",
     "battery": "cam_blue",
     "xt60": "pla_yellow"
    },
@@ -2021,7 +2020,33 @@
       30.0,
       "rear"
      ]
-    ]
+    ],
+    "battery": {
+     "show": [
+      75.0,
+      35.0,
+      27.0,
+      125.0,
+      "3S 11.1 V 1500 mAh with XT60 (typical 75 x 35 x 27 mm, about 125 g)"
+     ],
+     "max": [
+      90.0,
+      37.0,
+      30.0
+     ]
+    },
+    "door": {
+     "y": [
+      -53.5,
+      -13.5
+     ],
+     "z": [
+      50.0,
+      84.0
+     ],
+     "r": 3.0
+    },
+    "buck": null
    },
    "pivot_cap_ribs": 3,
    "press_fits": [
@@ -4093,39 +4118,6 @@
    "module": null
   },
   {
-   "link": "base",
-   "mesh": "part/buck_4s_envelope",
-   "T": [
-    [
-     1.0,
-     0.0,
-     0.0,
-     0.0
-    ],
-    [
-     0.0,
-     1.0,
-     0.0,
-     0.0
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     0.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "envelope",
-   "name": "4S step-down (keep-out)",
-   "module": null
-  },
-  {
    "link": "upper",
    "mesh": "part/shoulder_plate",
    "T": [
@@ -4160,7 +4152,7 @@
   },
   {
    "link": "turret",
-   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "mesh": "part/pivot_cap_1p0_frame_dark",
    "T": [
     [
      1.0,
@@ -4193,7 +4185,7 @@
   },
   {
    "link": "turret",
-   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "mesh": "part/pivot_cap_1p0_frame_dark",
    "T": [
     [
      -1.0,
@@ -4226,7 +4218,7 @@
   },
   {
    "link": "mid_yoke",
-   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "mesh": "part/pivot_cap_1p0_frame_dark",
    "T": [
     [
      0.0,
@@ -4259,7 +4251,7 @@
   },
   {
    "link": "mid_yoke",
-   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "mesh": "part/pivot_cap_1p0_frame_dark",
    "T": [
     [
      -0.0,
@@ -4292,7 +4284,7 @@
   },
   {
    "link": "neck_yoke",
-   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "mesh": "part/pivot_cap_1p0_frame_dark",
    "T": [
     [
      1.0,
@@ -4325,7 +4317,7 @@
   },
   {
    "link": "neck_yoke",
-   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "mesh": "part/pivot_cap_1p0_frame_dark",
    "T": [
     [
      -1.0,
@@ -7453,11 +7445,11 @@
   {
    "link": "base",
    "name": "battery_sled",
-   "mass_g": 8.81,
+   "mass_g": 8.15,
    "p": [
-    -23.528,
-    -33.539,
-    58.692
+    -20.823,
+    -33.54,
+    56.896
    ],
    "source": "M9 battery sled + door (the door is the left wall's battery hatch, in the shell's colour): plate for a pack <= 90 x 39.5 x 36.5 mm, Velcro strap slots, a lip that keeps the pack out of the plug pocket. PLA, print on the plate, 4 walls, 25 % gyroid"
   },
@@ -7486,11 +7478,11 @@
   {
    "link": "base",
    "name": "base_shell",
-   "mass_g": 118.31,
+   "mass_g": 118.92,
    "p": [
-    2.425,
-    -9.976,
-    61.37
+    2.111,
+    -10.096,
+    61.498
    ],
    "source": "M9 base shell 120 x 103 x 77.5 mm (deck at z 93.5): four M3 inserts at the bottom, battery door, DC-jack / switch / microSD slots open at the bottom edge, rear vents, front air holes, deck cable hole. PLA, print upside down (deck on the bed), 6 walls, 15 % gyroid, no support"
   },
@@ -7622,9 +7614,9 @@
    "p": [
     11.5,
     -33.55,
-    70.35
+    67.1
    ],
-   "source": "largest pack the bay takes: 90 x 39.5 x 36.5 mm (covers the 2S / 3S / 4S 1500 mAh packs listed in 08_Docs/M9_PLA_COMPACT_BASE.md)"
+   "source": "largest pack the bay takes: 90 x 37 x 30 mm (see 08_Docs/M9_PLA_COMPACT_BASE.md)"
   },
   {
    "link": "base",
@@ -7635,7 +7627,7 @@
     -33.55,
     65.6
    ],
-   "source": "3S 11.1 V 1500 mAh (typical 75 x 35 x 27 mm, about 125 g) - not bought, sizes from sellers' listings"
+   "source": "3S 11.1 V 1500 mAh with XT60 (typical 75 x 35 x 27 mm, about 125 g) - not bought, sizes from sellers' listings"
   },
   {
    "link": "base",
@@ -7647,17 +7639,6 @@
     57.6
    ],
    "source": "XT60 pair: the pack's lead plugged into the OpenCR pigtail, lying in the sled's pocket by the door"
-  },
-  {
-   "link": "base",
-   "name": "4S step-down (keep-out)",
-   "mass_g": 0.0,
-   "p": [
-    27.0,
-    -45.5,
-    34.5
-   ],
-   "source": "ONLY with a 4S pack: a step-down regulator to <= 12 V, >= 5 A (e.g. a 25 x 25 mm module) hung under the servo deck; 2XL430's input limit is 12.0 V. Not designed"
   },
   {
    "link": "upper",
@@ -8409,7 +8390,7 @@
   }
  ],
  "notes": [
-  "Revision intent: Compact PLA build for the Cubicon Single Plus: OpenCR and Pi stacked under the base servo (base 120 x 103 mm, was 137 x 152.5), LiPo sled (2S/3S/4S 1500 mAh, XT60) behind a door in the left wall, the OpenCR's DC jack and switch through the left wall, every part a separate PLA print.",
+  "Revision intent: Compact PLA build for the Cubicon Single Plus: OpenCR and Pi stacked under the base servo (base 120 x 103 mm, was 137 x 152.5), 3S 1500 mAh LiPo sled (XT60) behind a door in the left wall, the OpenCR's DC jack and switch through the left wall, every part a separate white-PLA print, painted in RC3's colours.",
   "Inactive axes: P1.B (hypothesis ID 1) and P4.A (hypothesis ID 8) drive nothing and must not be commanded. With torque OFF they are free to spin but carry no load in this topology.",
   "Joint sign: positive = direction of an increasing DYNAMIXEL position (CCW seen facing the horn, per e-Manual convention) - NOT verified on hardware.",
   "The STEP does not model the output shaft; horn/idler meshes are excluded from collision proxies.",

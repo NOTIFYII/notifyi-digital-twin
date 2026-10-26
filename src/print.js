@@ -8,10 +8,11 @@ import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 const ROOT = 'assets/mech_M9_PLA/print';
 const BED = [240, 190];
 const GROUPS = { all: '전체', base: '베이스', body: '몸통', head: '머리' };
-const HEX = { 'PLA matte ivory white': 0xfffff0, 'PLA matte charcoal': 0x36454f, 'PLA matte army green': 0x505a46,
-              'PLA natural (translucent)': 0xd9dccd, 'PLA black': 0x161616 };
-const KO_COL = { 'PLA matte ivory white': 'PLA 매트 아이보리 화이트', 'PLA matte charcoal': 'PLA 매트 차콜',
-                 'PLA matte army green': 'PLA 매트 아미 그린', 'PLA natural (translucent)': 'PLA 내추럴 (반투명)', 'PLA black': 'PLA 블랙' };
+// every part is printed in white PLA and painted afterwards in RC3's colours (owner, 2026-10-27); 'unpainted' parts stay white
+const HEX = { cream: 0xdcd2b4, dark: 0x4a5050, olive: 0x6f8452, black: 0x161616, unpainted: 0xf4f4f0 };
+const KO_COL = { cream: '크림 (RC3 외피 · 머리 · 요크)', dark: '다크 그레이 (RC3 프레임)', olive: '올리브 (RC3 잎 · 귀)', black: '검정 (RC3 앞 패널)',
+                 unpainted: '칠하지 않음 — 흰 PLA 그대로 (빛이 퍼짐)' };
+const swatch = c => `<i class="sw" style="background:#${(HEX[c] ?? 0xcccccc).toString(16).padStart(6, '0')}"></i>`;
 const $ = s => document.querySelector(s);
 
 const el = $('#view'), status = $('#status');
@@ -47,7 +48,8 @@ async function show(r) {
   $('#pname').textContent = `${r.nameKo}${r.qty > 1 ? ` × ${r.qty}` : ''}`;
   const sl = r.slicer || {};
   const facts = [
-    ['색 (예시)', KO_COL[r.colour] || r.colour], ['벽 · 채움 · 레이어', `${r.perimeters}겹 · ${r.infill_pct}% · ${r.layer_mm} mm`],
+    ['필라멘트', 'PLA 흰색'], ['칠할 색', swatch(r.colour) + (KO_COL[r.colour] || r.colour)],
+    ['벽 · 채움 · 레이어', `${r.perimeters}겹 · ${r.infill_pct}% · ${r.layer_mm} mm`],
     ['서포트 · 브림', `${r.supports ? '필요 (자동)' : '없음'} · ${r.brim_mm ? r.brim_mm + ' mm' : '없음'}`],
     ['베드 위 크기', `${r.on_bed_mm.join(' × ')} mm ${r.fits_bed ? '✓ 들어감' : '✗ 안 들어감'}`],
     ['예상 (1개)', sl.seconds ? `${hms(sl.seconds)} · ${sl.filament_g} g` : '–'], ['출력 방향', r.orientKo || r.orientation]];
@@ -59,7 +61,7 @@ async function show(r) {
   if (my !== ticket) return;
   geo.rotateX(-Math.PI / 2); geo.computeVertexNormals();
   if (mesh) { scene.remove(mesh); mesh.geometry.dispose(); }
-  const col = HEX[r.colour] ?? 0xcccccc, nat = r.colour.includes('natural');
+  const col = HEX[r.colour] ?? 0xcccccc, nat = r.colour === 'unpainted';
   mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: col, roughness: 0.6, metalness: 0.0, transparent: nat, opacity: nat ? 0.78 : 1 }));
   scene.add(mesh);
   geo.computeBoundingBox(); const bb = geo.boundingBox;

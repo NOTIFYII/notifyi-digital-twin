@@ -111,6 +111,7 @@
   #plist { list-style:none; padding:0; margin:4px 0 10px; display:grid; gap:4px; }
   #plist button { width:100%; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:8px; text-align:left; padding:5px 8px; }
   #plist i { display:inline-block; width:11px; height:11px; border-radius:3px; border:1px solid rgba(255,255,255,.25); }
+  .facts i.sw { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:6px; vertical-align:-1px; border:1px solid rgba(255,255,255,.3); }
   #plist .nm em { color:var(--mute); font-style:normal; }
   #plist .mt { color:var(--mute); font-size:11px; font-variant-numeric:tabular-nums; white-space:nowrap; }
   #pname { font-size:13.5px; color:var(--ink); text-transform:none; letter-spacing:0; margin:12px 0 4px; }
@@ -145,7 +146,7 @@
 <div id="printPage">
   <aside class="panel" id="printSide">
     <h1>M9 PLA · 부품별 출력</h1>
-    <p class="note">학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)에서 <b>PLA만</b>으로 뽑는 부품입니다. RC3의 A–F 묶음(런너) 대신 <b>부품마다 따로</b> 출력하고, 각 STL은 이미 출력 방향으로 돌려 베드 가운데에 놓았습니다.</p>
+    <p class="note">학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)에서 <b>흰 PLA</b>로 뽑고, 다 뽑은 뒤 <b>RC3 원래 색으로 칠합니다</b>. RC3의 A–F 묶음(런너) 대신 <b>부품마다 따로</b> 출력하고, 각 STL은 이미 출력 방향으로 돌려 베드 가운데에 놓았습니다. 목록의 색 점 = 칠할 색.</p>
     <p class="sub" id="summary">불러오는 중…</p>
     <p class="btns"><a id="zip" class="btn" href="#">전체 STL (zip)</a> <a class="btn" id="tablejson" href="#" target="_blank" rel="noopener">출력표 JSON</a></p>
     <div class="chips" id="groups"></div>
@@ -167,6 +168,16 @@
       </ul>
     </details>
     <details>
+      <summary>칠하기 (흰 PLA → RC3 색)</summary>
+      <ul>
+        <li><b>색</b>: 크림 — 베이스 외피 · 배터리 문 · 얼굴 상자 · 머리 윗판 · 카메라 받침 · 요크 · 어깨판 / 다크 그레이 — 바닥 트레이 · 서보 데크 · Pi 레일 · 피벗 캡 · 안테나 막대 · 문 버튼 / 올리브 — 안테나 잎 · 귀 · 턴테이블 링 · 케이블 부싱 / 검정 — 앞 패널.</li>
+        <li><b>칠하지 않음</b>: 얼굴 테 · 라이트 띠 — 흰 PLA가 빛을 퍼뜨립니다(밝기는 실물에서 확인).</li>
+        <li><b>순서</b>: 서포트 제거 → 400방 사포 → <b>인서트를 먼저 압입</b>(인두 열에 도막이 녹으므로) → 플라스틱용 프라이머 → 아크릴 스프레이를 얇게 2–3번 → 무광 클리어.</li>
+        <li><b>칠하지 말고 가릴 곳</b>(도막 0.05–0.1 mm만큼 빡빡해짐): 인서트 · 나사 구멍, 요크 허브 구멍과 피벗 캡 축 · 크러시 리브, 배터리 슬레드가 미끄러지는 면과 문 테두리, 안테나 소켓 · 막대 끝, 어깨판이 서보에 닿는 면, 외피와 바닥 트레이가 맞닿는 테두리.</li>
+        <li>안쪽 부품(서보 데크 · Pi 레일)은 보이지 않으니 칠하지 않아도 됩니다. 12V · POWER · SD 각인은 두껍게 칠하면 메워지니, 칠한 뒤 검은 먹선으로 채우면 잘 보입니다.</li>
+      </ul>
+    </details>
+    <details>
       <summary>베이스 조립 순서</summary>
       <ol>
         <li>인서트를 인두로 압입: M3 14개 (OpenCR 받침 4 · 기둥 위 5 · 외피 보스 4 · 문 버튼 보스 1), M2.5 8개 (레일 받침 4 · Pi 레일 4).</li>
@@ -174,10 +185,10 @@
         <li>Pi 레일 2개를 기둥 받침에, Pi를 레일에 M2.5 × 6. USB 업앵글 어댑터 2개 꽂기.</li>
         <li>DXL · USB · 5 V · 배터리 피그테일 배선 → 서보 데크를 기둥에 M3 × 8, P1을 거치대에 M2.5.</li>
         <li>외피를 위에서 씌우고(왼쪽 슬롯이 아래로 열려 있음) 바닥에서 M3 × 12 4개. 케이블 부싱 끼우기.</li>
-        <li>턴테이블 링 · 몸통 · 머리 조립 (RC3와 같은 순서). 배터리는 슬레드에 묶고 XT60 연결 후 밀어 넣고 버튼을 돌려 잠금.</li>
+        <li>턴테이블 링 · 몸통 · 머리 조립 (RC3와 같은 순서). 3S 배터리는 슬레드에 묶고 XT60 연결 후 밀어 넣고 버튼을 돌려 잠금.</li>
       </ol>
     </details>
-    <p class="sub">예상 시간 · 무게는 PrusaSlicer 2.9.6 <b>해석값</b>(0.4 mm 노즐, 40–60 mm/s의 느린 프린터로 가정)이라 Cubicon의 Cubicreator와 다를 수 있습니다. 색 이름은 3DFARM PLA 목록 기준의 예시이고 학교 필라멘트로 바꿔도 됩니다. 실물 출력 · 조립 · 결선 · 발열은 <b>검증 전</b>입니다.</p>
+    <p class="sub">예상 시간 · 무게는 PrusaSlicer 2.9.6 <b>해석값</b>(0.4 mm 노즐, 40–60 mm/s의 느린 프린터로 가정)이라 Cubicon의 Cubicreator와 다를 수 있습니다. 미리보기 색은 칠한 뒤의 RC3 색입니다. 실물 출력 · 칠 · 조립 · 결선 · 발열은 <b>검증 전</b>입니다.</p>
     <p class="sub">드래그: 회전 · 휠: 확대 · 우클릭: 이동 · 흰 사각형 = Cubicon 베드 240 × 190 mm</p>
   </aside>
   <div id="view"><div id="status" role="status">STL을 불러오는 중…</div></div>
@@ -190,28 +201,31 @@
     <ul>
       <li>베이스 <b>137 × 152.5 mm → 120 × 103 mm</b> (책상 면적 41 % 감소). 대신 층이 생겨 높이가 47.5 → 93.5 mm, 모든 관절이 46 mm 올라갔습니다.</li>
       <li>층 구조: <b>바닥 OpenCR → 레일 위 Raspberry Pi → 서보 데크 위 베이스 모터(P1) + 배터리 슬레드</b>. 외피는 위에서 씌우고 바닥에서 나사 4개.</li>
-      <li>모든 출력 부품을 <b>PLA</b>로, 학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)에서 <b>하나씩 따로</b> 출력 — 22개 파일 · 31개 조각, 모두 베드에 들어감. 자세한 건 출력 도면 탭.</li>
+      <li>모든 출력 부품을 <b>흰 PLA</b>로(칠은 나중에), 학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)에서 <b>하나씩 따로</b> 출력 — 22개 파일 · 31개 조각, 모두 베드에 들어감. 자세한 건 출력 도면 탭.</li>
       <li>CAD 검사: 부품끼리 간섭 없음, 소프트 리밋 안 3,502개 자세 충돌 0, 기본 동작 10개 충돌 0, 최대 중력 토크 0.185 N·m(상한 0.28의 66 %), 정적 전도 여유 최소 27.0 mm. <b>실물 출력 · 조립 · 결선 · 발열은 검증 전</b>입니다.</li>
     </ul>
-    <h3>배터리 · 전원 (1500 mAh LiPo, XT60)</h3>
+    <h3>배터리 · 전원 — 3S 1500 mAh LiPo, XT60 (2026-10-27 결정)</h3>
     <dl>
-      <dt>권장</dt>
-      <dd><b>3S 11.1 V</b>. 2XL430-W250의 입력 범위는 6.5–12.0 V, 권장 11.1 V이고, ROBOTIS TurtleBot3도 같은 계열(XL430)을 3S 11.1 V로 씁니다. 완충 직후 12.6 V는 표기 상한보다 조금 높으니 실물에서 확인하세요.</dd>
-      <dt>2S 7.4 V</dt>
-      <dd>범위 안이라 쓸 수 있지만 모터 힘과 속도가 약 2/3로 줄어듭니다(전압에 비례한다고 가정, 측정 안 함).</dd>
-      <dt>4S 14.8 V</dt>
-      <dd><b>그대로 연결하면 안 됩니다</b> — 완충 16.8 V로 모터 상한 12 V를 넘습니다. 12 V 이하 · 5 A 이상 강압 컨버터가 필요하고, 자리만 Pi 앞쪽에 비워 두었습니다(설계 안 됨).</dd>
+      <dt>전압</dt>
+      <dd><b>3S 11.1 V</b> (완충 12.6 V). 2XL430-W250의 입력 범위는 6.5–12.0 V, 권장 11.1 V이고, ROBOTIS TurtleBot3도 같은 계열(XL430)을 3S로 씁니다. 완충 직후 12.6 V는 표기 상한보다 조금 높으니 첫 충전 뒤 서보 상태를 확인하세요.</dd>
       <dt>배터리 칸</dt>
-      <dd>최대 <b>90 × 39.5 × 36.5 mm</b>. 판매 목록 기준 1500 mAh 2S(70 × 35 × 18), 3S(71 × 34 × 26 · 88 × 35 × 26), 4S(75 × 39.5 × 34.5 · 73 × 35 × 36 · 88 × 35 × 29)가 들어갑니다. 105 mm 길이의 납작한 2S는 안 들어갑니다. 왼쪽 벽 문으로 슬레드째 꺼냅니다.</dd>
+      <dd>최대 <b>90 × 37 × 30 mm</b> — 흔한 3S 1500 mAh 팩(71–88 × 34–36 × 22–27 mm, 판매 목록 기준)이 들어갑니다. 왼쪽 벽 문(높이 34 mm)으로 슬레드째 꺼냅니다. 사기 전에 팩 크기를 이 칸과 비교하세요.</dd>
       <dt>XT60</dt>
       <dd>팩의 XT60을 문 쪽 포켓에서 OpenCR 배터리 단자로 가는 피그테일(14 AWG, 약 150 mm로 잘라 슬레드를 빼도 연결이 유지)에 꽂습니다. OpenCR 배터리 커넥터 종류는 보드에서 확인 필요.</dd>
+      <dt>방전 한계</dt>
+      <dd>셀당 3.5 V(팩 10.5 V) 아래로 쓰지 않도록, OpenCR에서 입력 전압을 읽어 멈추게 하는 것을 권장합니다 (아직 구현 안 함).</dd>
       <dt>어댑터 전원</dt>
       <dd>왼쪽 벽 아래 <b>DC 잭 구멍 = OpenCR 자체 DC 잭</b>이라 12 V 어댑터를 배선 없이 바로 꽂습니다(ROBOTIS SMPS 12 V 5 A 규격, 플러그 크기는 확인). OpenCR <b>전원 스위치</b>도 바로 옆 슬롯으로 누릅니다. 배터리와 어댑터를 함께 꽂았을 때의 전환 동작은 실물에서 확인하세요.</dd>
       <dt>Pi 전원</dt>
       <dd>OpenCR 5 V 출력(최대 4 A) → Pi GPIO 5 V 핀. micro-USB 소켓은 비워 둡니다(Pi 입력 퓨즈를 거치지 않음).</dd>
       <dt>충전</dt>
-      <dd>LiPo는 꺼내서 LiPo 안전 백 안에서 밸런스 충전기로 충전하세요. 로봇 안에서 충전하지 않습니다.</dd>
+      <dd>LiPo는 꺼내서 LiPo 안전 백 안에서 3S 밸런스 충전기로 충전하세요. 로봇 안에서 충전하지 않습니다.</dd>
     </dl>
+    <h3>색 · 출력</h3>
+    <ul>
+      <li>모든 부품을 <b>흰 PLA</b>로 뽑고 <b>RC3 원래 색으로 칠합니다</b>: 크림(외피 · 머리 · 요크 · 어깨판), 다크 그레이(바닥 · 프레임 · 캡), 올리브(잎 · 귀 · 턴테이블 링), 검정(앞 패널). 얼굴 테와 라이트 띠는 칠하지 않아 빛이 퍼지게 둡니다. 3D 모델은 칠한 뒤 모습입니다.</li>
+      <li>칠하는 순서와 가려야 할 면(인서트 · 끼워맞춤 · 미끄러지는 면)은 출력 도면 탭의 "칠하기"에 있습니다.</li>
+    </ul>
     <h3>모델링 기준 부품</h3>
     <dl>
       <dt>디스플레이</dt>
@@ -234,6 +248,6 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
 </script>
-<script type="module" src="./src/print.js?v=m9-20261026"></script>
+<script type="module" src="./src/print.js?v=m9-20261027"></script>
 </body>
 </html>
