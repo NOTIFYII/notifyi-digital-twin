@@ -176,24 +176,43 @@
 <div id="infoOverlay" class="overlay" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
     <div class="sheet-hd"><h2 id="infoTitle">기준 부품 · 전원 안내</h2><button type="button" class="close" data-close="infoOverlay" aria-label="닫기">✕</button></div>
-    <h3>모델링 기준 부품 (RC3와 캐릭터 스킨 Sprout · Tech · Hop · Dial)</h3>
+    <h3>M9 PLA (2026-10-26) — 보드를 모터 아래로, 베이스를 작게</h3>
+    <ul>
+      <li>베이스 <b>137 × 152.5 mm → 120 × 103 mm</b> (책상 면적 41 % 감소). 대신 층이 생겨 높이가 47.5 → 93.5 mm, 모든 관절이 46 mm 올라갔습니다.</li>
+      <li>층 구조: <b>바닥 OpenCR → 레일 위 Raspberry Pi → 서보 데크 위 베이스 모터(P1) + 배터리 슬레드</b>. 외피는 위에서 씌우고 바닥에서 나사 4개.</li>
+      <li>모든 출력 부품을 <b>PLA</b>로, 학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)에서 <b>하나씩 따로</b> 출력 — 22개 파일 · 31개 조각, 모두 베드에 들어감. 자세한 건 출력 도면 탭.</li>
+      <li>CAD 검사: 부품끼리 간섭 없음, 소프트 리밋 안 3,502개 자세 충돌 0, 기본 동작 10개 충돌 0, 최대 중력 토크 0.185 N·m(상한 0.28의 66 %), 정적 전도 여유 최소 27.0 mm. <b>실물 출력 · 조립 · 결선 · 발열은 검증 전</b>입니다.</li>
+    </ul>
+    <h3>배터리 · 전원 (1500 mAh LiPo, XT60)</h3>
+    <dl>
+      <dt>권장</dt>
+      <dd><b>3S 11.1 V</b>. 2XL430-W250의 입력 범위는 6.5–12.0 V, 권장 11.1 V이고, ROBOTIS TurtleBot3도 같은 계열(XL430)을 3S 11.1 V로 씁니다. 완충 직후 12.6 V는 표기 상한보다 조금 높으니 실물에서 확인하세요.</dd>
+      <dt>2S 7.4 V</dt>
+      <dd>범위 안이라 쓸 수 있지만 모터 힘과 속도가 약 2/3로 줄어듭니다(전압에 비례한다고 가정, 측정 안 함).</dd>
+      <dt>4S 14.8 V</dt>
+      <dd><b>그대로 연결하면 안 됩니다</b> — 완충 16.8 V로 모터 상한 12 V를 넘습니다. 12 V 이하 · 5 A 이상 강압 컨버터가 필요하고, 자리만 Pi 앞쪽에 비워 두었습니다(설계 안 됨).</dd>
+      <dt>배터리 칸</dt>
+      <dd>최대 <b>90 × 39.5 × 36.5 mm</b>. 판매 목록 기준 1500 mAh 2S(70 × 35 × 18), 3S(71 × 34 × 26 · 88 × 35 × 26), 4S(75 × 39.5 × 34.5 · 73 × 35 × 36 · 88 × 35 × 29)가 들어갑니다. 105 mm 길이의 납작한 2S는 안 들어갑니다. 왼쪽 벽 문으로 슬레드째 꺼냅니다.</dd>
+      <dt>XT60</dt>
+      <dd>팩의 XT60을 문 쪽 포켓에서 OpenCR 배터리 단자로 가는 피그테일(14 AWG, 약 150 mm로 잘라 슬레드를 빼도 연결이 유지)에 꽂습니다. OpenCR 배터리 커넥터 종류는 보드에서 확인 필요.</dd>
+      <dt>어댑터 전원</dt>
+      <dd>왼쪽 벽 아래 <b>DC 잭 구멍 = OpenCR 자체 DC 잭</b>이라 12 V 어댑터를 배선 없이 바로 꽂습니다(ROBOTIS SMPS 12 V 5 A 규격, 플러그 크기는 확인). OpenCR <b>전원 스위치</b>도 바로 옆 슬롯으로 누릅니다. 배터리와 어댑터를 함께 꽂았을 때의 전환 동작은 실물에서 확인하세요.</dd>
+      <dt>Pi 전원</dt>
+      <dd>OpenCR 5 V 출력(최대 4 A) → Pi GPIO 5 V 핀. micro-USB 소켓은 비워 둡니다(Pi 입력 퓨즈를 거치지 않음).</dd>
+      <dt>충전</dt>
+      <dd>LiPo는 꺼내서 LiPo 안전 백 안에서 밸런스 충전기로 충전하세요. 로봇 안에서 충전하지 않습니다.</dd>
+    </dl>
+    <h3>모델링 기준 부품</h3>
     <dl>
       <dt>디스플레이</dt>
-      <dd><b>Adafruit 1.9" 320 × 170 IPS TFT (ST7789)</b>, Adafruit 제품 5394. 표시 영역 42.72 × 22.70 mm, 보드 57.2 × 36.6 × 5.2 mm, 장착 구멍 간격 52.0 × 31.7 mm. Raspberry Pi에서 SPI로 구동. 얼굴은 2 mm 스모크 아크릴판과 0.2 mm 검은 마스크 뒤에 있습니다.</dd>
+      <dd><b>Adafruit 1.9" 320 × 170 IPS TFT (ST7789)</b>, 제품 5394. 표시 영역 42.72 × 22.70 mm, 보드 57.2 × 36.6 × 5.2 mm, 장착 구멍 52.0 × 31.7 mm. Pi에서 SPI로 구동. 2 mm 스모크 아크릴판 · 0.2 mm 검은 마스크 뒤.</dd>
       <dt>카메라</dt>
-      <dd><b>Adafruit Ultra Tiny USB Camera</b>, Adafruit 제품 5733. 26 × 8 × 10 mm 외형으로 모델링했고, 얼굴판 아래쪽 Ø 6.5 mm 렌즈 구멍으로 봅니다. 일체형 USB-A 케이블(Ø 2.1 mm)로 Pi에 연결.</dd>
+      <dd><b>Adafruit Ultra Tiny USB Camera</b>, 제품 5733. 26 × 8 × 10 mm, Ø 6.5 mm 렌즈 구멍. 일체형 USB-A 케이블(Ø 2.1 mm) → Pi USB (업앵글 어댑터).</dd>
       <dt>제어 · 모터</dt>
-      <dd>ROBOTIS OpenCR 1.0 (공식 RevH STEP 형상) + Raspberry Pi 3 Model B+. 모터는 ROBOTIS DYNAMIXEL 2XL430-W250-T 4개 = 관절 6개 (공식 STEP 형상).</dd>
-      <dt>책벌레 (worm_C4, worm_B7)</dt>
-      <dd>이전 단계의 연구 모델입니다. 보유 중인 USB 웹캠(모델 미확인, 72 × 25 × 27 mm 막대형으로 근사)을 기준으로 했고 디스플레이는 없습니다.</dd>
+      <dd>ROBOTIS OpenCR 1.0 (공식 RevH STEP) + Raspberry Pi 3 Model B+ (공개 도면 기억값, 실측 아님). DYNAMIXEL 2XL430-W250-T 4개 = 관절 6개 (공식 STEP).</dd>
+      <dt>이전 모델</dt>
+      <dd>RC3(PETG, A–F 묶음 출력)와 캐릭터 스킨, 책벌레(worm_C4 · B7)는 3D 모델 탭에서 비교용으로 남겨 두었습니다.</dd>
     </dl>
-    <h3>전원과 하단 베이스</h3>
-    <ul>
-      <li>현재 베이스의 배터리 칸은 <b>2S LiPo 7.4 V 1500 mAh</b> (70 × 35 × 18 mm, 70 g, Deans T 플러그) 기준입니다. 일부 배선 표기에는 3S 11.1 V가 남아 있어 <b>전원 방식은 아직 확정되지 않았습니다.</b></li>
-      <li>7.4 V는 모터 입력 범위(6.5–12 V)와 OpenCR 입력 범위(5–24 V) 안에 있지만, 모듈 4개를 동시에 구동할 때 감당하는지는 측정하지 않았습니다.</li>
-      <li><b>배터리 종류 · 크기, DC 어댑터 사용 여부, 충전 잭 위치</b>에 따라 하단 베이스의 세부 출력 부품 — 베이스 섀시, 배터리 트레이, 포트판(Ø 8.4 mm 잭 구멍, 판 뒤 여유 4.5 mm), 전면판, Pi 브리지, 베이스 커버 — 의 형상이 바뀔 수 있습니다. 출력 도면 탭에서 이 부품들에 표시해 두었습니다.</li>
-      <li>실물 출력, 조립 맞춤, 전체 동작, 전기 결선은 아직 검증되지 않았습니다 (RC3 기록 기준).</li>
-    </ul>
   </div>
 </div>
 

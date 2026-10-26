@@ -1,0 +1,9837 @@
+{
+ "schema": "notifyi.joint_config/1",
+ "revision": "mech_M9_PLA",
+ "generated": "2026-10-26T22:30:10",
+ "units": {
+  "length": "mm",
+  "angle": "deg",
+  "mass": "g"
+ },
+ "world": {
+  "up": "+Z",
+  "front": "-Y",
+  "origin": "desk plane, on the J1 axis",
+  "note": "all link frames are parallel to world at home (all joints 0)"
+ },
+ "source_step": {
+  "file": "2XL-430.stp",
+  "sha256": "ffac59d032bcd8242ca32c42841c35a25c3f8ffd6d0a41099afcb48cdfc50851"
+ },
+ "params": {
+  "yoke_inner_width": 38.2,
+  "yoke_leg_t": 4.0,
+  "yoke_axis_to_base": 23.0,
+  "yoke_base_t": 4.0,
+  "yoke_depth_base": 26.0,
+  "yoke_depth_hub": 26.0,
+  "yoke_top": 12.0,
+  "yoke_chamfer": 6.0,
+  "hub_centre_hole_d": 11.0,
+  "base_centre_hole_d": 8.3,
+  "m2_clear_d": 2.4,
+  "horn_pcd": 16.0,
+  "p1_centre_z": 70.5,
+  "soft_limits": {
+   "J1": [
+    -90,
+    90
+   ],
+   "J2": [
+    -35,
+    2
+   ],
+   "J3": [
+    -60,
+    60
+   ],
+   "J4": [
+    -25,
+    25
+   ],
+   "J5": [
+    -60,
+    30
+   ],
+   "J6": [
+    -90,
+    90
+   ]
+  },
+  "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+  "yoke_base_disc_d": null,
+  "yoke_overrides": {
+   "yoke0": {
+    "yoke_axis_to_base": 23.0
+   }
+  },
+  "yoke_material": "pla_matte_charcoal",
+  "yoke_fill": 1.0,
+  "fork_slot_w": 9.0,
+  "hub_recess_d": 23.0,
+  "hub_recess_depth": 1.0,
+  "base_cbore_d": 4.4,
+  "base_cbore_depth": 1.0,
+  "base_cable_window": [
+   7.0,
+   9.0,
+   14.5
+  ],
+  "yoke_base_corner_r": 4.0,
+  "p4_turn_deg": 180.0,
+  "product": {
+   "floor_t": 3.0,
+   "p1_floor_gap": 47.5,
+   "yoke_base_disc_d": null,
+   "yoke_material": "pla_matte_charcoal",
+   "clear": 1.5,
+   "wall": 1.2,
+   "sweep_step_deg": 8.0,
+   "soft_limits": {
+    "J1": [
+     -90,
+     90
+    ],
+    "J2": [
+     -35,
+     2
+    ],
+    "J3": [
+     -60,
+     60
+    ],
+    "J4": [
+     -25,
+     25
+    ],
+    "J5": [
+     -60,
+     30
+    ],
+    "J6": [
+     -90,
+     90
+    ]
+   },
+   "base": {
+    "half_w": 60.0,
+    "y_front": -61.0,
+    "y_rear": 42.0,
+    "deck_z": null,
+    "equator_z": 14.0,
+    "n_plan": 6.0,
+    "n_side": 5.0,
+    "flat_top": 0.9,
+    "flat_bot": 0.93,
+    "turret_gap": 1.0,
+    "ballast_g": 0.0,
+    "form": "box",
+    "r_plan": 7.0,
+    "r_edge": 5.0,
+    "r_edge_bot": 2.0,
+    "plinth": {
+     "h": 16.0,
+     "inset": 1.2
+    },
+    "grille": {
+     "centre": [
+      0.0,
+      31.0
+     ],
+     "half": [
+      33.0,
+      8.0
+     ],
+     "pitch": 4.2,
+     "d": 2.2
+    },
+    "front_panel": {
+     "w": 92.0,
+     "z": [
+      21.0,
+      67.0
+     ],
+     "t": 1.2,
+     "r": 7.0,
+     "material": "pla_black"
+    },
+    "cable_holes": null,
+    "deck_screws": null,
+    "posts": null
+   },
+   "stone2": {
+    "a": 29.5,
+    "b_rear": 27.0,
+    "b_front": 32.0,
+    "cy": 12.0,
+    "cz": 0.0,
+    "top": 70.0,
+    "bottom": -24.5,
+    "n_plan": 3.5,
+    "n_side": 2.4,
+    "flat_top": 0.8,
+    "flat_bot": 0.7,
+    "skew": [
+     0.0,
+     0.0
+    ],
+    "form": "pill",
+    "pill": {
+     "centres": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       24.0,
+       46.0
+      ],
+      [
+       0.0,
+       11.0,
+       -2.0
+      ]
+     ],
+     "r": 36.5,
+     "rim_up": 0.0,
+     "rim_z": -1.0,
+     "deck": 22.2,
+     "bow_fwd": 55.0,
+     "bow_back": 5.0,
+     "floor_t": 1.2,
+     "leaf": null,
+     "numeric_hull": true,
+     "levels": [
+      -27.0,
+      -22.0,
+      -17.0,
+      -12.0,
+      -6.0,
+      0.0,
+      6.0,
+      12.0,
+      18.0,
+      24.0,
+      30.0,
+      35.0,
+      39.0,
+      42.5,
+      45.0,
+      47.0,
+      48.2
+     ],
+     "leaf2": {
+      "proud": 2.0,
+      "skin": 0.8,
+      "hem_band": 1.0,
+      "c": [
+       -49.2,
+       -43.0
+      ],
+      "r": 90.0,
+      "pitch_deg": -8.0,
+      "y_ref": -25.0,
+      "below_rim": 3.0
+     }
+    },
+    "top_skin": true,
+    "no_yoke_sweep": true
+   },
+   "stone3": {
+    "a": 29.5,
+    "b": 29.0,
+    "cz": 12.0,
+    "top": 10.0,
+    "bottom": -15.5,
+    "n_plan": 3.5,
+    "n_side": 2.4,
+    "flat_top": 0.78,
+    "flat_bot": 0.78,
+    "skew": [
+     0.0,
+     0.0
+    ],
+    "form": "capsule",
+    "capsule": {
+     "c0": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "c1": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "r": 34.5
+    },
+    "scoops": null,
+    "head_sweep": null,
+    "lobes": {
+     "r_bot": 0.5,
+     "r_top": 0.5,
+     "z_keep_bot": -15.5,
+     "z_keep_top": 10.0,
+     "hole_d": null,
+     "no_bottom_hole": true
+    }
+   },
+   "head": {
+    "a": 43.5,
+    "y_rear": 16.5,
+    "y_front": -67.5,
+    "cz": 19.5,
+    "top": 41.5,
+    "bottom": 1.0,
+    "n_plan": 3.2,
+    "n_side": 2.4,
+    "flat_top": 0.75,
+    "flat_bot": 0.72,
+    "skew": [
+     0.0,
+     0.0
+    ],
+    "lens_d": 14.0,
+    "face_tilt_deg": 0.0,
+    "style": "mech",
+    "wall": 2.0,
+    "box": {
+     "y_front": -38.5,
+     "y_rear": -37.0,
+     "zc": 33.5,
+     "front": [
+      84.0,
+      65.0
+     ],
+     "rear": [
+      80.0,
+      65.0
+     ],
+     "r": 9.0,
+     "window": [
+      72.0,
+      53.0,
+      7.0,
+      34.0
+     ],
+     "rear_cut": [
+      37.5,
+      37.5
+     ],
+     "lens_hole_d": 13.6
+    },
+    "hood": {
+     "front": [
+      98.0,
+      79.0
+     ],
+     "r": 13.0,
+     "y_front": -48.5,
+     "ring": 1.6,
+     "flare": 4.0,
+     "depth": 6.0
+    },
+    "chin_screws": [
+     [
+      -17.0,
+      -58.0
+     ],
+     [
+      17.0,
+      -58.0
+     ]
+    ],
+    "eye_dots": {
+     "x": 21.5,
+     "z": 46.0,
+     "pitch": 2.5,
+     "dot_r": 1.05,
+     "pattern": [
+      "........",
+      "..XXXX..",
+      ".XXXXXX.",
+      "XXX..XXX",
+      "XX....XX",
+      "XX....XX",
+      "........",
+      "........"
+     ]
+    },
+    "led_eyes": {
+     "x": 21.5,
+     "z": 46.0,
+     "back": 0.4,
+     "bridge_z": 35.4
+    },
+    "strap": {
+     "half_w": 15.0,
+     "t": 3.0,
+     "z": 40.0,
+     "gap": 0.7,
+     "rear_z0": 6.0,
+     "idler_hole_r": 11.2,
+     "vents": 3,
+     "cable_window": [
+      -16.5,
+      -1.0,
+      3.0,
+      21.0
+     ],
+     "y0": -11.0
+    },
+    "antenna": {
+     "x": 11.0,
+     "y": 30.0,
+     "d": 4.0,
+     "len": 38.0,
+     "tip_d": 6.5,
+     "out_deg": 14.0,
+     "back_deg": 12.0,
+     "leaf": [
+      3.2,
+      9.0,
+      17.5
+     ],
+     "socket_d": 4.25,
+     "rod_note": "M9 PLA antenna rods d 4.0 (were TPU d 2.4): print lying on the bed, 100 %, glued into 4.25 sockets; or a 4 mm wooden / carbon rod"
+    },
+    "ears": {
+     "x0": 23.8,
+     "r": 12.0,
+     "t": 2.4
+    },
+    "status_on_rim": true,
+    "screen": null,
+    "visor_head": {
+     "plate_y": [
+      -14.0,
+      -11.6
+     ],
+     "bosses": [
+      [
+       -35.2,
+       6.0
+      ],
+      [
+       35.2,
+       6.0
+      ],
+      [
+       -35.2,
+       60.5
+      ],
+      [
+       35.2,
+       60.5
+      ]
+     ],
+     "cam_stops": [
+      -12.0,
+      12.0
+     ],
+     "cam_posts": [
+      -12.0,
+      12.0
+     ],
+     "display": {
+      "name": "Adafruit 1.9in 320x170 IPS TFT (ST7789)",
+      "size": [
+       57.2,
+       36.6,
+       5.2
+      ],
+      "front_t": 2.0,
+      "active": [
+       42.72,
+       22.7
+      ],
+      "px": [
+       320,
+       170
+      ],
+      "face_set": "st7789_320x170",
+      "margin": 7.24,
+      "chin": -1.0,
+      "zc": 44.5,
+      "mass_g": 9.6,
+      "mount_holes": [
+       52.0,
+       31.7
+      ]
+     },
+     "plate": {
+      "overlap": 2.0,
+      "t": 2.0,
+      "tape": 0.1,
+      "mask_t": 0.2,
+      "lens_aperture_d": 6.5,
+      "transmission": 0.45
+     },
+     "eyes": {
+      "x": 14.5,
+      "r": 5.5,
+      "h": 16.5
+     },
+     "cradle": {
+      "arm_x": 21.4,
+      "arm_t": 3.0,
+      "arm_h": 16.0,
+      "pad_r": 11.5,
+      "holder_wall": 2.0
+     }
+    }
+   },
+   "camera": {
+    "size": [
+     26.0,
+     8.0,
+     10.0
+    ],
+    "centre": [
+     0.0,
+     -28.0,
+     16.5
+    ],
+    "tilt_up_deg": 0.0,
+    "lens_offset_x": -14.0,
+    "mass_g": 3.0
+   },
+   "opencr": {
+    "size": [
+     105.0,
+     75.0,
+     14.0
+    ],
+    "centre_xy": [
+     0.0,
+     -59.5
+    ],
+    "z0": 6.0,
+    "mass_g": 60.0
+   },
+   "pi3b": {
+    "size": [
+     85.0,
+     56.0,
+     18.0
+    ],
+    "centre_xy": [
+     20.5,
+     -62.0
+    ],
+    "z0": 24.5,
+    "mass_g": 45.0,
+    "across": -1
+   },
+   "shell_density": 1.27,
+   "shell_fill": 1.0,
+   "yoke_params": {
+    "fork_slot_w": 9.0,
+    "hub_recess_d": 23.0,
+    "hub_recess_depth": 1.0,
+    "base_cbore_d": 4.4,
+    "base_cbore_depth": 1.0,
+    "base_centre_hole_d": 8.3,
+    "base_cable_window": [
+     7.0,
+     9.0,
+     14.5
+    ],
+    "yoke_depth_base": 26.0,
+    "yoke_depth_hub": 26.0,
+    "yoke_base_corner_r": 4.0,
+    "p4_turn_deg": 180.0
+   },
+   "turntable_ring_d": 58.0,
+   "materials": {
+    "base_cover": "pla_matte_ivory_white",
+    "stone2": "pla_matte_ivory_white",
+    "stone3": "pla_matte_ivory_white",
+    "head": "pla_matte_ivory_white",
+    "caps": "pla_matte_charcoal",
+    "caps_turret": "pla_matte_charcoal",
+    "caps_mid_yoke": "pla_matte_charcoal",
+    "caps_neck_yoke": "pla_matte_charcoal",
+    "lid": "accent_warm",
+    "nest": "moss_deep",
+    "face": "pla_matte_ivory_white",
+    "eyes": "eye_glow",
+    "nose": "frame_dark",
+    "tuft": "skin",
+    "accent": "oak_dark",
+    "visor": "smoked_plate",
+    "moss": "moss_deep",
+    "leaf": "sage_pale",
+    "arms": "oak",
+    "led_band": "led_glow",
+    "skins": "pla_matte_ivory_white",
+    "waist": "sage",
+    "plinth": "pla_matte_charcoal",
+    "hip_ball": "pla_matte_ivory_white",
+    "body_leaf": "cream",
+    "neck_ball": "pla_matte_ivory_white",
+    "neck_cap": "cream",
+    "accent2": "pla_matte_army_green",
+    "antenna_tips": "pla_matte_army_green",
+    "shoulder": "pla_matte_ivory_white",
+    "frame_m9": "pla_matte_charcoal",
+    "antenna_rods": "pla_matte_charcoal",
+    "face_ring": "pla_natural",
+    "battery": "cam_blue",
+    "xt60": "pla_yellow"
+   },
+   "base_wall": 2.4,
+   "yoke_fill": 1.0,
+   "pivot_caps": true,
+   "cradle": true,
+   "chassis": null,
+   "envelope_v2": true,
+   "lens_lid": null,
+   "carve_limits": {
+    "J2": [
+     -55,
+     5
+    ]
+   },
+   "constraints": [
+    {
+     "type": "sum_min",
+     "joints": [
+      "J2",
+      "J5"
+     ],
+     "min": -75.0,
+     "why": "deep bow and deep nod together put the head on the deck and J2 at its torque ceiling (CAD sampling)",
+     "exception": "the named pose 'dock' (J1 = J3 = J4 = J6 = 0), checked on its own and along its approach path"
+    }
+   ],
+   "allowed_contacts": [],
+   "nest": null,
+   "special_poses": {},
+   "named_poses": {
+    "home": {},
+    "attend": {
+     "J5": 15.0
+    },
+    "rest": {
+     "J5": 12.0,
+     "J6": 20.0
+    },
+    "mirror_L1": {
+     "J2": -5.0,
+     "J5": 7.0
+    },
+    "mirror_L2": {
+     "J2": -10.0,
+     "J5": 3.0
+    },
+    "sleep": {
+     "J2": -12.0,
+     "J5": -45.0
+    }
+   },
+   "cap_styles": null,
+   "tuft": null,
+   "nose_cap": null,
+   "crown": null,
+   "arms": null,
+   "moss_deck": null,
+   "ring_material": "sage",
+   "real_parts": true,
+   "bare_body": true,
+   "pi_plugs": {
+    "usb_ports": [
+     0,
+     1
+    ],
+    "power": true
+   },
+   "led_band": {
+    "z": [
+     10.0,
+     13.0
+    ],
+    "x": [
+     -16.0,
+     16.0
+    ],
+    "t": 0.8,
+    "pad_front": -1.2
+   },
+   "skins": null,
+   "no_caps": null,
+   "waist": null,
+   "neck_ball": null,
+   "servo_wrap": null,
+   "hip_ball": null,
+   "cap_gaps": {
+    "turret": 1.0,
+    "mid_yoke": 1.0,
+    "neck_yoke": 1.0
+   },
+   "neck_roll": null,
+   "neck_shell": null,
+   "cables": {
+    "pose": {
+     "J2": -20.0,
+     "J5": 20.0
+    },
+    "step": 4.0,
+    "list": [
+     {
+      "name": "dxl_opencr_p1",
+      "d": 3.0,
+      "stock_mm": 180.0,
+      "what": "DYNAMIXEL TTL (Robot Cable-X3P 180 mm, supplied): OpenCR TTL port 3 under the Pi, up behind it, through the servo deck to the base servo",
+      "assumed": "OpenCR TTL port position ASSUMED",
+      "way": [
+       [
+        "base",
+        [
+         -6.3,
+         -43.0,
+         16.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -6.3,
+         -43.0,
+         21.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -2.0,
+         -30.0,
+         23.0
+        ]
+       ],
+       [
+        "base",
+        [
+         2.5,
+         10.0,
+         23.0
+        ]
+       ],
+       [
+        "base",
+        [
+         3.0,
+         26.5,
+         24.5
+        ]
+       ],
+       [
+        "base",
+        [
+         8.0,
+         27.0,
+         31.0
+        ]
+       ],
+       [
+        "base",
+        [
+         25.0,
+         27.0,
+         34.0
+        ]
+       ],
+       [
+        "base",
+        [
+         33.0,
+         27.0,
+         40.0
+        ]
+       ],
+       [
+        "base",
+        [
+         35.0,
+         27.0,
+         48.0
+        ]
+       ],
+       [
+        "base",
+        [
+         33.0,
+         25.0,
+         53.0
+        ]
+       ],
+       [
+        "base",
+        [
+         25.0,
+         18.0,
+         54.5
+        ]
+       ],
+       [
+        "base",
+        [
+         16.4,
+         15.0,
+         55.0
+        ]
+       ]
+      ],
+      "part": "ROBOTIS Robot Cable-X3P 180 mm (supplied with each servo)",
+      "ends": [
+       "jst_eh3",
+       "jst_eh3"
+      ],
+      "tips": [
+       [
+        0,
+        0,
+        -1
+       ],
+       null
+      ],
+      "bulge": [
+       0,
+       0,
+       1
+      ],
+      "free_length_mm": 164.0
+     },
+     {
+      "name": "dxl_opencr_p2",
+      "d": 3.0,
+      "stock_mm": 300.0,
+      "what": "DYNAMIXEL TTL: OpenCR TTL port 1 under the Pi, up the rear left, through both decks and the cable bushing to the lower servo",
+      "assumed": "OpenCR TTL port position ASSUMED; crosses yaw and bow",
+      "way": [
+       [
+        "base",
+        [
+         -26.7,
+         -43.0,
+         16.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -26.7,
+         -43.0,
+         21.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -27.0,
+         -30.0,
+         23.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -30.0,
+         0.0,
+         23.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -32.0,
+         26.0,
+         25.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -36.0,
+         27.5,
+         34.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -38.0,
+         28.0,
+         44.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -38.0,
+         28.0,
+         70.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -38.0,
+         28.0,
+         92.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -38.0,
+         28.0,
+         95.0
+        ]
+       ],
+       [
+        "turret",
+        [
+         -19.0,
+         18.0,
+         14.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         -18.0,
+         19.0,
+         -8.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         -17.0,
+         17.0,
+         -16.4
+        ]
+       ]
+      ],
+      "part": "3-pin JST EH (X3P-compatible) lead, 300 mm - to make or buy (the supplied 180 mm is too short)",
+      "ends": [
+       "jst_eh3",
+       "jst_eh3"
+      ],
+      "tips": [
+       [
+        0,
+        0,
+        -1
+       ],
+       null
+      ],
+      "out": [
+       0.0,
+       1.0,
+       0.5
+      ],
+      "free_length_mm": 284.0
+     },
+     {
+      "name": "dxl_p2_p3",
+      "d": 3.0,
+      "stock_mm": 180.0,
+      "what": "DYNAMIXEL TTL (X3P 180 mm): lower servo to upper servo, round the back",
+      "assumed": "route ASSUMED; crosses twist and roll",
+      "way": [
+       [
+        "lower",
+        [
+         -17.5,
+         19.5,
+         -13.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         -21.5,
+         27.0,
+         -8.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         -21.5,
+         40.0,
+         5.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         -10.0,
+         55.5,
+         21.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         -1.0,
+         30.4,
+         -13.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         0.0,
+         31.6,
+         0.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         7.0,
+         32.7,
+         6.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         15.5,
+         22.5,
+         4.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         17.0,
+         17.0,
+         11.0
+        ]
+       ]
+      ],
+      "seed": [
+       [
+        "lower",
+        [
+         -17.5,
+         19.5,
+         -13.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         -21.5,
+         27.0,
+         -8.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         -21.5,
+         40.0,
+         5.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         -10.0,
+         55.5,
+         21.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         -1.0,
+         30.4,
+         -13.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         0.0,
+         30.4,
+         0.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         7.0,
+         32.7,
+         6.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         15.5,
+         22.5,
+         4.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         17.0,
+         17.0,
+         11.0
+        ]
+       ]
+      ],
+      "part": "ROBOTIS Robot Cable-X3P 180 mm (supplied with each servo)",
+      "ends": [
+       "jst_eh3",
+       "jst_eh3"
+      ],
+      "out": [
+       0.0,
+       1.0,
+       0.5
+      ],
+      "free_length_mm": 164.0
+     },
+     {
+      "name": "dxl_p3_p4",
+      "d": 3.0,
+      "stock_mm": 180.0,
+      "what": "DYNAMIXEL TTL (X3P 180 mm): upper servo to head servo, behind the neck",
+      "assumed": "route ASSUMED; crosses nod and pan",
+      "way": [
+       [
+        "upper",
+        [
+         17.0,
+         17.0,
+         15.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         12.0,
+         22.0,
+         20.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         2.0,
+         22.8,
+         28.5
+        ]
+       ],
+       [
+        "neck_yoke",
+        [
+         0.0,
+         23.5,
+         8.2
+        ]
+       ],
+       [
+        "neck_yoke",
+        [
+         -4.0,
+         23.0,
+         19.0
+        ]
+       ],
+       [
+        "head",
+        [
+         -10.0,
+         21.0,
+         -2.0
+        ]
+       ],
+       [
+        "head",
+        [
+         -19.0,
+         17.5,
+         8.0
+        ]
+       ],
+       [
+        "head",
+        [
+         -20.0,
+         15.0,
+         30.0
+        ]
+       ],
+       [
+        "head",
+        [
+         -19.0,
+         13.5,
+         37.5
+        ]
+       ],
+       [
+        "head",
+        [
+         -16.4,
+         12.0,
+         35.0
+        ]
+       ]
+      ],
+      "seed": [
+       [
+        "upper",
+        [
+         17.0,
+         17.0,
+         15.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         10.0,
+         24.0,
+         20.0
+        ]
+       ],
+       [
+        "neck_yoke",
+        [
+         0.0,
+         22.4,
+         8.2
+        ]
+       ],
+       [
+        "neck_yoke",
+        [
+         -4.0,
+         22.0,
+         19.0
+        ]
+       ],
+       [
+        "head",
+        [
+         -10.0,
+         22.0,
+         -3.0
+        ]
+       ],
+       [
+        "head",
+        [
+         -21.5,
+         18.0,
+         2.7
+        ]
+       ],
+       [
+        "head",
+        [
+         -22.5,
+         15.0,
+         30.0
+        ]
+       ],
+       [
+        "head",
+        [
+         -21.0,
+         13.5,
+         37.5
+        ]
+       ],
+       [
+        "head",
+        [
+         -16.4,
+         12.0,
+         35.0
+        ]
+       ]
+      ],
+      "part": "ROBOTIS Robot Cable-X3P 180 mm (supplied with each servo)",
+      "ends": [
+       "jst_eh3",
+       "jst_eh3"
+      ],
+      "out": [
+       0.0,
+       1.0,
+       0.35
+      ],
+      "free_length_mm": 164.0
+     },
+     {
+      "name": "usb_webcam",
+      "d": 2.2,
+      "stock_mm": null,
+      "g_per_m": 30.0,
+      "material": "gloss_black",
+      "what": "Adafruit Ultra Tiny USB Webcam (ada-5733) captive cable: head, shoulder clip, turret, deck bushing, along the rear of the Pi storey, down into the second USB up-angle adapter",
+      "assumed": "where the cable leaves the webcam and its length are UNKNOWN",
+      "way": [
+       [
+        "head",
+        [
+         9.5,
+         -34.0,
+         13.0
+        ]
+       ],
+       [
+        "head",
+        [
+         12.0,
+         -16.0,
+         12.0
+        ]
+       ],
+       [
+        "head",
+        [
+         18.0,
+         -9.0,
+         8.0
+        ]
+       ],
+       [
+        "head",
+        [
+         15.0,
+         15.0,
+         -2.0
+        ]
+       ],
+       [
+        "neck_yoke",
+        [
+         13.5,
+         23.0,
+         15.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         13.5,
+         23.0,
+         29.8
+        ]
+       ],
+       [
+        "mid_yoke",
+        [
+         14.0,
+         24.5,
+         16.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         8.0,
+         27.0,
+         10.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         -8.0,
+         27.0,
+         -6.0
+        ]
+       ],
+       [
+        "turret",
+        [
+         -20.0,
+         21.0,
+         14.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -39.0,
+         29.5,
+         95.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -39.0,
+         29.5,
+         92.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -39.0,
+         29.0,
+         60.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -39.0,
+         28.5,
+         45.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -30.0,
+         27.0,
+         38.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -10.0,
+         27.0,
+         37.5
+        ]
+       ],
+       [
+        "base",
+        [
+         20.0,
+         27.0,
+         37.5
+        ]
+       ],
+       [
+        "base",
+        [
+         33.0,
+         27.0,
+         44.0
+        ]
+       ],
+       [
+        "base",
+        [
+         38.0,
+         25.0,
+         56.0
+        ]
+       ],
+       [
+        "base",
+        [
+         41.5,
+         19.0,
+         72.0
+        ]
+       ],
+       [
+        "base",
+        [
+         41.0,
+         15.0,
+         70.0
+        ]
+       ],
+       [
+        "base",
+        [
+         41.0,
+         15.0,
+         63.0
+        ]
+       ]
+      ],
+      "part": "Integrated captive USB-A cable on ada-5733 (2.1 mm OD)",
+      "ends": [
+       null,
+       "usb_a"
+      ],
+      "tips": [
+       null,
+       [
+        0,
+        0,
+        -1
+       ]
+      ],
+      "out": [
+       0.0,
+       1.0,
+       0.5
+      ]
+     },
+     {
+      "name": "uart_display",
+      "d": 2.6,
+      "stock_mm": null,
+      "g_per_m": 8.0,
+      "material": "sage",
+      "what": "Adafruit 1.9in IPS TFT 7-wire SPI harness: head, shoulder clip, turret, deck bushing, down to the Pi's GPIO (right-angle housing)",
+      "assumed": "route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written",
+      "way": [
+       [
+        "head",
+        [
+         -21.0,
+         -34.0,
+         26.5
+        ]
+       ],
+       [
+        "head",
+        [
+         -21.0,
+         -16.0,
+         24.0
+        ]
+       ],
+       [
+        "head",
+        [
+         -19.0,
+         -8.0,
+         14.0
+        ]
+       ],
+       [
+        "head",
+        [
+         -15.0,
+         15.0,
+         -2.0
+        ]
+       ],
+       [
+        "neck_yoke",
+        [
+         -13.5,
+         23.0,
+         15.0
+        ]
+       ],
+       [
+        "upper",
+        [
+         -13.5,
+         23.0,
+         29.8
+        ]
+       ],
+       [
+        "mid_yoke",
+        [
+         -14.0,
+         24.5,
+         16.0
+        ]
+       ],
+       [
+        "lower",
+        [
+         -16.0,
+         26.0,
+         6.0
+        ]
+       ],
+       [
+        "turret",
+        [
+         -22.0,
+         20.0,
+         14.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -37.0,
+         27.0,
+         95.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -37.0,
+         27.0,
+         92.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -37.0,
+         27.0,
+         60.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -37.0,
+         26.5,
+         46.5
+        ]
+       ],
+       [
+        "base",
+        [
+         -30.0,
+         23.5,
+         44.5
+        ]
+       ],
+       [
+        "base",
+        [
+         -25.0,
+         20.3,
+         44.5
+        ]
+       ],
+       [
+        "base",
+        [
+         -25.0,
+         20.3,
+         40.0
+        ]
+       ]
+      ],
+      "part": "7-wire 28AWG silicone ribbon/harness with right-angle female header on Pi GPIO",
+      "ends": [
+       null,
+       "dupont_4p"
+      ],
+      "tips": [
+       null,
+       [
+        0,
+        0,
+        -1
+       ]
+      ],
+      "out": [
+       0.0,
+       1.0,
+       0.5
+      ]
+     },
+     {
+      "name": "usb_opencr_pi",
+      "d": 3.6,
+      "stock_mm": null,
+      "g_per_m": 30.0,
+      "material": "gloss_black",
+      "what": "USB: OpenCR micro-USB (right edge) up the right wall to the first USB up-angle adapter on the Pi",
+      "assumed": "OpenCR USB position ASSUMED",
+      "way": [
+       [
+        "base",
+        [
+         55.0,
+         -10.8,
+         11.0
+        ]
+       ],
+       [
+        "base",
+        [
+         54.5,
+         -10.5,
+         18.0
+        ]
+       ],
+       [
+        "base",
+        [
+         53.0,
+         -9.0,
+         30.0
+        ]
+       ],
+       [
+        "base",
+        [
+         51.0,
+         -6.0,
+         48.0
+        ]
+       ],
+       [
+        "base",
+        [
+         48.0,
+         -4.0,
+         67.0
+        ]
+       ],
+       [
+        "base",
+        [
+         42.0,
+         -3.0,
+         72.0
+        ]
+       ],
+       [
+        "base",
+        [
+         41.0,
+         -3.0,
+         63.0
+        ]
+       ]
+      ],
+      "part": "USB-A to micro-B cable, 0.15 m, with a RIGHT-ANGLE micro-B plug (a straight one leaves 3 mm to the wall)",
+      "ends": [
+       "usb_micro_ra",
+       "usb_a"
+      ],
+      "tips": [
+       [
+        -1,
+        0,
+        0
+       ],
+       [
+        0,
+        0,
+        -1
+       ]
+      ],
+      "bulge": [
+       0,
+       0,
+       1
+      ]
+     },
+     {
+      "name": "pi_power",
+      "d": 2.6,
+      "stock_mm": null,
+      "g_per_m": 10.0,
+      "material": "sage",
+      "what": "5 V from the OpenCR's 5 V output (max 4 A) to the Pi's GPIO 5 V pins (the micro-USB socket stays free; this bypasses the Pi's input fuse)",
+      "assumed": "the mating plug for the 5267-02A header is to be bought; the lead bends 90 degrees within 6 mm above its plug, under the Pi",
+      "way": [
+       [
+        "base",
+        [
+         -53.5,
+         9.7,
+         20.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -54.5,
+         9.7,
+         23.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -54.5,
+         13.0,
+         30.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -50.0,
+         22.0,
+         42.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -44.0,
+         21.0,
+         44.5
+        ]
+       ],
+       [
+        "base",
+        [
+         -44.0,
+         20.3,
+         40.0
+        ]
+       ]
+      ],
+      "part": "2-wire lead to make (22 AWG): 2-pin plug for the OpenCR's 5 V output (5267-02A) to GPIO pins 2 (5 V) and 6 (GND)",
+      "ends": [
+       "molex_2p",
+       "dupont_4p"
+      ],
+      "tips": [
+       [
+        0,
+        0,
+        -1
+       ],
+       [
+        0,
+        0,
+        -1
+       ]
+      ],
+      "bulge": [
+       1,
+       0,
+       0
+      ]
+     },
+     {
+      "name": "power_pigtail",
+      "d": 2.8,
+      "stock_mm": null,
+      "g_per_m": 25.0,
+      "material": "coral",
+      "what": "LiPo (+) lead, 14 AWG red: XT60 (mated with the pack's lead in the sled's pocket) down through the servo deck to the OpenCR battery connector",
+      "part": "14 AWG red silicone wire + XT60 (to the pack) + the OpenCR battery plug (type to confirm on the board)",
+      "assumed": "the battery connector's type is NOT stated in the e-Manual - to confirm on the board",
+      "ends": [
+       null,
+       "deans_t"
+      ],
+      "tips": [
+       null,
+       [
+        0,
+        0,
+        -1
+       ]
+      ],
+      "bulge": [
+       0,
+       0,
+       1
+      ],
+      "way": [
+       [
+        "base",
+        [
+         -37.4,
+         -41.7,
+         34.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -41.0,
+         -40.6,
+         40.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -46.0,
+         -40.6,
+         46.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -46.0,
+         -40.6,
+         51.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -51.0,
+         -36.0,
+         55.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -53.0,
+         -32.2,
+         57.6
+        ]
+       ]
+      ]
+     },
+     {
+      "name": "power_pigtail_neg",
+      "d": 2.8,
+      "stock_mm": null,
+      "g_per_m": 15.0,
+      "material": "gloss_black",
+      "what": "LiPo (-) lead, 14 AWG black: as the red one",
+      "part": "14 AWG black silicone wire",
+      "ends": [
+       null,
+       null
+      ],
+      "bulge": [
+       0,
+       0,
+       1
+      ],
+      "way": [
+       [
+        "base",
+        [
+         -40.2,
+         -41.7,
+         34.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -43.0,
+         -43.4,
+         40.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -48.0,
+         -43.4,
+         46.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -48.0,
+         -43.4,
+         51.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -52.0,
+         -38.0,
+         55.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -53.0,
+         -34.9,
+         57.6
+        ]
+       ]
+      ]
+     }
+    ],
+    "live": true
+   },
+   "shoulder": {
+    "half_w": 33.0,
+    "z": [
+     16.0,
+     26.5
+    ],
+    "y": [
+     18.4,
+     21.4
+    ],
+    "r": 4.5,
+    "clips": [
+     [
+      -19.0,
+      21.0
+     ],
+     [
+      23.0,
+      21.5
+     ]
+    ],
+    "screws": [
+     [
+      -9.0,
+      21.2
+     ],
+     [
+      9.0,
+      21.2
+     ],
+     [
+      -28.0,
+      21.2
+     ],
+     [
+      28.0,
+      21.2
+     ]
+    ],
+    "clip_slot": [
+     2.9,
+     5.2
+    ],
+    "m9": true
+   },
+   "opencr_connectors": true,
+   "battery_3s": false,
+   "base_m9": {
+    "plinth_h": 16.0,
+    "shell_bosses": [
+     [
+      -40.0,
+      "front"
+     ],
+     [
+      40.0,
+      "front"
+     ],
+     [
+      -30.0,
+      "rear"
+     ],
+     [
+      30.0,
+      "rear"
+     ]
+    ]
+   },
+   "pivot_cap_ribs": 3,
+   "press_fits": [
+    [
+     "yoke",
+     "pivot_cap",
+     1.0,
+     "pivot-cap crush ribs, 0.15 mm interference by design"
+    ]
+   ],
+   "print_density": 1.24,
+   "print_material": "PLA"
+  }
+ },
+ "root_link": "base",
+ "links": [
+  {
+   "name": "base",
+   "parent": null
+  },
+  {
+   "name": "turret",
+   "parent": "base"
+  },
+  {
+   "name": "lower",
+   "parent": "turret"
+  },
+  {
+   "name": "mid_yoke",
+   "parent": "lower"
+  },
+  {
+   "name": "upper",
+   "parent": "mid_yoke"
+  },
+  {
+   "name": "neck_yoke",
+   "parent": "upper"
+  },
+  {
+   "name": "head",
+   "parent": "neck_yoke"
+  }
+ ],
+ "joints": [
+  {
+   "name": "J1",
+   "module": "P1",
+   "module_axis": "A",
+   "dxl_id": {
+    "hypothesis": 2,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "base yaw - turns the whole body",
+   "moving_side": "horn",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -90.0,
+    90.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "carries all moving mass axially on a single horn bearing; no idler support",
+   "parent": "base",
+   "child": "turret",
+   "origin_mm": [
+    0.0,
+    0.0,
+    89.5
+   ],
+   "axis": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "name": "J2",
+   "module": "P2",
+   "module_axis": "A",
+   "dxl_id": {
+    "hypothesis": 3,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "body pitch - lean forward(-) / back(+)",
+   "moving_side": "body",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -35.0,
+    2.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "hinge with horn + idler support; highest gravity torque in the chain",
+   "parent": "turret",
+   "child": "lower",
+   "origin_mm": [
+    0.0,
+    0.0,
+    27.0
+   ],
+   "axis": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "J3",
+   "module": "P2",
+   "module_axis": "B",
+   "dxl_id": {
+    "hypothesis": 4,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "torso twist about the body axis",
+   "moving_side": "horn",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -60.0,
+    60.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "single horn bearing carries the upper column in bending when leaned",
+   "parent": "lower",
+   "child": "mid_yoke",
+   "origin_mm": [
+    0.0,
+    24.0,
+    19.0
+   ],
+   "axis": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "name": "J4",
+   "module": "P3",
+   "module_axis": "B",
+   "dxl_id": {
+    "hypothesis": 5,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "roll - side tilt",
+   "moving_side": "body",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -25.0,
+    25.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "hinge with horn + idler support",
+   "parent": "mid_yoke",
+   "child": "upper",
+   "origin_mm": [
+    0.0,
+    0.0,
+    27.0
+   ],
+   "axis": [
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "name": "J5",
+   "module": "P3",
+   "module_axis": "A",
+   "dxl_id": {
+    "hypothesis": 6,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "neck pitch - nod forward(-) / back(+)",
+   "moving_side": "horn",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -60.0,
+    30.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "hinge with horn + idler support",
+   "parent": "upper",
+   "child": "neck_yoke",
+   "origin_mm": [
+    0.0,
+    0.0,
+    24.0
+   ],
+   "axis": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "J6",
+   "module": "P4",
+   "module_axis": "B",
+   "dxl_id": {
+    "hypothesis": 7,
+    "status": "UNVERIFIED - sticker photos conflict; needs user ID map"
+   },
+   "role": "head pan",
+   "moving_side": "body",
+   "home_deg": 0.0,
+   "home_ticks": {
+    "value": null,
+    "status": "UNMEASURED (photographed pose assumed = 0 deg)"
+   },
+   "ticks_per_deg": 11.377777777777778,
+   "hard_limit_deg": [
+    -180.0,
+    180.0
+   ],
+   "hard_limit_provenance": "servo Position Control Mode 0..4095 (e-Manual); no mechanical hard stop measured",
+   "soft_limit_deg": [
+    -90.0,
+    90.0
+   ],
+   "soft_limit_provenance": "design value inside CAD mesh-collision sweep (07_Verification/<rev>/verify_report.json); not measured on hardware; cable twist not modelled",
+   "max_speed_deg_s": 90.0,
+   "max_speed_provenance": "conservative design value; no-load speed is 57 rev/min = 342 deg/s at 11.1 V (e-Manual)",
+   "load_note": "single horn bearing carries the head",
+   "parent": "neck_yoke",
+   "child": "head",
+   "origin_mm": [
+    0.0,
+    0.0,
+    27.0
+   ],
+   "axis": [
+    0,
+    0,
+    1
+   ]
+  }
+ ],
+ "modules": {
+  "P1": {
+   "link": "base",
+   "T_link_module": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     70.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  "P2": {
+   "link": "lower",
+   "T_link_module": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  "P3": {
+   "link": "upper",
+   "T_link_module": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  "P4": {
+   "link": "head",
+   "T_link_module": [
+    [
+     1.0,
+     -0.0,
+     0.0,
+     0.0
+    ],
+    [
+     -0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "visuals": [
+  {
+   "link": "base",
+   "mesh": "2XL430/body",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     70.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.body",
+   "module": "P1"
+  },
+  {
+   "link": "base",
+   "mesh": "2XL430/plugs",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     70.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.plugs",
+   "module": "P1"
+  },
+  {
+   "link": "base",
+   "mesh": "2XL430/idler_A",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     70.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.idler_A",
+   "module": "P1"
+  },
+  {
+   "link": "base",
+   "mesh": "2XL430/idler_B",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     70.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.idler_B",
+   "module": "P1"
+  },
+  {
+   "link": "base",
+   "mesh": "2XL430/horn_B",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     70.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.horn_B",
+   "module": "P1"
+  },
+  {
+   "link": "turret",
+   "mesh": "2XL430/horn_A",
+   "T": [
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     -19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P1.horn_A",
+   "module": "P1"
+  },
+  {
+   "link": "turret",
+   "mesh": "part/yoke",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "yoke0",
+   "module": null
+  },
+  {
+   "link": "lower",
+   "mesh": "2XL430/body",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.body",
+   "module": "P2"
+  },
+  {
+   "link": "lower",
+   "mesh": "2XL430/plugs",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.plugs",
+   "module": "P2"
+  },
+  {
+   "link": "lower",
+   "mesh": "2XL430/idler_B",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.idler_B",
+   "module": "P2"
+  },
+  {
+   "link": "turret",
+   "mesh": "2XL430/horn_A",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.horn_A",
+   "module": "P2"
+  },
+  {
+   "link": "turret",
+   "mesh": "2XL430/idler_A",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.idler_A",
+   "module": "P2"
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "2XL430/horn_B",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     -19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P2.horn_B",
+   "module": "P2"
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "part/yoke",
+   "T": [
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "yoke1",
+   "module": null
+  },
+  {
+   "link": "upper",
+   "mesh": "2XL430/body",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.body",
+   "module": "P3"
+  },
+  {
+   "link": "upper",
+   "mesh": "2XL430/plugs",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.plugs",
+   "module": "P3"
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "2XL430/horn_B",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     39.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.horn_B",
+   "module": "P3"
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "2XL430/idler_B",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     39.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.idler_B",
+   "module": "P3"
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "2XL430/horn_A",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.horn_A",
+   "module": "P3"
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "2XL430/idler_A",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     -12.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P3.idler_A",
+   "module": "P3"
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/yoke",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     -0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "yoke2",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "2XL430/body",
+   "T": [
+    [
+     1.0,
+     -0.0,
+     0.0,
+     0.0
+    ],
+    [
+     -0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.body",
+   "module": "P4"
+  },
+  {
+   "link": "head",
+   "mesh": "2XL430/plugs",
+   "T": [
+    [
+     1.0,
+     -0.0,
+     0.0,
+     0.0
+    ],
+    [
+     -0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.plugs",
+   "module": "P4"
+  },
+  {
+   "link": "head",
+   "mesh": "2XL430/horn_A",
+   "T": [
+    [
+     1.0,
+     -0.0,
+     0.0,
+     0.0
+    ],
+    [
+     -0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.horn_A",
+   "module": "P4"
+  },
+  {
+   "link": "head",
+   "mesh": "2XL430/idler_A",
+   "T": [
+    [
+     1.0,
+     -0.0,
+     0.0,
+     0.0
+    ],
+    [
+     -0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.idler_A",
+   "module": "P4"
+  },
+  {
+   "link": "head",
+   "mesh": "2XL430/idler_B",
+   "T": [
+    [
+     1.0,
+     -0.0,
+     0.0,
+     0.0
+    ],
+    [
+     -0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.idler_B",
+   "module": "P4"
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "2XL430/horn_B",
+   "T": [
+    [
+     1.0,
+     -0.0,
+     0.0,
+     0.0
+    ],
+    [
+     -0.0,
+     -1.0,
+     0.0,
+     12.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     46.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "motor",
+   "name": "P4.horn_B",
+   "module": "P4"
+  },
+  {
+   "link": "base",
+   "mesh": "part/led_band",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "led_band",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/base_floor",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "base_floor",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi_rail",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -49.5
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "pi_rail_l",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi_rail",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     8.5
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "pi_rail_r",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/servo_deck",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "servo_deck",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/battery_sled",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "battery_sled",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/door_latch",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "door_latch",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/base_front_panel",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "base_front_panel",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/base_shell",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "base_shell",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/cable_bushing",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "cable_bushing",
+   "module": null
+  },
+  {
+   "link": "turret",
+   "mesh": "part/turntable_ring",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "turntable_ring",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/opencr_pcb",
+   "T": [
+    [
+     -1.0,
+     -0.0,
+     0.0,
+     49.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     29.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     6.3
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "OpenCR 1.0 (pcb)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/opencr_connectors",
+   "T": [
+    [
+     -1.0,
+     -0.0,
+     0.0,
+     49.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     29.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     6.3
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "envelope",
+   "name": "OpenCR 1.0 (connectors)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/opencr_metal",
+   "T": [
+    [
+     -1.0,
+     -0.0,
+     0.0,
+     49.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     29.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     6.3
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "envelope",
+   "name": "OpenCR 1.0 (metal)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/opencr_components",
+   "T": [
+    [
+     -1.0,
+     -0.0,
+     0.0,
+     49.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     29.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     6.3
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "envelope",
+   "name": "OpenCR 1.0 (components)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi3b_pcb",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -53.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -32.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "Raspberry Pi 3 B (pcb)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi3b_parts",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -53.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -32.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "Raspberry Pi 3 B (parts)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi3b_sockets",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -53.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -32.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "Raspberry Pi 3 B (sockets)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi_usb_adapters",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "envelope",
+   "name": "USB up-angle adapters (keep-out)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/pi_gpio_plugs",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "envelope",
+   "name": "GPIO plugs (keep-out)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/battery_max_envelope",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "envelope",
+   "name": "battery bay (largest pack)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/battery_pack",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "LiPo battery",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/xt60_pair",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "XT60 (mated)",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/buck_4s_envelope",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "envelope",
+   "name": "4S step-down (keep-out)",
+   "module": null
+  },
+  {
+   "link": "upper",
+   "mesh": "part/shoulder_plate",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "shoulder_plate",
+   "module": null
+  },
+  {
+   "link": "turret",
+   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     23.1
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_turret_p",
+   "module": null
+  },
+  {
+   "link": "turret",
+   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "T": [
+    [
+     -1.0,
+     -0.0,
+     0.0,
+     -23.1
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_turret_n",
+   "module": null
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "T": [
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     23.1
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_mid_yoke_p",
+   "module": null
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "T": [
+    [
+     -0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    [
+     -1.0,
+     -0.0,
+     0.0,
+     -23.1
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     27.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_mid_yoke_n",
+   "module": null
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     23.1
+    ],
+    [
+     0.0,
+     -1.0,
+     -0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_neck_yoke_p",
+   "module": null
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/pivot_cap_1p0_pla_matte_charcoal",
+   "T": [
+    [
+     -1.0,
+     -0.0,
+     0.0,
+     -23.1
+    ],
+    [
+     -0.0,
+     1.0,
+     -0.0,
+     0.0
+    ],
+    [
+     0.0,
+     -0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "pivot_cap_neck_yoke_n",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/head_face",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "head_face",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/head_ring",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "head_ring",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/face_visor",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "face_visor",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/face_mask",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "face_mask",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/display_glass",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "display glass",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/display_board",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "display board",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/display_parts",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "display parts",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/display_picture",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "display_picture",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/status_light",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "status_light",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/webcam_body",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -14.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -31.15
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     16.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "webcam",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/webcam_pcb",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -14.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -31.15
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     16.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "webcam pcb",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/webcam_conn",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -14.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -31.15
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     16.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "webcam conn",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/webcam_lens",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -14.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -31.15
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     16.5
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "webcam lens",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/lens_shield",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "lens_shield",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/camera_cradle",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "camera_cradle",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/head_strap",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "head_strap",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/antenna_rods",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "antenna_rods",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/antenna_tips",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "antenna_tips",
+   "module": null
+  },
+  {
+   "link": "head",
+   "mesh": "part/head_ears",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "enclosure",
+   "name": "head_ears",
+   "module": null
+  },
+  {
+   "link": "base",
+   "mesh": "part/plug_jst_eh3",
+   "T": [
+    [
+     -0.0,
+     1.0,
+     0.0,
+     -6.3
+    ],
+    [
+     -0.0,
+     -0.0,
+     1.0,
+     -43.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     16.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug dxl_opencr_p1 a",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/plug_jst_eh3",
+   "T": [
+    [
+     0.942781,
+     -0.329372,
+     0.051754,
+     16.4
+    ],
+    [
+     0.328877,
+     0.9442,
+     0.018054,
+     15.0
+    ],
+    [
+     -0.054813,
+     0.0,
+     0.998497,
+     55.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug dxl_opencr_p1 b",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/cable_dxl_opencr_p1_base",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable dxl_opencr_p1 (base)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/plug_jst_eh3",
+   "T": [
+    [
+     -0.0,
+     1.0,
+     0.0,
+     -26.7
+    ],
+    [
+     -0.0,
+     -0.0,
+     1.0,
+     -43.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     16.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug dxl_opencr_p2 a",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "lower",
+   "mesh": "part/plug_jst_eh3",
+   "T": [
+    [
+     -0.115041,
+     0.992988,
+     0.027199,
+     -17.0
+    ],
+    [
+     0.230083,
+     -0.0,
+     0.973171,
+     17.0
+    ],
+    [
+     0.966347,
+     0.118213,
+     -0.228469,
+     -16.4
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug dxl_opencr_p2 b",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/cable_dxl_opencr_p2_base",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable dxl_opencr_p2 (base)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "turret",
+   "mesh": "part/cable_dxl_opencr_p2_turret",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable dxl_opencr_p2 (turret)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "lower",
+   "mesh": "part/cable_dxl_opencr_p2_lower",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable dxl_opencr_p2 (lower)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "lower",
+   "mesh": "part/plug_jst_eh3",
+   "T": [
+    [
+     -0.405616,
+     -0.882353,
+     0.238598,
+     -17.5
+    ],
+    [
+     0.76053,
+     -0.470588,
+     -0.447371,
+     19.5
+    ],
+    [
+     0.50702,
+     0.0,
+     0.861934,
+     -13.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug dxl_p2_p3 a",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "upper",
+   "mesh": "part/plug_jst_eh3",
+   "T": [
+    [
+     -0.166155,
+     -0.964764,
+     -0.204018,
+     17.0
+    ],
+    [
+     0.609234,
+     -0.263117,
+     0.748067,
+     17.0
+    ],
+    [
+     -0.775388,
+     0.0,
+     0.631485,
+     11.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug dxl_p2_p3 b",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "lower",
+   "mesh": "part/cable_dxl_p2_p3_lower",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable dxl_p2_p3 (lower)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "upper",
+   "mesh": "part/cable_dxl_p2_p3_upper",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable dxl_p2_p3 (upper)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "upper",
+   "mesh": "part/plug_jst_eh3",
+   "T": [
+    [
+     -0.57735,
+     -0.707107,
+     0.408248,
+     17.0
+    ],
+    [
+     0.57735,
+     -0.707107,
+     -0.408248,
+     17.0
+    ],
+    [
+     0.57735,
+     0.0,
+     0.816497,
+     15.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug dxl_p3_p4 a",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/plug_jst_eh3",
+   "T": [
+    [
+     -0.665574,
+     -0.499722,
+     0.554337,
+     -16.4
+    ],
+    [
+     0.383985,
+     -0.866186,
+     -0.31981,
+     12.0
+    ],
+    [
+     0.639975,
+     0.0,
+     0.768396,
+     35.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug dxl_p3_p4 b",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "upper",
+   "mesh": "part/cable_dxl_p3_p4_upper",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable dxl_p3_p4 (upper)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/cable_dxl_p3_p4_neck_yoke",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable dxl_p3_p4 (neck_yoke)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/cable_dxl_p3_p4_head",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable dxl_p3_p4 (head)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/plug_usb_a",
+   "T": [
+    [
+     -0.0,
+     1.0,
+     0.0,
+     41.0
+    ],
+    [
+     -0.0,
+     -0.0,
+     1.0,
+     15.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     63.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug usb_webcam b",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/cable_usb_webcam_head",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable usb_webcam (head)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/cable_usb_webcam_neck_yoke",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable usb_webcam (neck_yoke)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "upper",
+   "mesh": "part/cable_usb_webcam_upper",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable usb_webcam (upper)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "part/cable_usb_webcam_mid_yoke",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable usb_webcam (mid_yoke)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "lower",
+   "mesh": "part/cable_usb_webcam_lower",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable usb_webcam (lower)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "turret",
+   "mesh": "part/cable_usb_webcam_turret",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable usb_webcam (turret)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/cable_usb_webcam_base",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable usb_webcam (base)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/plug_dupont_4p",
+   "T": [
+    [
+     -0.0,
+     1.0,
+     0.0,
+     -25.0
+    ],
+    [
+     -0.0,
+     -0.0,
+     1.0,
+     20.3
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     40.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug uart_display b",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "head",
+   "mesh": "part/cable_uart_display_head",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable uart_display (head)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/cable_uart_display_neck_yoke",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable uart_display (neck_yoke)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "upper",
+   "mesh": "part/cable_uart_display_upper",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable uart_display (upper)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "part/cable_uart_display_mid_yoke",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable uart_display (mid_yoke)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "lower",
+   "mesh": "part/cable_uart_display_lower",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable uart_display (lower)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "turret",
+   "mesh": "part/cable_uart_display_turret",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable uart_display (turret)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/cable_uart_display_base",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable uart_display (base)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/plug_usb_micro_ra",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     55.0
+    ],
+    [
+     -0.0,
+     1.0,
+     0.0,
+     -10.8
+    ],
+    [
+     -0.0,
+     -0.0,
+     1.0,
+     11.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug usb_opencr_pi a",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/plug_usb_a",
+   "T": [
+    [
+     -0.0,
+     1.0,
+     0.0,
+     41.0
+    ],
+    [
+     -0.0,
+     -0.0,
+     1.0,
+     -3.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     63.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug usb_opencr_pi b",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/cable_usb_opencr_pi_base",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable usb_opencr_pi (base)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/plug_molex_2p",
+   "T": [
+    [
+     -0.0,
+     1.0,
+     0.0,
+     -53.5
+    ],
+    [
+     -0.0,
+     -0.0,
+     1.0,
+     9.7
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     20.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug pi_power a",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/plug_dupont_4p",
+   "T": [
+    [
+     -0.0,
+     1.0,
+     0.0,
+     -44.0
+    ],
+    [
+     -0.0,
+     -0.0,
+     1.0,
+     20.3
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     40.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug pi_power b",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/cable_pi_power_base",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable pi_power (base)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/plug_deans_t",
+   "T": [
+    [
+     -0.0,
+     1.0,
+     0.0,
+     -53.0
+    ],
+    [
+     -0.0,
+     -0.0,
+     1.0,
+     -32.2
+    ],
+    [
+     1.0,
+     0.0,
+     0.0,
+     57.6
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "electronics",
+   "name": "plug power_pigtail b",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/cable_power_pigtail_base",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable power_pigtail (base)",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "base",
+   "mesh": "part/cable_power_pigtail_neg_base",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "cable",
+   "name": "cable power_pigtail_neg (base)",
+   "module": null,
+   "no_collide": true
+  }
+ ],
+ "collision_boxes": {
+  "base": [
+   {
+    "name": "P1.body",
+    "T": [
+     [
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      12.0
+     ],
+     [
+      1.0,
+      0.0,
+      0.0,
+      70.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     18.0,
+     23.25,
+     18.0
+    ]
+   },
+   {
+    "name": "base_cover.wall_l",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -58.8
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -9.5
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      46.75
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     1.2,
+     51.5,
+     46.75
+    ]
+   },
+   {
+    "name": "base_cover.wall_r",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      58.8
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -9.5
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      46.75
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     1.2,
+     51.5,
+     46.75
+    ]
+   },
+   {
+    "name": "base_cover.wall_f",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -59.8
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      46.75
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     60.0,
+     1.2,
+     46.75
+    ]
+   },
+   {
+    "name": "base_cover.wall_b",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      40.8
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      46.75
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     60.0,
+     1.2,
+     46.75
+    ]
+   },
+   {
+    "name": "base_cover.deck_f",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -45.75
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      92.3
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     60.0,
+     15.25,
+     1.2
+    ]
+   },
+   {
+    "name": "base_cover.deck_b",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      36.25
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      92.3
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     60.0,
+     5.75,
+     1.2
+    ]
+   },
+   {
+    "name": "base_cover.deck_l",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -45.25
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      92.3
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     14.75,
+     30.5,
+     1.2
+    ]
+   },
+   {
+    "name": "base_cover.deck_r",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      45.25
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      92.3
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     14.75,
+     30.5,
+     1.2
+    ]
+   }
+  ],
+  "lower": [
+   {
+    "name": "P2.body",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      12.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     18.0,
+     23.25,
+     18.0
+    ]
+   }
+  ],
+  "upper": [
+   {
+    "name": "P3.body",
+    "T": [
+     [
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+     ],
+     [
+      0.0,
+      -1.0,
+      0.0,
+      12.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     18.0,
+     23.25,
+     18.0
+    ]
+   }
+  ],
+  "head": [
+   {
+    "name": "P4.body",
+    "T": [
+     [
+      1.0,
+      -0.0,
+      0.0,
+      0.0
+     ],
+     [
+      -0.0,
+      -1.0,
+      0.0,
+      12.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0,
+      19.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     18.0,
+     23.25,
+     18.0
+    ]
+   },
+   {
+    "name": "head_shell.x+",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      41.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -26.25
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      33.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     1.0,
+     12.25,
+     28.79
+    ]
+   },
+   {
+    "name": "head_shell.x-",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -41.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -26.25
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      33.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     1.0,
+     12.25,
+     28.79
+    ]
+   },
+   {
+    "name": "head_shell.y+",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -14.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      33.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     40.0,
+     0.4,
+     32.5
+    ]
+   },
+   {
+    "name": "head_shell.y-",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -38.5
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      33.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     42.0,
+     0.4,
+     32.5
+    ]
+   },
+   {
+    "name": "head_shell.z+",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      -26.25
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      65.140576
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     38.29,
+     12.25,
+     0.859
+    ]
+   }
+  ],
+  "turret": [
+   {
+    "name": "yoke0.base",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      2.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     23.1,
+     13.0,
+     2.0
+    ]
+   },
+   {
+    "name": "yoke0.leg+",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      21.1
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      19.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   },
+   {
+    "name": "yoke0.leg-",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -21.1
+     ],
+     [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      19.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   }
+  ],
+  "mid_yoke": [
+   {
+    "name": "yoke1.base",
+    "T": [
+     [
+      0.0,
+      -1.0,
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      2.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     23.1,
+     13.0,
+     2.0
+    ]
+   },
+   {
+    "name": "yoke1.leg+",
+    "T": [
+     [
+      0.0,
+      -1.0,
+      0.0,
+      0.0
+     ],
+     [
+      1.0,
+      0.0,
+      0.0,
+      21.1
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      19.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   },
+   {
+    "name": "yoke1.leg-",
+    "T": [
+     [
+      0.0,
+      -1.0,
+      0.0,
+      -0.0
+     ],
+     [
+      1.0,
+      0.0,
+      0.0,
+      -21.1
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      19.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   }
+  ],
+  "neck_yoke": [
+   {
+    "name": "yoke2.base",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      -1.0,
+      -0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0,
+      25.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     23.1,
+     13.0,
+     2.0
+    ]
+   },
+   {
+    "name": "yoke2.leg+",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      21.1
+     ],
+     [
+      0.0,
+      -1.0,
+      -0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0,
+      7.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   },
+   {
+    "name": "yoke2.leg-",
+    "T": [
+     [
+      1.0,
+      0.0,
+      0.0,
+      -21.1
+     ],
+     [
+      0.0,
+      -1.0,
+      -0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0,
+      7.5
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "half": [
+     2.0,
+     13.0,
+     19.5
+    ]
+   }
+  ]
+ },
+ "masses": [
+  {
+   "link": "base",
+   "name": "P1 2XL430",
+   "mass_g": 98.2,
+   "p": [
+    0.0,
+    12.0,
+    70.5
+   ],
+   "source": "e-Manual 98.2 g, lumped at module centre (ASSUMPTION)"
+  },
+  {
+   "link": "turret",
+   "name": "yoke0",
+   "mass_g": 11.61,
+   "p": [
+    -0.0,
+    0.0,
+    10.931
+   ],
+   "source": "hinge yoke; print on its side (U profile on the bed) so layers run along the legs"
+  },
+  {
+   "link": "lower",
+   "name": "P2 2XL430",
+   "mass_g": 98.2,
+   "p": [
+    0.0,
+    12.0,
+    0.0
+   ],
+   "source": "e-Manual 98.2 g, lumped at module centre (ASSUMPTION)"
+  },
+  {
+   "link": "mid_yoke",
+   "name": "yoke1",
+   "mass_g": 11.61,
+   "p": [
+    -0.0,
+    -0.0,
+    10.931
+   ],
+   "source": "hinge yoke; print on its side (U profile on the bed) so layers run along the legs"
+  },
+  {
+   "link": "upper",
+   "name": "P3 2XL430",
+   "mass_g": 98.2,
+   "p": [
+    0.0,
+    0.0,
+    12.0
+   ],
+   "source": "e-Manual 98.2 g, lumped at module centre (ASSUMPTION)"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "yoke2",
+   "mass_g": 11.61,
+   "p": [
+    -0.0,
+    0.0,
+    16.069
+   ],
+   "source": "hinge yoke; print on its side (U profile on the bed) so layers run along the legs"
+  },
+  {
+   "link": "head",
+   "name": "P4 2XL430",
+   "mass_g": 98.2,
+   "p": [
+    0.0,
+    12.0,
+    19.0
+   ],
+   "source": "e-Manual 98.2 g, lumped at module centre (ASSUMPTION)"
+  },
+  {
+   "link": "base",
+   "name": "led_band",
+   "mass_g": 0.1,
+   "p": [
+    0.0,
+    -60.2,
+    11.5
+   ],
+   "source": "light band: a thin translucent window over an LED strip behind the page block (drawn lit). The LED strip and its wiring are NOT on hand and NOT designed - a purchase"
+  },
+  {
+   "link": "base",
+   "name": "base_floor",
+   "mass_g": 32.87,
+   "p": [
+    -0.999,
+    -11.183,
+    8.218
+   ],
+   "source": "M9 floor tray: dark plinth band, OpenCR M3 standoffs [(44.5, 24.5), (-51.5, 24.5), (44.5, -41.5), (-51.5, -41.5)], five columns to the servo deck, rail ledges, pillars for the shell screws, foot recesses, air slots. PLA, print flat, 4 walls, 30 % gyroid"
+  },
+  {
+   "link": "base",
+   "name": "pi_rail_l",
+   "mass_g": 1.16,
+   "p": [
+    -49.5,
+    -8.359,
+    22.888
+   ],
+   "source": "M9 Pi rail (print 2): two M2.5 inserts for the Pi, two M2.5 screws into the column ledges. PLA, print flat, 100 % (it is small), layer lines along its length"
+  },
+  {
+   "link": "base",
+   "name": "pi_rail_r",
+   "mass_g": 1.16,
+   "p": [
+    8.5,
+    -8.359,
+    22.888
+   ],
+   "source": "M9 Pi rail (print 2): two M2.5 inserts for the Pi, two M2.5 screws into the column ledges. PLA, print flat, 100 % (it is small), layer lines along its length"
+  },
+  {
+   "link": "base",
+   "name": "servo_deck",
+   "mass_g": 26.82,
+   "p": [
+    -3.464,
+    -9.985,
+    49.43
+   ],
+   "source": "M9 servo deck: 4 mm plate on five columns (M3 x 8), P1 cradle (bottom bosses + side cheeks, M2.5), bay guide, cable holes. PLA, print flat (plate on the bed, cheeks up), 5 walls, 40 % gyroid"
+  },
+  {
+   "link": "base",
+   "name": "battery_sled",
+   "mass_g": 8.81,
+   "p": [
+    -23.528,
+    -33.539,
+    58.692
+   ],
+   "source": "M9 battery sled + door (the door is the left wall's battery hatch, in the shell's colour): plate for a pack <= 90 x 39.5 x 36.5 mm, Velcro strap slots, a lip that keeps the pack out of the plug pocket. PLA, print on the plate, 4 walls, 25 % gyroid"
+  },
+  {
+   "link": "base",
+   "name": "door_latch",
+   "mass_g": 0.47,
+   "p": [
+    -61.541,
+    -33.0,
+    45.596
+   ],
+   "source": "M9 door latch: turn button (M3 x 10 + washer, insert in the wall boss); turned up it covers the door's lower edge, turned down the sled comes out. PLA, print flat, 100 %"
+  },
+  {
+   "link": "base",
+   "name": "base_front_panel",
+   "mass_g": 5.91,
+   "p": [
+    0.0,
+    -61.6,
+    44.709
+   ],
+   "source": "M9 front panel with the air holes through it: PLA, print flat (face down on a smooth plate for a gloss face), glued on with two dots of CA"
+  },
+  {
+   "link": "base",
+   "name": "base_shell",
+   "mass_g": 118.31,
+   "p": [
+    2.425,
+    -9.976,
+    61.37
+   ],
+   "source": "M9 base shell 120 x 103 x 77.5 mm (deck at z 93.5): four M3 inserts at the bottom, battery door, DC-jack / switch / microSD slots open at the bottom edge, rear vents, front air holes, deck cable hole. PLA, print upside down (deck on the bed), 6 walls, 15 % gyroid, no support"
+  },
+  {
+   "link": "base",
+   "name": "cable_bushing",
+   "mass_g": 0.65,
+   "p": [
+    -37.522,
+    28.276,
+    93.609
+   ],
+   "source": "M9 cable bushing: rigid PLA ring with a 3.2 mm slot (the webcam's USB plug passes the 13 mm hole first, then the bushing is laid round the cables). Replaces the TPU grommet. Print flat, 100 %"
+  },
+  {
+   "link": "turret",
+   "name": "turntable_ring",
+   "mass_g": 6.97,
+   "p": [
+    -0.0,
+    -0.0,
+    2.0
+   ],
+   "source": "turntable ring (58 x 58 x 4 mm), unchanged from RC3. PLA, print flat, 100 %"
+  },
+  {
+   "link": "base",
+   "name": "OpenCR 1.0 (pcb)",
+   "mass_g": 60.0,
+   "p": [
+    -4.226,
+    -8.656,
+    8.299
+   ],
+   "source": "OpenCR RevH from ROBOTIS' STEP, turned 180 deg: DC jack and power switch at the left wall"
+  },
+  {
+   "link": "base",
+   "name": "OpenCR 1.0 (connectors)",
+   "mass_g": 0.0,
+   "p": [
+    -22.755,
+    -15.106,
+    11.056
+   ],
+   "source": "OpenCR RevH from ROBOTIS' STEP, turned 180 deg: DC jack and power switch at the left wall"
+  },
+  {
+   "link": "base",
+   "name": "OpenCR 1.0 (metal)",
+   "mass_g": 0.0,
+   "p": [
+    -4.878,
+    -9.958,
+    10.611
+   ],
+   "source": "OpenCR RevH from ROBOTIS' STEP, turned 180 deg: DC jack and power switch at the left wall"
+  },
+  {
+   "link": "base",
+   "name": "OpenCR 1.0 (components)",
+   "mass_g": 0.0,
+   "p": [
+    -21.798,
+    -11.744,
+    12.456
+   ],
+   "source": "OpenCR RevH from ROBOTIS' STEP, turned 180 deg: DC jack and power switch at the left wall"
+  },
+  {
+   "link": "base",
+   "name": "Raspberry Pi 3 B (pcb)",
+   "mass_g": 45.0,
+   "p": [
+    -10.45,
+    -4.0,
+    27.7
+   ],
+   "source": "Raspberry Pi 3 Model B+: outline, holes and big sockets from the published drawing AS RECALLED - not measured"
+  },
+  {
+   "link": "base",
+   "name": "Raspberry Pi 3 B (parts)",
+   "mass_g": 0.0,
+   "p": [
+    -20.695,
+    -4.846,
+    30.033
+   ],
+   "source": "Raspberry Pi 3 Model B+: outline, holes and big sockets from the published drawing AS RECALLED - not measured"
+  },
+  {
+   "link": "base",
+   "name": "Raspberry Pi 3 B (sockets)",
+   "mass_g": 0.0,
+   "p": [
+    15.589,
+    -4.664,
+    35.193
+   ],
+   "source": "Raspberry Pi 3 Model B+: outline, holes and big sockets from the published drawing AS RECALLED - not measured"
+  },
+  {
+   "link": "base",
+   "name": "USB up-angle adapters (keep-out)",
+   "mass_g": 10.0,
+   "p": [
+    40.762,
+    6.0,
+    45.307
+   ],
+   "source": "two USB-A male-to-female up-angle adapters (bought) + the plugs standing in them: keep-out, typical sizes"
+  },
+  {
+   "link": "base",
+   "name": "GPIO plugs (keep-out)",
+   "mass_g": 2.0,
+   "p": [
+    -20.5,
+    20.5,
+    34.2
+   ],
+   "source": "GPIO: the display harness and the 5 V feed from the OpenCR on right-angle housings (keep-out, ASSUMED low housings)"
+  },
+  {
+   "link": "base",
+   "name": "battery bay (largest pack)",
+   "mass_g": 0.0,
+   "p": [
+    11.5,
+    -33.55,
+    70.35
+   ],
+   "source": "largest pack the bay takes: 90 x 39.5 x 36.5 mm (covers the 2S / 3S / 4S 1500 mAh packs listed in 08_Docs/M9_PLA_COMPACT_BASE.md)"
+  },
+  {
+   "link": "base",
+   "name": "LiPo battery",
+   "mass_g": 125.0,
+   "p": [
+    5.0,
+    -33.55,
+    65.6
+   ],
+   "source": "3S 11.1 V 1500 mAh (typical 75 x 35 x 27 mm, about 125 g) - not bought, sizes from sellers' listings"
+  },
+  {
+   "link": "base",
+   "name": "XT60 (mated)",
+   "mass_g": 8.0,
+   "p": [
+    -45.55,
+    -33.55,
+    57.6
+   ],
+   "source": "XT60 pair: the pack's lead plugged into the OpenCR pigtail, lying in the sled's pocket by the door"
+  },
+  {
+   "link": "base",
+   "name": "4S step-down (keep-out)",
+   "mass_g": 0.0,
+   "p": [
+    27.0,
+    -45.5,
+    34.5
+   ],
+   "source": "ONLY with a 4S pack: a step-down regulator to <= 12 V, >= 5 A (e.g. a 25 x 25 mm module) hung under the servo deck; 2XL430's input limit is 12.0 V. Not designed"
+  },
+  {
+   "link": "upper",
+   "name": "shoulder_plate",
+   "mass_g": 1.75,
+   "p": [
+    -0.0,
+    20.157,
+    30.431
+   ],
+   "source": "M9 shoulder_plate (37.7 x 6.9 x 18.6 mm, PLA): flat on P3's rear face, two M2.5 x 6 button heads into P3's frame holes (x +-11, z 32), two cable clips; print flat on its back, 100 %"
+  },
+  {
+   "link": "turret",
+   "name": "pivot_cap_turret_p",
+   "mass_g": 1.43,
+   "p": [
+    25.147,
+    0.0,
+    27.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "turret",
+   "name": "pivot_cap_turret_n",
+   "mass_g": 1.43,
+   "p": [
+    -25.147,
+    -0.0,
+    27.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "mid_yoke",
+   "name": "pivot_cap_mid_yoke_p",
+   "mass_g": 1.43,
+   "p": [
+    0.0,
+    25.147,
+    27.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "mid_yoke",
+   "name": "pivot_cap_mid_yoke_n",
+   "mass_g": 1.43,
+   "p": [
+    -0.0,
+    -25.147,
+    27.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "pivot_cap_neck_yoke_p",
+   "mass_g": 1.43,
+   "p": [
+    25.147,
+    -0.0,
+    -0.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "pivot_cap_neck_yoke_n",
+   "mass_g": 1.43,
+   "p": [
+    -25.147,
+    0.0,
+    -0.0
+   ],
+   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
+  },
+  {
+   "link": "head",
+   "name": "head_face",
+   "mass_g": 25.93,
+   "p": [
+    -0.0,
+    -31.095,
+    33.345
+   ],
+   "source": "RC3 face box with hood (94.1 x 75.1 x 31.7 mm, PETG cream)"
+  },
+  {
+   "link": "head",
+   "name": "head_ring",
+   "mass_g": 2.68,
+   "p": [
+    0.0,
+    -47.223,
+    33.5
+   ],
+   "source": "RC3 clear PETG light ring (98.0 x 79.0 x 2.6 mm)"
+  },
+  {
+   "link": "head",
+   "name": "face_visor",
+   "mass_g": 10.13,
+   "p": [
+    -0.0,
+    -35.4,
+    34.0
+   ],
+   "source": "2mm smoked PMMA plate (76 x 57 mm, R9)"
+  },
+  {
+   "link": "head",
+   "name": "face_mask",
+   "mass_g": 0.9,
+   "p": [
+    0.144,
+    -34.3,
+    30.885
+   ],
+   "source": "KNIFE_ONLY 0.2mm PVC matte black mask"
+  },
+  {
+   "link": "head",
+   "name": "display glass",
+   "mass_g": 4.8,
+   "p": [
+    -0.0,
+    -33.0,
+    44.5
+   ],
+   "source": "ADA5394 1.9in TFT (glass)"
+  },
+  {
+   "link": "head",
+   "name": "display board",
+   "mass_g": 4.8,
+   "p": [
+    -0.007,
+    -31.2,
+    44.409
+   ],
+   "source": "ADA5394 1.9in TFT (board)"
+  },
+  {
+   "link": "head",
+   "name": "display parts",
+   "mass_g": 0.5,
+   "p": [
+    -9.626,
+    -29.348,
+    44.5
+   ],
+   "source": "ADA5394 1.9in TFT (parts)"
+  },
+  {
+   "link": "head",
+   "name": "display_picture",
+   "mass_g": 0.0,
+   "p": [
+    0.0,
+    -34.04,
+    44.5
+   ],
+   "source": "display picture quad"
+  },
+  {
+   "link": "head",
+   "name": "status_light",
+   "mass_g": 0.0,
+   "p": [
+    0.0,
+    -48.575,
+    72.0
+   ],
+   "source": "camera status light"
+  },
+  {
+   "link": "head",
+   "name": "webcam",
+   "mass_g": 3.0,
+   "p": [
+    -1.065,
+    -31.853,
+    16.5
+   ],
+   "source": "ADA5733 Ultra Tiny USB Webcam"
+  },
+  {
+   "link": "head",
+   "name": "webcam pcb",
+   "mass_g": 0.1,
+   "p": [
+    -5.5,
+    -30.55,
+    16.5
+   ],
+   "source": "ADA5733 Ultra Tiny USB Webcam"
+  },
+  {
+   "link": "head",
+   "name": "webcam conn",
+   "mass_g": 0.1,
+   "p": [
+    5.075,
+    -31.86,
+    16.5
+   ],
+   "source": "ADA5733 Ultra Tiny USB Webcam"
+  },
+  {
+   "link": "head",
+   "name": "webcam lens",
+   "mass_g": 0.1,
+   "p": [
+    -14.0,
+    -34.01,
+    16.5
+   ],
+   "source": "ADA5733 Ultra Tiny USB Webcam"
+  },
+  {
+   "link": "head",
+   "name": "lens_shield",
+   "mass_g": 0.1,
+   "p": [
+    -14.0,
+    -32.75,
+    16.5
+   ],
+   "source": "2~3T black foam ring round the lens"
+  },
+  {
+   "link": "head",
+   "name": "camera_cradle",
+   "mass_g": 24.91,
+   "p": [
+    -0.532,
+    -7.592,
+    28.099
+   ],
+   "source": "RC3 camera_cradle (PETG cream, 80.0 x 65.0 x 67.6 mm, horn axis at y=24, z=19, PCD16 N/S/E/W)"
+  },
+  {
+   "link": "head",
+   "name": "head_strap",
+   "mass_g": 8.3,
+   "p": [
+    0.891,
+    23.23,
+    34.345
+   ],
+   "source": "RC3 head_strap with idler relief & antenna sockets"
+  },
+  {
+   "link": "head",
+   "name": "antenna_rods",
+   "mass_g": 0.55,
+   "p": [
+    -0.0,
+    34.08,
+    62.126
+   ],
+   "source": "M9 PLA antenna rods d 4.0 (were TPU d 2.4): print lying on the bed, 100 %, glued into 4.25 sockets; or a 4 mm wooden / carbon rod"
+  },
+  {
+   "link": "head",
+   "name": "antenna_tips",
+   "mass_g": 0.41,
+   "p": [
+    -0.0,
+    37.544,
+    85.936
+   ],
+   "source": "RC3 PETG olive antenna leaves"
+  },
+  {
+   "link": "head",
+   "name": "head_ears",
+   "mass_g": 1.15,
+   "p": [
+    0.0,
+    24.0,
+    19.0
+   ],
+   "source": "RC3 head_ears (24.0 x 24.0 x 3.6 mm, aligned to y=24, z=19)"
+  },
+  {
+   "link": "base",
+   "name": "plug dxl_opencr_p1 a",
+   "mass_g": 0.5,
+   "p": [
+    -6.3,
+    -43.0,
+    12.5
+   ],
+   "source": "3-pin JST EH housing of a DYNAMIXEL X3P cable (about 7.5 x 3.2 x 7 mm); typical size, NOT measured"
+  },
+  {
+   "link": "base",
+   "name": "plug dxl_opencr_p1 b",
+   "mass_g": 0.5,
+   "p": [
+    13.1,
+    13.849,
+    55.192
+   ],
+   "source": "3-pin JST EH housing of a DYNAMIXEL X3P cable (about 7.5 x 3.2 x 7 mm); typical size, NOT measured"
+  },
+  {
+   "link": "base",
+   "name": "cable dxl_opencr_p1 (base)",
+   "mass_g": 1.97,
+   "p": [
+    10.119,
+    5.161,
+    34.514
+   ],
+   "source": "DYNAMIXEL TTL (Robot Cable-X3P 180 mm, supplied): OpenCR TTL port 3 under the Pi, up behind it, through the servo deck to the base servo - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; OpenCR TTL port position ASSUMED"
+  },
+  {
+   "link": "base",
+   "name": "plug dxl_opencr_p2 a",
+   "mass_g": 0.5,
+   "p": [
+    -26.7,
+    -43.0,
+    12.5
+   ],
+   "source": "3-pin JST EH housing of a DYNAMIXEL X3P cable (about 7.5 x 3.2 x 7 mm); typical size, NOT measured"
+  },
+  {
+   "link": "lower",
+   "name": "plug dxl_opencr_p2 b",
+   "mass_g": 0.5,
+   "p": [
+    -16.597,
+    16.195,
+    -19.782
+   ],
+   "source": "3-pin JST EH housing of a DYNAMIXEL X3P cable (about 7.5 x 3.2 x 7 mm); typical size, NOT measured"
+  },
+  {
+   "link": "base",
+   "name": "cable dxl_opencr_p2 (base)",
+   "mass_g": 2.77,
+   "p": [
+    -30.133,
+    19.209,
+    65.843
+   ],
+   "source": "DYNAMIXEL TTL: OpenCR TTL port 1 under the Pi, up the rear left, through both decks and the cable bushing to the lower servo - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; OpenCR TTL port position ASSUMED; crosses yaw and bow"
+  },
+  {
+   "link": "turret",
+   "name": "cable dxl_opencr_p2 (turret)",
+   "mass_g": 0.53,
+   "p": [
+    -19.185,
+    29.539,
+    17.737
+   ],
+   "source": "DYNAMIXEL TTL: OpenCR TTL port 1 under the Pi, up the rear left, through both decks and the cable bushing to the lower servo - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; OpenCR TTL port position ASSUMED; crosses yaw and bow"
+  },
+  {
+   "link": "lower",
+   "name": "cable dxl_opencr_p2 (lower)",
+   "mass_g": 0.11,
+   "p": [
+    -17.364,
+    17.338,
+    -12.175
+   ],
+   "source": "DYNAMIXEL TTL: OpenCR TTL port 1 under the Pi, up the rear left, through both decks and the cable bushing to the lower servo - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; OpenCR TTL port position ASSUMED; crosses yaw and bow"
+  },
+  {
+   "link": "lower",
+   "name": "plug dxl_p2_p3 a",
+   "mass_g": 0.5,
+   "p": [
+    -16.08,
+    16.838,
+    -14.775
+   ],
+   "source": "3-pin JST EH housing of a DYNAMIXEL X3P cable (about 7.5 x 3.2 x 7 mm); typical size, NOT measured"
+  },
+  {
+   "link": "upper",
+   "name": "plug dxl_p2_p3 b",
+   "mass_g": 0.5,
+   "p": [
+    17.582,
+    14.868,
+    13.714
+   ],
+   "source": "3-pin JST EH housing of a DYNAMIXEL X3P cable (about 7.5 x 3.2 x 7 mm); typical size, NOT measured"
+  },
+  {
+   "link": "lower",
+   "name": "cable dxl_p2_p3 (lower)",
+   "mass_g": 1.41,
+   "p": [
+    -12.931,
+    55.316,
+    18.174
+   ],
+   "source": "DYNAMIXEL TTL (X3P 180 mm): lower servo to upper servo, round the back - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; crosses twist and roll"
+  },
+  {
+   "link": "upper",
+   "name": "cable dxl_p2_p3 (upper)",
+   "mass_g": 0.56,
+   "p": [
+    7.468,
+    27.541,
+    1.952
+   ],
+   "source": "DYNAMIXEL TTL (X3P 180 mm): lower servo to upper servo, round the back - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; crosses twist and roll"
+  },
+  {
+   "link": "upper",
+   "name": "plug dxl_p3_p4 a",
+   "mass_g": 0.5,
+   "p": [
+    19.021,
+    14.979,
+    12.979
+   ],
+   "source": "3-pin JST EH housing of a DYNAMIXEL X3P cable (about 7.5 x 3.2 x 7 mm); typical size, NOT measured"
+  },
+  {
+   "link": "head",
+   "name": "plug dxl_p3_p4 b",
+   "mass_g": 0.5,
+   "p": [
+    -14.07,
+    10.656,
+    32.76
+   ],
+   "source": "3-pin JST EH housing of a DYNAMIXEL X3P cable (about 7.5 x 3.2 x 7 mm); typical size, NOT measured"
+  },
+  {
+   "link": "upper",
+   "name": "cable dxl_p3_p4 (upper)",
+   "mass_g": 0.65,
+   "p": [
+    4.732,
+    26.9,
+    25.962
+   ],
+   "source": "DYNAMIXEL TTL (X3P 180 mm): upper servo to head servo, behind the neck - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; crosses nod and pan"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "cable dxl_p3_p4 (neck_yoke)",
+   "mass_g": 0.74,
+   "p": [
+    -5.989,
+    31.364,
+    23.66
+   ],
+   "source": "DYNAMIXEL TTL (X3P 180 mm): upper servo to head servo, behind the neck - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; crosses nod and pan"
+  },
+  {
+   "link": "head",
+   "name": "cable dxl_p3_p4 (head)",
+   "mass_g": 0.59,
+   "p": [
+    -18.192,
+    16.067,
+    18.607
+   ],
+   "source": "DYNAMIXEL TTL (X3P 180 mm): upper servo to head servo, behind the neck - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; crosses nod and pan"
+  },
+  {
+   "link": "base",
+   "name": "plug usb_webcam b",
+   "mass_g": 0.5,
+   "p": [
+    41.0,
+    15.0,
+    49.768
+   ],
+   "source": "USB-A plug, short body; typical size, NOT measured"
+  },
+  {
+   "link": "head",
+   "name": "cable usb_webcam (head)",
+   "mass_g": 2.41,
+   "p": [
+    14.418,
+    1.808,
+    3.644
+   ],
+   "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) captive cable: head, shoulder clip, turret, deck bushing, along the rear of the Pi storey, down into the second USB up-angle adapter - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "cable usb_webcam (neck_yoke)",
+   "mass_g": 0.31,
+   "p": [
+    13.479,
+    19.494,
+    15.442
+   ],
+   "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) captive cable: head, shoulder clip, turret, deck bushing, along the rear of the Pi storey, down into the second USB up-angle adapter - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
+  },
+  {
+   "link": "upper",
+   "name": "cable usb_webcam (upper)",
+   "mass_g": 2.43,
+   "p": [
+    14.166,
+    41.46,
+    10.245
+   ],
+   "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) captive cable: head, shoulder clip, turret, deck bushing, along the rear of the Pi storey, down into the second USB up-angle adapter - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
+  },
+  {
+   "link": "mid_yoke",
+   "name": "cable usb_webcam (mid_yoke)",
+   "mass_g": 2.0,
+   "p": [
+    5.649,
+    23.875,
+    -4.754
+   ],
+   "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) captive cable: head, shoulder clip, turret, deck bushing, along the rear of the Pi storey, down into the second USB up-angle adapter - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
+  },
+  {
+   "link": "lower",
+   "name": "cable usb_webcam (lower)",
+   "mass_g": 1.98,
+   "p": [
+    -13.211,
+    26.926,
+    -8.148
+   ],
+   "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) captive cable: head, shoulder clip, turret, deck bushing, along the rear of the Pi storey, down into the second USB up-angle adapter - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
+  },
+  {
+   "link": "turret",
+   "name": "cable usb_webcam (turret)",
+   "mass_g": 1.33,
+   "p": [
+    -28.244,
+    33.653,
+    14.684
+   ],
+   "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) captive cable: head, shoulder clip, turret, deck bushing, along the rear of the Pi storey, down into the second USB up-angle adapter - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
+  },
+  {
+   "link": "base",
+   "name": "cable usb_webcam (base)",
+   "mass_g": 5.13,
+   "p": [
+    -3.103,
+    26.243,
+    53.901
+   ],
+   "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) captive cable: head, shoulder clip, turret, deck bushing, along the rear of the Pi storey, down into the second USB up-angle adapter - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
+  },
+  {
+   "link": "base",
+   "name": "plug uart_display b",
+   "mass_g": 0.5,
+   "p": [
+    -25.0,
+    20.3,
+    35.75
+   ],
+   "source": "Right-angle female Dupont header on Pi GPIO; typical size, NOT measured"
+  },
+  {
+   "link": "head",
+   "name": "cable uart_display (head)",
+   "mass_g": 0.68,
+   "p": [
+    -17.468,
+    1.428,
+    8.775
+   ],
+   "source": "Adafruit 1.9in IPS TFT 7-wire SPI harness: head, shoulder clip, turret, deck bushing, down to the Pi's GPIO (right-angle housing) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "cable uart_display (neck_yoke)",
+   "mass_g": 0.08,
+   "p": [
+    -13.479,
+    19.563,
+    15.377
+   ],
+   "source": "Adafruit 1.9in IPS TFT 7-wire SPI harness: head, shoulder clip, turret, deck bushing, down to the Pi's GPIO (right-angle housing) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
+  },
+  {
+   "link": "upper",
+   "name": "cable uart_display (upper)",
+   "mass_g": 0.62,
+   "p": [
+    -13.755,
+    40.537,
+    10.251
+   ],
+   "source": "Adafruit 1.9in IPS TFT 7-wire SPI harness: head, shoulder clip, turret, deck bushing, down to the Pi's GPIO (right-angle housing) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
+  },
+  {
+   "link": "mid_yoke",
+   "name": "cable uart_display (mid_yoke)",
+   "mass_g": 0.56,
+   "p": [
+    -16.561,
+    24.435,
+    -7.97
+   ],
+   "source": "Adafruit 1.9in IPS TFT 7-wire SPI harness: head, shoulder clip, turret, deck bushing, down to the Pi's GPIO (right-angle housing) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
+  },
+  {
+   "link": "lower",
+   "name": "cable uart_display (lower)",
+   "mass_g": 0.43,
+   "p": [
+    -21.996,
+    30.071,
+    -11.084
+   ],
+   "source": "Adafruit 1.9in IPS TFT 7-wire SPI harness: head, shoulder clip, turret, deck bushing, down to the Pi's GPIO (right-angle housing) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
+  },
+  {
+   "link": "turret",
+   "name": "cable uart_display (turret)",
+   "mass_g": 0.28,
+   "p": [
+    -28.962,
+    30.101,
+    13.463
+   ],
+   "source": "Adafruit 1.9in IPS TFT 7-wire SPI harness: head, shoulder clip, turret, deck bushing, down to the Pi's GPIO (right-angle housing) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
+  },
+  {
+   "link": "base",
+   "name": "cable uart_display (base)",
+   "mass_g": 0.54,
+   "p": [
+    -34.757,
+    25.692,
+    63.207
+   ],
+   "source": "Adafruit 1.9in IPS TFT 7-wire SPI harness: head, shoulder clip, turret, deck bushing, down to the Pi's GPIO (right-angle housing) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
+  },
+  {
+   "link": "base",
+   "name": "plug usb_opencr_pi a",
+   "mass_g": 0.5,
+   "p": [
+    51.0,
+    -10.8,
+    11.0
+   ],
+   "source": "Right-angle Micro-USB B plug; typical size, NOT measured"
+  },
+  {
+   "link": "base",
+   "name": "plug usb_opencr_pi b",
+   "mass_g": 0.5,
+   "p": [
+    41.0,
+    -3.0,
+    49.768
+   ],
+   "source": "USB-A plug, short body; typical size, NOT measured"
+  },
+  {
+   "link": "base",
+   "name": "cable usb_opencr_pi (base)",
+   "mass_g": 2.4,
+   "p": [
+    50.73,
+    -7.017,
+    47.5
+   ],
+   "source": "USB: OpenCR micro-USB (right edge) up the right wall to the first USB up-angle adapter on the Pi - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; OpenCR USB position ASSUMED"
+  },
+  {
+   "link": "base",
+   "name": "plug pi_power a",
+   "mass_g": 0.5,
+   "p": [
+    -53.5,
+    9.7,
+    15.25
+   ],
+   "source": "2-pin plug on an OpenCR power connector; typical size, NOT measured"
+  },
+  {
+   "link": "base",
+   "name": "plug pi_power b",
+   "mass_g": 0.5,
+   "p": [
+    -44.0,
+    20.3,
+    35.75
+   ],
+   "source": "Right-angle female Dupont header on Pi GPIO; typical size, NOT measured"
+  },
+  {
+   "link": "base",
+   "name": "cable pi_power (base)",
+   "mass_g": 0.5,
+   "p": [
+    -48.229,
+    16.413,
+    34.585
+   ],
+   "source": "5 V from the OpenCR's 5 V output (max 4 A) to the Pi's GPIO 5 V pins (the micro-USB socket stays free; this bypasses the Pi's input fuse) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; the mating plug for the 5267-02A header is to be bought; the lead bends 90 degrees within 6 mm above its plug, under the Pi"
+  },
+  {
+   "link": "base",
+   "name": "plug power_pigtail b",
+   "mass_g": 0.5,
+   "p": [
+    -53.0,
+    -32.2,
+    52.1
+   ],
+   "source": "Deans T-Plug battery connector on OpenCR BAT port; typical size, NOT measured"
+  },
+  {
+   "link": "base",
+   "name": "cable power_pigtail (base)",
+   "mass_g": 1.0,
+   "p": [
+    -45.93,
+    -39.215,
+    49.547
+   ],
+   "source": "LiPo (+) lead, 14 AWG red: XT60 (mated with the pack's lead in the sled's pocket) down through the servo deck to the OpenCR battery connector - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; the battery connector's type is NOT stated in the e-Manual - to confirm on the board"
+  },
+  {
+   "link": "base",
+   "name": "cable power_pigtail_neg (base)",
+   "mass_g": 0.6,
+   "p": [
+    -47.59,
+    -41.828,
+    49.715
+   ],
+   "source": "LiPo (-) lead, 14 AWG black: as the red one - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; "
+  }
+ ],
+ "notes": [
+  "Revision intent: Compact PLA build for the Cubicon Single Plus: OpenCR and Pi stacked under the base servo (base 120 x 103 mm, was 137 x 152.5), LiPo sled (2S/3S/4S 1500 mAh, XT60) behind a door in the left wall, the OpenCR's DC jack and switch through the left wall, every part a separate PLA print.",
+  "Inactive axes: P1.B (hypothesis ID 1) and P4.A (hypothesis ID 8) drive nothing and must not be commanded. With torque OFF they are free to spin but carry no load in this topology.",
+  "Joint sign: positive = direction of an increasing DYNAMIXEL position (CCW seen facing the horn, per e-Manual convention) - NOT verified on hardware.",
+  "The STEP does not model the output shaft; horn/idler meshes are excluded from collision proxies.",
+  "Electronics and camera are ENVELOPES with PRELIMINARY (UNMEASURED) sizes and assumed masses.",
+  "Printed-part masses assume PLA 1.24 g/cc at the stated fill (ASSUMPTION until weighed)."
+ ],
+ "support_polygon_mm": [
+  [
+   56.0,
+   -58.3
+  ],
+  [
+   57.3,
+   -57.0
+  ],
+  [
+   57.3,
+   38.0
+  ],
+  [
+   56.0,
+   39.3
+  ],
+  [
+   -56.0,
+   39.3
+  ],
+  [
+   -57.3,
+   38.0
+  ],
+  [
+   -57.3,
+   -57.0
+  ],
+  [
+   -56.0,
+   -58.3
+  ]
+ ],
+ "m9_base": {
+  "deck_z": 93.5,
+  "outer_mm": [
+   120.0,
+   103.0,
+   93.5
+  ],
+  "dc_jack_yz": [
+   -32.8,
+   14.6
+  ],
+  "switch_y": -11.6,
+  "opencr_standoffs": [
+   [
+    44.5,
+    24.5
+   ],
+   [
+    -51.5,
+    24.5
+   ],
+   [
+    44.5,
+    -41.5
+   ],
+   [
+    -51.5,
+    -41.5
+   ]
+  ]
+ },
+ "face_display": {
+  "palette": "mint",
+  "eye_style": "sparkle",
+  "set": "st7789_320x170",
+  "display": "Adafruit 1.9in 320x170 IPS TFT (ST7789)",
+  "pixels": [
+   320,
+   170
+  ],
+  "picture_mm": [
+   42.72,
+   22.7
+  ],
+  "default": "neutral",
+  "mesh": "part/display_picture",
+  "plate_transmission": 0.45
+ },
+ "lens": {
+  "link": "head",
+  "p": [
+   -14.0,
+   -32.0,
+   16.5
+  ],
+  "axis": [
+   0.0,
+   -1.0,
+   0.0
+  ],
+  "status": "PRELIMINARY - camera not measured"
+ },
+ "deck_z": 93.5,
+ "constraints": [
+  {
+   "type": "sum_min",
+   "joints": [
+    "J2",
+    "J5"
+   ],
+   "min": -75.0,
+   "why": "deep bow and deep nod together put the head on the deck and J2 at its torque ceiling (CAD sampling)",
+   "exception": "the named pose 'dock' (J1 = J3 = J4 = J6 = 0), checked on its own and along its approach path"
+  }
+ ],
+ "cables": [
+  {
+   "cable": "dxl_opencr_p1",
+   "what": "DYNAMIXEL TTL (Robot Cable-X3P 180 mm, supplied): OpenCR TTL port 3 under the Pi, up behind it, through the servo deck to the base servo",
+   "part": "ROBOTIS Robot Cable-X3P 180 mm (supplied with each servo)",
+   "ends": [
+    "jst_eh3",
+    "jst_eh3"
+   ],
+   "d_mm": 3.0,
+   "drawn_route_mm": 147.0,
+   "longest_in_joint_box_mm": 147.0,
+   "needed_with_plugs_mm": 163.0,
+   "stock_mm": 180.0,
+   "ok": true,
+   "crosses": [
+    "base"
+   ],
+   "assumed": "OpenCR TTL port position ASSUMED",
+   "free_length_mm": 164.0,
+   "slack_at_drawn_pose_mm": 17.0,
+   "taut_at_drawn_pose": false
+  },
+  {
+   "cable": "dxl_opencr_p2",
+   "what": "DYNAMIXEL TTL: OpenCR TTL port 1 under the Pi, up the rear left, through both decks and the cable bushing to the lower servo",
+   "part": "3-pin JST EH (X3P-compatible) lead, 300 mm - to make or buy (the supplied 180 mm is too short)",
+   "ends": [
+    "jst_eh3",
+    "jst_eh3"
+   ],
+   "d_mm": 3.0,
+   "drawn_route_mm": 193.0,
+   "longest_in_joint_box_mm": 233.0,
+   "needed_with_plugs_mm": 249.0,
+   "stock_mm": 300.0,
+   "ok": true,
+   "crosses": [
+    "base",
+    "lower",
+    "turret"
+   ],
+   "assumed": "OpenCR TTL port position ASSUMED; crosses yaw and bow",
+   "free_length_mm": 284.0,
+   "slack_at_drawn_pose_mm": 92.0,
+   "taut_at_drawn_pose": false
+  },
+  {
+   "cable": "dxl_p2_p3",
+   "what": "DYNAMIXEL TTL (X3P 180 mm): lower servo to upper servo, round the back",
+   "part": "ROBOTIS Robot Cable-X3P 180 mm (supplied with each servo)",
+   "ends": [
+    "jst_eh3",
+    "jst_eh3"
+   ],
+   "d_mm": 3.0,
+   "drawn_route_mm": 115.0,
+   "longest_in_joint_box_mm": 145.0,
+   "needed_with_plugs_mm": 161.0,
+   "stock_mm": 180.0,
+   "ok": true,
+   "crosses": [
+    "lower",
+    "upper"
+   ],
+   "assumed": "route ASSUMED; crosses twist and roll",
+   "free_length_mm": 164.0,
+   "slack_at_drawn_pose_mm": 49.0,
+   "taut_at_drawn_pose": false
+  },
+  {
+   "cable": "dxl_p3_p4",
+   "what": "DYNAMIXEL TTL (X3P 180 mm): upper servo to head servo, behind the neck",
+   "part": "ROBOTIS Robot Cable-X3P 180 mm (supplied with each servo)",
+   "ends": [
+    "jst_eh3",
+    "jst_eh3"
+   ],
+   "d_mm": 3.0,
+   "drawn_route_mm": 96.0,
+   "longest_in_joint_box_mm": 147.0,
+   "needed_with_plugs_mm": 163.0,
+   "stock_mm": 180.0,
+   "ok": true,
+   "crosses": [
+    "head",
+    "neck_yoke",
+    "upper"
+   ],
+   "assumed": "route ASSUMED; crosses nod and pan",
+   "free_length_mm": 164.0,
+   "slack_at_drawn_pose_mm": 67.0,
+   "taut_at_drawn_pose": false
+  },
+  {
+   "cable": "usb_webcam",
+   "what": "Adafruit Ultra Tiny USB Webcam (ada-5733) captive cable: head, shoulder clip, turret, deck bushing, along the rear of the Pi storey, down into the second USB up-angle adapter",
+   "part": "Integrated captive USB-A cable on ada-5733 (2.1 mm OD)",
+   "ends": [
+    null,
+    "usb_a"
+   ],
+   "d_mm": 2.2,
+   "drawn_route_mm": 387.0,
+   "longest_in_joint_box_mm": 488.0,
+   "needed_with_plugs_mm": 504.0,
+   "stock_mm": null,
+   "ok": null,
+   "crosses": [
+    "base",
+    "head",
+    "lower",
+    "mid_yoke",
+    "neck_yoke",
+    "turret",
+    "upper"
+   ],
+   "assumed": "where the cable leaves the webcam and its length are UNKNOWN",
+   "free_length_mm": 520.0,
+   "slack_at_drawn_pose_mm": 134.0,
+   "taut_at_drawn_pose": false
+  },
+  {
+   "cable": "uart_display",
+   "what": "Adafruit 1.9in IPS TFT 7-wire SPI harness: head, shoulder clip, turret, deck bushing, down to the Pi's GPIO (right-angle housing)",
+   "part": "7-wire 28AWG silicone ribbon/harness with right-angle female header on Pi GPIO",
+   "ends": [
+    null,
+    "dupont_4p"
+   ],
+   "d_mm": 2.6,
+   "drawn_route_mm": 272.0,
+   "longest_in_joint_box_mm": 376.0,
+   "needed_with_plugs_mm": 392.0,
+   "stock_mm": null,
+   "ok": null,
+   "crosses": [
+    "base",
+    "head",
+    "lower",
+    "mid_yoke",
+    "neck_yoke",
+    "turret",
+    "upper"
+   ],
+   "assumed": "route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written",
+   "free_length_mm": 400.0,
+   "slack_at_drawn_pose_mm": 129.0,
+   "taut_at_drawn_pose": false
+  },
+  {
+   "cable": "usb_opencr_pi",
+   "what": "USB: OpenCR micro-USB (right edge) up the right wall to the first USB up-angle adapter on the Pi",
+   "part": "USB-A to micro-B cable, 0.15 m, with a RIGHT-ANGLE micro-B plug (a straight one leaves 3 mm to the wall)",
+   "ends": [
+    "usb_micro_ra",
+    "usb_a"
+   ],
+   "d_mm": 3.6,
+   "drawn_route_mm": 74.0,
+   "longest_in_joint_box_mm": 74.0,
+   "needed_with_plugs_mm": 90.0,
+   "stock_mm": null,
+   "ok": null,
+   "crosses": [
+    "base"
+   ],
+   "assumed": "OpenCR USB position ASSUMED",
+   "free_length_mm": 80.0,
+   "slack_at_drawn_pose_mm": 6.0,
+   "taut_at_drawn_pose": false
+  },
+  {
+   "cable": "pi_power",
+   "what": "5 V from the OpenCR's 5 V output (max 4 A) to the Pi's GPIO 5 V pins (the micro-USB socket stays free; this bypasses the Pi's input fuse)",
+   "part": "2-wire lead to make (22 AWG): 2-pin plug for the OpenCR's 5 V output (5267-02A) to GPIO pins 2 (5 V) and 6 (GND)",
+   "ends": [
+    "molex_2p",
+    "dupont_4p"
+   ],
+   "d_mm": 2.6,
+   "drawn_route_mm": 38.0,
+   "longest_in_joint_box_mm": 38.0,
+   "needed_with_plugs_mm": 54.0,
+   "stock_mm": null,
+   "ok": null,
+   "crosses": [
+    "base"
+   ],
+   "assumed": "the mating plug for the 5267-02A header is to be bought; the lead bends 90 degrees within 6 mm above its plug, under the Pi",
+   "free_length_mm": 50.0,
+   "slack_at_drawn_pose_mm": 12.0,
+   "taut_at_drawn_pose": false
+  },
+  {
+   "cable": "power_pigtail",
+   "what": "LiPo (+) lead, 14 AWG red: XT60 (mated with the pack's lead in the sled's pocket) down through the servo deck to the OpenCR battery connector",
+   "part": "14 AWG red silicone wire + XT60 (to the pack) + the OpenCR battery plug (type to confirm on the board)",
+   "ends": [
+    null,
+    "deans_t"
+   ],
+   "d_mm": 2.8,
+   "drawn_route_mm": 33.0,
+   "longest_in_joint_box_mm": 33.0,
+   "needed_with_plugs_mm": 49.0,
+   "stock_mm": null,
+   "ok": null,
+   "crosses": [
+    "base"
+   ],
+   "assumed": "the battery connector's type is NOT stated in the e-Manual - to confirm on the board",
+   "free_length_mm": 40.0,
+   "slack_at_drawn_pose_mm": 7.0,
+   "taut_at_drawn_pose": false
+  },
+  {
+   "cable": "power_pigtail_neg",
+   "what": "LiPo (-) lead, 14 AWG black: as the red one",
+   "part": "14 AWG black silicone wire",
+   "ends": [
+    null,
+    null
+   ],
+   "d_mm": 2.8,
+   "drawn_route_mm": 32.0,
+   "longest_in_joint_box_mm": 32.0,
+   "needed_with_plugs_mm": 48.0,
+   "stock_mm": null,
+   "ok": null,
+   "crosses": [
+    "base"
+   ],
+   "assumed": "",
+   "free_length_mm": 40.0,
+   "slack_at_drawn_pose_mm": 8.0,
+   "taut_at_drawn_pose": false
+  }
+ ],
+ "cable_defs": [
+  {
+   "name": "dxl_opencr_p1",
+   "d": 3.0,
+   "material": "frame_dark",
+   "rgb": [
+    0.16,
+    0.17,
+    0.18
+   ],
+   "length_mm": 164.0,
+   "what": "DYNAMIXEL TTL (Robot Cable-X3P 180 mm, supplied): OpenCR TTL port 3 under the Pi, up behind it, through the servo deck to the base servo",
+   "way": [
+    [
+     "base",
+     [
+      -6.3,
+      -43.0,
+      16.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -6.3,
+      -43.0,
+      21.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -2.0,
+      -30.0,
+      23.0
+     ]
+    ],
+    [
+     "base",
+     [
+      2.5,
+      10.0,
+      23.0
+     ]
+    ],
+    [
+     "base",
+     [
+      3.0,
+      26.5,
+      24.5
+     ]
+    ],
+    [
+     "base",
+     [
+      8.0,
+      27.0,
+      31.0
+     ]
+    ],
+    [
+     "base",
+     [
+      25.0,
+      27.0,
+      34.0
+     ]
+    ],
+    [
+     "base",
+     [
+      33.0,
+      27.0,
+      40.0
+     ]
+    ],
+    [
+     "base",
+     [
+      35.0,
+      27.0,
+      48.0
+     ]
+    ],
+    [
+     "base",
+     [
+      33.0,
+      25.0,
+      53.0
+     ]
+    ],
+    [
+     "base",
+     [
+      25.0,
+      18.0,
+      54.5
+     ]
+    ],
+    [
+     "base",
+     [
+      16.4,
+      15.0,
+      55.0
+     ]
+    ]
+   ],
+   "bulge": [
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "dxl_opencr_p2",
+   "d": 3.0,
+   "material": "frame_dark",
+   "rgb": [
+    0.16,
+    0.17,
+    0.18
+   ],
+   "length_mm": 284.0,
+   "what": "DYNAMIXEL TTL: OpenCR TTL port 1 under the Pi, up the rear left, through both decks and the cable bushing to the lower servo",
+   "way": [
+    [
+     "base",
+     [
+      -26.7,
+      -43.0,
+      16.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -26.7,
+      -43.0,
+      21.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -27.0,
+      -30.0,
+      23.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -30.0,
+      0.0,
+      23.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -32.0,
+      26.0,
+      25.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -36.0,
+      27.5,
+      34.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -38.0,
+      28.0,
+      44.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -38.0,
+      28.0,
+      70.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -38.0,
+      28.0,
+      92.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -38.0,
+      28.0,
+      95.0
+     ]
+    ],
+    [
+     "turret",
+     [
+      -19.0,
+      18.0,
+      14.0
+     ]
+    ],
+    [
+     "lower",
+     [
+      -18.0,
+      19.0,
+      -8.0
+     ]
+    ],
+    [
+     "lower",
+     [
+      -17.0,
+      17.0,
+      -16.4
+     ]
+    ]
+   ],
+   "out": [
+    0.0,
+    1.0,
+    0.5
+   ]
+  },
+  {
+   "name": "dxl_p2_p3",
+   "d": 3.0,
+   "material": "frame_dark",
+   "rgb": [
+    0.16,
+    0.17,
+    0.18
+   ],
+   "length_mm": 164.0,
+   "what": "DYNAMIXEL TTL (X3P 180 mm): lower servo to upper servo, round the back",
+   "way": [
+    [
+     "lower",
+     [
+      -17.5,
+      19.5,
+      -13.0
+     ]
+    ],
+    [
+     "lower",
+     [
+      -21.5,
+      27.0,
+      -8.0
+     ]
+    ],
+    [
+     "lower",
+     [
+      -21.5,
+      40.0,
+      5.0
+     ]
+    ],
+    [
+     "lower",
+     [
+      -10.0,
+      55.5,
+      21.0
+     ]
+    ],
+    [
+     "upper",
+     [
+      -1.0,
+      30.4,
+      -13.0
+     ]
+    ],
+    [
+     "upper",
+     [
+      0.0,
+      31.6,
+      0.0
+     ]
+    ],
+    [
+     "upper",
+     [
+      7.0,
+      32.7,
+      6.0
+     ]
+    ],
+    [
+     "upper",
+     [
+      15.5,
+      22.5,
+      4.0
+     ]
+    ],
+    [
+     "upper",
+     [
+      17.0,
+      17.0,
+      11.0
+     ]
+    ]
+   ],
+   "out": [
+    0.0,
+    1.0,
+    0.5
+   ]
+  },
+  {
+   "name": "dxl_p3_p4",
+   "d": 3.0,
+   "material": "frame_dark",
+   "rgb": [
+    0.16,
+    0.17,
+    0.18
+   ],
+   "length_mm": 164.0,
+   "what": "DYNAMIXEL TTL (X3P 180 mm): upper servo to head servo, behind the neck",
+   "way": [
+    [
+     "upper",
+     [
+      17.0,
+      17.0,
+      15.0
+     ]
+    ],
+    [
+     "upper",
+     [
+      12.0,
+      22.0,
+      20.0
+     ]
+    ],
+    [
+     "upper",
+     [
+      2.0,
+      22.8,
+      28.5
+     ]
+    ],
+    [
+     "neck_yoke",
+     [
+      0.0,
+      23.5,
+      8.2
+     ]
+    ],
+    [
+     "neck_yoke",
+     [
+      -4.0,
+      23.0,
+      19.0
+     ]
+    ],
+    [
+     "head",
+     [
+      -10.0,
+      21.0,
+      -2.0
+     ]
+    ],
+    [
+     "head",
+     [
+      -19.0,
+      17.5,
+      8.0
+     ]
+    ],
+    [
+     "head",
+     [
+      -20.0,
+      15.0,
+      30.0
+     ]
+    ],
+    [
+     "head",
+     [
+      -19.0,
+      13.5,
+      37.5
+     ]
+    ],
+    [
+     "head",
+     [
+      -16.4,
+      12.0,
+      35.0
+     ]
+    ]
+   ],
+   "out": [
+    0.0,
+    1.0,
+    0.35
+   ]
+  },
+  {
+   "name": "usb_webcam",
+   "d": 2.2,
+   "material": "gloss_black",
+   "rgb": [
+    0.012,
+    0.012,
+    0.016
+   ],
+   "length_mm": 520.0,
+   "what": "Adafruit Ultra Tiny USB Webcam (ada-5733) captive cable: head, shoulder clip, turret, deck bushing, along the rear of the Pi storey, down into the second USB up-angle adapter",
+   "way": [
+    [
+     "head",
+     [
+      9.5,
+      -34.0,
+      13.0
+     ]
+    ],
+    [
+     "head",
+     [
+      12.0,
+      -16.0,
+      12.0
+     ]
+    ],
+    [
+     "head",
+     [
+      18.0,
+      -9.0,
+      8.0
+     ]
+    ],
+    [
+     "head",
+     [
+      15.0,
+      15.0,
+      -2.0
+     ]
+    ],
+    [
+     "neck_yoke",
+     [
+      13.5,
+      23.0,
+      15.0
+     ]
+    ],
+    [
+     "upper",
+     [
+      13.5,
+      23.0,
+      29.8
+     ]
+    ],
+    [
+     "mid_yoke",
+     [
+      14.0,
+      24.5,
+      16.0
+     ]
+    ],
+    [
+     "lower",
+     [
+      8.0,
+      27.0,
+      10.0
+     ]
+    ],
+    [
+     "lower",
+     [
+      -8.0,
+      27.0,
+      -6.0
+     ]
+    ],
+    [
+     "turret",
+     [
+      -20.0,
+      21.0,
+      14.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -39.0,
+      29.5,
+      95.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -39.0,
+      29.5,
+      92.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -39.0,
+      29.0,
+      60.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -39.0,
+      28.5,
+      45.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -30.0,
+      27.0,
+      38.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -10.0,
+      27.0,
+      37.5
+     ]
+    ],
+    [
+     "base",
+     [
+      20.0,
+      27.0,
+      37.5
+     ]
+    ],
+    [
+     "base",
+     [
+      33.0,
+      27.0,
+      44.0
+     ]
+    ],
+    [
+     "base",
+     [
+      38.0,
+      25.0,
+      56.0
+     ]
+    ],
+    [
+     "base",
+     [
+      41.5,
+      19.0,
+      72.0
+     ]
+    ],
+    [
+     "base",
+     [
+      41.0,
+      15.0,
+      70.0
+     ]
+    ],
+    [
+     "base",
+     [
+      41.0,
+      15.0,
+      63.0
+     ]
+    ]
+   ],
+   "out": [
+    0.0,
+    1.0,
+    0.5
+   ]
+  },
+  {
+   "name": "uart_display",
+   "d": 2.6,
+   "material": "sage",
+   "rgb": [
+    0.2,
+    0.27,
+    0.15
+   ],
+   "length_mm": 400.0,
+   "what": "Adafruit 1.9in IPS TFT 7-wire SPI harness: head, shoulder clip, turret, deck bushing, down to the Pi's GPIO (right-angle housing)",
+   "way": [
+    [
+     "head",
+     [
+      -21.0,
+      -34.0,
+      26.5
+     ]
+    ],
+    [
+     "head",
+     [
+      -21.0,
+      -16.0,
+      24.0
+     ]
+    ],
+    [
+     "head",
+     [
+      -19.0,
+      -8.0,
+      14.0
+     ]
+    ],
+    [
+     "head",
+     [
+      -15.0,
+      15.0,
+      -2.0
+     ]
+    ],
+    [
+     "neck_yoke",
+     [
+      -13.5,
+      23.0,
+      15.0
+     ]
+    ],
+    [
+     "upper",
+     [
+      -13.5,
+      23.0,
+      29.8
+     ]
+    ],
+    [
+     "mid_yoke",
+     [
+      -14.0,
+      24.5,
+      16.0
+     ]
+    ],
+    [
+     "lower",
+     [
+      -16.0,
+      26.0,
+      6.0
+     ]
+    ],
+    [
+     "turret",
+     [
+      -22.0,
+      20.0,
+      14.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -37.0,
+      27.0,
+      95.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -37.0,
+      27.0,
+      92.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -37.0,
+      27.0,
+      60.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -37.0,
+      26.5,
+      46.5
+     ]
+    ],
+    [
+     "base",
+     [
+      -30.0,
+      23.5,
+      44.5
+     ]
+    ],
+    [
+     "base",
+     [
+      -25.0,
+      20.3,
+      44.5
+     ]
+    ],
+    [
+     "base",
+     [
+      -25.0,
+      20.3,
+      40.0
+     ]
+    ]
+   ],
+   "out": [
+    0.0,
+    1.0,
+    0.5
+   ]
+  },
+  {
+   "name": "usb_opencr_pi",
+   "d": 3.6,
+   "material": "gloss_black",
+   "rgb": [
+    0.012,
+    0.012,
+    0.016
+   ],
+   "length_mm": 80.0,
+   "what": "USB: OpenCR micro-USB (right edge) up the right wall to the first USB up-angle adapter on the Pi",
+   "way": [
+    [
+     "base",
+     [
+      55.0,
+      -10.8,
+      11.0
+     ]
+    ],
+    [
+     "base",
+     [
+      54.5,
+      -10.5,
+      18.0
+     ]
+    ],
+    [
+     "base",
+     [
+      53.0,
+      -9.0,
+      30.0
+     ]
+    ],
+    [
+     "base",
+     [
+      51.0,
+      -6.0,
+      48.0
+     ]
+    ],
+    [
+     "base",
+     [
+      48.0,
+      -4.0,
+      67.0
+     ]
+    ],
+    [
+     "base",
+     [
+      42.0,
+      -3.0,
+      72.0
+     ]
+    ],
+    [
+     "base",
+     [
+      41.0,
+      -3.0,
+      63.0
+     ]
+    ]
+   ],
+   "bulge": [
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "pi_power",
+   "d": 2.6,
+   "material": "sage",
+   "rgb": [
+    0.2,
+    0.27,
+    0.15
+   ],
+   "length_mm": 50.0,
+   "what": "5 V from the OpenCR's 5 V output (max 4 A) to the Pi's GPIO 5 V pins (the micro-USB socket stays free; this bypasses the Pi's input fuse)",
+   "way": [
+    [
+     "base",
+     [
+      -53.5,
+      9.7,
+      20.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -54.5,
+      9.7,
+      23.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -54.5,
+      13.0,
+      30.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -50.0,
+      22.0,
+      42.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -44.0,
+      21.0,
+      44.5
+     ]
+    ],
+    [
+     "base",
+     [
+      -44.0,
+      20.3,
+      40.0
+     ]
+    ]
+   ],
+   "bulge": [
+    1.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "power_pigtail",
+   "d": 2.8,
+   "material": "coral",
+   "rgb": [
+    0.91,
+    0.2,
+    0.11
+   ],
+   "length_mm": 40.0,
+   "what": "LiPo (+) lead, 14 AWG red: XT60 (mated with the pack's lead in the sled's pocket) down through the servo deck to the OpenCR battery connector",
+   "way": [
+    [
+     "base",
+     [
+      -37.4,
+      -41.7,
+      34.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -41.0,
+      -40.6,
+      40.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -46.0,
+      -40.6,
+      46.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -46.0,
+      -40.6,
+      51.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -51.0,
+      -36.0,
+      55.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -53.0,
+      -32.2,
+      57.6
+     ]
+    ]
+   ],
+   "bulge": [
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "power_pigtail_neg",
+   "d": 2.8,
+   "material": "gloss_black",
+   "rgb": [
+    0.012,
+    0.012,
+    0.016
+   ],
+   "length_mm": 40.0,
+   "what": "LiPo (-) lead, 14 AWG black: as the red one",
+   "way": [
+    [
+     "base",
+     [
+      -40.2,
+      -41.7,
+      34.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -43.0,
+      -43.4,
+      40.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -48.0,
+      -43.4,
+      46.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -48.0,
+      -43.4,
+      51.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -52.0,
+      -38.0,
+      55.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -53.0,
+      -34.9,
+      57.6
+     ]
+    ]
+   ],
+   "bulge": [
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ],
+ "named_poses": {
+  "home": {},
+  "attend": {
+   "J5": 15.0
+  },
+  "rest": {
+   "J5": 12.0,
+   "J6": 20.0
+  },
+  "mirror_L1": {
+   "J2": -5.0,
+   "J5": 7.0
+  },
+  "mirror_L2": {
+   "J2": -10.0,
+   "J5": 3.0
+  },
+  "sleep": {
+   "J2": -12.0,
+   "J5": -45.0
+  }
+ }
+}

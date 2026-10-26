@@ -56,7 +56,8 @@ cad.rotation.x = -Math.PI / 2;
 cad.scale.setScalar(0.001);
 scene.add(cad);
 
-const VIEWS = { front: [0, 0.02, 1], side: [1, 0.02, 0], rear: [0, 0.02, -1], three_quarter: [0.72, 0.42, 0.72], top: [0, 1, 0.001] };
+const VIEWS = { front: [0, 0.02, 1], side: [1, 0.02, 0], rear: [0, 0.02, -1], three_quarter: [0.72, 0.42, 0.72], top: [0, 1, 0.001],
+                left: [-1, 0.02, 0], three_quarter_left: [-0.72, 0.42, 0.72], rear_left: [-0.72, 0.42, -0.72] };
 let viewTarget = new THREE.Vector3(0, 0.13, -0.012), viewDist = 0.72;
 function setView(name) {
   const d = new THREE.Vector3(...VIEWS[name]).normalize();
@@ -587,5 +588,7 @@ function tick(now) {
     snap: async name => { controls.update(); renderer.render(scene, camera);
       const r = await fetch(`/api/screenshot/${S.rev}/${name}`, { method: 'PUT', body: renderer.domElement.toDataURL('image/png') }); return r.json(); },
     setToggle: (id, on) => { const e = document.querySelector(id); e.checked = on; applyVisibility(); },
+    // aim the camera: target [x, y, z] in scene metres (Y up), distance in metres, a VIEWS name (review screenshots)
+    aim: (t, dist, view) => { viewTarget.set(...t); viewDist = dist; setView(view || "three_quarter"); },
   };
 })().catch(e => { $('#loading').textContent = 'Load failed: ' + e.message; console.error(e); });
