@@ -11,7 +11,7 @@
   canvas { display:block; }
   .panel { position:absolute; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px 12px; backdrop-filter:blur(6px); }
   #left { top:10px; left:10px; width:330px; max-height:calc(100% - 210px); overflow:auto; }
-  #right { top:10px; right:10px; width:250px; }
+  #right { top:10px; right:10px; width:250px; max-height:calc(100% - 210px); overflow:auto; }
   #bottom { left:10px; right:10px; bottom:10px; height:178px; }
   h1 { font-size:14px; margin:0 0 2px; letter-spacing:.02em; }
   h2 { font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--mute); margin:10px 0 6px; }
@@ -46,6 +46,12 @@
   #report { font-size:11.5px; color:var(--mute); margin-top:4px; white-space:pre-wrap; max-height:42px; overflow:auto; }
   .hidden { display:none !important; }
   #loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--mute); font-size:15px; }
+  #campad { margin-top:8px; }
+  #campad .pad-row { display:flex; align-items:center; gap:4px; margin:4px 0; flex-wrap:wrap; }
+  #campad .pad-lb { width:30px; color:var(--mute); font-size:11.5px; }
+  #campad button { min-width:30px; padding:3px 7px; touch-action:none; user-select:none; -webkit-user-select:none; }
+  #campad .pad-hint { margin-top:4px; }
+  #showUi { position:absolute; right:10px; bottom:10px; z-index:5; }
   .note { margin:6px 0; color:var(--mute); font-size:11.5px; }
   #faceExport, #save, #export { display:none; }
   @media (max-width: 760px) {
@@ -55,7 +61,7 @@
   }
   /* published copy: the parts / power sheet; the page tabs live in the shared top bar (topbar.css) */
   #left, #right { top:calc(var(--tb-h) + 8px) !important; }
-  #left { max-height:calc(100% - 210px - var(--tb-h)) !important; }
+  #left, #right { max-height:calc(100% - 210px - var(--tb-h)) !important; }
   #loading { padding-top:var(--tb-h); }
   .embed .nfy-topbar { display:none !important; }
   .embed #loading { padding-top:0; }
@@ -74,6 +80,14 @@
   .sheet .close { background:none; border:none; font-size:18px; color:var(--mute); padding:2px 6px; }
   .sheet .close:hover { color:var(--ink); }
   @media (max-width: 560px) { .sheet dl { grid-template-columns:1fr; gap:2px; } .sheet dd { margin-bottom:8px; } }
+  /* free camera (2026-10-27): on a phone the right panel shrinks to the camera pad above the motion bar */
+  #showUi { bottom:max(10px, env(safe-area-inset-bottom, 0px)) !important; }
+  @media (max-width: 760px) {
+    #right { display:block !important; top:auto !important; bottom:calc(34% + 18px); left:auto; right:10px; width:auto; padding:6px 8px; }
+    #right > :not(#campad) { display:none !important; }
+    #campad { margin-top:0; }
+    #campad .pad-hint, #campad .pad-lb { display:none; }
+  }
 
 /* One top bar on every page of the site: brand left, page tabs exactly centred, an optional control right (language on the
    research page). Fixed, dark and translucent, so it reads the same over the 3D twin, the print layout and the paper page. */
@@ -101,7 +115,7 @@
   .nfy-topbar nav.tabs { grid-column: 1 / -1; grid-row: 2; justify-self: stretch; overflow-x: auto; scrollbar-width: none; }
 }
 
-  /* print tab layout (M9 PLA): part list on the left, the STL on the Cubicon bed on the right */
+  /* print tab layout (M9 / M10 PLA): part list on the left, the STL on the Cubicon bed on the right */
   #printPage { display:grid; grid-template-columns:380px 1fr; height:calc(100% - var(--tb-h)); margin-top:var(--tb-h); }
   #printSide { position:static; border-radius:0; border-width:0 1px 0 0; max-height:none; overflow:auto; backdrop-filter:none; padding:12px 14px 18px; }
   #view { position:relative; min-height:320px; min-width:0; }
@@ -135,6 +149,16 @@
     #view { height:52vh; order:-1; }
     #printSide { border-width:1px 0 0; }
   }
+  /* M10 (2026-10-27): supports / print aids per part, the physics table */
+  #plist u.tg { text-decoration:none; font-size:10.5px; padding:0 5px; margin-left:4px; border-radius:8px; border:1px solid var(--line); white-space:nowrap; }
+  #plist u.tg.sup { color:#ffb36b; border-color:#7a4b1d; }
+  #plist u.tg.aid { color:#9fd0ff; border-color:#2c4f73; }
+  .facts em.need { font-style:normal; color:#ffb36b; }
+  #physics table { width:100%; border-collapse:collapse; font-size:11.5px; margin:6px 0; }
+  #physics th, #physics td { text-align:left; vertical-align:top; border-bottom:1px solid var(--line); padding:3px 4px; }
+  #physics th { color:var(--mute); font-weight:600; }
+  #physics td.ok { color:var(--ok); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  #physics td.bad { color:var(--bad); }
 
 </style>
 <script type="importmap">
@@ -145,8 +169,9 @@
 <div class="nfy-topbar"><a class="nfy-brand" href="index.html">Notifyi</a><nav class="tabs"><a class="tab" href="index.html">3D 모델</a><a class="tab on" href="print.html">출력 도면</a><a class="tab" href="research.html">연구 · 논문</a><button type="button" class="tab info" data-open="infoOverlay">기준 부품 · 전원 안내</button></nav><div class="nfy-right"></div></div>
 <div id="printPage">
   <aside class="panel" id="printSide">
-    <h1>M9 PLA · 부품별 출력</h1>
-    <p class="note">학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)에서 <b>흰 PLA</b>로 뽑고, 다 뽑은 뒤 <b>RC3 원래 색으로 칠합니다</b>. RC3의 A–F 묶음(런너) 대신 <b>부품마다 따로</b> 출력하고, 각 STL은 이미 출력 방향으로 돌려 베드 가운데에 놓았습니다. 목록의 색 점 = 칠할 색.</p>
+    <h1>M10 PLA · 부품별 출력</h1>
+    <p class="note">학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)에서 <b>흰 PLA</b>로 뽑고, 다 뽑은 뒤 <b>RC3 원래 색으로 칠합니다</b>. 부품마다 따로 출력하고, 각 STL은 이미 출력 방향으로 돌려 베드 가운데에 놓았습니다. 목록의 색 점 = 칠할 색.</p>
+    <p class="note"><b>M10 (2026-10-27)</b>: 지지대를 떼다가 부품이 부러지지 않도록 모든 부품을 다시 검토했습니다. 31조각 중 <b>카메라 받침 1개만 지지대</b>가 필요하고, 나머지는 45° 보강 · 세로 슬롯 · 출력 방향 변경으로 지지대 없이 뽑힙니다. 브리지가 긴 곳 세 부품에는 <b>함께 출력되는 보조물</b>(떼어 내는 웹, 따로 떨어진 링, 0.3 mm 막)이 있습니다. 목록의 <u class="tg sup" style="text-decoration:none">지지대</u> · <u class="tg aid" style="text-decoration:none">보조물</u> 표시를 보세요.</p>
     <p class="sub" id="summary">불러오는 중…</p>
     <p class="btns"><a id="zip" class="btn" href="#">전체 STL (zip)</a> <a class="btn" id="tablejson" href="#" target="_blank" rel="noopener">출력표 JSON</a></p>
     <div class="chips" id="groups"></div>
@@ -156,14 +181,36 @@
     <p class="change" id="change"></p>
     <p class="btns"><a id="stl" class="btn" href="#">이 부품 STL 받기</a>
       <button type="button" data-view="three_quarter">입체</button><button type="button" data-view="top">위</button><button type="button" data-view="side">옆</button></p>
+    <details open>
+      <summary>지지대 · 보조물 떼기</summary>
+      <ul>
+        <li><b>베이스 외피</b>: 문 위 받침 웹 2개 — 펜치로 가운데를 잡고 옆으로 꺾으면 아래쪽 목에서 부러집니다(약 2 N). 남은 돌기는 줄로. 문에 가려지는 면입니다.</li>
+        <li><b>바닥 트레이</b>: 오른쪽 레일 받침 아래 웹 2개 — <b>OpenCR을 넣기 전에</b> 옆으로 꺾어 떼기(1.2 mm 목). 외피 나사 구멍 위 0.3 mm 막 4개는 M3 나사로 밀어 뚫거나 3.4 mm 드릴.</li>
+        <li><b>얼굴 상자</b>: 후드 안에 서 있는 링 — 부품과 붙어 있지 않으니(0.25 mm 띄움) 들어내면 끝.</li>
+        <li><b>머리 윗판</b>: 나사 기둥 위 0.3 mm 막 2개 — M2.5 나사로 뚫거나 2.8 mm 드릴.</li>
+        <li><b>카메라 받침 (유일한 지지대)</b>: 슬라이서 설정 — 지지대 45°, 접촉 간격 0.2 mm, 브리지에는 지지대 없음, <b>허브 구멍(Ø 11) 4개 안은 지지대 막기</b>(구멍과 나사 머리 홈 사이 벽이 0.65 mm). 디스플레이 기둥 아래 지지대는 <b>니퍼로 기둥에 붙여 잘라 내고</b> 기둥을 지렛대로 쓰지 않기. 팔 아래 지지대는 <b>옆이 아니라 아래로</b> 당기기.</li>
+        <li><b>서보 데크</b>: P1 옆 홈에 들어가는 짧은 핀 4개(4 mm)는 지지대 없이 뽑힙니다. 아래쪽이 0.3 mm쯤 처져도 홈 여유가 0.7 mm라 괜찮고, 거칠면 줄로 살짝.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>물리 검토 — 떼는 힘 · 층 방향 · 나사 길이</summary>
+      <ul>
+        <li><b>가정</b>: PLA 강도 층 방향 40 MPa, 층 사이(접착) 15 MPa — 오래된 프린터를 생각해 공개 값의 낮은 쪽. 펜치로 지지대를 뗄 때 보통 20 N, 세게 40 N. 보 공식(σ = M / W) 손계산이라 위험 순위를 정하는 용도이고, <b>실물 검증은 아닙니다</b>.</li>
+        <li><b>지지대를 떼도 부품이 견디는가</b>: 가장 약한 곳은 카메라 받침의 디스플레이 기둥(Ø 5.6, 16 mm) — 40 N에 안전율 2.1(그래서 니퍼로 자르라는 안내). 팔은 7.2, 카메라 포켓 바닥 12.7.</li>
+        <li><b>보조물이 부품보다 먼저 부러지는가</b>: 문 위 웹의 목은 외피 벽보다 32배 약하고, 바닥 웹의 목은 받침보다 19배 약합니다 — 부러지면 목에서 부러집니다.</li>
+        <li><b>층 방향이 바뀐 부품</b>: 요크를 바닥판이 아래로 세워 뽑으면 층이 다리를 가로지르지만, 관절 토크로 다리에 걸리는 응력은 0.4 MPa(서보가 막혀 1.4 N·m를 낼 때 3.1 MPa)라 안전율 4.8 이상. 머리 윗판 나사 기둥 9.3, 안테나 소켓은 막대(Ø 4)가 먼저 부러져 윗판을 보호합니다.</li>
+        <li><b>M9에서 찾은 실제 오류도 고쳤습니다</b>: 서보 데크의 P1 나사 보스 벽 0.15 mm, Pi 레일 받침 인서트가 받침 끝을 뚫고 아래로 1.2 mm 나옴, 레일 나사 머리 홈 벽 0.05 mm, 귀 · 어깨판 출력 방향이 뒤집혀 있었음, 안테나 막대 출력 파일이 8 mm 짧았음, 외피 고정 나사 M3 × 12는 인서트에 닿지 않음(→ M3 × 18), 레일 나사 M2.5 × 8은 OpenCR 헤더까지 내려감(→ × 5).</li>
+      </ul>
+      <div id="physics"></div>
+    </details>
     <details>
       <summary>PLA로 다시 설계한 원칙</summary>
       <ul>
+        <li><b>지지대는 형상으로 없앰</b> — 오버행 45° 이내(보강 · 코벨 · 모따기), 긴 가로 슬롯 대신 세로 슬롯, 브리지 25 mm 이하. 꼭 필요하면 부품보다 약한 목을 가진 보조물로.</li>
         <li><b>휘는 부품 없음</b> — 스냅핏 · 걸쇠 · TPU 부품을 나사 · 돌리는 버튼 · 단단한 부싱으로 바꿈 (PLA는 휘면 부러짐).</li>
-        <li><b>나사는 황동 인서트</b>(M3 · M2.5, 인두로 압입) — PLA에 직접 나사를 반복해서 감으면 나사산이 뭉개짐. 보스 지름은 인서트의 2배 이상.</li>
+        <li><b>나사는 황동 인서트</b>(M3 · M2.5, 인두로 압입) — PLA에 직접 나사를 반복해서 감으면 나사산이 뭉개짐. 인서트 둘레 벽 1.2 mm 이상.</li>
         <li><b>압입은 크러시 리브로</b> — 0.15 mm 리브가 깎이며 들어가 링이 쪼개지지 않음 (피벗 캡).</li>
-        <li><b>층 방향 = 하중 방향</b> — 요크는 옆으로, 안테나 막대는 눕혀서 출력.</li>
-        <li><b>모서리 필렛 · 원뿔 보강</b>, 벽 2.0–4.0 mm, 접시머리 대신 둥근머리 나사.</li>
+        <li><b>층 방향</b> — 하중이 큰 곳은 층을 따라가게(안테나 막대는 눕혀서, 카메라 받침 팔은 층 방향), 층을 가로지르는 곳은 응력을 계산해 확인(요크 다리).</li>
         <li><b>열</b> — PLA는 55–60 °C에서 물러짐. 서보 · Pi 주변은 큰 힘을 받지 않게 했고 통풍구를 둠. 차 안 · 직사광선 보관 금지. 30분 연속 동작 후 온도 확인은 <b>아직 안 함</b>.</li>
       </ul>
     </details>
@@ -172,20 +219,21 @@
       <ul>
         <li><b>색</b>: 크림 — 베이스 외피 · 배터리 문 · 얼굴 상자 · 머리 윗판 · 카메라 받침 · 요크 · 어깨판 / 다크 그레이 — 바닥 트레이 · 서보 데크 · Pi 레일 · 피벗 캡 · 안테나 막대 · 문 버튼 / 올리브 — 안테나 잎 · 귀 · 턴테이블 링 · 케이블 부싱 / 검정 — 앞 패널.</li>
         <li><b>칠하지 않음</b>: 얼굴 테 · 라이트 띠 — 흰 PLA가 빛을 퍼뜨립니다(밝기는 실물에서 확인).</li>
-        <li><b>순서</b>: 서포트 제거 → 400방 사포 → <b>인서트를 먼저 압입</b>(인두 열에 도막이 녹으므로) → 플라스틱용 프라이머 → 아크릴 스프레이를 얇게 2–3번 → 무광 클리어.</li>
+        <li><b>순서</b>: 지지대 · 보조물 떼기 → 400방 사포 → <b>인서트를 먼저 압입</b>(인두 열에 도막이 녹으므로) → 플라스틱용 프라이머 → 아크릴 스프레이를 얇게 2–3번 → 무광 클리어.</li>
         <li><b>칠하지 말고 가릴 곳</b>(도막 0.05–0.1 mm만큼 빡빡해짐): 인서트 · 나사 구멍, 요크 허브 구멍과 피벗 캡 축 · 크러시 리브, 배터리 슬레드가 미끄러지는 면과 문 테두리, 안테나 소켓 · 막대 끝, 어깨판이 서보에 닿는 면, 외피와 바닥 트레이가 맞닿는 테두리.</li>
         <li>안쪽 부품(서보 데크 · Pi 레일)은 보이지 않으니 칠하지 않아도 됩니다. 12V · POWER · SD 각인은 두껍게 칠하면 메워지니, 칠한 뒤 검은 먹선으로 채우면 잘 보입니다.</li>
       </ul>
     </details>
     <details>
-      <summary>베이스 조립 순서</summary>
+      <summary>베이스 조립 순서 (나사 길이 정정)</summary>
       <ol>
-        <li>인서트를 인두로 압입: M3 14개 (OpenCR 받침 4 · 기둥 위 5 · 외피 보스 4 · 문 버튼 보스 1), M2.5 8개 (레일 받침 4 · Pi 레일 4).</li>
+        <li>보조물 떼기, 막 뚫기 (위 "지지대 · 보조물 떼기").</li>
+        <li>인서트를 인두로 압입: <b>M3 × 5.7</b> 10개 (기둥 위 5 · 외피 보스 4 · 문 버튼 보스 1), <b>M3 × 4</b> 4개 (OpenCR 받침 — 구멍이 4.6 mm라 긴 인서트는 튀어나옴), <b>M2.5 × 3</b> 4개 (레일 받침), <b>M2.5 × 4</b> 4개 (Pi 레일).</li>
         <li>OpenCR를 바닥 트레이에 M3 × 6 4개 (DC 잭 · 스위치가 왼쪽).</li>
-        <li>Pi 레일 2개를 기둥 받침에, Pi를 레일에 M2.5 × 6. USB 업앵글 어댑터 2개 꽂기.</li>
-        <li>DXL · USB · 5 V · 배터리 피그테일 배선 → 서보 데크를 기둥에 M3 × 8, P1을 거치대에 M2.5.</li>
-        <li>외피를 위에서 씌우고(왼쪽 슬롯이 아래로 열려 있음) 바닥에서 M3 × 12 4개. 케이블 부싱 끼우기.</li>
-        <li>턴테이블 링 · 몸통 · 머리 조립 (RC3와 같은 순서). 3S 배터리는 슬레드에 묶고 XT60 연결 후 밀어 넣고 버튼을 돌려 잠금.</li>
+        <li>Pi 레일 2개를 기둥 받침에 <b>M2.5 × 5</b>(M9 안내의 × 8은 너무 김), Pi를 레일에 M2.5 × 6. USB 업앵글 어댑터 2개 꽂기.</li>
+        <li>DXL · USB · 5 V · 배터리 피그테일 배선 → 서보 데크를 기둥에 M3 × 8, P1을 거치대에 M2.5 × 6 (6개).</li>
+        <li>외피를 위에서 씌우고(왼쪽 슬롯이 아래로 열려 있음) 바닥에서 <b>M3 × 18 둥근머리</b> 4개(M9 안내의 × 12는 인서트에 닿지 않음). 케이블 부싱 끼우기.</li>
+        <li>턴테이블 링 · 몸통 · 머리 조립 (RC3와 같은 순서). 3S 배터리는 슬레드에 묶고 XT60 연결 후 밀어 넣고, 문 버튼(M3 × 10 + 와셔)을 위로 돌려 잠금 — 옆으로 돌리면 열림.</li>
       </ol>
     </details>
     <p class="sub">예상 시간 · 무게는 PrusaSlicer 2.9.6 <b>해석값</b>(0.4 mm 노즐, 40–60 mm/s의 느린 프린터로 가정)이라 Cubicon의 Cubicreator와 다를 수 있습니다. 미리보기 색은 칠한 뒤의 RC3 색입니다. 실물 출력 · 칠 · 조립 · 결선 · 발열은 <b>검증 전</b>입니다.</p>
@@ -197,12 +245,18 @@
 <div id="infoOverlay" class="overlay" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
     <div class="sheet-hd"><h2 id="infoTitle">기준 부품 · 전원 안내</h2><button type="button" class="close" data-close="infoOverlay" aria-label="닫기">✕</button></div>
+    <h3>M10 PLA (2026-10-27) — 지지대를 떼도 부러지지 않게 전부 재검토</h3>
+    <ul>
+      <li>31조각 중 <b>카메라 받침 1개만 지지대</b>. 나머지는 45° 보강 · 코벨 · 세로 슬롯 · 출력 방향 변경으로 지지대 없이 출력되고, 긴 브리지 세 곳은 함께 출력해 떼어 내는 보조물(부품보다 약한 목)로 받칩니다.</li>
+      <li>떼는 힘 · 층 방향 하중 · 나사 길이를 손계산으로 확인(PLA 층 방향 40 MPa, 층 사이 15 MPa 가정): 가장 약한 곳이 안전율 2.1. M9의 실제 오류(서보 데크 보스 벽 0.15 mm, 레일 받침 인서트 돌출, 귀 · 어깨판 방향, 안테나 막대 길이, 외피 나사 M3 × 12 → × 18 등)도 고쳤습니다. 자세한 건 출력 도면 탭.</li>
+      <li>3D 모델은 이제 위아래 · 좌우로 자유롭게: 오른쪽 패널의 <b>이동 · 회전 · 확대</b> 버튼, 오른쪽 드래그 / Shift+드래그로 이동, H 키로 패널 숨기기.</li>
+    </ul>
     <h3>M9 PLA (2026-10-26) — 보드를 모터 아래로, 베이스를 작게</h3>
     <ul>
       <li>베이스 <b>137 × 152.5 mm → 120 × 103 mm</b> (책상 면적 41 % 감소). 대신 층이 생겨 높이가 47.5 → 93.5 mm, 모든 관절이 46 mm 올라갔습니다.</li>
       <li>층 구조: <b>바닥 OpenCR → 레일 위 Raspberry Pi → 서보 데크 위 베이스 모터(P1) + 배터리 슬레드</b>. 외피는 위에서 씌우고 바닥에서 나사 4개.</li>
       <li>모든 출력 부품을 <b>흰 PLA</b>로(칠은 나중에), 학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)에서 <b>하나씩 따로</b> 출력 — 22개 파일 · 31개 조각, 모두 베드에 들어감. 자세한 건 출력 도면 탭.</li>
-      <li>CAD 검사: 부품끼리 간섭 없음, 소프트 리밋 안 3,502개 자세 충돌 0, 기본 동작 10개 충돌 0, 최대 중력 토크 0.185 N·m(상한 0.28의 66 %), 정적 전도 여유 최소 27.0 mm. <b>실물 출력 · 조립 · 결선 · 발열은 검증 전</b>입니다.</li>
+      <li>CAD 검사(M9 기준): 부품끼리 간섭 없음, 소프트 리밋 안 3,502개 자세 충돌 0, 기본 동작 10개 충돌 0, 최대 중력 토크 0.185 N·m(상한 0.28의 66 %), 정적 전도 여유 최소 27.0 mm. <b>실물 출력 · 조립 · 결선 · 발열은 검증 전</b>입니다.</li>
     </ul>
     <h3>배터리 · 전원 — 3S 1500 mAh LiPo, XT60 (2026-10-27 결정)</h3>
     <dl>
@@ -248,6 +302,6 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
 </script>
-<script type="module" src="./src/print.js?v=m9-20261027"></script>
+<script type="module" src="./src/print.js?v=m10-20261027"></script>
 </body>
 </html>

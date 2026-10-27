@@ -1,11 +1,12 @@
-// Print tab, mech_M9_PLA (round 25): every printed part as its own PLA print for the Cubicon Single Plus (bed 240 x 190 mm).
-// Each STL is already turned to its print orientation and centred on the bed (scripts/make_m9_print_pack.py); this page shows it
-// on the bed outline with its settings, slicer estimate and what changed for PLA. Data: assets/mech_M9_PLA/print/print_table.json.
+// Print tab, mech_M10_PLA (round 26): every printed part as its own PLA print for the Cubicon Single Plus (bed 240 x 190 mm).
+// Each STL is already turned to its print orientation and centred on the bed (scripts/make_m9_print_pack.py), print aids included;
+// this page shows it on the bed outline with its settings, slicer estimate, what changed for PLA, whether it needs support, its print
+// aids and how to take them off. Data: assets/mech_M10_PLA/print/print_table.json (+ print_physics.json).
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
-const ROOT = 'assets/mech_M9_PLA/print';
+const REV = 'mech_M10_PLA', ROOT = `assets/${REV}/print`;
 const BED = [240, 190];
 const GROUPS = { all: '전체', base: '베이스', body: '몸통', head: '머리' };
 // every part is printed in white PLA and painted afterwards in RC3's colours (owner, 2026-10-27); 'unpainted' parts stay white
@@ -50,11 +51,13 @@ async function show(r) {
   const facts = [
     ['필라멘트', 'PLA 흰색'], ['칠할 색', swatch(r.colour) + (KO_COL[r.colour] || r.colour)],
     ['벽 · 채움 · 레이어', `${r.perimeters}겹 · ${r.infill_pct}% · ${r.layer_mm} mm`],
-    ['서포트 · 브림', `${r.supports ? '필요 (자동)' : '없음'} · ${r.brim_mm ? r.brim_mm + ' mm' : '없음'}`],
+    ['지지대', r.supports ? `<em class="need">${r.supportKo || '필요'}</em>` : (r.supportKo || '필요 없음')],
+    ['출력 보조물', r.aidKo || '없음'], ['브림', r.brim_mm ? r.brim_mm + ' mm' : '없음'],
     ['베드 위 크기', `${r.on_bed_mm.join(' × ')} mm ${r.fits_bed ? '✓ 들어감' : '✗ 안 들어감'}`],
     ['예상 (1개)', sl.seconds ? `${hms(sl.seconds)} · ${sl.filament_g} g` : '–'], ['출력 방향', r.orientKo || r.orientation]];
   $('#facts').innerHTML = facts.map(([k, v]) => `<div><span>${k}</span><b>${v}</b></div>`).join('');
-  $('#change').innerHTML = r.changeKo ? `<b>PLA로 바꾼 점</b> ${r.changeKo}` : '';
+  $('#change').innerHTML = (r.changeKo ? `<b>PLA로 바꾼 점</b> ${r.changeKo}` : '')
+    + (r.removeKo ? `<br><b>떼는 법</b> ${r.removeKo}` : '');
   $('#stl').href = `${ROOT}/${r.file}`; $('#stl').download = r.file.split('/').pop();
   status.hidden = false; status.textContent = `${r.file.split('/').pop()} 불러오는 중…`;
   const geo = await loader.loadAsync(`${ROOT}/${r.file}`);
@@ -75,7 +78,8 @@ function list(rows, grp) {
     const li = document.createElement('li'), b = document.createElement('button');
     b.type = 'button'; b.dataset.file = r.file;
     const sl = r.slicer || {};
-    b.innerHTML = `<i style="background:#${(HEX[r.colour] ?? 0xcccccc).toString(16).padStart(6, '0')}"></i><span class="nm">${r.nameKo}${r.qty > 1 ? ` <em>× ${r.qty}</em>` : ''}</span>`
+    const tag = r.supports ? ' <u class="tg sup">지지대</u>' : r.aidKo ? ' <u class="tg aid">보조물</u>' : '';
+    b.innerHTML = `<i style="background:#${(HEX[r.colour] ?? 0xcccccc).toString(16).padStart(6, '0')}"></i><span class="nm">${r.nameKo}${r.qty > 1 ? ` <em>× ${r.qty}</em>` : ''}${tag}</span>`
       + `<span class="mt">${sl.seconds ? hms(sl.seconds * r.qty) + ' · ' + Math.round(sl.filament_g * r.qty) + ' g' : ''}${r.fits_bed ? '' : ' ✗'}</span>`;
     b.onclick = () => show(r);
     li.append(b); ul.append(li);
@@ -96,9 +100,18 @@ document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click'
   const T = await (await fetch(`${ROOT}/print_table.json`, { cache: 'no-cache' })).json();
   const rows = T.parts;
   const tot = T.slicer || {};
+  const nSup = rows.filter(q => q.supports).reduce((n, q) => n + q.qty, 0), nAid = rows.filter(q => q.aidKo).length;
   $('#summary').innerHTML = `파일 <b>${rows.length}개</b> · 조각 <b>${T.pieces_to_print}개</b> · 모두 베드에 ${T.all_fit_bed ? '<b>들어감 ✓</b>' : '<b>안 들어가는 부품 있음</b>'}`
+    + `<br>지지대가 필요한 조각 <b>${nSup}개</b> (나머지는 지지대 없이) · 떼어 낼 출력 보조물이 있는 부품 <b>${nAid}개</b>`
     + (tot.total_time_h ? `<br>합계 약 <b>${tot.total_time_h}시간 · ${tot.total_filament_g} g</b> PLA (슬라이서 해석값)` : '');
-  $('#zip').href = `${ROOT}/mech_M9_PLA_stl_all.zip`; $('#zip').download = 'mech_M9_PLA_stl_all.zip';
+  $('#zip').href = `${ROOT}/${REV}_stl_all.zip`; $('#zip').download = `${REV}_stl_all.zip`;
+  fetch(`${ROOT}/print_physics.json`, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(P => {
+    if (!P || !$('#physics')) return;
+    const rowsP = P.checks.map(c => `<tr><td>${c.item}</td><td>${c.check}</td><td class="${c.result === 'PASS' ? 'ok' : 'bad'}">${c.safety_factor}</td></tr>`).join('');
+    const rowsS = P.screws.map(c => `<tr><td>${c.joint}</td><td>${c.screw}</td><td class="${c.result === 'PASS' ? 'ok' : 'bad'}">${c.engaged_mm} mm</td></tr>`).join('');
+    $('#physics').innerHTML = `<table><tr><th>부품</th><th>검토 (영문 원문)</th><th>안전율</th></tr>${rowsP}</table>`
+      + `<table><tr><th>체결</th><th>나사</th><th>물림</th></tr>${rowsS}</table>`;
+  }).catch(() => {});
   $('#tablejson').href = `${ROOT}/print_table.json`;
   const gl = $('#groups'); let grp = 'all';
   for (const [k, v] of Object.entries(GROUPS)) {
