@@ -32,10 +32,6 @@ scene.background = new THREE.Color(0xc4c8ce);
 const camera = new THREE.PerspectiveCamera(32, innerWidth / innerHeight, 0.01, 20);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.screenSpacePanning = true;   // right-drag / Shift-drag / two fingers move the model up, down and sideways on the screen
-controls.zoomToCursor = true;         // the wheel zooms toward the pointer, so any part can be brought close
-controls.minDistance = 0.04;
-controls.maxDistance = 4;
 scene.add(new THREE.HemisphereLight(0xffffff, 0x7c828c, 1.6));
 const key = new THREE.DirectionalLight(0xffffff, 2.2);
 key.position.set(0.5, 0.9, 0.7);
@@ -68,12 +64,10 @@ function setView(name) {
   camera.position.copy(viewTarget).addScaledVector(d, viewDist);
   controls.target.copy(viewTarget);
   controls.update();
-  frameFree();
   document.querySelectorAll('#views button').forEach(b => b.classList.toggle('on', b.dataset.v === name));
 }
 
-// ------------------------------------------------------------------ free camera: move / turn / zoom from the buttons and the keys; the model's
-// place on screen is the middle of the canvas the panels leave free (the projection centre is shifted there with a view offset)
+// ------------------------------------------------------------------ keys (no extra UI): arrows move the model on screen, Shift+arrows turn / tilt it
 const _sph = new THREE.Spherical(), _off = new THREE.Vector3();
 function camPan(dx, dy) {            // moves the MODEL on screen by dx, dy (fractions of the view height; +dy = up)
   camera.updateMatrixWorld();
@@ -87,75 +81,12 @@ function camOrbit(dAz, dEl) {        // radians: turn about the vertical through
   _sph.theta += dAz; _sph.phi = THREE.MathUtils.clamp(_sph.phi - dEl, 0.02, Math.PI - 0.02);
   camera.position.copy(controls.target).add(_off.setFromSpherical(_sph)); controls.update();
 }
-function camZoom(f) { _off.copy(camera.position).sub(controls.target).multiplyScalar(f); camera.position.copy(controls.target).add(_off); controls.update(); }
-function freeRect() {                // the part of the window no panel covers (a wide panel is a band, a tall one a side; a small pad is ignored)
-  const W = innerWidth, H = innerHeight;
-  let x0 = 0, x1 = W, y0 = 0, y1 = H;
-  const shown = e => e && !e.classList.contains('hidden') && getComputedStyle(e).display !== 'none';
-  const tb = document.querySelector('.nfy-topbar');
-  if (shown(tb)) y0 = tb.getBoundingClientRect().bottom;
-  for (const id of ['#left', '#right', '#bottom']) {
-    const e = $(id);
-    if (!shown(e)) continue;
-    const r = e.getBoundingClientRect();
-    if (r.width > 0.6 * W) { if (r.top > H / 2) y1 = Math.min(y1, r.top); else y0 = Math.max(y0, r.bottom); }
-    else if (r.height > 0.35 * H) { if (r.left < W / 2) x0 = Math.max(x0, r.right); else x1 = Math.min(x1, r.left); }
-  }
-  if (x1 - x0 < 0.3 * W) { x0 = 0; x1 = W; }
-  if (y1 - y0 < 0.3 * H) { y0 = 0; y1 = H; }
-  return { x0, x1, y0, y1 };
-}
-function frameFree() {
-  const W = innerWidth, H = innerHeight, f = freeRect(), cx = (f.x0 + f.x1) / 2, cy = (f.y0 + f.y1) / 2;
-  if (Math.abs(cx - W / 2) < 1 && Math.abs(cy - H / 2) < 1) camera.clearViewOffset();
-  else camera.setViewOffset(W, H, W / 2 - cx, H / 2 - cy, W, H);
-  camera.updateProjectionMatrix();
-  return f;
-}
-function camFit() {                  // the whole model in the free part of the window, seen from the same direction
-  const f = frameFree();
-  scene.updateMatrixWorld(true);
-  const bb = new THREE.Box3().setFromObject(cad);
-  if (!Number.isFinite(bb.min.x)) return;
-  const c = bb.getCenter(new THREE.Vector3()), r = 0.5 * bb.getSize(new THREE.Vector3()).length();
-  const t = Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2);
-  const dist = 0.92 * r / Math.min(t * (f.y1 - f.y0) / innerHeight, t * camera.aspect * (f.x1 - f.x0) / innerWidth);
-  const dir = camera.position.clone().sub(controls.target).normalize();
-  controls.target.copy(c); camera.position.copy(c).addScaledVector(dir, dist); controls.update();
-}
-function setUiHidden(on) {
-  document.querySelectorAll('.ui').forEach(e => e.classList.toggle('hidden', on));
-  $('#showUi').classList.toggle('hidden', !on);
-  frameFree();
-}
-function camAct(d, k = 1) {
-  if (d.cam === 'pan') camPan(+d.dx * 0.04 * k, +d.dy * 0.04 * k);
-  else if (d.cam === 'orbit') camOrbit(+d.da * 0.105 * k, +d.de * 0.105 * k);
-  else if (d.cam === 'zoom') camZoom(Math.pow(+d.f, k));
-  else if (d.cam === 'fit') camFit();
-}
-document.querySelectorAll('#campad [data-cam]').forEach(b => {
-  let hold = null, rep = null;
-  const stop = () => { clearTimeout(hold); clearInterval(rep); hold = rep = null; };
-  b.addEventListener('pointerdown', e => {           // press: one step; keep pressing: it keeps going
-    e.preventDefault(); stop(); camAct(b.dataset);
-    if (b.dataset.cam !== 'fit') hold = setTimeout(() => { rep = setInterval(() => camAct(b.dataset, 0.35), 40); }, 320);
-  });
-  for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) b.addEventListener(ev, stop);
-});
-$('#hideUi').onclick = () => setUiHidden(true);
-$('#showUi').onclick = () => setUiHidden(false);
 addEventListener('keydown', e => {
   const tg = e.target;
   if (e.ctrlKey || e.metaKey || e.altKey || (tg && tg.closest && tg.closest('input, select, textarea'))) return;
-  const arrows = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, 1], ArrowDown: [0, -1] }, a = arrows[e.key];
-  if (a) { e.preventDefault(); if (e.shiftKey) camOrbit(a[0] * 0.105, a[1] * 0.105); else camPan(a[0] * 0.04, a[1] * 0.04); return; }
-  if (e.key === '+' || e.key === '=') camZoom(0.88);
-  else if (e.key === '-' || e.key === '_') camZoom(1.14);
-  else if (e.key === 'f' || e.key === 'F') camFit();
-  else if ((e.key === 'h' || e.key === 'H') && params.get('ui') !== '0') setUiHidden($('#showUi').classList.contains('hidden'));
+  const arrows = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, 1], ArrowDown: [0, -1] }, k = arrows[e.key];
+  if (k) { e.preventDefault(); if (e.shiftKey) camOrbit(k[0] * 0.105, k[1] * 0.105); else camPan(k[0] * 0.04, k[1] * 0.04); }
 });
-for (const id of ['#left', '#right', '#bottom']) if ($(id) && window.ResizeObserver) new ResizeObserver(() => frameFree()).observe($(id));
 
 // ------------------------------------------------------------------ the face on the display (drawn live by face.js)
 function setFace(name) {            // an expression by name; '' or 'auto' gives the face back to itself (it then follows the pointer)
@@ -575,7 +506,7 @@ async function refreshPresets() {
 $('#home').onclick = () => { for (const j of S.cfg.joints) S.q[j.name] = j.home_deg || 0; update(); };
 $('#norm').onchange = () => syncJointUI(true);
 $('#rev').onchange = e => loadRevision(e.target.value);
-document.querySelectorAll('#views button').forEach(b => b.onclick = () => { setView(b.dataset.v); if ($('#showUi').classList.contains('hidden') && params.get('ui') !== '0') camFit(); });
+document.querySelectorAll('#views button').forEach(b => b.onclick = () => setView(b.dataset.v));
 document.querySelectorAll('#right input[type=checkbox]').forEach(cb => cb.addEventListener('change', applyVisibility));
 $('#track').addEventListener('click', ev => { const r = $('#track').getBoundingClientRect(); S.sel = -1; setTime((ev.clientX - r.left) / r.width * Math.max(motionDuration(S.motion), S.t + 1, 2)); });
 $('#addkf').onclick = addKey;
@@ -593,7 +524,7 @@ $('#export').onclick = () => { const a = document.createElement('a'); a.href = U
 $('#import').onclick = () => $('#file').click();
 $('#file').onchange = async e => { const f = e.target.files[0]; if (f) loadMotion(JSON.parse(await f.text())); e.target.value = ''; };
 $('#presets').onchange = async e => { if (e.target.value) loadMotion(await (await fetch('motions/' + e.target.value)).json()); };
-addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; renderer.setSize(innerWidth, innerHeight); frameFree(); });
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
 
 function tick(now) {
   if (S.playing) {
@@ -664,7 +595,6 @@ function tick(now) {
   }
   if (params.get('dist')) viewDist = parseFloat(params.get('dist'));
   setView(params.get('view') || 'three_quarter');
-  if (!params.get('dist') && params.get('ui') !== '0') camFit();      // with the panels shown: the whole model in the free part of the window
   refreshTimeline();
   requestAnimationFrame(tick);
   window.NFY = {

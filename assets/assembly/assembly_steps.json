@@ -1,0 +1,1158 @@
+{
+ "revision": "mech_M10_PLA",
+ "skip": [
+  "battery bay (largest pack)"
+ ],
+ "steps": [
+  {
+   "n": 0,
+   "title": "시작하기 전에",
+   "kicker": "준비",
+   "text": "흰 PLA로 뽑은 부품 31조각과 서보 4개, 보드 2개로 Notifyi를 만듭니다. 단계마다 새로 넣는 부품이 화살표를 따라 제자리로 들어갑니다. 왼쪽 상자에는 그 단계에서 쓰는 부품과 나사가 개수와 함께 있습니다.",
+   "add": [],
+   "from": [
+    0,
+    0,
+    40
+   ],
+   "radial": {},
+   "parts": [],
+   "hw": [],
+   "notes": [
+    "출력 후: 지지대 · 보조물을 떼고(출력 도면 탭 \"떼는 법\"), 400방 사포 → 인서트 압입 → 칠하기 순서.",
+    "공구: 인두(인서트용), 육각렌치 1.5 · 2 · 2.5 mm, 펜치 · 니퍼, 순간접착제(CA), 양면테이프.",
+    "서보 ID와 배선은 아직 실물로 확인 전입니다. 모터에 전원을 넣기 전에 ID 지도를 먼저 정하세요."
+   ],
+   "cover": true,
+   "finale": false
+  },
+  {
+   "n": 1,
+   "title": "바닥 트레이 준비",
+   "kicker": "베이스",
+   "text": "바닥 트레이에 인서트를 인두로 눌러 넣고, 바닥 홈에 고무발 4개를 붙입니다.",
+   "add": [
+    "base_floor"
+   ],
+   "from": [
+    0,
+    0,
+    40
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "바닥 트레이",
+     "qty": 1,
+     "items": [
+      "base_floor"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "insert",
+     "label": "M3 × 4 인서트 (OpenCR 받침)",
+     "qty": 4,
+     "d": 3,
+     "len": 4
+    },
+    {
+     "kind": "insert",
+     "label": "M3 × 5.7 인서트 (기둥 위)",
+     "qty": 5,
+     "d": 3,
+     "len": 5.7
+    },
+    {
+     "kind": "insert",
+     "label": "M2.5 × 3 인서트 (레일 받침)",
+     "qty": 4,
+     "d": 2.5,
+     "len": 3
+    },
+    {
+     "kind": "misc",
+     "label": "고무발 Ø10",
+     "qty": 4
+    }
+   ],
+   "notes": [
+    "오른쪽 레일 받침 아래 웹 2개를 먼저 옆으로 꺾어 떼세요(OpenCR 자리).",
+    "바닥 나사 구멍 4곳의 0.3 mm 막은 M3 나사로 밀어 뚫거나 3.4 mm 드릴."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 2,
+   "title": "OpenCR 올리기",
+   "kicker": "베이스",
+   "text": "OpenCR를 DC 잭과 전원 스위치가 왼쪽 벽을 향하게 받침 4개 위에 놓고 나사로 고정합니다.",
+   "add": [
+    "OpenCR 1.0 (pcb)",
+    "OpenCR 1.0 (connectors)",
+    "OpenCR 1.0 (metal)",
+    "OpenCR 1.0 (components)"
+   ],
+   "from": [
+    0,
+    0,
+    45
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "OpenCR 1.0",
+     "qty": 1,
+     "items": [
+      "OpenCR 1.0 (pcb)",
+      "OpenCR 1.0 (connectors)",
+      "OpenCR 1.0 (metal)",
+      "OpenCR 1.0 (components)"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M3 × 6",
+     "qty": 4,
+     "d": 3,
+     "len": 6,
+     "head": "socket"
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 3,
+   "title": "Pi 레일 2개",
+   "kicker": "베이스",
+   "text": "레일에 M2.5 인서트를 먼저 넣고, 기둥 받침 위에 올려 양끝을 나사로 고정합니다.",
+   "add": [
+    "pi_rail_l",
+    "pi_rail_r"
+   ],
+   "from": [
+    0,
+    0,
+    35
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "Pi 레일",
+     "qty": 2,
+     "items": [
+      "pi_rail_l"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "insert",
+     "label": "M2.5 × 4 인서트 (레일 위)",
+     "qty": 4,
+     "d": 2.5,
+     "len": 4
+    },
+    {
+     "kind": "screw",
+     "label": "M2.5 × 5",
+     "qty": 4,
+     "d": 2.5,
+     "len": 5,
+     "head": "socket"
+    }
+   ],
+   "notes": [
+    "M2.5 × 8은 쓰지 마세요 — OpenCR 헤더까지 내려갑니다."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 4,
+   "title": "Raspberry Pi",
+   "kicker": "베이스",
+   "text": "Pi를 USB 쪽이 오른쪽을 향하게 레일 위에 놓고 나사 4개로 고정합니다.",
+   "add": [
+    "Raspberry Pi 3 B (pcb)",
+    "Raspberry Pi 3 B (parts)",
+    "Raspberry Pi 3 B (sockets)"
+   ],
+   "from": [
+    0,
+    0,
+    35
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "Raspberry Pi 3 B+",
+     "qty": 1,
+     "items": [
+      "Raspberry Pi 3 B (pcb)",
+      "Raspberry Pi 3 B (parts)",
+      "Raspberry Pi 3 B (sockets)"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2.5 × 6",
+     "qty": 4,
+     "d": 2.5,
+     "len": 6,
+     "head": "socket"
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 5,
+   "title": "보드끼리 배선",
+   "kicker": "베이스",
+   "text": "Pi의 USB에 업앵글 어댑터 2개를 꽂고, OpenCR micro-USB → Pi USB, OpenCR 5 V 출력 → Pi GPIO 2 · 6번 핀을 연결합니다.",
+   "add": [
+    "USB up-angle adapters (keep-out)",
+    "GPIO plugs (keep-out)",
+    "plug usb_opencr_pi a",
+    "plug usb_opencr_pi b",
+    "plug pi_power a",
+    "plug pi_power b",
+    "cable:usb_opencr_pi",
+    "cable:pi_power"
+   ],
+   "from": [
+    0,
+    0,
+    25
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "USB 업앵글 어댑터",
+     "qty": 2,
+     "items": [
+      "USB up-angle adapters (keep-out)"
+     ]
+    },
+    {
+     "label": "USB 케이블 (OpenCR → Pi)",
+     "qty": 1,
+     "items": [
+      "plug usb_opencr_pi a",
+      "plug usb_opencr_pi b",
+      "cable:usb_opencr_pi"
+     ]
+    },
+    {
+     "label": "5 V 리드 (OpenCR → Pi)",
+     "qty": 1,
+     "items": [
+      "plug pi_power a",
+      "plug pi_power b",
+      "cable:pi_power"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "misc",
+     "label": "micro-USB(ㄱ자) → USB-A 15 cm",
+     "qty": 1
+    },
+    {
+     "kind": "misc",
+     "label": "2핀 → 듀폰 5 V 리드 (직접 제작)",
+     "qty": 1
+    }
+   ],
+   "notes": [
+    "Pi의 micro-USB 전원 소켓은 비워 둡니다(GPIO 5 V로 급전)."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 6,
+   "title": "서보 데크",
+   "kicker": "베이스",
+   "text": "DXL 케이블 2가닥(OpenCR TTL 3 · TTL 1)을 위로 빼 둔 채 서보 데크를 기둥 5개 위에 올려 고정합니다.",
+   "add": [
+    "servo_deck"
+   ],
+   "from": [
+    0,
+    0,
+    50
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "서보 데크",
+     "qty": 1,
+     "items": [
+      "servo_deck"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M3 × 8",
+     "qty": 5,
+     "d": 3,
+     "len": 8,
+     "head": "socket"
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 7,
+   "title": "베이스 서보 P1",
+   "kicker": "베이스",
+   "text": "P1을 혼(A축)이 위로 오게 데크 거치대에 넣고, 아래 2개 · 옆 4개 나사로 고정한 뒤 OpenCR TTL 3 케이블을 꽂습니다.",
+   "add": [
+    "P1.body",
+    "P1.plugs",
+    "P1.idler_A",
+    "P1.idler_B",
+    "P1.horn_B",
+    "P1.horn_A",
+    "plug dxl_opencr_p1 a",
+    "plug dxl_opencr_p1 b",
+    "cable:dxl_opencr_p1"
+   ],
+   "from": [
+    0,
+    0,
+    45
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "DYNAMIXEL 2XL430 (P1)",
+     "qty": 1,
+     "items": [
+      "P1.body",
+      "P1.plugs",
+      "P1.idler_A",
+      "P1.idler_B",
+      "P1.horn_B",
+      "P1.horn_A"
+     ]
+    },
+    {
+     "label": "X3P 케이블 180 mm",
+     "qty": 1,
+     "items": [
+      "plug dxl_opencr_p1 a",
+      "plug dxl_opencr_p1 b",
+      "cable:dxl_opencr_p1"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2.5 × 6",
+     "qty": 6,
+     "d": 2.5,
+     "len": 6,
+     "head": "socket"
+    }
+   ],
+   "notes": [
+    "옆 나사는 데크 바깥의 통로로 넣습니다. 서보 인서트에 1.9 mm만 물리니 세게 조이지 마세요."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 8,
+   "title": "배터리 슬레드",
+   "kicker": "베이스",
+   "text": "3S 배터리를 벨크로로 슬레드에 묶고, XT60을 피그테일에 연결한 뒤 왼쪽 문으로 밀어 넣습니다.",
+   "add": [
+    "battery_sled",
+    "LiPo battery",
+    "XT60 (mated)",
+    "plug power_pigtail b",
+    "cable:power_pigtail",
+    "cable:power_pigtail_neg"
+   ],
+   "from": [
+    -75,
+    0,
+    0
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "배터리 슬레드 + 문",
+     "qty": 1,
+     "items": [
+      "battery_sled"
+     ]
+    },
+    {
+     "label": "3S 1500 mAh LiPo",
+     "qty": 1,
+     "items": [
+      "LiPo battery"
+     ]
+    },
+    {
+     "label": "XT60 피그테일",
+     "qty": 1,
+     "items": [
+      "XT60 (mated)",
+      "cable:power_pigtail",
+      "cable:power_pigtail_neg"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "misc",
+     "label": "벨크로 20 × 250 mm",
+     "qty": 1
+    }
+   ],
+   "notes": [
+    "배터리는 로봇 안에서 충전하지 않습니다 — 꺼내서 LiPo 백 안에서.",
+    "팩 크기는 90 × 37 × 30 mm 이하인지 사기 전에 확인."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 9,
+   "title": "외피 씌우기",
+   "kicker": "베이스",
+   "text": "위로 뺀 케이블을 외피의 케이블 구멍으로 통과시키며 외피를 위에서 씌웁니다. 바닥에서 나사 4개, 왼쪽 문 버튼, 앞 패널, 케이블 부싱.",
+   "add": [
+    "base_shell",
+    "base_front_panel",
+    "led_band",
+    "door_latch",
+    "cable_bushing"
+   ],
+   "from": [
+    0,
+    0,
+    90
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "베이스 외피",
+     "qty": 1,
+     "items": [
+      "base_shell"
+     ]
+    },
+    {
+     "label": "앞 패널",
+     "qty": 1,
+     "items": [
+      "base_front_panel"
+     ]
+    },
+    {
+     "label": "라이트 띠",
+     "qty": 1,
+     "items": [
+      "led_band"
+     ]
+    },
+    {
+     "label": "문 버튼",
+     "qty": 1,
+     "items": [
+      "door_latch"
+     ]
+    },
+    {
+     "label": "케이블 부싱",
+     "qty": 1,
+     "items": [
+      "cable_bushing"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M3 × 18 둥근머리",
+     "qty": 4,
+     "d": 3,
+     "len": 18,
+     "head": "button"
+    },
+    {
+     "kind": "screw",
+     "label": "M3 × 10 + 와셔 (문 버튼)",
+     "qty": 1,
+     "d": 3,
+     "len": 10,
+     "head": "button"
+    },
+    {
+     "kind": "misc",
+     "label": "순간접착제 2점 (앞 패널)",
+     "qty": 1
+    }
+   ],
+   "notes": [
+    "외피 보스의 M3 × 5.7 인서트 4개 · 문 버튼 보스 인서트 1개는 미리 넣어 둡니다.",
+    "문 버튼은 위로 돌리면 잠기고 옆으로 돌리면 열립니다."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 10,
+   "title": "턴테이블 링 · 요크 1",
+   "kicker": "몸통",
+   "text": "요크 바닥판을 P1 위쪽 혼에 나사 4개로 고정하고, 턴테이블 링을 요크 바닥판 둘레에 끼웁니다.",
+   "add": [
+    "turntable_ring",
+    "yoke0"
+   ],
+   "from": [
+    0,
+    0,
+    40
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "턴테이블 링",
+     "qty": 1,
+     "items": [
+      "turntable_ring"
+     ]
+    },
+    {
+     "label": "요크",
+     "qty": 1,
+     "items": [
+      "yoke0"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2 × 6",
+     "qty": 4,
+     "d": 2,
+     "len": 6,
+     "head": "socket"
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 11,
+   "title": "몸통 아래 서보 P2",
+   "kicker": "몸통",
+   "text": "P2를 요크의 포크 홈으로 위에서 내려 끼우고, 다리 양쪽을 혼 · 아이들러에 나사 3개씩 고정한 뒤 피벗 캡 2개를 눌러 끼웁니다.",
+   "add": [
+    "P2.body",
+    "P2.plugs",
+    "P2.idler_B",
+    "P2.horn_A",
+    "P2.idler_A",
+    "plug dxl_opencr_p2 a",
+    "plug dxl_opencr_p2 b",
+    "cable:dxl_opencr_p2",
+    "pivot_cap_turret_p",
+    "pivot_cap_turret_n"
+   ],
+   "from": [
+    0,
+    0,
+    45
+   ],
+   "radial": {
+    "pivot_cap_turret_p": 30,
+    "pivot_cap_turret_n": 30
+   },
+   "parts": [
+    {
+     "label": "DYNAMIXEL 2XL430 (P2)",
+     "qty": 1,
+     "items": [
+      "P2.body",
+      "P2.plugs",
+      "P2.idler_B",
+      "P2.horn_A",
+      "P2.idler_A"
+     ]
+    },
+    {
+     "label": "피벗 캡",
+     "qty": 2,
+     "items": [
+      "pivot_cap_turret_p"
+     ]
+    },
+    {
+     "label": "DXL 리드 300 mm",
+     "qty": 1,
+     "items": [
+      "plug dxl_opencr_p2 a",
+      "plug dxl_opencr_p2 b",
+      "cable:dxl_opencr_p2"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2 × 6",
+     "qty": 6,
+     "d": 2,
+     "len": 6,
+     "head": "socket"
+    }
+   ],
+   "notes": [
+    "피벗 캡은 똑바로 눌러 넣습니다(리브가 깎이며 들어감). OpenCR TTL 1 → P2는 300 mm 리드가 필요합니다."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 12,
+   "title": "요크 2",
+   "kicker": "몸통",
+   "text": "두 번째 요크의 바닥판을 P2 위쪽 혼에 나사 4개로 고정합니다.",
+   "add": [
+    "P2.horn_B",
+    "yoke1"
+   ],
+   "from": [
+    0,
+    0,
+    40
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "요크",
+     "qty": 1,
+     "items": [
+      "yoke1"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2 × 6",
+     "qty": 4,
+     "d": 2,
+     "len": 6,
+     "head": "socket"
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 13,
+   "title": "몸통 위 서보 P3",
+   "kicker": "몸통",
+   "text": "P3를 요크에 내려 끼우고 다리 양쪽을 나사 3개씩, 피벗 캡 2개, P2 → P3 케이블.",
+   "add": [
+    "P3.body",
+    "P3.plugs",
+    "P3.horn_B",
+    "P3.idler_B",
+    "plug dxl_p2_p3 a",
+    "plug dxl_p2_p3 b",
+    "cable:dxl_p2_p3",
+    "pivot_cap_mid_yoke_p",
+    "pivot_cap_mid_yoke_n"
+   ],
+   "from": [
+    0,
+    0,
+    45
+   ],
+   "radial": {
+    "pivot_cap_mid_yoke_p": 30,
+    "pivot_cap_mid_yoke_n": 30
+   },
+   "parts": [
+    {
+     "label": "DYNAMIXEL 2XL430 (P3)",
+     "qty": 1,
+     "items": [
+      "P3.body",
+      "P3.plugs",
+      "P3.horn_B",
+      "P3.idler_B"
+     ]
+    },
+    {
+     "label": "피벗 캡",
+     "qty": 2,
+     "items": [
+      "pivot_cap_mid_yoke_p"
+     ]
+    },
+    {
+     "label": "X3P 케이블 180 mm",
+     "qty": 1,
+     "items": [
+      "plug dxl_p2_p3 a",
+      "plug dxl_p2_p3 b",
+      "cable:dxl_p2_p3"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2 × 6",
+     "qty": 6,
+     "d": 2,
+     "len": 6,
+     "head": "socket"
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 14,
+   "title": "어깨판",
+   "kicker": "몸통",
+   "text": "어깨판을 P3 뒷면에 대고 프레임 구멍에 둥근머리 나사 2개. 클립에는 나중에 웹캠 · 디스플레이 케이블이 지나갑니다.",
+   "add": [
+    "shoulder_plate"
+   ],
+   "from": [
+    0,
+    40,
+    0
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "어깨판",
+     "qty": 1,
+     "items": [
+      "shoulder_plate"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2.5 × 6 둥근머리",
+     "qty": 2,
+     "d": 2.5,
+     "len": 6,
+     "head": "button"
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 15,
+   "title": "목 요크 3",
+   "kicker": "몸통",
+   "text": "세 번째 요크를 거꾸로 해서 P3 위쪽(A축) 혼 · 아이들러에 나사 3개씩, 피벗 캡 2개.",
+   "add": [
+    "yoke2",
+    "P3.horn_A",
+    "P3.idler_A",
+    "pivot_cap_neck_yoke_p",
+    "pivot_cap_neck_yoke_n"
+   ],
+   "from": [
+    0,
+    0,
+    45
+   ],
+   "radial": {
+    "pivot_cap_neck_yoke_p": 30,
+    "pivot_cap_neck_yoke_n": 30
+   },
+   "parts": [
+    {
+     "label": "요크",
+     "qty": 1,
+     "items": [
+      "yoke2"
+     ]
+    },
+    {
+     "label": "피벗 캡",
+     "qty": 2,
+     "items": [
+      "pivot_cap_neck_yoke_p"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2 × 6",
+     "qty": 6,
+     "d": 2,
+     "len": 6,
+     "head": "socket"
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 16,
+   "title": "머리 서보 P4",
+   "kicker": "머리",
+   "text": "P4의 B축 혼을 목 요크 바닥판에 나사 4개로 고정하고 P3 → P4 케이블을 꽂습니다.",
+   "add": [
+    "P4.body",
+    "P4.plugs",
+    "P4.horn_B",
+    "P4.horn_A",
+    "P4.idler_A",
+    "P4.idler_B",
+    "plug dxl_p3_p4 a",
+    "plug dxl_p3_p4 b",
+    "cable:dxl_p3_p4"
+   ],
+   "from": [
+    0,
+    0,
+    45
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "DYNAMIXEL 2XL430 (P4)",
+     "qty": 1,
+     "items": [
+      "P4.body",
+      "P4.plugs",
+      "P4.horn_B",
+      "P4.horn_A",
+      "P4.idler_A",
+      "P4.idler_B"
+     ]
+    },
+    {
+     "label": "X3P 케이블 180 mm",
+     "qty": 1,
+     "items": [
+      "plug dxl_p3_p4 a",
+      "plug dxl_p3_p4 b",
+      "cable:dxl_p3_p4"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2 × 6",
+     "qty": 4,
+     "d": 2,
+     "len": 6,
+     "head": "socket"
+    }
+   ],
+   "notes": [
+    "P4의 A축은 고정용입니다 — 명령하지 않습니다."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 17,
+   "title": "카메라 · 디스플레이 받침",
+   "kicker": "머리",
+   "text": "디스플레이를 받침 기둥 4개에, 카메라를 포켓에 밀어 넣고(렌즈 둘레 폼 링), 받침의 양쪽 패드를 P4 혼 · 아이들러에 나사로 고정합니다.",
+   "add": [
+    "camera_cradle",
+    "webcam",
+    "webcam pcb",
+    "webcam conn",
+    "webcam lens",
+    "lens_shield",
+    "display board",
+    "display glass",
+    "display parts"
+   ],
+   "from": [
+    0,
+    -55,
+    0
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "카메라 · 디스플레이 받침",
+     "qty": 1,
+     "items": [
+      "camera_cradle"
+     ]
+    },
+    {
+     "label": "1.9\" IPS 디스플레이",
+     "qty": 1,
+     "items": [
+      "display board",
+      "display glass",
+      "display parts"
+     ]
+    },
+    {
+     "label": "USB 초소형 카메라",
+     "qty": 1,
+     "items": [
+      "webcam",
+      "webcam pcb",
+      "webcam conn",
+      "webcam lens"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2 둥근머리 (패드)",
+     "qty": 8,
+     "d": 2,
+     "len": 6,
+     "head": "button"
+    },
+    {
+     "kind": "screw",
+     "label": "M2.5 × 6 셀프태핑 (디스플레이)",
+     "qty": 4,
+     "d": 2.5,
+     "len": 6,
+     "head": "pan"
+    },
+    {
+     "kind": "misc",
+     "label": "폼 링 2–3 mm (렌즈)",
+     "qty": 1
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 18,
+   "title": "얼굴 상자",
+   "kicker": "머리",
+   "text": "스모크 아크릴과 검은 마스크를 얼굴 상자 안쪽에 테이프로 붙이고, 상자를 받침의 보스 4개에 나사로 고정한 뒤 얼굴 테를 붙입니다.",
+   "add": [
+    "head_face",
+    "face_visor",
+    "face_mask",
+    "head_ring",
+    "display_picture",
+    "status_light"
+   ],
+   "from": [
+    0,
+    -60,
+    0
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "얼굴 상자",
+     "qty": 1,
+     "items": [
+      "head_face"
+     ]
+    },
+    {
+     "label": "얼굴 테 (칠 안 함)",
+     "qty": 1,
+     "items": [
+      "head_ring"
+     ]
+    },
+    {
+     "label": "스모크 아크릴 76 × 57",
+     "qty": 1,
+     "items": [
+      "face_visor"
+     ]
+    },
+    {
+     "label": "PVC 마스크 0.2 mm",
+     "qty": 1,
+     "items": [
+      "face_mask"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2 나사 (얼굴 상자 보스)",
+     "qty": 4,
+     "d": 2,
+     "len": 8,
+     "head": "pan"
+    },
+    {
+     "kind": "misc",
+     "label": "양면테이프 · 순간접착제",
+     "qty": 1
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 19,
+   "title": "머리 윗판 · 안테나 · 귀",
+   "kicker": "머리",
+   "text": "윗판의 혀를 받침 홈에 끼우고 기둥 2개를 P4 위에 나사로 고정합니다. 안테나 막대를 윗판 구멍에, 잎을 막대 끝에 붙이고, 귀를 양쪽 허브 구멍에 끼웁니다.",
+   "add": [
+    "head_strap",
+    "antenna_rods",
+    "antenna_tips",
+    "head_ears"
+   ],
+   "from": [
+    0,
+    0,
+    40
+   ],
+   "radial": {
+    "head_ears": 0
+   },
+   "parts": [
+    {
+     "label": "머리 윗판",
+     "qty": 1,
+     "items": [
+      "head_strap"
+     ]
+    },
+    {
+     "label": "안테나 막대",
+     "qty": 2,
+     "items": [
+      "antenna_rods"
+     ]
+    },
+    {
+     "label": "안테나 잎",
+     "qty": 2,
+     "items": [
+      "antenna_tips"
+     ]
+    },
+    {
+     "label": "귀",
+     "qty": 2,
+     "items": [
+      "head_ears"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2.5 × 6",
+     "qty": 2,
+     "d": 2.5,
+     "len": 6,
+     "head": "socket"
+    },
+    {
+     "kind": "misc",
+     "label": "순간접착제 (막대 · 잎)",
+     "qty": 1
+    }
+   ],
+   "notes": [],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 20,
+   "title": "머리 배선 · 완성",
+   "kicker": "완성",
+   "text": "웹캠 USB와 디스플레이 하네스를 어깨판 클립 → 턴테이블 → 케이블 부싱으로 내려 Pi의 USB 어댑터와 GPIO에 꽂습니다. 완성!",
+   "add": [
+    "plug usb_webcam b",
+    "plug uart_display b",
+    "cable:usb_webcam",
+    "cable:uart_display"
+   ],
+   "from": [
+    0,
+    0,
+    20
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "웹캠 USB 케이블",
+     "qty": 1,
+     "items": [
+      "plug usb_webcam b",
+      "cable:usb_webcam"
+     ]
+    },
+    {
+     "label": "디스플레이 하네스 7선",
+     "qty": 1,
+     "items": [
+      "plug uart_display b",
+      "cable:uart_display"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "misc",
+     "label": "직각 듀폰 하우징",
+     "qty": 1
+    }
+   ],
+   "notes": [
+    "처음 켤 때: 배터리 전압(12.6 V 이하)과 서보 ID 지도를 확인하고, 관절을 손으로 소프트 리밋 안에 둔 뒤 켭니다.",
+    "이 설명서는 CAD에서 만든 순서입니다 — 실물로 조립해 본 적은 아직 없습니다."
+   ],
+   "cover": false,
+   "finale": true
+  }
+ ]
+}
