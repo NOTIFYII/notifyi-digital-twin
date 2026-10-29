@@ -1,5 +1,5 @@
 {
- "revision": "mech_M12_screws",
+ "revision": "mech_M13_solderless",
  "assumptions": {
   "in_layer_MPa": 40.0,
   "across_layers_MPa": 15.0,
@@ -11,11 +11,11 @@
   {
    "group": "support removal",
    "item": "camera_cradle: display standoff (x4)",
-   "check": "tube 5.6/2.0 bending, pull spread along 16.4 mm",
-   "safety_factor": 2.1,
+   "check": "tube 5.6/2.4 bending, pull spread along 14.0 mm",
+   "safety_factor": 2.4,
    "need": 2.0,
    "result": "PASS",
-   "note": "W 17.0 mm3, in-layer. Cut the support at the standoff with flush cutters rather than levering on the tip (tip load: SF 2.1 at 20 N)"
+   "note": "W 16.7 mm3, in-layer. Cut the support at the standoff with flush cutters rather than levering on the tip (tip load: SF 2.4 at 20 N)"
   },
   {
    "group": "support removal",
@@ -227,15 +227,6 @@
    "result": "PASS"
   },
   {
-   "joint": "display -> cradle standoffs (x4)",
-   "screw": "M2 x 5 button, from the front",
-   "stack": "through the 1.57 mm PCB",
-   "into": "M2 x 3 insert, hole 3.5",
-   "insert_or_thread_mm": 3.0,
-   "engaged_mm": 3.4,
-   "result": "PASS"
-  },
-  {
    "joint": "cradle -> face box (x4)",
    "screw": "M2 x 6 button, from behind",
    "stack": "through the 2.4 mm cradle plate",
@@ -305,6 +296,15 @@
    "into": "M3 x 4 insert in the tip's boss",
    "insert_or_thread_mm": 4.0,
    "engaged_mm": 4.2,
+   "result": "PASS"
+  },
+  {
+   "joint": "display -> cradle (x4)",
+   "screw": "M2 x 18 socket, from the cradle plate's back",
+   "stack": "plate 2.4 (0.2 counterbore) + standoff 14.0",
+   "into": "the module's brass M2 stud (2.5 mm thread, soldered on the module)",
+   "insert_or_thread_mm": 2.5,
+   "engaged_mm": 1.8,
    "result": "PASS"
   }
  ],

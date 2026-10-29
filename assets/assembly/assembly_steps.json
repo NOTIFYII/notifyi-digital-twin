@@ -1,5 +1,5 @@
 {
- "revision": "mech_M12_screws",
+ "revision": "mech_M13_solderless",
  "skip": [
   "battery bay (largest pack)"
  ],
@@ -200,7 +200,8 @@
     "plug pi_usb1_lower_to_opencr",
     "plug pi_usb2_lower_up_adapter",
     "plug pi_gpio_2_4_6_power",
-    "plug pi_microsd_card"
+    "plug pi_microsd_card",
+    "plug pi_gpio_12_backlight"
    ],
    "from": [
     0,
@@ -238,6 +239,13 @@
      "items": [
       "plug pi_microsd_card"
      ]
+    },
+    {
+     "label": "수-암 점퍼 1가닥 (디스플레이 백라이트, 12번 핀)",
+     "qty": 1,
+     "items": [
+      "plug pi_gpio_12_backlight"
+     ]
     }
    ],
    "hw": [
@@ -248,7 +256,8 @@
     }
    ],
    "notes": [
-    "Pi의 micro-USB 전원 소켓은 비워 둡니다(GPIO 5 V로 급전, Pi의 입력 퓨즈를 거치지 않음)."
+    "Pi의 micro-USB 전원 소켓은 비워 둡니다(GPIO 5 V로 급전, Pi의 입력 퓨즈를 거치지 않음).",
+    "디스플레이 백라이트용 수-암 점퍼 1가닥을 12번 핀(GPIO18)에 지금 꽂고, 수 끝을 5 V 리드와 함께 데크의 뒤쪽 구멍으로 위로 빼 둡니다(데크를 얹은 뒤에는 위에서 닿지 않음)."
    ],
    "cover": false,
    "finale": false
@@ -942,7 +951,7 @@
    "n": 16,
    "title": "카메라 · 디스플레이 받침",
    "kicker": "머리",
-   "text": "디스플레이를 앞에서 M2 × 5 나사 4개로 받침 기둥(인서트)에 고정합니다. 카메라는 마운트판의 0.6 mm 홈에 넣고(뒷면 접착 테이프는 그대로 사용), M2 × 6 나사 + 와셔 2개로 받침 기둥에 고정합니다. 렌즈 둘레 폼 링을 올리고, 받침 양쪽 패드를 P4 혼 · 아이들러에 나사로 고정합니다.",
+   "text": "받침판의 기둥 4개 앞에 Waveshare 디스플레이를 대고, 받침판 뒤에서 M2 × 18 렌치볼트 4개를 넣어 모듈 뒷면의 황동 스터드에 조입니다(2 mm만 물리면 됨 — 세게 조이지 않기). 모듈 뒤 8핀 커넥터에 동봉 케이블을 꽂고 받침판 구멍으로 뺍니다. 카메라는 마운트판의 0.6 mm 홈에 넣고 M2 × 6 나사 + 와셔 2개로, 렌즈 둘레 폼 링을 올린 뒤 받침 양쪽 패드를 P4 혼 · 아이들러에 고정합니다.",
    "add": [
     "camera_cradle",
     "webcam",
@@ -950,16 +959,19 @@
     "webcam conn",
     "webcam lens",
     "lens_shield",
-    "display board",
-    "display glass",
-    "display parts",
     "camera_mount",
     "screw camera mount down",
     "screw camera mount up",
-    "screw display 3,-3",
-    "screw display 3,29",
-    "screw display 55,-3",
-    "screw display 55,29"
+    "screw display stud 3,24",
+    "screw display stud 3,3",
+    "screw display stud 48,24",
+    "screw display stud 48,3",
+    "display board",
+    "display lcd",
+    "display studs",
+    "display conn",
+    "display parts",
+    "plug display_mx125"
    ],
    "from": [
     0,
@@ -976,12 +988,12 @@
      ]
     },
     {
-     "label": "1.9\" IPS 디스플레이",
+     "label": "Waveshare 1.9인치 LCD 모듈 (170 × 320, 뒷면 황동 스터드 4개)",
      "qty": 1,
      "items": [
       "display board",
-      "display glass",
-      "display parts"
+      "display lcd",
+      "display studs"
      ]
     },
     {
@@ -1000,23 +1012,30 @@
      "items": [
       "camera_mount"
      ]
+    },
+    {
+     "label": "모듈 동봉 케이블 MX1.25 8핀 (20 cm, 암 점퍼)",
+     "qty": 1,
+     "items": [
+      "plug display_mx125"
+     ]
     }
    ],
    "hw": [
     {
      "kind": "insert",
-     "label": "M2 × 3 인서트 (디스플레이 기둥 4 · 카메라 기둥 2 · 귀 패드 4)",
-     "qty": 10,
+     "label": "M2 × 3 인서트 (카메라 기둥 2 · 귀 패드 4)",
+     "qty": 6,
      "d": 2,
      "len": 3
     },
     {
      "kind": "screw",
-     "label": "M2 × 5 둥근머리 (디스플레이)",
+     "label": "M2 × 18 렌치볼트 (디스플레이, 뒤에서)",
      "qty": 4,
      "d": 2,
-     "len": 5,
-     "head": "button"
+     "len": 18,
+     "head": "socket"
     },
     {
      "kind": "screw",
@@ -1041,8 +1060,8 @@
     }
    ],
    "notes": [
-    "디스플레이 배선: 1 × 11 헤더 패드에 전선 8가닥(DC, RST, TCS, MOSI, SCK, GND, Vin, Lite)을 직접 납땜합니다. EYESPI 리본 케이블(100 / 200 mm)은 관절 6개를 지나 Pi까지 닿지 않습니다.",
-    "카메라는 납땜이 필요 없습니다 — 동봉 케이블을 1 mm 4핀 커넥터에 꽂습니다."
+    "납땜이 없습니다 — 디스플레이는 동봉 케이블을 커넥터에 꽂기만 하고, 케이블 끝의 암 점퍼에 수-암 점퍼 30 cm 8가닥을 이어 Pi까지 갑니다(이음부는 어깨판 클립에 둡니다).",
+    "카메라도 납땜이 없습니다 — 동봉 케이블을 1 mm 4핀 커넥터에 꽂습니다."
    ],
    "cover": false,
    "finale": false
@@ -1219,7 +1238,7 @@
     }
    ],
    "notes": [
-    "배지는 돌려서 바꿔 끼웁니다(잎 · HGU · SIRLab 여분 출력). 공식 로고 SVG가 있으면 글자 대신 넣을 수 있습니다."
+    "HGU와 SIRLab 배지는 같은 32 × 14 둥근 판입니다. 돌려서 바꿔 끼웁니다(잎 · HGU · SIRLab 여분 출력)."
    ],
    "cover": false,
    "finale": false
@@ -1228,7 +1247,7 @@
    "n": 19,
    "title": "머리 배선 · 완성",
    "kicker": "완성",
-   "text": "웹캠 케이블(카메라 쪽 작은 커넥터를 위로)과 디스플레이 하네스를 베이스에서 척추 구멍 → 턴테이블 → 어깨판 클립으로 올립니다. 웹캠의 USB-A는 오른쪽 데크 구멍으로 업앵글 어댑터에 위에서, 디스플레이 2×4 하우징은 GPIO 17–24번 핀에 위에서 꽂습니다. 완성!",
+   "text": "웹캠 케이블(카메라 쪽 작은 커넥터를 위로)과 디스플레이 점퍼 묶음을 베이스에서 척추 구멍 → 턴테이블 → 어깨판 클립으로 올립니다. 웹캠의 USB-A는 업앵글 어댑터에, 디스플레이 점퍼는 Pi 핀에 하나씩 꽂습니다: VCC 17번(3.3 V), GND 20번, DIN 19번, CLK 23번, CS 24번, DC 22번(GPIO25), RST 18번(GPIO24); BL은 이미 12번(GPIO18)에 꽂혀 있는 점퍼에. 완성!",
    "add": [
     "plug webcam_usb_in_adapter",
     "plug pi_gpio_17_24_display",
@@ -1251,7 +1270,7 @@
      ]
     },
     {
-     "label": "디스플레이 하네스 7선",
+     "label": "디스플레이 점퍼 7가닥 (17–24번)",
      "qty": 1,
      "items": [
       "plug pi_gpio_17_24_display",
@@ -1262,11 +1281,12 @@
    "hw": [
     {
      "kind": "misc",
-     "label": "2×4 듀폰 하우징 (디스플레이)",
-     "qty": 1
+     "label": "수-암 점퍼 30 cm",
+     "qty": 7
     }
    ],
    "notes": [
+    "12번 핀(백라이트) 점퍼는 Pi 단계에서 이미 꽂혀 있습니다 — 그 수 끝을 디스플레이 케이블의 BL 암 점퍼에 꽂습니다.",
     "웹캠 케이블 길이(약 45 cm 필요)와 USB-A 플러그 길이(부트 포함 33 mm 이하)는 실물로 재 주세요.",
     "USB-A 플러그는 13 mm 척추 구멍을 지나지 못합니다 — 카메라 쪽 작은 커넥터를 먼저 위로 통과시킵니다.",
     "처음 켤 때: 배터리 전압(12.6 V 이하)과 서보 ID 지도를 확인하고, 관절을 손으로 소프트 리밋 안에 둔 뒤 켭니다.",

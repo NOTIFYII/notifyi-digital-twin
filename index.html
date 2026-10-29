@@ -176,6 +176,14 @@
 <div id="infoOverlay" class="overlay" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
     <div class="sheet-hd"><h2 id="infoTitle">기준 부품 · 전원 안내</h2><button type="button" class="close" data-close="infoOverlay" aria-label="닫기">✕</button></div>
+    <h3>M13 (2026-10-29) — 납땜 없이 연결, 같은 모양 배지, 실물처럼 그린 부품</h3>
+    <ul>
+      <li><b>납땜 없음</b>: 디스플레이를 <b>Waveshare 1.9인치 LCD 모듈</b>(170 × 320 IPS, ST7789V2)로 바꿨습니다. 뒷면 8핀 커넥터에 동봉 케이블(20 cm, 끝은 암 점퍼)을 꽂고, 수-암 점퍼 30 cm로 이어 Pi 핀에 꽂습니다 — VCC 17번, GND 20번, DIN 19번, CLK 23번, CS 24번, DC 22번, RST 18번, BL 12번. 5 V · 배터리 리드도 미리 압착 · 납땜된 리드와 레버식 커넥터(WAGO 221)로 잇습니다.</li>
+      <li><b>디스플레이 고정</b>: 모듈 뒷면 모서리의 황동 M2 스터드 4개에 받침판 뒤에서 <b>M2 × 18 렌치볼트</b> 4개(1.8 mm 물림). 모듈 STEP · 제품 사진 · 위키 기준.</li>
+      <li><b>배지</b>: HGU · SIRLab 모두 같은 32 × 14 둥근 판.</li>
+      <li><b>3D · 조립 설명서</b>: 커넥터(JST EH · Molex · 듀폰 · MX1.25 · USB), LiPo 팩, XT60, 황동 스탠드오프, 나사(육각 홈 · 나사산)를 실제 모양으로 그렸습니다. <b>Enclosure</b>를 끄면 외피를 잡는 나사도 같이 숨겨집니다.</li>
+      <li><b>바로 출력</b>: 출력 도면 탭의 9판 .hfb는 Cubicreator4(3DP-310F · PLA)로 저장한 파일입니다.</li>
+    </ul>
     <h3>M12 (2026-10-29) — 모든 부품 나사 체결, 실제 디스플레이 · 카메라, 안테나 배지</h3>
     <ul>
       <li><b>납땜?</b> 디스플레이(Adafruit 5394)는 헤더 패드에 전선 8가닥을 <b>납땜</b>합니다(반대쪽은 점퍼선 암 끝을 Pi GPIO에 꽂음). 납땜 없는 EYESPI 리본(100 · 200 mm)은 관절 6개를 지나 베이스까지 닿지 않습니다. 카메라(Adafruit 5733)는 <b>납땜 없음</b> — 동봉 케이블을 1 mm 4핀 커넥터에 꽂습니다.</li>

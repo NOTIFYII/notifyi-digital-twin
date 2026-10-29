@@ -1,5 +1,5 @@
 {
- "revision": "mech_M12_screws",
+ "revision": "mech_M13_solderless",
  "printer": "Cubicon Single Plus (3DP-310F): bed 240 x 190 x 200 mm, 0.4 mm nozzle, 1.75 mm, heated bed (specs from resellers; cubiconshop.com's page lists none)",
  "material": "PLA only (university printer), all printed in white PLA; 'colour' = the paint colour after printing (RC3's colours), 'unpainted' parts stay white so light passes through.",
  "bed_margin_mm": 5.0,
@@ -359,8 +359,8 @@
    "solid_mass_g": 11.3,
    "slicer": {
     "exit_code": 0,
-    "time": "1h 8m 42s",
-    "seconds": 4122,
+    "time": "1h 8m 43s",
+    "seconds": 4123,
     "filament_g": 11.03
    },
    "nameKo": "요크 (관절 브래킷, 2개)",
@@ -441,8 +441,8 @@
    "solid_mass_g": 1.7,
    "slicer": {
     "exit_code": 0,
-    "time": "11m 35s",
-    "seconds": 695,
+    "time": "11m 36s",
+    "seconds": 696,
     "filament_g": 1.78
    },
    "nameKo": "어깨판",
@@ -560,23 +560,23 @@
    "bed_yaw_deg": 0,
    "fits_bed": true,
    "watertight": true,
-   "volume_cm3": 19.36,
-   "solid_mass_g": 24.0,
+   "volume_cm3": 18.43,
+   "solid_mass_g": 22.8,
    "slicer": {
     "exit_code": 0,
-    "time": "3h 8m 2s",
-    "seconds": 11282,
-    "filament_g": 29.79
+    "time": "2h 57m 56s",
+    "seconds": 10676,
+    "filament_g": 28.07
    },
    "nameKo": "카메라 · 디스플레이 받침",
    "nameEn": "camera / display cradle",
    "group": "head",
-   "changeKo": "머리 무게를 받는 부품: 옆팔 2.2 → 3.0 mm, 카메라 포켓 벽 1.4 → 2.0 mm. 벽 5 · 채움 60 %. M10 검토: 판 · 팔 · 디스플레이 기둥 · 카메라 포켓이 판 양쪽으로 튀어나와 어느 방향으로 두어도 지지대가 필요한 유일한 부품. 지지대가 닿는 곳의 떼는 힘을 계산함 — 가장 약한 곳은 디스플레이 기둥(Ø 5.6, 16 mm): 40 N으로 당겨도 안전율 2.1. M12: 디스플레이 기둥을 Adafruit STEP의 구멍 위치로(r 3.2, M2 × 3 인서트), 헤더 배선 슬롯, 카메라 마운트판용 기둥 2개(인서트), 아크릴을 누르는 손가락 6개, 귀 패드에 인서트 2개씩, 얼굴 상자용 나사 구멍 4개.",
-   "changeEn": "Carries the head: side arms 2.2 -> 3.0 mm, camera pocket walls 1.4 -> 2.0 mm; 5 walls, 60 % infill. M10 review: plate, arms, display standoffs and camera pocket stick out on both sides, so it is the one part that needs support whichever way it lies. Removal loads checked: the weakest supported feature is a display standoff (d 5.6, 16 mm): SF 2.1 at a 40 N pull. M12: display standoffs at the Adafruit STEP's holes (r 3.2, M2 x 3 inserts), a slot for the header wires, two posts (inserts) for the camera mount plate, six fingers that press on the acrylic, two inserts in each ear pad, four holes for the face box screws.",
+   "changeKo": "머리 무게를 받는 부품: 옆팔 2.2 → 3.0 mm, 카메라 포켓 벽 1.4 → 2.0 mm. 벽 5 · 채움 60 %. M10 검토: 판 · 팔 · 디스플레이 기둥 · 카메라 포켓이 판 양쪽으로 튀어나와 어느 방향으로 두어도 지지대가 필요한 유일한 부품. 지지대가 닿는 곳의 떼는 힘을 계산함 — 가장 약한 곳은 디스플레이 기둥(Ø 5.6, 16 mm): 40 N으로 당겨도 안전율 2.1. M12: 디스플레이 기둥을 Adafruit STEP의 구멍 위치로(r 3.2, M2 × 3 인서트), 헤더 배선 슬롯, 카메라 마운트판용 기둥 2개(인서트), 아크릴을 누르는 손가락 6개, 귀 패드에 인서트 2개씩, 얼굴 상자용 나사 구멍 4개. M13: 디스플레이를 Waveshare 1.9인치 모듈로 — 기둥 4개가 모듈 뒷면 황동 스터드 끝에 닿고, 받침판 뒤에서 M2 × 18 렌치볼트로 스터드에 조임(인서트 없음, 0.2 mm 카운터보어). 8핀 플러그와 케이블이 지나가는 7 × 15 mm 구멍. 디스플레이용 인서트 4개가 빠져 인서트는 6개(카메라 2 · 귀 패드 4).",
+   "changeEn": "Carries the head: side arms 2.2 -> 3.0 mm, camera pocket walls 1.4 -> 2.0 mm; 5 walls, 60 % infill. M10 review: plate, arms, display standoffs and camera pocket stick out on both sides, so it is the one part that needs support whichever way it lies. Removal loads checked: the weakest supported feature is a display standoff (d 5.6, 16 mm): SF 2.1 at a 40 N pull. M12: display standoffs at the Adafruit STEP's holes (r 3.2, M2 x 3 inserts), a slot for the header wires, two posts (inserts) for the camera mount plate, six fingers that press on the acrylic, two inserts in each ear pad, four holes for the face box screws. M13: the display is the Waveshare 1.9inch module - four standoffs meet the ends of its brass studs and M2 x 18 socket screws go in from the plate's back into the studs (no inserts, 0.2 mm counterbore); a 7 x 15 mm opening for the 8-pin plug and its wires. Six inserts left (camera 2, ear pads 4).",
    "orientKo": "아래 모서리로 세워서 (머리 무게를 받는 팔이 층을 따라감)",
    "supportKo": "필요 — 45°, 접촉 간격 0.2 mm, 브리지에는 안 함, 허브 구멍(Ø 11) 4개 안은 막기",
    "aidKo": "",
-   "removeKo": "인서트 10개(디스플레이 4 · 카메라 2 · 귀 패드 4)를 인두로."
+   "removeKo": "인서트 6개(카메라 2 · 귀 패드 4)를 인두로."
   },
   {
    "file": "stl/13_head_strap.stl",
@@ -840,26 +840,26 @@
    "brim_mm": 0,
    "orientation": "lying on its back (plate and D-boss flush), lettering up; press the M3 x 4 insert into the boss's side hole afterwards; paint the letters and rim cream",
    "on_bed_mm": [
-    27.2,
-    22.0,
+    32.0,
+    19.0,
     8.0
    ],
-   "bed_yaw_deg": 0,
+   "bed_yaw_deg": 65,
    "fits_bed": true,
    "watertight": true,
-   "volume_cm3": 1.49,
-   "solid_mass_g": 1.8,
+   "volume_cm3": 1.7,
+   "solid_mass_g": 2.1,
    "slicer": {
     "exit_code": 0,
-    "time": "15m 11s",
-    "seconds": 911,
-    "filament_g": 1.9
+    "time": "17m 19s",
+    "seconds": 1039,
+    "filament_g": 2.17
    },
    "nameKo": "안테나 배지 (왼쪽 HGU · 오른쪽 SIRLab) (왼쪽)",
    "nameEn": "antenna badges (HGU left, SIRLab right)",
    "group": "head",
-   "changeKo": "M12: 막대에 붙이던 잎 → 돌려 끼우는 배지. 보스(r 4, M3 × 4 인서트)를 무두볼트 M3 × 10에 돌려 끼우고 얇은 너트로 앞을 보게 잠금. HGU: Ø22 메달, 굵은 글자 7 mm, 테두리. SIRLab: 32 × 14 둥근 판, 글자 5.6 mm, 테두리. 세워서 뽑으면 판 아래 가장자리가 허공에 떠서, 판을 2.5 mm 뒤로 옮기고 보스 뒤쪽을 네모(D자)로 — 뒷면을 바닥에 눕혀 지지대 없이 출력. 공식 로고 SVG가 있으면 글자 대신.",
-   "changeEn": "M12: glued leaf -> twist-on badge: the boss (r 4, M3 x 4 insert) screws onto an M3 x 10 grub screw and a thin nut locks it facing forward. HGU: d 22 medallion, bold 7 mm letters, rim. SIRLab: 32 x 14 rounded plate, 5.6 mm letters, rim. Standing, the plate's lower edge overhung the boss, so the plate sits 2.5 mm back on a D-shaped boss and the badge prints on its back with no support. The official logos replace the text if SVGs are supplied.",
+   "changeKo": "M12: 막대에 붙이던 잎 → 돌려 끼우는 배지. 보스(r 4, M3 × 4 인서트)를 무두볼트 M3 × 10에 돌려 끼우고 얇은 너트로 앞을 보게 잠금. HGU: Ø22 메달, 굵은 글자 7 mm, 테두리. SIRLab: 32 × 14 둥근 판, 글자 5.6 mm, 테두리. 세워서 뽑으면 판 아래 가장자리가 허공에 떠서, 판을 2.5 mm 뒤로 옮기고 보스 뒤쪽을 네모(D자)로 — 뒷면을 바닥에 눕혀 지지대 없이 출력. 공식 로고 SVG가 있으면 글자 대신. M13: HGU도 SIRLab과 같은 32 × 14 둥근 판(글자 7 mm).",
+   "changeEn": "M12: glued leaf -> twist-on badge: the boss (r 4, M3 x 4 insert) screws onto an M3 x 10 grub screw and a thin nut locks it facing forward. HGU: d 22 medallion, bold 7 mm letters, rim. SIRLab: 32 x 14 rounded plate, 5.6 mm letters, rim. Standing, the plate's lower edge overhung the boss, so the plate sits 2.5 mm back on a D-shaped boss and the badge prints on its back with no support. The official logos replace the text if SVGs are supplied. M13: HGU on the same 32 x 14 rounded plate as SIRLab (7 mm letters).",
    "orientKo": "뒷면을 바닥에 눕혀서(판과 D자 보스 뒷면이 한 평면), 글자가 위로. 브림 없음",
    "supportKo": "필요 없음",
    "aidKo": "",
@@ -899,8 +899,8 @@
    "nameKo": "안테나 배지 (왼쪽 HGU · 오른쪽 SIRLab) (오른쪽)",
    "nameEn": "antenna badges (HGU left, SIRLab right)",
    "group": "head",
-   "changeKo": "M12: 막대에 붙이던 잎 → 돌려 끼우는 배지. 보스(r 4, M3 × 4 인서트)를 무두볼트 M3 × 10에 돌려 끼우고 얇은 너트로 앞을 보게 잠금. HGU: Ø22 메달, 굵은 글자 7 mm, 테두리. SIRLab: 32 × 14 둥근 판, 글자 5.6 mm, 테두리. 세워서 뽑으면 판 아래 가장자리가 허공에 떠서, 판을 2.5 mm 뒤로 옮기고 보스 뒤쪽을 네모(D자)로 — 뒷면을 바닥에 눕혀 지지대 없이 출력. 공식 로고 SVG가 있으면 글자 대신.",
-   "changeEn": "M12: glued leaf -> twist-on badge: the boss (r 4, M3 x 4 insert) screws onto an M3 x 10 grub screw and a thin nut locks it facing forward. HGU: d 22 medallion, bold 7 mm letters, rim. SIRLab: 32 x 14 rounded plate, 5.6 mm letters, rim. Standing, the plate's lower edge overhung the boss, so the plate sits 2.5 mm back on a D-shaped boss and the badge prints on its back with no support. The official logos replace the text if SVGs are supplied.",
+   "changeKo": "M12: 막대에 붙이던 잎 → 돌려 끼우는 배지. 보스(r 4, M3 × 4 인서트)를 무두볼트 M3 × 10에 돌려 끼우고 얇은 너트로 앞을 보게 잠금. HGU: Ø22 메달, 굵은 글자 7 mm, 테두리. SIRLab: 32 × 14 둥근 판, 글자 5.6 mm, 테두리. 세워서 뽑으면 판 아래 가장자리가 허공에 떠서, 판을 2.5 mm 뒤로 옮기고 보스 뒤쪽을 네모(D자)로 — 뒷면을 바닥에 눕혀 지지대 없이 출력. 공식 로고 SVG가 있으면 글자 대신. M13: HGU도 SIRLab과 같은 32 × 14 둥근 판(글자 7 mm).",
+   "changeEn": "M12: glued leaf -> twist-on badge: the boss (r 4, M3 x 4 insert) screws onto an M3 x 10 grub screw and a thin nut locks it facing forward. HGU: d 22 medallion, bold 7 mm letters, rim. SIRLab: 32 x 14 rounded plate, 5.6 mm letters, rim. Standing, the plate's lower edge overhung the boss, so the plate sits 2.5 mm back on a D-shaped boss and the badge prints on its back with no support. The official logos replace the text if SVGs are supplied. M13: HGU on the same 32 x 14 rounded plate as SIRLab (7 mm letters).",
    "orientKo": "뒷면을 바닥에 눕혀서(판과 D자 보스 뒷면이 한 평면), 글자가 위로. 브림 없음",
    "supportKo": "필요 없음",
    "aidKo": "",
@@ -940,8 +940,8 @@
    "nameKo": "여분 끝: SIRLab (왼쪽)",
    "nameEn": "spare tip: SIRLab (left)",
    "group": "head",
-   "changeKo": "M12 여분: 같은 나사로 바꿔 끼움.",
-   "changeEn": "M12 spare: same screw - swap at will.",
+   "changeKo": "M12 여분: 같은 나사로 바꿔 끼움. M13: HGU도 SIRLab과 같은 32 × 14 둥근 판(글자 7 mm).",
+   "changeEn": "M12 spare: same screw - swap at will. M13: HGU on the same 32 x 14 rounded plate as SIRLab (7 mm letters).",
    "orientKo": "뒷면을 바닥에 눕혀서(판과 D자 보스 뒷면이 한 평면), 글자가 위로. 브림 없음",
    "supportKo": "필요 없음",
    "aidKo": "",
@@ -963,26 +963,26 @@
    "brim_mm": 0,
    "orientation": "lying on its back (plate and D-boss flush), lettering up; press the M3 x 4 insert into the boss's side hole afterwards; paint the letters and rim cream",
    "on_bed_mm": [
-    27.1,
-    22.0,
+    32.2,
+    19.5,
     8.0
    ],
-   "bed_yaw_deg": 155,
+   "bed_yaw_deg": 90,
    "fits_bed": true,
    "watertight": true,
-   "volume_cm3": 1.49,
-   "solid_mass_g": 1.8,
+   "volume_cm3": 1.7,
+   "solid_mass_g": 2.1,
    "slicer": {
     "exit_code": 0,
-    "time": "15m 18s",
-    "seconds": 918,
-    "filament_g": 1.9
+    "time": "17m 18s",
+    "seconds": 1038,
+    "filament_g": 2.17
    },
    "nameKo": "여분 끝: HGU (오른쪽)",
    "nameEn": "spare tip: HGU (right)",
    "group": "head",
-   "changeKo": "M12 여분: 같은 나사로 바꿔 끼움.",
-   "changeEn": "M12 spare: same screw - swap at will.",
+   "changeKo": "M12 여분: 같은 나사로 바꿔 끼움. M13: HGU도 SIRLab과 같은 32 × 14 둥근 판(글자 7 mm).",
+   "changeEn": "M12 spare: same screw - swap at will. M13: HGU on the same 32 x 14 rounded plate as SIRLab (7 mm letters).",
    "orientKo": "뒷면을 바닥에 눕혀서(판과 D자 보스 뒷면이 한 평면), 글자가 위로. 브림 없음",
    "supportKo": "필요 없음",
    "aidKo": "",
@@ -995,7 +995,7 @@
   "tool": "PrusaSlicer 2.9.6 console, analysis only (profile approximating a Cubicon Single Plus)",
   "profile": "slicing/pla_cubicon_single_plus_approx.ini",
   "note": "ANALYSIS ONLY - G-code deleted; Cubicreator will differ",
-  "total_time_h": 35.1,
-  "total_filament_g": 383.0
+  "total_time_h": 35.0,
+  "total_filament_g": 381.0
  }
 }

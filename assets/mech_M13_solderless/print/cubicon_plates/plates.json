@@ -1,5 +1,5 @@
 {
- "pack": "03_Print/mech_M12_screws_20261029",
+ "pack": "03_Print/mech_M13_solderless_20261029",
  "printer": "Cubicon Single Plus (3DP-310F), bed 240 x 190 x 200 mm",
  "slicer": "Cubicreator4 (only its .hfb prints)",
  "note": "Plate layouts only. The .hfb files are made in Cubicreator4 (device 3DP-310F, PLA); estimates are PrusaSlicer analysis per part, summed - Cubicreator's own time / weight differ",
@@ -12,7 +12,7 @@
    ],
    "stl": "cubicon_plates/P1_base_shell.stl",
    "3mf": "cubicon_plates/P1_base_shell.3mf",
-   "hfb": "hfb/M12_P1_base_shell.hfb",
+   "hfb": "hfb/M13_P1_base_shell.hfb",
    "footprint_mm": [
     120.0,
     110.0,
@@ -45,7 +45,12 @@
    "prusaslicer_estimate_g": 117.2,
    "colours": [
     "cream"
-   ]
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "10:12",
+    "filament_g": 118.02,
+    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+   }
   },
   {
    "plate": "P2_base_floor",
@@ -55,7 +60,7 @@
    ],
    "stl": "cubicon_plates/P2_base_floor.stl",
    "3mf": "cubicon_plates/P2_base_floor.3mf",
-   "hfb": "hfb/M12_P2_base_floor.hfb",
+   "hfb": "hfb/M13_P2_base_floor.hfb",
    "footprint_mm": [
     117.6,
     108.3,
@@ -88,7 +93,12 @@
    "prusaslicer_estimate_g": 61.9,
    "colours": [
     "dark"
-   ]
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "6:06",
+    "filament_g": 61.98,
+    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+   }
   },
   {
    "plate": "P3_servo_deck",
@@ -98,7 +108,7 @@
    ],
    "stl": "cubicon_plates/P3_servo_deck.stl",
    "3mf": "cubicon_plates/P3_servo_deck.3mf",
-   "hfb": "hfb/M12_P3_servo_deck.hfb",
+   "hfb": "hfb/M13_P3_servo_deck.hfb",
    "footprint_mm": [
     114.2,
     104.2,
@@ -131,7 +141,12 @@
    "prusaslicer_estimate_g": 44.6,
    "colours": [
     "dark"
-   ]
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "4:07",
+    "filament_g": 44.44,
+    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+   }
   },
   {
    "plate": "P4_head_face",
@@ -141,7 +156,7 @@
    ],
    "stl": "cubicon_plates/P4_head_face.stl",
    "3mf": "cubicon_plates/P4_head_face.3mf",
-   "hfb": "hfb/M12_P4_head_face.hfb",
+   "hfb": "hfb/M13_P4_head_face.hfb",
    "footprint_mm": [
     98.0,
     79.0,
@@ -174,7 +189,12 @@
    "prusaslicer_estimate_g": 31.6,
    "colours": [
     "cream"
-   ]
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "2:32",
+    "filament_g": 28.48,
+    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+   }
   },
   {
    "plate": "P5_camera_cradle",
@@ -184,7 +204,7 @@
    ],
    "stl": "cubicon_plates/P5_camera_cradle.stl",
    "3mf": "cubicon_plates/P5_camera_cradle.3mf",
-   "hfb": "hfb/M12_P5_camera_cradle.hfb",
+   "hfb": "hfb/M13_P5_camera_cradle.hfb",
    "footprint_mm": [
     80.0,
     68.6,
@@ -213,11 +233,16 @@
      "바닥보조물": "브림"
     }
    },
-   "prusaslicer_estimate_h": 3.1,
-   "prusaslicer_estimate_g": 29.8,
+   "prusaslicer_estimate_h": 3.0,
+   "prusaslicer_estimate_g": 28.1,
    "colours": [
     "cream"
-   ]
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "4:03",
+    "filament_g": 32.73,
+    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+   }
   },
   {
    "plate": "P6_yokes",
@@ -229,7 +254,7 @@
    ],
    "stl": "cubicon_plates/P6_yokes.stl",
    "3mf": "cubicon_plates/P6_yokes.3mf",
-   "hfb": "hfb/M12_P6_yokes.hfb",
+   "hfb": "hfb/M13_P6_yokes.hfb",
    "footprint_mm": [
     170.4,
     58.0,
@@ -262,7 +287,12 @@
    "prusaslicer_estimate_g": 39.3,
    "colours": [
     "cream"
-   ]
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "4:49",
+    "filament_g": 42.01,
+    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+   }
   },
   {
    "plate": "P7_sled_strap",
@@ -273,7 +303,7 @@
    ],
    "stl": "cubicon_plates/P7_sled_strap.stl",
    "3mf": "cubicon_plates/P7_sled_strap.3mf",
-   "hfb": "hfb/M12_P7_sled_strap.hfb",
+   "hfb": "hfb/M13_P7_sled_strap.hfb",
    "footprint_mm": [
     178.9,
     36.4,
@@ -306,7 +336,12 @@
    "prusaslicer_estimate_g": 21.6,
    "colours": [
     "cream"
-   ]
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "2:42",
+    "filament_g": 23.31,
+    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+   }
   },
   {
    "plate": "P8_flat_parts",
@@ -320,7 +355,7 @@
    ],
    "stl": "cubicon_plates/P8_flat_parts.stl",
    "3mf": "cubicon_plates/P8_flat_parts.3mf",
-   "hfb": "hfb/M12_P8_flat_parts.hfb",
+   "hfb": "hfb/M13_P8_flat_parts.hfb",
    "footprint_mm": [
     223.6,
     46.0,
@@ -356,7 +391,12 @@
     "cream",
     "olive",
     "unpainted"
-   ]
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "1:40",
+    "filament_g": 15.78,
+    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+   }
   },
   {
    "plate": "P9_small_parts",
@@ -369,9 +409,9 @@
     "pivot_cap_1p0_frame_dark_5",
     "pivot_cap_1p0_frame_dark_6",
     "antenna_tips_R",
-    "antenna_tip_sirlab_L",
-    "antenna_tips_L",
     "antenna_tip_hgu_R",
+    "antenna_tips_L",
+    "antenna_tip_sirlab_L",
     "camera_mount",
     "cable_bushing",
     "door_latch",
@@ -380,10 +420,10 @@
    ],
    "stl": "cubicon_plates/P9_small_parts.stl",
    "3mf": "cubicon_plates/P9_small_parts.3mf",
-   "hfb": "hfb/M12_P9_small_parts.hfb",
+   "hfb": "hfb/M13_P9_small_parts.hfb",
    "footprint_mm": [
-    216.0,
-    80.8,
+    209.6,
+    82.0,
     22.7
    ],
    "fits_bed": true,
@@ -409,12 +449,21 @@
      "바닥보조물": "브림"
     }
    },
-   "prusaslicer_estimate_h": 3.2,
-   "prusaslicer_estimate_g": 21.5,
+   "prusaslicer_estimate_h": 3.3,
+   "prusaslicer_estimate_g": 22.0,
    "colours": [
     "dark",
     "olive"
-   ]
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "4:38",
+    "filament_g": 26.22,
+    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+   }
   }
- ]
+ ],
+ "cubicreator_total": {
+  "time_h": 40.8,
+  "filament_g": 393.0
+ }
 }

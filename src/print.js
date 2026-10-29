@@ -1,12 +1,12 @@
-// Print tab, mech_M12_screws (round 28; mech_M11_wiring in round 27, mech_M10_PLA in round 26): every printed part as its own PLA print for the Cubicon Single Plus (bed 240 x 190 mm).
+// Print tab, mech_M13_solderless (round 28b; mech_M12_screws in round 28, mech_M11_wiring in round 27): every printed part as its own PLA print for the Cubicon Single Plus (bed 240 x 190 mm).
 // Each STL is already turned to its print orientation and centred on the bed (scripts/make_m9_print_pack.py), print aids included;
 // this page shows it on the bed outline with its settings, slicer estimate, what changed for PLA, whether it needs support, its print
-// aids and how to take them off. Data: assets/mech_M12_screws/print/print_table.json (+ print_physics.json).
+// aids and how to take them off. Data: assets/mech_M13_solderless/print/print_table.json (+ print_physics.json).
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
-const REV = 'mech_M12_screws', ROOT = `assets/${REV}/print`;
+const REV = 'mech_M13_solderless', ROOT = `assets/${REV}/print`;
 const BED = [240, 190];
 const GROUPS = { all: '전체', base: '베이스', body: '몸통', head: '머리' };
 // every part is printed in white PLA and painted afterwards in RC3's colours (owner, 2026-10-27); 'unpainted' parts stay white
