@@ -151,6 +151,18 @@
 #printSide table.plates th, #printSide table.plates td { border-top: 1px solid rgba(127,127,127,.25); padding: 5px 4px; text-align: left; vertical-align: top; }
 #printSide table.plates .btn { padding: 2px 7px; font-size: 11px; }
 
+/* M13: plates first (.hfb) */
+#plates { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 4px; }
+#plates li { display: flex; gap: 4px; }
+#plates li button { flex: 1; display: flex; justify-content: space-between; gap: 8px; text-align: left; }
+#plates li button.on { outline: 2px solid #8fb4ff; }
+#plates .btn.dl { padding: 4px 9px; font-weight: 600; }
+#printSide .btn.main { font-weight: 700; }
+#printSide ul.pieces { padding-left: 16px; font-size: 13px; }
+#printSide ul.pieces li { margin: 4px 0; }
+#printSide ul.plist-dl { padding-left: 16px; font-size: 12px; }
+#printSide .ok { color: #57c785; }
+
 </style>
 <script type="importmap">
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/" } }
@@ -160,22 +172,22 @@
 <div class="nfy-topbar"><a class="nfy-brand" href="index.html">Notifyi</a><nav class="tabs"><a class="tab" href="index.html">3D 모델</a><a class="tab on" href="print.html">출력 도면</a><a class="tab" href="assembly.html">조립 설명서</a><a class="tab" href="research.html">연구 · 논문</a><button type="button" class="tab info" data-open="infoOverlay">기준 부품 · 전원 안내</button></nav><div class="nfy-right"></div></div>
 <div id="printPage">
   <aside class="panel" id="printSide">
-    <h1>M13 · 부품별 출력</h1>
-    <p class="note">학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)에서 <b>흰 PLA</b>로 뽑고, 다 뽑은 뒤 <b>RC3 원래 색으로 칠합니다</b>. 부품마다 따로 출력하고, 각 STL은 이미 출력 방향으로 돌려 베드 가운데에 놓았습니다. 목록의 색 점 = 칠할 색.</p>
-    <p class="note"><b>M13 (2026-10-29)</b>: <b>납땜이 없습니다</b> — 디스플레이를 Waveshare 1.9인치 모듈(같은 170 × 320 IPS)로 바꿔 동봉 케이블을 꽂기만 하고, 받침판 뒤에서 M2 × 18 나사로 모듈의 황동 스터드에 조입니다. HGU · SIRLab 배지는 같은 둥근 판입니다. 아래 <b>.hfb</b>는 Cubicreator4로 판마다 슬라이스해 저장한 파일이고, 파일 안의 설정값을 판 표와 대조해 확인했습니다.</p>
-    <p class="note"><b>M12 (2026-10-29)</b>: <b>모든 부품을 나사로 조입니다</b>(접착 · 테이프 · 억지 끼움 없음) — 인서트 위치와 나사 26개를 CAD에 실제 크기로 넣고, 구멍 · 공구 길 · 머리가 실제로 누르는지 · 인서트에 물리는지까지 확인했습니다. 디스플레이는 Adafruit 공식 STEP, 카메라는 제조사 도면 그대로. 안테나 끝은 돌려 끼우는 <b>HGU · SIRLab 배지</b>(여분 잎 · 배지 포함). 얼굴 테는 얼굴 상자와, 턴테이블 링은 첫 요크와 한 몸으로 출력하고, 안테나 막대는 사서 쓰는 M3 × 40 스탠드오프입니다. 24개 파일 · 30조각. 살 부품 목록은 PURCHASE_LIST_mech_M12.csv.</p>
-    <details open id="cubicon"><summary>Cubicon에서 바로 출력 (.hfb) — 9판</summary><p class="note">싱글플러스는 <b>Cubicreator로 슬라이스한 .hfb · .hvs만</b> 출력합니다(매뉴얼: 다른 슬라이서의 G-code는 출력되지 않고 장비를 손상시킬 수 있음). 30조각을 설정이 같은 것끼리 9판으로 묶었습니다. <b>9 / 9</b>판의 .hfb가 올라와 있습니다. USB 메모리(FAT32)에 .hfb를 넣고 프린터에서 선택하세요(영문 파일명만 보임).</p><table class="plates"><thead><tr><th>판</th><th>Cubicreator4 설정 (3DP-310F · PLA, 전문가 설정 값)</th><th>받기</th></tr></thead><tbody><tr><td><b>P1_base_shell</b><br><small>1조각 · Cubicreator 10:12 · 118 g</small></td><td>레이어 0.2 mm · 벽 6줄 · 채움 15 % · 지지대 끔 · 스커트<br><small>기본 메뉴만 쓸 때: 0.2 mm · 20 % (Medium)</small></td><td><a class="btn" href="assets/mech_M13_solderless/print/hfb/M13_P1_base_shell.hfb" download>.hfb 받기</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P1_base_shell.stl" download>STL</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P1_base_shell.3mf" download>3MF</a></td></tr><tr><td><b>P2_base_floor</b><br><small>1조각 · Cubicreator 6:06 · 62 g</small></td><td>레이어 0.2 mm · 벽 4줄 · 채움 30 % · 지지대 끔 · 스커트<br><small>기본 메뉴만 쓸 때: 0.2 mm · 40 % (High)</small></td><td><a class="btn" href="assets/mech_M13_solderless/print/hfb/M13_P2_base_floor.hfb" download>.hfb 받기</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P2_base_floor.stl" download>STL</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P2_base_floor.3mf" download>3MF</a></td></tr><tr><td><b>P3_servo_deck</b><br><small>1조각 · Cubicreator 4:07 · 44 g</small></td><td>레이어 0.2 mm · 벽 5줄 · 채움 40 % · 지지대 끔 · 스커트<br><small>기본 메뉴만 쓸 때: 0.2 mm · 40 % (High)</small></td><td><a class="btn" href="assets/mech_M13_solderless/print/hfb/M13_P3_servo_deck.hfb" download>.hfb 받기</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P3_servo_deck.stl" download>STL</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P3_servo_deck.3mf" download>3MF</a></td></tr><tr><td><b>P4_head_face</b><br><small>1조각 · Cubicreator 2:32 · 28 g</small></td><td>레이어 0.2 mm · 벽 4줄 · 채움 20 % · 지지대 끔 · 스커트<br><small>기본 메뉴만 쓸 때: 0.2 mm · 20 % (Medium)</small></td><td><a class="btn" href="assets/mech_M13_solderless/print/hfb/M13_P4_head_face.hfb" download>.hfb 받기</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P4_head_face.stl" download>STL</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P4_head_face.3mf" download>3MF</a></td></tr><tr><td><b>P5_camera_cradle</b><br><small>1조각 · Cubicreator 4:03 · 33 g</small></td><td>레이어 0.2 mm · 벽 5줄 · 채움 60 % · 지지대 켬 · 브림<br><small>기본 메뉴만 쓸 때: 0.2 mm · 40 % (High)</small></td><td><a class="btn" href="assets/mech_M13_solderless/print/hfb/M13_P5_camera_cradle.hfb" download>.hfb 받기</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P5_camera_cradle.stl" download>STL</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P5_camera_cradle.3mf" download>3MF</a></td></tr><tr><td><b>P6_yokes</b><br><small>3조각 · Cubicreator 4:49 · 42 g</small></td><td>레이어 0.2 mm · 벽 5줄 · 채움 60 % · 지지대 끔 · 브림<br><small>기본 메뉴만 쓸 때: 0.2 mm · 40 % (High)</small></td><td><a class="btn" href="assets/mech_M13_solderless/print/hfb/M13_P6_yokes.hfb" download>.hfb 받기</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P6_yokes.stl" download>STL</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P6_yokes.3mf" download>3MF</a></td></tr><tr><td><b>P7_sled_strap</b><br><small>2조각 · Cubicreator 2:42 · 23 g</small></td><td>레이어 0.2 mm · 벽 4줄 · 채움 40 % · 지지대 끔 · 브림<br><small>기본 메뉴만 쓸 때: 0.2 mm · 40 % (High)</small></td><td><a class="btn" href="assets/mech_M13_solderless/print/hfb/M13_P7_sled_strap.hfb" download>.hfb 받기</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P7_sled_strap.stl" download>STL</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P7_sled_strap.3mf" download>3MF</a></td></tr><tr><td><b>P8_flat_parts</b><br><small>5조각 · Cubicreator 1:40 · 16 g</small></td><td>레이어 0.2 mm · 벽 4줄 · 채움 100 % · 지지대 끔 · 스커트<br><small>기본 메뉴만 쓸 때: 0.2 mm · 40 % (High)</small></td><td><a class="btn" href="assets/mech_M13_solderless/print/hfb/M13_P8_flat_parts.hfb" download>.hfb 받기</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P8_flat_parts.stl" download>STL</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P8_flat_parts.3mf" download>3MF</a></td></tr><tr><td><b>P9_small_parts</b><br><small>15조각 · Cubicreator 4:38 · 26 g</small></td><td>레이어 0.12 mm · 벽 4줄 · 채움 100 % · 지지대 끔 · 브림<br><small>기본 메뉴만 쓸 때: 0.15 mm · 40 % (High)</small></td><td><a class="btn" href="assets/mech_M13_solderless/print/hfb/M13_P9_small_parts.hfb" download>.hfb 받기</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P9_small_parts.stl" download>STL</a> <a class="btn" href="assets/mech_M13_solderless/print/cubicon_plates/P9_small_parts.3mf" download>3MF</a></td></tr></tbody></table><p class="sub">합계 Cubicreator 예상 <b>40.8시간 · 393 g</b>(Cubicreator4가 슬라이스 후 보여 준 값). .hfb마다 들어 있는 설정값(레이어 · 벽 · 채움 · 지지대 · 바닥 보조물)과 파일 끝 기록을 판 표와 대조해 확인했습니다(hfb_check.json). P5(카메라 받침)만 지지대를 켭니다.</p></details>
-    <p class="note"><b>M11 (2026-10-28)</b>: 실제 배선에 맞춰 베이스를 고쳤습니다 — Pi 레일 2개가 빠지고(Pi는 데크 아래 스탠드오프에 매달림) 29조각이 됐습니다. 바닥 · 서보 데크 · 외피 · 배터리 슬레드 · 케이블 부싱이 바뀌었고, 나머지는 M10과 같습니다. 배선 부품(케이블 · 어댑터 · 스탠드오프)은 BOM에 있습니다.</p>
-    <p class="note"><b>M10 (2026-10-27)</b>: 지지대를 떼다가 부품이 부러지지 않도록 모든 부품을 다시 검토했습니다. 조각 중 <b>카메라 받침 1개만 지지대</b>가 필요하고, 나머지는 45° 보강 · 세로 슬롯 · 출력 방향 변경으로 지지대 없이 뽑힙니다. 네 부품에는 <b>함께 출력되는 보조물</b>(긴 브리지를 받치는 떼어 내는 웹 · 따로 떨어진 링, 나사 구멍 위 0.3 mm 막)이 있습니다. 목록의 <u class="tg sup" style="text-decoration:none">지지대</u> · <u class="tg aid" style="text-decoration:none">보조물</u> 표시를 보세요.</p>
+    <h1>M13 · Cubicon 출력 (.hfb)</h1>
+    <p class="note">학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)는 <b>Cubicreator로 슬라이스한 .hfb</b>만 출력합니다. 아래 9판의 .hfb는 Cubicreator4(장비 3DP-310F · PLA)로 저장한 파일입니다 — <b>USB 메모리(FAT32)에 넣고 프린터에서 고르면 바로 출력</b>됩니다(영문 파일명만 보임). <b>흰 PLA</b>로 뽑은 뒤 RC3 색으로 칠합니다. 판을 누르면 그 판이 베드 위에 놓인 그대로 보입니다(색 = 칠할 색).</p>
     <p class="sub" id="summary">불러오는 중…</p>
-    <p class="btns"><a id="zip" class="btn" href="#">전체 STL (zip)</a> <a class="btn" id="tablejson" href="#" target="_blank" rel="noopener">출력표 JSON</a></p>
-    <div class="chips" id="groups"></div>
-    <ul id="plist"></ul>
+    <ul id="plates"></ul>
     <h2 id="pname">–</h2>
-    <div class="facts" id="facts"></div>
-    <p class="change" id="change"></p>
-    <p class="btns"><a id="stl" class="btn" href="#">이 부품 STL 받기</a>
+    <p class="btns"><a id="hfb" class="btn main" href="#">.hfb 받기</a> <a id="platestl" class="btn" href="#">이 판 STL</a>
       <button type="button" data-view="three_quarter">입체</button><button type="button" data-view="top">위</button><button type="button" data-view="side">옆</button></p>
+    <div class="facts" id="facts"></div>
+    <h3>이 판에 들어간 조각</h3>
+    <ul id="pieces" class="pieces"></ul>
+    <p class="note"><b>M13 (2026-10-29)</b>: <b>납땜이 없습니다</b> — 디스플레이를 Waveshare 1.9인치 모듈(같은 170 × 320 IPS)로 바꿔 동봉 케이블을 꽂기만 하고, 받침판 뒤에서 M2 × 18 나사로 모듈의 황동 스터드에 조입니다. HGU · SIRLab 배지는 같은 둥근 판입니다. M12부터 모든 부품을 나사(인서트)로 조입니다.</p>
+    <details>
+      <summary>부품별 STL (다른 슬라이서 · 수정용)</summary>
+      <p class="btns"><a id="zip" class="btn" href="#">전체 STL (zip)</a> <a class="btn" id="tablejson" href="#" target="_blank" rel="noopener">판 표 JSON</a></p>
+      <ul id="plist" class="plist-dl"></ul>
+    </details>
     <details open>
       <summary>지지대 · 보조물 떼기</summary>
       <ul>
@@ -322,6 +334,6 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
 </script>
-<script type="module" src="./src/print.js?v=m13-20261029"></script>
+<script type="module" src="./src/print.js?v=m13-hfb-20261029"></script>
 </body>
 </html>

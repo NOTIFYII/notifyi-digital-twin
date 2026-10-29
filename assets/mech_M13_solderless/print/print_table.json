@@ -441,8 +441,8 @@
    "solid_mass_g": 1.7,
    "slicer": {
     "exit_code": 0,
-    "time": "11m 36s",
-    "seconds": 696,
+    "time": "11m 35s",
+    "seconds": 695,
     "filament_g": 1.78
    },
    "nameKo": "어깨판",
@@ -560,13 +560,13 @@
    "bed_yaw_deg": 0,
    "fits_bed": true,
    "watertight": true,
-   "volume_cm3": 18.43,
-   "solid_mass_g": 22.8,
+   "volume_cm3": 18.24,
+   "solid_mass_g": 22.6,
    "slicer": {
     "exit_code": 0,
-    "time": "2h 57m 56s",
-    "seconds": 10676,
-    "filament_g": 28.07
+    "time": "2h 57m 23s",
+    "seconds": 10643,
+    "filament_g": 27.96
    },
    "nameKo": "카메라 · 디스플레이 받침",
    "nameEn": "camera / display cradle",

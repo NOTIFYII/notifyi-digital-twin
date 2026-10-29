@@ -14,7 +14,7 @@ Pack: `03_Print/mech_M13_solderless_20261029`. Cubicreator4 is installed at `10_
 | P2_base_floor | 1 | 0.2 | 4 | 30 % | 끔 | 스커트 | 0.2 mm, 40 % (High), support OFF, none (skirt) | 5.5 h, 61.9 g |
 | P3_servo_deck | 1 | 0.2 | 5 | 40 % | 끔 | 스커트 | 0.2 mm, 40 % (High), support OFF, none (skirt) | 3.8 h, 44.6 g |
 | P4_head_face | 1 | 0.2 | 4 | 20 % | 끔 | 스커트 | 0.2 mm, 20 % (Medium), support OFF, none (skirt) | 2.5 h, 31.6 g |
-| P5_camera_cradle | 1 | 0.2 | 5 | 60 % | 켬 | 브림 | 0.2 mm, 40 % (High), support ON, angle 40-50, offset Normal, 10 lines (Narrowly) | 3.0 h, 28.1 g |
+| P5_camera_cradle | 1 | 0.2 | 5 | 60 % | 켬 | 브림 | 0.2 mm, 40 % (High), support ON, angle 40-50, offset Normal, 10 lines (Narrowly) | 3.0 h, 28.0 g |
 | P6_yokes | 3 | 0.2 | 5 | 60 % | 끔 | 브림 | 0.2 mm, 40 % (High), support OFF, 10 lines (Narrowly) | 4.0 h, 39.3 g |
 | P7_sled_strap | 2 | 0.2 | 4 | 40 % | 끔 | 브림 | 0.2 mm, 40 % (High), support OFF, 10 lines (Narrowly) | 2.0 h, 21.6 g |
 | P8_flat_parts | 5 | 0.2 | 4 | 100 % | 끔 | 스커트 | 0.2 mm, 40 % (High), support OFF, none (skirt) | 1.4 h, 15.1 g |

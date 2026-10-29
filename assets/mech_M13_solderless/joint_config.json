@@ -1,7 +1,7 @@
 {
  "schema": "notifyi.joint_config/1",
  "revision": "mech_M13_solderless",
- "generated": "2026-10-29T15:20:59",
+ "generated": "2026-10-29T19:49:27",
  "units": {
   "length": "mm",
   "angle": "deg",
@@ -556,7 +556,8 @@
      },
      "display_ws19": {
       "screw": "M2 socket, length chosen to bite 1.8-2.4 mm of the stud"
-     }
+     },
+     "webcam_opening_mirror": true
     }
    },
    "camera": {
@@ -1583,129 +1584,281 @@
        [
         "head",
         [
-         12.0,
-         -16.0,
-         12.0
+         10.0,
+         -27.0,
+         21.5
         ]
        ],
        [
         "head",
         [
-         18.0,
-         -9.0,
-         8.0
+         10.5,
+         -20.0,
+         30.0
         ]
        ],
        [
         "head",
         [
-         15.0,
-         15.0,
-         -2.0
+         12.98,
+         -12.8,
+         47.0
+        ]
+       ],
+       [
+        "head",
+        [
+         17.89,
+         -7.62,
+         39.34
+        ]
+       ],
+       [
+        "head",
+        [
+         20.03,
+         -2.87,
+         30.83
+        ]
+       ],
+       [
+        "head",
+        [
+         19.76,
+         1.89,
+         22.16
+        ]
+       ],
+       [
+        "head",
+        [
+         19.64,
+         6.65,
+         13.53
         ]
        ],
        [
         "neck_yoke",
         [
-         13.5,
-         23.0,
-         15.0
+         19.51,
+         11.39,
+         31.89
         ]
        ],
        [
         "upper",
         [
-         13.5,
-         23.0,
-         29.8
+         18.89,
+         23.18,
+         40.53
+        ]
+       ],
+       [
+        "upper",
+        [
+         18.28,
+         23.05,
+         31.63
+        ]
+       ],
+       [
+        "upper",
+        [
+         17.67,
+         22.92,
+         22.73
         ]
        ],
        [
         "mid_yoke",
         [
-         14.0,
-         24.5,
-         16.0
+         17.07,
+         22.35,
+         40.85
+        ]
+       ],
+       [
+        "mid_yoke",
+        [
+         16.44,
+         21.4,
+         32.16
+        ]
+       ],
+       [
+        "mid_yoke",
+        [
+         15.82,
+         20.46,
+         23.48
+        ]
+       ],
+       [
+        "mid_yoke",
+        [
+         15.2,
+         19.52,
+         14.8
+        ]
+       ],
+       [
+        "mid_yoke",
+        [
+         14.57,
+         18.58,
+         6.12
         ]
        ],
        [
         "lower",
         [
-         8.0,
-         27.0,
-         10.0
+         13.5,
+         41.67,
+         16.45
         ]
        ],
        [
         "lower",
         [
-         -8.0,
-         27.0,
-         -6.0
+         7.9,
+         40.77,
+         8.8
+        ]
+       ],
+       [
+        "lower",
+        [
+         2.3,
+         39.87,
+         1.15
+        ]
+       ],
+       [
+        "lower",
+        [
+         -3.3,
+         38.98,
+         -6.5
+        ]
+       ],
+       [
+        "lower",
+        [
+         -8.9,
+         38.09,
+         -14.15
+        ]
+       ],
+       [
+        "lower",
+        [
+         -14.5,
+         37.2,
+         -21.8
         ]
        ],
        [
         "turret",
         [
-         -20.0,
-         21.0,
-         14.0
+         -16.45,
+         38.96,
+         14.99
+        ]
+       ],
+       [
+        "turret",
+        [
+         -18.4,
+         35.51,
+         10.75
+        ]
+       ],
+       [
+        "turret",
+        [
+         -20.34,
+         32.06,
+         6.5
         ]
        ],
        [
         "base",
         [
-         -23.5,
-         30.2,
-         95.0
+         -19.85,
+         29.94,
+         89.84
         ]
        ],
        [
         "base",
         [
-         -23.5,
-         30.2,
-         92.0
+         -13.98,
+         27.61,
+         88.47
         ]
        ],
        [
         "base",
         [
-         -21.0,
-         33.5,
+         -7.49,
+         27.06,
+         88.01
+        ]
+       ],
+       [
+        "base",
+        [
+         -0.99,
+         26.5,
+         87.61
+        ]
+       ],
+       [
+        "base",
+        [
+         5.51,
+         25.94,
+         87.21
+        ]
+       ],
+       [
+        "base",
+        [
+         12.01,
+         25.39,
+         86.81
+        ]
+       ],
+       [
+        "base",
+        [
+         18.5,
+         24.83,
+         86.41
+        ]
+       ],
+       [
+        "base",
+        [
+         25.0,
+         24.28,
          86.0
         ]
        ],
        [
         "base",
         [
-         0.0,
-         34.5,
-         87.0
+         31.5,
+         23.72,
+         85.6
         ]
        ],
        [
         "base",
         [
-         26.0,
-         34.0,
-         87.5
-        ]
-       ],
-       [
-        "base",
-        [
-         39.0,
-         30.5,
-         88.0
-        ]
-       ],
-       [
-        "base",
-        [
-         44.5,
-         25.5,
-         87.5
+         38.0,
+         23.17,
+         85.2
         ]
        ],
        [
@@ -1894,97 +2047,249 @@
        [
         "head",
         [
-         -12.98,
-         -12.0,
-         40.0
+         -16.26,
+         -14.86,
+         38.93
         ]
        ],
        [
         "head",
         [
-         -19.0,
-         -8.0,
-         14.0
+         -19.54,
+         -10.01,
+         33.36
         ]
        ],
        [
         "head",
         [
-         -15.0,
-         15.0,
-         -2.0
+         -19.6,
+         -5.92,
+         27.79
+        ]
+       ],
+       [
+        "head",
+        [
+         -19.67,
+         -1.83,
+         22.22
+        ]
+       ],
+       [
+        "head",
+        [
+         -19.74,
+         2.26,
+         16.64
+        ]
+       ],
+       [
+        "head",
+        [
+         -19.8,
+         6.35,
+         11.07
+        ]
+       ],
+       [
+        "head",
+        [
+         -19.95,
+         10.44,
+         5.49
+        ]
+       ],
+       [
+        "head",
+        [
+         -20.1,
+         14.53,
+         -0.09
         ]
        ],
        [
         "neck_yoke",
         [
-         -13.5,
-         23.0,
-         15.0
+         -20.3,
+         16.27,
+         20.11
+        ]
+       ],
+       [
+        "neck_yoke",
+        [
+         -20.46,
+         17.91,
+         13.26
         ]
        ],
        [
         "upper",
         [
-         -13.5,
-         23.0,
-         29.8
+         -20.46,
+         20.36,
+         23.32
+        ]
+       ],
+       [
+        "upper",
+        [
+         -20.42,
+         19.11,
+         16.3
+        ]
+       ],
+       [
+        "upper",
+        [
+         -20.39,
+         17.77,
+         9.27
         ]
        ],
        [
         "mid_yoke",
         [
-         -14.0,
-         24.5,
-         16.0
+         -20.36,
+         16.35,
+         29.22
+        ]
+       ],
+       [
+        "mid_yoke",
+        [
+         -20.34,
+         14.83,
+         22.17
+        ]
+       ],
+       [
+        "mid_yoke",
+        [
+         -20.34,
+         13.21,
+         15.1
+        ]
+       ],
+       [
+        "mid_yoke",
+        [
+         -20.36,
+         11.49,
+         8.02
         ]
        ],
        [
         "lower",
         [
-         -16.0,
-         26.0,
-         6.0
+         -20.39,
+         33.68,
+         19.92
+        ]
+       ],
+       [
+        "lower",
+        [
+         -20.45,
+         31.79,
+         12.8
+        ]
+       ],
+       [
+        "lower",
+        [
+         -20.53,
+         29.82,
+         5.67
+        ]
+       ],
+       [
+        "lower",
+        [
+         -20.62,
+         27.77,
+         -1.49
         ]
        ],
        [
         "turret",
         [
-         -22.0,
-         20.0,
-         14.0
+         -20.74,
+         27.08,
+         27.63
+        ]
+       ],
+       [
+        "turret",
+        [
+         -20.87,
+         27.51,
+         20.13
+        ]
+       ],
+       [
+        "turret",
+        [
+         -21.02,
+         27.91,
+         12.59
         ]
        ],
        [
         "base",
         [
-         -22.5,
-         29.7,
-         95.0
+         -21.19,
+         28.28,
+         94.52
         ]
        ],
        [
         "base",
         [
-         -22.5,
-         29.7,
-         92.0
+         -21.07,
+         28.35,
+         86.86
         ]
        ],
        [
         "base",
         [
-         -21.5,
-         29.5,
-         70.0
+         -20.96,
+         28.39,
+         79.17
         ]
        ],
        [
         "base",
         [
-         -20.5,
-         28.5,
-         52.0
+         -20.86,
+         28.43,
+         71.46
+        ]
+       ],
+       [
+        "base",
+        [
+         -20.76,
+         28.45,
+         63.74
+        ]
+       ],
+       [
+        "base",
+        [
+         -20.67,
+         28.47,
+         56.0
+        ]
+       ],
+       [
+        "base",
+        [
+         -20.58,
+         28.49,
+         48.25
         ]
        ],
        [
@@ -2011,17 +2316,17 @@
        [
         "head",
         [
-         -21.0,
-         -34.0,
-         26.5
+         -12.98,
+         -19.7,
+         44.5
         ]
        ],
        [
         "head",
         [
-         -21.0,
-         -16.0,
-         24.0
+         -12.98,
+         -12.0,
+         40.0
         ]
        ],
        [
@@ -12465,11 +12770,11 @@
   {
    "link": "head",
    "name": "camera_cradle",
-   "mass_g": 23.41,
+   "mass_g": 23.17,
    "p": [
-    -0.872,
-    -6.561,
-    28.679
+    -1.023,
+    -6.497,
+    28.515
    ],
    "source": "RC3 camera_cradle (PETG cream, 80.0 x 65.0 x 67.6 mm, horn axis at y=24, z=19, PCD16 N/S/E/W)"
   },
@@ -12729,154 +13034,154 @@
   {
    "link": "head",
    "name": "cable usb_webcam (head)",
-   "mass_g": 2.4,
+   "mass_g": 3.7,
    "p": [
-    14.418,
-    1.72,
-    3.649
+    16.378,
+    -2.037,
+    24.655
    ],
    "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) adapter cable: head, shoulder clip, turret, spine hole, along the rear of storey 2 behind the base servo, down into the up-angle USB-A adapter on the Pi's rear USB stack - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
   },
   {
    "link": "neck_yoke",
    "name": "cable usb_webcam (neck_yoke)",
-   "mass_g": 0.31,
+   "mass_g": 1.22,
    "p": [
-    13.479,
-    19.519,
-    15.421
+    19.232,
+    22.458,
+    32.447
    ],
    "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) adapter cable: head, shoulder clip, turret, spine hole, along the rear of storey 2 behind the base servo, down into the up-angle USB-A adapter on the Pi's rear USB stack - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
   },
   {
    "link": "upper",
    "name": "cable usb_webcam (upper)",
-   "mass_g": 2.4,
+   "mass_g": 1.68,
    "p": [
-    14.159,
-    41.154,
-    10.223
+    17.438,
+    28.549,
+    22.289
    ],
    "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) adapter cable: head, shoulder clip, turret, spine hole, along the rear of storey 2 behind the base servo, down into the up-angle USB-A adapter on the Pi's rear USB stack - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
   },
   {
    "link": "mid_yoke",
    "name": "cable usb_webcam (mid_yoke)",
-   "mass_g": 1.98,
+   "mass_g": 2.18,
    "p": [
-    5.75,
-    23.694,
-    -4.611
+    14.643,
+    23.53,
+    12.13
    ],
    "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) adapter cable: head, shoulder clip, turret, spine hole, along the rear of storey 2 behind the base servo, down into the up-angle USB-A adapter on the Pi's rear USB stack - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
   },
   {
    "link": "lower",
    "name": "cable usb_webcam (lower)",
-   "mass_g": 1.97,
+   "mass_g": 2.17,
    "p": [
-    -13.162,
-    26.888,
-    -8.15
+    -7.576,
+    38.542,
+    -9.965
    ],
    "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) adapter cable: head, shoulder clip, turret, spine hole, along the rear of storey 2 behind the base servo, down into the up-angle USB-A adapter on the Pi's rear USB stack - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
   },
   {
    "link": "turret",
    "name": "cable usb_webcam (turret)",
-   "mass_g": 0.76,
+   "mass_g": 1.18,
    "p": [
-    -21.168,
-    29.601,
-    13.459
+    -19.32,
+    36.598,
+    4.028
    ],
    "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) adapter cable: head, shoulder clip, turret, spine hole, along the rear of storey 2 behind the base servo, down into the up-angle USB-A adapter on the Pi's rear USB stack - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
   },
   {
    "link": "base",
    "name": "cable usb_webcam (base)",
-   "mass_g": 2.49,
+   "mass_g": 1.97,
    "p": [
-    10.027,
-    32.411,
-    87.479
+    12.459,
+    25.379,
+    86.83
    ],
    "source": "Adafruit Ultra Tiny USB Webcam (ada-5733) adapter cable: head, shoulder clip, turret, spine hole, along the rear of storey 2 behind the base servo, down into the up-angle USB-A adapter on the Pi's rear USB stack - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; where the cable leaves the webcam and its length are UNKNOWN"
   },
   {
    "link": "head",
    "name": "cable uart_display (head)",
-   "mass_g": 0.73,
+   "mass_g": 0.7,
    "p": [
-    -15.652,
-    3.289,
-    12.554
+    -19.286,
+    5.721,
+    14.735
    ],
    "source": "Waveshare 1.9inch LCD SPI: the supplied MX1.25 8-pin cable (20 cm, female jumpers) + 8 male-female jumpers 30 cm, through the cradle plate, the shoulder clip (the jumper joint sits there), turret and spine hole to Pi pins 17-24 and pin 12 (backlight) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
   },
   {
    "link": "neck_yoke",
    "name": "cable uart_display (neck_yoke)",
-   "mass_g": 0.08,
+   "mass_g": 0.3,
    "p": [
-    -13.479,
-    19.503,
-    15.428
+    -20.45,
+    23.963,
+    12.166
    ],
    "source": "Waveshare 1.9inch LCD SPI: the supplied MX1.25 8-pin cable (20 cm, female jumpers) + 8 male-female jumpers 30 cm, through the cradle plate, the shoulder clip (the jumper joint sits there), turret and spine hole to Pi pins 17-24 and pin 12 (backlight) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
   },
   {
    "link": "upper",
    "name": "cable uart_display (upper)",
-   "mass_g": 0.64,
+   "mass_g": 0.36,
    "p": [
-    -13.755,
-    41.27,
-    10.31
+    -20.373,
+    22.49,
+    7.96
    ],
    "source": "Waveshare 1.9inch LCD SPI: the supplied MX1.25 8-pin cable (20 cm, female jumpers) + 8 male-female jumpers 30 cm, through the cradle plate, the shoulder clip (the jumper joint sits there), turret and spine hole to Pi pins 17-24 and pin 12 (backlight) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
   },
   {
    "link": "mid_yoke",
    "name": "cable uart_display (mid_yoke)",
-   "mass_g": 0.58,
+   "mass_g": 0.43,
    "p": [
-    -16.634,
-    24.942,
-    -8.385
+    -20.378,
+    16.124,
+    9.038
    ],
    "source": "Waveshare 1.9inch LCD SPI: the supplied MX1.25 8-pin cable (20 cm, female jumpers) + 8 male-female jumpers 30 cm, through the cradle plate, the shoulder clip (the jumper joint sits there), turret and spine hole to Pi pins 17-24 and pin 12 (backlight) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
   },
   {
    "link": "lower",
    "name": "cable uart_display (lower)",
-   "mass_g": 0.45,
+   "mass_g": 0.43,
    "p": [
-    -22.255,
-    30.564,
-    -11.319
+    -20.672,
+    32.564,
+    -0.623
    ],
    "source": "Waveshare 1.9inch LCD SPI: the supplied MX1.25 8-pin cable (20 cm, female jumpers) + 8 male-female jumpers 30 cm, through the cradle plate, the shoulder clip (the jumper joint sits there), turret and spine hole to Pi pins 17-24 and pin 12 (backlight) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
   },
   {
    "link": "turret",
    "name": "cable uart_display (turret)",
-   "mass_g": 0.2,
+   "mass_g": 0.38,
    "p": [
-    -22.114,
-    28.628,
-    13.693
+    -21.089,
+    33.083,
+    12.488
    ],
    "source": "Waveshare 1.9inch LCD SPI: the supplied MX1.25 8-pin cable (20 cm, female jumpers) + 8 male-female jumpers 30 cm, through the cradle plate, the shoulder clip (the jumper joint sits there), turret and spine hole to Pi pins 17-24 and pin 12 (backlight) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
   },
   {
    "link": "base",
    "name": "cable uart_display (base)",
-   "mass_g": 0.44,
+   "mass_g": 0.43,
    "p": [
-    -21.386,
-    29.183,
-    67.9
+    -20.813,
+    28.358,
+    67.007
    ],
    "source": "Waveshare 1.9inch LCD SPI: the supplied MX1.25 8-pin cable (20 cm, female jumpers) + 8 male-female jumpers 30 cm, through the cradle plate, the shoulder clip (the jumper joint sits there), turret and spine hole to Pi pins 17-24 and pin 12 (backlight) - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written"
   },
@@ -14878,9 +15183,9 @@
     null
    ],
    "d_mm": 2.2,
-   "drawn_route_mm": 289.0,
-   "longest_in_joint_box_mm": 389.0,
-   "needed_with_plugs_mm": 405.0,
+   "drawn_route_mm": 309.0,
+   "longest_in_joint_box_mm": 448.0,
+   "needed_with_plugs_mm": 464.0,
    "stock_mm": null,
    "ok": null,
    "crosses": [
@@ -14893,8 +15198,8 @@
     "upper"
    ],
    "assumed": "where the cable leaves the webcam and its length are UNKNOWN",
-   "free_length_mm": 410.0,
-   "slack_at_drawn_pose_mm": 121.0,
+   "free_length_mm": 470.0,
+   "slack_at_drawn_pose_mm": 161.0,
    "taut_at_drawn_pose": false
   },
   {
@@ -14906,9 +15211,9 @@
     null
    ],
    "d_mm": 2.6,
-   "drawn_route_mm": 258.0,
-   "longest_in_joint_box_mm": 363.0,
-   "needed_with_plugs_mm": 379.0,
+   "drawn_route_mm": 236.0,
+   "longest_in_joint_box_mm": 357.0,
+   "needed_with_plugs_mm": 373.0,
    "stock_mm": null,
    "ok": null,
    "crosses": [
@@ -14921,8 +15226,8 @@
     "upper"
    ],
    "assumed": "route ASSUMED; that the board runs from 5 V on VSYS is read off the maker's pin diagram, NOT tested; the display is not bought; its firmware is NOT written",
-   "free_length_mm": 390.0,
-   "slack_at_drawn_pose_mm": 133.0,
+   "free_length_mm": 380.0,
+   "slack_at_drawn_pose_mm": 144.0,
    "taut_at_drawn_pose": false
   },
   {
@@ -15460,7 +15765,7 @@
     0.012,
     0.016
    ],
-   "length_mm": 410.0,
+   "length_mm": 470.0,
    "what": "Adafruit Ultra Tiny USB Webcam (ada-5733) adapter cable: head, shoulder clip, turret, spine hole, along the rear of storey 2 behind the base servo, down into the up-angle USB-A adapter on the Pi's rear USB stack",
    "way": [
     [
@@ -15474,129 +15779,281 @@
     [
      "head",
      [
-      12.0,
-      -16.0,
-      12.0
+      10.0,
+      -27.0,
+      21.5
      ]
     ],
     [
      "head",
      [
-      18.0,
-      -9.0,
-      8.0
+      10.5,
+      -20.0,
+      30.0
      ]
     ],
     [
      "head",
      [
-      15.0,
-      15.0,
-      -2.0
+      12.98,
+      -12.8,
+      47.0
+     ]
+    ],
+    [
+     "head",
+     [
+      17.89,
+      -7.62,
+      39.34
+     ]
+    ],
+    [
+     "head",
+     [
+      20.03,
+      -2.87,
+      30.83
+     ]
+    ],
+    [
+     "head",
+     [
+      19.76,
+      1.89,
+      22.16
+     ]
+    ],
+    [
+     "head",
+     [
+      19.64,
+      6.65,
+      13.53
      ]
     ],
     [
      "neck_yoke",
      [
-      13.5,
-      23.0,
-      15.0
+      19.51,
+      11.39,
+      31.89
      ]
     ],
     [
      "upper",
      [
-      13.5,
-      23.0,
-      29.8
+      18.89,
+      23.18,
+      40.53
+     ]
+    ],
+    [
+     "upper",
+     [
+      18.28,
+      23.05,
+      31.63
+     ]
+    ],
+    [
+     "upper",
+     [
+      17.67,
+      22.92,
+      22.73
      ]
     ],
     [
      "mid_yoke",
      [
-      14.0,
-      24.5,
-      16.0
+      17.07,
+      22.35,
+      40.85
+     ]
+    ],
+    [
+     "mid_yoke",
+     [
+      16.44,
+      21.4,
+      32.16
+     ]
+    ],
+    [
+     "mid_yoke",
+     [
+      15.82,
+      20.46,
+      23.48
+     ]
+    ],
+    [
+     "mid_yoke",
+     [
+      15.2,
+      19.52,
+      14.8
+     ]
+    ],
+    [
+     "mid_yoke",
+     [
+      14.57,
+      18.58,
+      6.12
      ]
     ],
     [
      "lower",
      [
-      8.0,
-      27.0,
-      10.0
+      13.5,
+      41.67,
+      16.45
      ]
     ],
     [
      "lower",
      [
-      -8.0,
-      27.0,
-      -6.0
+      7.9,
+      40.77,
+      8.8
+     ]
+    ],
+    [
+     "lower",
+     [
+      2.3,
+      39.87,
+      1.15
+     ]
+    ],
+    [
+     "lower",
+     [
+      -3.3,
+      38.98,
+      -6.5
+     ]
+    ],
+    [
+     "lower",
+     [
+      -8.9,
+      38.09,
+      -14.15
+     ]
+    ],
+    [
+     "lower",
+     [
+      -14.5,
+      37.2,
+      -21.8
      ]
     ],
     [
      "turret",
      [
-      -20.0,
-      21.0,
-      14.0
+      -16.45,
+      38.96,
+      14.99
+     ]
+    ],
+    [
+     "turret",
+     [
+      -18.4,
+      35.51,
+      10.75
+     ]
+    ],
+    [
+     "turret",
+     [
+      -20.34,
+      32.06,
+      6.5
      ]
     ],
     [
      "base",
      [
-      -23.5,
-      30.2,
-      95.0
+      -19.85,
+      29.94,
+      89.84
      ]
     ],
     [
      "base",
      [
-      -23.5,
-      30.2,
-      92.0
+      -13.98,
+      27.61,
+      88.47
      ]
     ],
     [
      "base",
      [
-      -21.0,
-      33.5,
+      -7.49,
+      27.06,
+      88.01
+     ]
+    ],
+    [
+     "base",
+     [
+      -0.99,
+      26.5,
+      87.61
+     ]
+    ],
+    [
+     "base",
+     [
+      5.51,
+      25.94,
+      87.21
+     ]
+    ],
+    [
+     "base",
+     [
+      12.01,
+      25.39,
+      86.81
+     ]
+    ],
+    [
+     "base",
+     [
+      18.5,
+      24.83,
+      86.41
+     ]
+    ],
+    [
+     "base",
+     [
+      25.0,
+      24.28,
       86.0
      ]
     ],
     [
      "base",
      [
-      0.0,
-      34.5,
-      87.0
+      31.5,
+      23.72,
+      85.6
      ]
     ],
     [
      "base",
      [
-      26.0,
-      34.0,
-      87.5
-     ]
-    ],
-    [
-     "base",
-     [
-      39.0,
-      30.5,
-      88.0
-     ]
-    ],
-    [
-     "base",
-     [
-      44.5,
-      25.5,
-      87.5
+      38.0,
+      23.17,
+      85.2
      ]
     ],
     [
@@ -15623,7 +16080,7 @@
     0.27,
     0.15
    ],
-   "length_mm": 390.0,
+   "length_mm": 380.0,
    "what": "Waveshare 1.9inch LCD SPI: the supplied MX1.25 8-pin cable (20 cm, female jumpers) + 8 male-female jumpers 30 cm, through the cradle plate, the shoulder clip (the jumper joint sits there), turret and spine hole to Pi pins 17-24 and pin 12 (backlight)",
    "way": [
     [
@@ -15637,97 +16094,249 @@
     [
      "head",
      [
-      -12.98,
-      -12.0,
-      40.0
+      -16.26,
+      -14.86,
+      38.93
      ]
     ],
     [
      "head",
      [
-      -19.0,
-      -8.0,
-      14.0
+      -19.54,
+      -10.01,
+      33.36
      ]
     ],
     [
      "head",
      [
-      -15.0,
-      15.0,
-      -2.0
+      -19.6,
+      -5.92,
+      27.79
+     ]
+    ],
+    [
+     "head",
+     [
+      -19.67,
+      -1.83,
+      22.22
+     ]
+    ],
+    [
+     "head",
+     [
+      -19.74,
+      2.26,
+      16.64
+     ]
+    ],
+    [
+     "head",
+     [
+      -19.8,
+      6.35,
+      11.07
+     ]
+    ],
+    [
+     "head",
+     [
+      -19.95,
+      10.44,
+      5.49
+     ]
+    ],
+    [
+     "head",
+     [
+      -20.1,
+      14.53,
+      -0.09
      ]
     ],
     [
      "neck_yoke",
      [
-      -13.5,
-      23.0,
-      15.0
+      -20.3,
+      16.27,
+      20.11
+     ]
+    ],
+    [
+     "neck_yoke",
+     [
+      -20.46,
+      17.91,
+      13.26
      ]
     ],
     [
      "upper",
      [
-      -13.5,
-      23.0,
-      29.8
+      -20.46,
+      20.36,
+      23.32
+     ]
+    ],
+    [
+     "upper",
+     [
+      -20.42,
+      19.11,
+      16.3
+     ]
+    ],
+    [
+     "upper",
+     [
+      -20.39,
+      17.77,
+      9.27
      ]
     ],
     [
      "mid_yoke",
      [
-      -14.0,
-      24.5,
-      16.0
+      -20.36,
+      16.35,
+      29.22
+     ]
+    ],
+    [
+     "mid_yoke",
+     [
+      -20.34,
+      14.83,
+      22.17
+     ]
+    ],
+    [
+     "mid_yoke",
+     [
+      -20.34,
+      13.21,
+      15.1
+     ]
+    ],
+    [
+     "mid_yoke",
+     [
+      -20.36,
+      11.49,
+      8.02
      ]
     ],
     [
      "lower",
      [
-      -16.0,
-      26.0,
-      6.0
+      -20.39,
+      33.68,
+      19.92
+     ]
+    ],
+    [
+     "lower",
+     [
+      -20.45,
+      31.79,
+      12.8
+     ]
+    ],
+    [
+     "lower",
+     [
+      -20.53,
+      29.82,
+      5.67
+     ]
+    ],
+    [
+     "lower",
+     [
+      -20.62,
+      27.77,
+      -1.49
      ]
     ],
     [
      "turret",
      [
-      -22.0,
-      20.0,
-      14.0
+      -20.74,
+      27.08,
+      27.63
+     ]
+    ],
+    [
+     "turret",
+     [
+      -20.87,
+      27.51,
+      20.13
+     ]
+    ],
+    [
+     "turret",
+     [
+      -21.02,
+      27.91,
+      12.59
      ]
     ],
     [
      "base",
      [
-      -22.5,
-      29.7,
-      95.0
+      -21.19,
+      28.28,
+      94.52
      ]
     ],
     [
      "base",
      [
-      -22.5,
-      29.7,
-      92.0
+      -21.07,
+      28.35,
+      86.86
      ]
     ],
     [
      "base",
      [
-      -21.5,
-      29.5,
-      70.0
+      -20.96,
+      28.39,
+      79.17
      ]
     ],
     [
      "base",
      [
-      -20.5,
-      28.5,
-      52.0
+      -20.86,
+      28.43,
+      71.46
+     ]
+    ],
+    [
+     "base",
+     [
+      -20.76,
+      28.45,
+      63.74
+     ]
+    ],
+    [
+     "base",
+     [
+      -20.67,
+      28.47,
+      56.0
+     ]
+    ],
+    [
+     "base",
+     [
+      -20.58,
+      28.49,
+      48.25
      ]
     ],
     [

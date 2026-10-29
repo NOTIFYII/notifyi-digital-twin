@@ -126,8 +126,8 @@
   {
    "plate": "P5_camera_cradle",
    "file": "hfb/M13_P5_camera_cradle.hfb",
-   "bytes": 5216922,
-   "sha256": "b5c69fa9213670d88203d0d09d6793b59ee598c9d2c3ec4e190ee775547b44ad",
+   "bytes": 5204280,
+   "sha256": "58f4d9a7aaf43924d03613526e0eaa724297b943716efa0a881352eaa122d110",
    "header_tags": [
     "HFE.02.02.00",
     "HFH.04.02.00"

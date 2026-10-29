@@ -46,10 +46,17 @@
    "colours": [
     "cream"
    ],
+   "piece_files": [
+    {
+     "name": "base_shell",
+     "part": "base_shell",
+     "file": "cubicon_plates/P1_base_shell_pieces/base_shell.stl"
+    }
+   ],
    "cubicreator_estimate": {
     "time_hm": "10:12",
     "filament_g": 118.02,
-    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M13_solderless/cubicreator/)"
    }
   },
   {
@@ -94,10 +101,17 @@
    "colours": [
     "dark"
    ],
+   "piece_files": [
+    {
+     "name": "base_floor",
+     "part": "base_floor",
+     "file": "cubicon_plates/P2_base_floor_pieces/base_floor.stl"
+    }
+   ],
    "cubicreator_estimate": {
     "time_hm": "6:06",
     "filament_g": 61.98,
-    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M13_solderless/cubicreator/)"
    }
   },
   {
@@ -142,10 +156,17 @@
    "colours": [
     "dark"
    ],
+   "piece_files": [
+    {
+     "name": "servo_deck",
+     "part": "servo_deck",
+     "file": "cubicon_plates/P3_servo_deck_pieces/servo_deck.stl"
+    }
+   ],
    "cubicreator_estimate": {
     "time_hm": "4:07",
     "filament_g": 44.44,
-    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M13_solderless/cubicreator/)"
    }
   },
   {
@@ -190,10 +211,17 @@
    "colours": [
     "cream"
    ],
+   "piece_files": [
+    {
+     "name": "head_face",
+     "part": "head_face",
+     "file": "cubicon_plates/P4_head_face_pieces/head_face.stl"
+    }
+   ],
    "cubicreator_estimate": {
     "time_hm": "2:32",
     "filament_g": 28.48,
-    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M13_solderless/cubicreator/)"
    }
   },
   {
@@ -234,14 +262,21 @@
     }
    },
    "prusaslicer_estimate_h": 3.0,
-   "prusaslicer_estimate_g": 28.1,
+   "prusaslicer_estimate_g": 28.0,
    "colours": [
     "cream"
    ],
+   "piece_files": [
+    {
+     "name": "camera_cradle",
+     "part": "camera_cradle",
+     "file": "cubicon_plates/P5_camera_cradle_pieces/camera_cradle.stl"
+    }
+   ],
    "cubicreator_estimate": {
     "time_hm": "4:03",
-    "filament_g": 32.73,
-    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+    "filament_g": 32.6,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M13_solderless/cubicreator/)"
    }
   },
   {
@@ -288,10 +323,27 @@
    "colours": [
     "cream"
    ],
+   "piece_files": [
+    {
+     "name": "yoke0_ring",
+     "part": "yoke0_ring",
+     "file": "cubicon_plates/P6_yokes_pieces/yoke0_ring.stl"
+    },
+    {
+     "name": "yoke_1",
+     "part": "yoke",
+     "file": "cubicon_plates/P6_yokes_pieces/yoke_1.stl"
+    },
+    {
+     "name": "yoke_2",
+     "part": "yoke",
+     "file": "cubicon_plates/P6_yokes_pieces/yoke_2.stl"
+    }
+   ],
    "cubicreator_estimate": {
     "time_hm": "4:49",
     "filament_g": 42.01,
-    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M13_solderless/cubicreator/)"
    }
   },
   {
@@ -337,10 +389,22 @@
    "colours": [
     "cream"
    ],
+   "piece_files": [
+    {
+     "name": "battery_sled",
+     "part": "battery_sled",
+     "file": "cubicon_plates/P7_sled_strap_pieces/battery_sled.stl"
+    },
+    {
+     "name": "head_strap",
+     "part": "head_strap",
+     "file": "cubicon_plates/P7_sled_strap_pieces/head_strap.stl"
+    }
+   ],
    "cubicreator_estimate": {
     "time_hm": "2:42",
     "filament_g": 23.31,
-    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M13_solderless/cubicreator/)"
    }
   },
   {
@@ -392,10 +456,37 @@
     "olive",
     "unpainted"
    ],
+   "piece_files": [
+    {
+     "name": "base_front_panel",
+     "part": "base_front_panel",
+     "file": "cubicon_plates/P8_flat_parts_pieces/base_front_panel.stl"
+    },
+    {
+     "name": "shoulder_plate",
+     "part": "shoulder_plate",
+     "file": "cubicon_plates/P8_flat_parts_pieces/shoulder_plate.stl"
+    },
+    {
+     "name": "head_ears_L",
+     "part": "head_ears_L",
+     "file": "cubicon_plates/P8_flat_parts_pieces/head_ears_L.stl"
+    },
+    {
+     "name": "head_ears_R",
+     "part": "head_ears_R",
+     "file": "cubicon_plates/P8_flat_parts_pieces/head_ears_R.stl"
+    },
+    {
+     "name": "led_band",
+     "part": "led_band",
+     "file": "cubicon_plates/P8_flat_parts_pieces/led_band.stl"
+    }
+   ],
    "cubicreator_estimate": {
     "time_hm": "1:40",
     "filament_g": 15.78,
-    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M13_solderless/cubicreator/)"
    }
   },
   {
@@ -455,15 +546,92 @@
     "dark",
     "olive"
    ],
+   "piece_files": [
+    {
+     "name": "pivot_cap_1p0_frame_dark_1",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_1.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_2",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_2.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_3",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_3.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_4",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_4.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_5",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_5.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_6",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_6.stl"
+    },
+    {
+     "name": "antenna_tips_R",
+     "part": "antenna_tips_R",
+     "file": "cubicon_plates/P9_small_parts_pieces/antenna_tips_R.stl"
+    },
+    {
+     "name": "antenna_tip_hgu_R",
+     "part": "antenna_tip_hgu_R",
+     "file": "cubicon_plates/P9_small_parts_pieces/antenna_tip_hgu_R.stl"
+    },
+    {
+     "name": "antenna_tips_L",
+     "part": "antenna_tips_L",
+     "file": "cubicon_plates/P9_small_parts_pieces/antenna_tips_L.stl"
+    },
+    {
+     "name": "antenna_tip_sirlab_L",
+     "part": "antenna_tip_sirlab_L",
+     "file": "cubicon_plates/P9_small_parts_pieces/antenna_tip_sirlab_L.stl"
+    },
+    {
+     "name": "camera_mount",
+     "part": "camera_mount",
+     "file": "cubicon_plates/P9_small_parts_pieces/camera_mount.stl"
+    },
+    {
+     "name": "cable_bushing",
+     "part": "cable_bushing",
+     "file": "cubicon_plates/P9_small_parts_pieces/cable_bushing.stl"
+    },
+    {
+     "name": "door_latch",
+     "part": "door_latch",
+     "file": "cubicon_plates/P9_small_parts_pieces/door_latch.stl"
+    },
+    {
+     "name": "antenna_tip_leaf_L",
+     "part": "antenna_tip_leaf_L",
+     "file": "cubicon_plates/P9_small_parts_pieces/antenna_tip_leaf_L.stl"
+    },
+    {
+     "name": "antenna_tip_leaf_R",
+     "part": "antenna_tip_leaf_R",
+     "file": "cubicon_plates/P9_small_parts_pieces/antenna_tip_leaf_R.stl"
+    }
+   ],
    "cubicreator_estimate": {
     "time_hm": "4:38",
     "filament_g": 26.22,
-    "source": "Cubicreator4 4.5.4 model information after slicing (captures in 07_Verification/mech_M13_solderless/cubicreator/)"
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M13_solderless/cubicreator/)"
    }
   }
  ],
  "cubicreator_total": {
   "time_h": 40.8,
-  "filament_g": 393.0
+  "filament_g": 392.8
  }
 }
