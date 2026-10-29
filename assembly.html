@@ -119,12 +119,12 @@
 <div class="nfy-topbar"><a class="nfy-brand" href="index.html">Notifyi</a><nav class="tabs"><a class="tab" href="index.html">3D 모델</a><a class="tab" href="print.html">출력 도면</a><a class="tab on" href="assembly.html">조립 설명서</a><a class="tab" href="research.html">연구 · 논문</a><button type="button" class="tab info" data-open="infoOverlay">기준 부품 · 전원 안내</button></nav><div class="nfy-right"></div></div>
 <div id="asm">
   <aside id="asmSide">
-    <div class="sthd"><span id="snum" class="snum">★</span><div><p id="skick" class="kick">Notifyi M11 · 조립 설명서</p><h1 id="stitle">불러오는 중…</h1></div></div>
+    <div class="sthd"><span id="snum" class="snum">★</span><div><p id="skick" class="kick">Notifyi M12 · 조립 설명서</p><h1 id="stitle">불러오는 중…</h1></div></div>
     <p id="stext" class="stext"></p>
     <section id="cparts" class="callout" hidden><p class="cap">이번 단계 부품</p><div id="sparts" class="grid"></div></section>
     <section id="chw" class="callout hwc" hidden><p class="cap">나사 · 인서트 · 소모품</p><div id="shw" class="grid"></div></section>
     <ul id="snotes" class="notes"></ul>
-    <p class="foot">CAD(mech_M11_wiring) 조립체에서 그대로 만든 순서와 부품입니다. 실물로 조립 · 체결 · 배선해 본 적은 아직 없습니다. 나사 그림은 서로의 크기 비례이고 실제 크기는 아닙니다.<br>드래그: 돌리기 · 휠: 확대 · 키보드 ← →: 이전 / 다음 단계</p>
+    <p class="foot">CAD(mech_M12_screws) 조립체에서 그대로 만든 순서와 부품입니다. 실물로 조립 · 체결 · 배선해 본 적은 아직 없습니다. 나사 그림은 서로의 크기 비례이고 실제 크기는 아닙니다. 3D의 은색 나사는 CAD에 실제 크기로 넣은 것입니다.<br>드래그: 돌리기 · 휠: 확대 · 키보드 ← →: 이전 / 다음 단계</p>
   </aside>
   <main id="asmView">
     <div id="bignum" class="bignum"></div>
@@ -139,6 +139,15 @@
 <div id="infoOverlay" class="overlay" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
     <div class="sheet-hd"><h2 id="infoTitle">기준 부품 · 전원 안내</h2><button type="button" class="close" data-close="infoOverlay" aria-label="닫기">✕</button></div>
+    <h3>M12 (2026-10-29) — 모든 부품 나사 체결, 실제 디스플레이 · 카메라, 안테나 배지</h3>
+    <ul>
+      <li><b>납땜?</b> 디스플레이(Adafruit 5394)는 헤더 패드에 전선 8가닥을 <b>납땜</b>합니다(반대쪽은 점퍼선 암 끝을 Pi GPIO에 꽂음). 납땜 없는 EYESPI 리본(100 · 200 mm)은 관절 6개를 지나 베이스까지 닿지 않습니다. 카메라(Adafruit 5733)는 <b>납땜 없음</b> — 동봉 케이블을 1 mm 4핀 커넥터에 꽂습니다.</li>
+      <li><b>모델</b>: 디스플레이는 Adafruit가 공개한 <b>STEP 그대로</b>(PCB 57.15 × 36.83 × 1.57 mm, 구멍 4개 52.07 × 31.75 mm 간격). 카메라는 제조사 도면(HBVCAM-1319: PCB 25 × 8 × 0.6 mm, 렌즈 윗면까지 4.5 mm, 고정 구멍 없음).</li>
+      <li><b>체결</b>: 디스플레이 M2 × 5 4개, 카메라 마운트판 M2 × 6 + 와셔 2개, 얼굴 상자 M2 × 6 4개, 귀 M2 × 5 접시머리 4개, 피벗 캡 M2 × 10 6개, 앞 패널 4개 · 케이블 부싱 2개. 아크릴은 받침의 손가락 6개가 EVA 패드로 누릅니다. 나사 26개 모두 CAD에서 구멍 · 공구 길 · 머리가 누르는지 · 인서트에 물리는지 확인(26/26 · 26/26 · 26/26 · 20/20).</li>
+      <li><b>안테나 배지</b>: 막대는 M3 × 40 알루미늄 스탠드오프, 끝은 무두볼트에 돌려 끼우는 <b>HGU</b>(왼쪽) · <b>SIRLab</b>(오른쪽) 배지 — 잎 · 배지 여분도 같은 나사. 공식 로고 파일이 있으면 글자 대신 넣습니다.</li>
+      <li>CAD 검사(M12): 간섭 없음, 2,633자세 충돌 0, 동작 10개 통과, 최대 토크 0.192 N·m(69 %), 넘어짐 여유 39.6 / 29.7 mm, 1,026 g. <b>아직 FAIL</b>: 데크 위 웹캠 · 디스플레이 케이블 그림이 서보 · 요크 · 어깨판을 최대 1.3 mm 관통(M10부터 같음, 케이블 홈 · 클립 필요).</li>
+      <li>출력: Cubicon 싱글플러스는 Cubicreator의 .hfb만 출력합니다 — 출력 도면 탭에 9판 묶음과 Cubicreator4 설정이 있습니다.</li>
+    </ul>
     <h3>M11 (2026-10-28) — 실제로 꽂히는 배선 기준으로 베이스 재설계</h3>
     <ul>
       <li><b>2XL 케이블</b>: 베이스 모터(P1)를 회전축 기준 90° 돌려(출력축은 그대로라 움직임은 같음) 커넥터를 척추 케이블 구멍 옆으로 옮겼습니다. 그래서 OpenCR → P1 → P2 → P3 → P4를 <b>서보마다 1개씩 들어 있는 X3P 180 mm 4개</b>로 잇습니다(필요 최대 163 mm). M10은 300 mm 리드가 필요했습니다.</li>
@@ -206,6 +215,6 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
 </script>
-<script type="module" src="./src/assembly.js?v=asm-20261028"></script>
+<script type="module" src="./src/assembly.js?v=asm-20261029"></script>
 </body>
 </html>

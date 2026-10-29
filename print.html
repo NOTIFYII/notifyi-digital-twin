@@ -146,6 +146,11 @@
   #physics td.ok { color:var(--ok); font-variant-numeric:tabular-nums; white-space:nowrap; }
   #physics td.bad { color:var(--bad); }
 
+/* M12: Cubicon plates table */
+#printSide table.plates { width: 100%; border-collapse: collapse; font-size: 12px; margin: 6px 0; }
+#printSide table.plates th, #printSide table.plates td { border-top: 1px solid rgba(127,127,127,.25); padding: 5px 4px; text-align: left; vertical-align: top; }
+#printSide table.plates .btn { padding: 2px 7px; font-size: 11px; }
+
 </style>
 <script type="importmap">
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/" } }
@@ -155,8 +160,10 @@
 <div class="nfy-topbar"><a class="nfy-brand" href="index.html">Notifyi</a><nav class="tabs"><a class="tab" href="index.html">3D 모델</a><a class="tab on" href="print.html">출력 도면</a><a class="tab" href="assembly.html">조립 설명서</a><a class="tab" href="research.html">연구 · 논문</a><button type="button" class="tab info" data-open="infoOverlay">기준 부품 · 전원 안내</button></nav><div class="nfy-right"></div></div>
 <div id="printPage">
   <aside class="panel" id="printSide">
-    <h1>M11 · 부품별 출력</h1>
+    <h1>M12 · 부품별 출력</h1>
     <p class="note">학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)에서 <b>흰 PLA</b>로 뽑고, 다 뽑은 뒤 <b>RC3 원래 색으로 칠합니다</b>. 부품마다 따로 출력하고, 각 STL은 이미 출력 방향으로 돌려 베드 가운데에 놓았습니다. 목록의 색 점 = 칠할 색.</p>
+    <p class="note"><b>M12 (2026-10-29)</b>: <b>모든 부품을 나사로 조입니다</b>(접착 · 테이프 · 억지 끼움 없음) — 인서트 위치와 나사 26개를 CAD에 실제 크기로 넣고, 구멍 · 공구 길 · 머리가 실제로 누르는지 · 인서트에 물리는지까지 확인했습니다. 디스플레이는 Adafruit 공식 STEP, 카메라는 제조사 도면 그대로. 안테나 끝은 돌려 끼우는 <b>HGU · SIRLab 배지</b>(여분 잎 · 배지 포함). 얼굴 테는 얼굴 상자와, 턴테이블 링은 첫 요크와 한 몸으로 출력하고, 안테나 막대는 사서 쓰는 M3 × 40 스탠드오프입니다. 24개 파일 · 30조각. 살 부품 목록은 PURCHASE_LIST_mech_M12.csv.</p>
+    <details open id="cubicon"><summary>Cubicon에서 바로 출력 (.hfb) — 9판</summary><p class="note">싱글플러스는 <b>Cubicreator로 슬라이스한 .hfb · .hvs만</b> 출력합니다(매뉴얼: 다른 슬라이서의 G-code는 출력되지 않고 장비를 손상시킬 수 있음). 30조각을 설정이 같은 것끼리 9판으로 묶었습니다. <b>.hfb는 아직 없습니다</b> — Cubicreator4에서 판마다 저장한 뒤 여기에 올립니다. USB 메모리(FAT32)에 .hfb를 넣고 프린터에서 선택하세요(영문 파일명만 보임).</p><table class="plates"><thead><tr><th>판</th><th>Cubicreator4 기본 설정 (3DP-310F · PLA)</th><th>받기</th></tr></thead><tbody><tr><td><b>P1_base_shell</b><br><small>1조각 · 약 9.5 h</small></td><td>0.2 mm · 채움 20 % (Medium) · 지지대 OFF · 브림 none (skirt)</td><td><span class="tg">준비 중</span> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P1_base_shell.stl" download>STL</a> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P1_base_shell.3mf" download>3MF</a></td></tr><tr><td><b>P2_base_floor</b><br><small>1조각 · 약 5.5 h</small></td><td>0.2 mm · 채움 40 % (High) · 지지대 OFF · 브림 none (skirt)</td><td><span class="tg">준비 중</span> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P2_base_floor.stl" download>STL</a> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P2_base_floor.3mf" download>3MF</a></td></tr><tr><td><b>P3_servo_deck</b><br><small>1조각 · 약 3.8 h</small></td><td>0.2 mm · 채움 40 % (High) · 지지대 OFF · 브림 none (skirt)</td><td><span class="tg">준비 중</span> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P3_servo_deck.stl" download>STL</a> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P3_servo_deck.3mf" download>3MF</a></td></tr><tr><td><b>P4_head_face</b><br><small>1조각 · 약 2.5 h</small></td><td>0.2 mm · 채움 20 % (Medium) · 지지대 OFF · 브림 none (skirt)</td><td><span class="tg">준비 중</span> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P4_head_face.stl" download>STL</a> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P4_head_face.3mf" download>3MF</a></td></tr><tr><td><b>P5_camera_cradle</b><br><small>1조각 · 약 3.1 h</small></td><td>0.2 mm · 채움 40 % (High) · 지지대 ON, angle 40-50, offset Normal · 브림 10 lines (Narrowly)</td><td><span class="tg">준비 중</span> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P5_camera_cradle.stl" download>STL</a> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P5_camera_cradle.3mf" download>3MF</a></td></tr><tr><td><b>P6_yokes</b><br><small>3조각 · 약 4.0 h</small></td><td>0.2 mm · 채움 40 % (High) · 지지대 OFF · 브림 10 lines (Narrowly)</td><td><span class="tg">준비 중</span> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P6_yokes.stl" download>STL</a> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P6_yokes.3mf" download>3MF</a></td></tr><tr><td><b>P7_sled_strap</b><br><small>2조각 · 약 2.0 h</small></td><td>0.2 mm · 채움 40 % (High) · 지지대 OFF · 브림 10 lines (Narrowly)</td><td><span class="tg">준비 중</span> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P7_sled_strap.stl" download>STL</a> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P7_sled_strap.3mf" download>3MF</a></td></tr><tr><td><b>P8_flat_parts</b><br><small>5조각 · 약 1.4 h</small></td><td>0.2 mm · 채움 40 % (High) · 지지대 OFF · 브림 none (skirt)</td><td><span class="tg">준비 중</span> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P8_flat_parts.stl" download>STL</a> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P8_flat_parts.3mf" download>3MF</a></td></tr><tr><td><b>P9_small_parts</b><br><small>15조각 · 약 3.2 h</small></td><td>0.15 mm · 채움 40 % (High) · 지지대 OFF · 브림 10 lines (Narrowly)</td><td><span class="tg">준비 중</span> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P9_small_parts.stl" download>STL</a> <a class="btn" href="assets/mech_M12_screws/print/cubicon_plates/P9_small_parts.3mf" download>3MF</a></td></tr></tbody></table><p class="sub">시간은 PrusaSlicer 해석값의 합(참고용) — Cubicreator가 보여 주는 값이 실제에 가깝습니다. P5(카메라 받침)만 지지대를 켭니다.</p></details>
     <p class="note"><b>M11 (2026-10-28)</b>: 실제 배선에 맞춰 베이스를 고쳤습니다 — Pi 레일 2개가 빠지고(Pi는 데크 아래 스탠드오프에 매달림) 29조각이 됐습니다. 바닥 · 서보 데크 · 외피 · 배터리 슬레드 · 케이블 부싱이 바뀌었고, 나머지는 M10과 같습니다. 배선 부품(케이블 · 어댑터 · 스탠드오프)은 BOM에 있습니다.</p>
     <p class="note"><b>M10 (2026-10-27)</b>: 지지대를 떼다가 부품이 부러지지 않도록 모든 부품을 다시 검토했습니다. 조각 중 <b>카메라 받침 1개만 지지대</b>가 필요하고, 나머지는 45° 보강 · 세로 슬롯 · 출력 방향 변경으로 지지대 없이 뽑힙니다. 네 부품에는 <b>함께 출력되는 보조물</b>(긴 브리지를 받치는 떼어 내는 웹 · 따로 떨어진 링, 나사 구멍 위 0.3 mm 막)이 있습니다. 목록의 <u class="tg sup" style="text-decoration:none">지지대</u> · <u class="tg aid" style="text-decoration:none">보조물</u> 표시를 보세요.</p>
     <p class="sub" id="summary">불러오는 중…</p>
@@ -173,7 +180,8 @@
       <ul>
         <li><b>베이스 외피</b>: 문 위 받침 웹 2개 — 펜치로 가운데를 잡고 옆으로 꺾으면 아래쪽 목에서 부러집니다(약 2 N). 남은 돌기는 줄로. 문에 가려지는 면입니다.</li>
         <li><b>바닥 트레이</b>: 오른쪽 레일 받침 아래 웹 2개 — <b>OpenCR을 넣기 전에</b> 옆으로 꺾어 떼기(1.2 mm 목). 외피 나사 구멍 위 0.3 mm 막 4개는 M3 나사로 밀어 뚫거나 3.4 mm 드릴.</li>
-        <li><b>얼굴 상자</b>: 후드 안에 서 있는 링 — 부품과 붙어 있지 않으니(0.25 mm 띄움) 들어내면 끝.</li>
+        <li><b>얼굴 상자</b>: 후드 안에 서 있는 링 — 부품과 붙어 있지 않으니(0.25 mm 띄움) 들어내면 끝. M12는 얼굴 테가 상자와 한 몸이라 링이 베드부터 섭니다.</li>
+        <li><b>안테나 배지(HGU · SIRLab)</b>: 뒷면을 베드에 눕혀 지지대 없이 출력 — 떼고 보스 옆 구멍에 M3 × 4 인서트. 잎 여분은 보스로 세워서(3 mm 브림).</li>
         <li><b>머리 윗판</b>: 나사 기둥 위 0.3 mm 막 2개 — M2.5 나사로 뚫거나 2.8 mm 드릴.</li>
         <li><b>카메라 받침 (유일한 지지대)</b>: 슬라이서 설정 — 지지대 45°, 접촉 간격 0.2 mm, 브리지에는 지지대 없음, <b>허브 구멍(Ø 11) 4개 안은 지지대 막기</b>(구멍과 나사 머리 홈 사이 벽이 0.65 mm). 디스플레이 기둥 아래 지지대는 <b>니퍼로 기둥에 붙여 잘라 내고</b> 기둥을 지렛대로 쓰지 않기. 팔 아래 지지대는 <b>옆이 아니라 아래로</b> 당기기.</li>
         <li><b>서보 데크</b>: P1 옆 홈에 들어가는 짧은 핀 4개(4 mm)는 지지대 없이 뽑힙니다. 아래쪽이 0.3 mm쯤 처져도 홈 여유가 0.7 mm라 괜찮고, 거칠면 줄로 살짝.</li>
@@ -196,7 +204,7 @@
         <li><b>지지대는 형상으로 없앰</b> — 오버행 45° 이내(보강 · 코벨 · 모따기), 긴 가로 슬롯 대신 세로 슬롯, 브리지 25 mm 이하. 꼭 필요하면 부품보다 약한 목을 가진 보조물로.</li>
         <li><b>휘는 부품 없음</b> — 스냅핏 · 걸쇠 · TPU 부품을 나사 · 돌리는 버튼 · 단단한 부싱으로 바꿈 (PLA는 휘면 부러짐).</li>
         <li><b>나사는 황동 인서트</b>(M3 · M2.5, 인두로 압입) — PLA에 직접 나사를 반복해서 감으면 나사산이 뭉개짐. 인서트 둘레 벽 1.2 mm 이상.</li>
-        <li><b>압입은 크러시 리브로</b> — 0.15 mm 리브가 깎이며 들어가 링이 쪼개지지 않음 (피벗 캡).</li>
+        <li><b>압입 없음 (M12)</b> — 피벗 캡도 요크 다리 나사 하나(M2 × 10 접시머리)로 함께 조입니다. 모든 나사는 황동 인서트(M2 × 3 · M3 × 4 · M3 × 5.7)나 서보 혼의 나사산으로.</li>
         <li><b>층 방향</b> — 하중이 큰 곳은 층을 따라가게(안테나 막대는 눕혀서, 카메라 받침 팔은 층 방향), 층을 가로지르는 곳은 응력을 계산해 확인(요크 다리).</li>
         <li><b>열</b> — PLA는 55–60 °C에서 물러짐. 서보 · Pi 주변은 큰 힘을 받지 않게 했고 통풍구를 둠. 차 안 · 직사광선 보관 금지. 30분 연속 동작 후 온도 확인은 <b>아직 안 함</b>.</li>
       </ul>
@@ -204,24 +212,21 @@
     <details>
       <summary>칠하기 (흰 PLA → RC3 색)</summary>
       <ul>
-        <li><b>색</b>: 크림 — 베이스 외피 · 배터리 문 · 얼굴 상자 · 머리 윗판 · 카메라 받침 · 요크 · 어깨판 / 다크 그레이 — 바닥 트레이 · 서보 데크 · Pi 레일 · 피벗 캡 · 안테나 막대 · 문 버튼 / 올리브 — 안테나 잎 · 귀 · 턴테이블 링 · 케이블 부싱 / 검정 — 앞 패널.</li>
-        <li><b>칠하지 않음</b>: 얼굴 테 · 라이트 띠 — 흰 PLA가 빛을 퍼뜨립니다(밝기는 실물에서 확인).</li>
+        <li><b>색</b>: 크림 — 베이스 외피 · 배터리 문 · 얼굴 상자 · 머리 윗판 · 카메라 받침 · 요크 · 어깨판 / 다크 그레이 — 바닥 트레이 · 서보 데크 · 피벗 캡 · 문 버튼 · 카메라 마운트판 / 올리브 — 안테나 배지 · 잎 · 귀 · 턴테이블 링(첫 요크에 붙어 있음 — 요크는 가리고) · 케이블 부싱 / 검정 — 앞 패널. 안테나 막대는 알루미늄 그대로.</li>
+        <li><b>배지 글자 · 테두리는 크림</b>으로 — 초록 바탕에 초록 글자는 잘 안 보입니다.</li>
+        <li><b>칠하지 않음</b>: 얼굴 테(얼굴 상자에 붙어 있음 — 가리고 칠하기) · 라이트 띠 — 흰 PLA가 빛을 퍼뜨립니다(밝기는 실물에서 확인).</li>
         <li><b>순서</b>: 지지대 · 보조물 떼기 → 400방 사포 → <b>인서트를 먼저 압입</b>(인두 열에 도막이 녹으므로) → 플라스틱용 프라이머 → 아크릴 스프레이를 얇게 2–3번 → 무광 클리어.</li>
         <li><b>칠하지 말고 가릴 곳</b>(도막 0.05–0.1 mm만큼 빡빡해짐): 인서트 · 나사 구멍, 요크 허브 구멍과 피벗 캡 축 · 크러시 리브, 배터리 슬레드가 미끄러지는 면과 문 테두리, 안테나 소켓 · 막대 끝, 어깨판이 서보에 닿는 면, 외피와 바닥 트레이가 맞닿는 테두리.</li>
         <li>안쪽 부품(서보 데크 · Pi 레일)은 보이지 않으니 칠하지 않아도 됩니다. 12V · POWER · SD 각인은 두껍게 칠하면 메워지니, 칠한 뒤 검은 먹선으로 채우면 잘 보입니다.</li>
       </ul>
     </details>
     <details>
-      <summary>베이스 조립 순서 (나사 길이 정정)</summary>
-      <ol>
-        <li>보조물 떼기, 막 뚫기 (위 "지지대 · 보조물 떼기").</li>
-        <li>인서트를 인두로 압입: <b>M3 × 5.7</b> 10개 (기둥 위 5 · 외피 보스 4 · 문 버튼 보스 1), <b>M3 × 4</b> 4개 (OpenCR 받침 — 구멍이 4.6 mm라 긴 인서트는 튀어나옴), <b>M2.5 × 3</b> 4개 (레일 받침), <b>M2.5 × 4</b> 4개 (Pi 레일).</li>
-        <li>OpenCR를 바닥 트레이에 M3 × 6 4개 (DC 잭 · 스위치가 왼쪽).</li>
-        <li>Pi 레일 2개를 기둥 받침에 <b>M2.5 × 5</b>(M9 안내의 × 8은 너무 김), Pi를 레일에 M2.5 × 6. USB 업앵글 어댑터 2개 꽂기.</li>
-        <li>DXL · USB · 5 V · 배터리 피그테일 배선 → 서보 데크를 기둥에 M3 × 8, P1을 거치대에 M2.5 × 6 (6개).</li>
-        <li>외피를 위에서 씌우고(왼쪽 슬롯이 아래로 열려 있음) 바닥에서 <b>M3 × 18 둥근머리</b> 4개(M9 안내의 × 12는 인서트에 닿지 않음). 케이블 부싱 끼우기.</li>
-        <li>턴테이블 링 · 몸통 · 머리 조립 (RC3와 같은 순서). 3S 배터리는 슬레드에 묶고 XT60 연결 후 밀어 넣고, 문 버튼(M3 × 10 + 와셔)을 위로 돌려 잠금 — 옆으로 돌리면 열림.</li>
-      </ol>
+      <summary>조립 순서 · 나사</summary>
+      <ul>
+        <li>순서와 단계별 나사 개수는 <a href="assembly.html">조립 설명서</a> 탭(20단계)에 CAD 조립체 그대로 있습니다.</li>
+        <li><b>인서트를 먼저</b>(칠하기 전에, 인두로): M2 × 3 20개(디스플레이 기둥 4 · 얼굴 상자 4 · 카메라 기둥 2 · 귀 패드 4 · 앞 패널 4 · 부싱 보스 2), M3 × 4 12개(OpenCR 받침 4 · 윗판 2 · 배지 2 · 여분 끝 4), M3 × 5.7 11개(기둥 6 · 외피 4 · 문 버튼 1).</li>
+        <li>앞 패널 보스의 인서트는 <b>보스 끝과 같은 높이까지만</b> — 더 밀면 0.7 mm 남은 앞면이 부풀 수 있습니다.</li>
+      </ul>
     </details>
     <p class="sub">예상 시간 · 무게는 PrusaSlicer 2.9.6 <b>해석값</b>(0.4 mm 노즐, 40–60 mm/s의 느린 프린터로 가정)이라 Cubicon의 Cubicreator와 다를 수 있습니다. 미리보기 색은 칠한 뒤의 RC3 색입니다. 실물 출력 · 칠 · 조립 · 결선 · 발열은 <b>검증 전</b>입니다.</p>
     <p class="sub">드래그: 회전 · 휠: 확대 · 우클릭: 이동 · 흰 사각형 = Cubicon 베드 240 × 190 mm</p>
@@ -232,6 +237,15 @@
 <div id="infoOverlay" class="overlay" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
     <div class="sheet-hd"><h2 id="infoTitle">기준 부품 · 전원 안내</h2><button type="button" class="close" data-close="infoOverlay" aria-label="닫기">✕</button></div>
+    <h3>M12 (2026-10-29) — 모든 부품 나사 체결, 실제 디스플레이 · 카메라, 안테나 배지</h3>
+    <ul>
+      <li><b>납땜?</b> 디스플레이(Adafruit 5394)는 헤더 패드에 전선 8가닥을 <b>납땜</b>합니다(반대쪽은 점퍼선 암 끝을 Pi GPIO에 꽂음). 납땜 없는 EYESPI 리본(100 · 200 mm)은 관절 6개를 지나 베이스까지 닿지 않습니다. 카메라(Adafruit 5733)는 <b>납땜 없음</b> — 동봉 케이블을 1 mm 4핀 커넥터에 꽂습니다.</li>
+      <li><b>모델</b>: 디스플레이는 Adafruit가 공개한 <b>STEP 그대로</b>(PCB 57.15 × 36.83 × 1.57 mm, 구멍 4개 52.07 × 31.75 mm 간격). 카메라는 제조사 도면(HBVCAM-1319: PCB 25 × 8 × 0.6 mm, 렌즈 윗면까지 4.5 mm, 고정 구멍 없음).</li>
+      <li><b>체결</b>: 디스플레이 M2 × 5 4개, 카메라 마운트판 M2 × 6 + 와셔 2개, 얼굴 상자 M2 × 6 4개, 귀 M2 × 5 접시머리 4개, 피벗 캡 M2 × 10 6개, 앞 패널 4개 · 케이블 부싱 2개. 아크릴은 받침의 손가락 6개가 EVA 패드로 누릅니다. 나사 26개 모두 CAD에서 구멍 · 공구 길 · 머리가 누르는지 · 인서트에 물리는지 확인(26/26 · 26/26 · 26/26 · 20/20).</li>
+      <li><b>안테나 배지</b>: 막대는 M3 × 40 알루미늄 스탠드오프, 끝은 무두볼트에 돌려 끼우는 <b>HGU</b>(왼쪽) · <b>SIRLab</b>(오른쪽) 배지 — 잎 · 배지 여분도 같은 나사. 공식 로고 파일이 있으면 글자 대신 넣습니다.</li>
+      <li>CAD 검사(M12): 간섭 없음, 2,633자세 충돌 0, 동작 10개 통과, 최대 토크 0.192 N·m(69 %), 넘어짐 여유 39.6 / 29.7 mm, 1,026 g. <b>아직 FAIL</b>: 데크 위 웹캠 · 디스플레이 케이블 그림이 서보 · 요크 · 어깨판을 최대 1.3 mm 관통(M10부터 같음, 케이블 홈 · 클립 필요).</li>
+      <li>출력: Cubicon 싱글플러스는 Cubicreator의 .hfb만 출력합니다 — 출력 도면 탭에 9판 묶음과 Cubicreator4 설정이 있습니다.</li>
+    </ul>
     <h3>M11 (2026-10-28) — 실제로 꽂히는 배선 기준으로 베이스 재설계</h3>
     <ul>
       <li><b>2XL 케이블</b>: 베이스 모터(P1)를 회전축 기준 90° 돌려(출력축은 그대로라 움직임은 같음) 커넥터를 척추 케이블 구멍 옆으로 옮겼습니다. 그래서 OpenCR → P1 → P2 → P3 → P4를 <b>서보마다 1개씩 들어 있는 X3P 180 mm 4개</b>로 잇습니다(필요 최대 163 mm). M10은 300 mm 리드가 필요했습니다.</li>
@@ -299,6 +313,6 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
 </script>
-<script type="module" src="./src/print.js?v=m11-20261028"></script>
+<script type="module" src="./src/print.js?v=m12-20261029"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-// 조립 설명서 (assembly guide), LEGO-book style, on the site's newest CAD assembly (mech_M11_wiring since 2026-10-28) (the same meshes and joint frames as the 3D
+// 조립 설명서 (assembly guide), LEGO-book style, on the site's newest CAD assembly (mech_M12_screws since 2026-10-29) (the same meshes and joint frames as the 3D
 // tab, home pose). Each step adds the visuals scripts/make_assembly_steps.py lists: they fly in along an arrow from where they
 // come from, the callout shows the parts (rendered from the same meshes) and the screws / inserts with their counts.
 import * as THREE from 'three';
@@ -216,7 +216,7 @@ function totals() {                                     // every screw / insert 
 }
 function renderSide(st, k) {
   $('#snum').textContent = st.cover ? '★' : k;
-  $('#skick').textContent = st.cover ? 'Notifyi M11 · 조립 설명서' : `${st.kicker} · ${k} / ${STEPS.length - 1}단계`;
+  $('#skick').textContent = st.cover ? 'Notifyi M12 · 조립 설명서' : `${st.kicker} · ${k} / ${STEPS.length - 1}단계`;
   $('#stitle').textContent = st.title;
   $('#stext').textContent = st.text;
   const parts = st.cover ? [] : st.parts;

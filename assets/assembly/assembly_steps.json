@@ -1,5 +1,5 @@
 {
- "revision": "mech_M11_wiring",
+ "revision": "mech_M12_screws",
  "skip": [
   "battery bay (largest pack)"
  ],
@@ -8,7 +8,7 @@
    "n": 0,
    "title": "시작하기 전에",
    "kicker": "준비",
-   "text": "흰 PLA로 뽑은 부품 29조각과 서보 4개, 보드 2개로 Notifyi를 만듭니다. 단계마다 새로 넣는 부품이 화살표를 따라 제자리로 들어갑니다. 왼쪽 상자에는 그 단계에서 쓰는 부품 · 나사 · 케이블이 개수와 함께 있습니다.",
+   "text": "흰 PLA로 뽑은 부품과 서보 4개, 보드 2개로 Notifyi를 만듭니다. 단계마다 새로 넣는 부품이 화살표를 따라 제자리로 들어갑니다. M12는 접착제 없이 모든 부품을 나사(인서트)로 조입니다. 왼쪽 상자에는 그 단계에서 쓰는 부품 · 나사 · 케이블이 개수와 함께 있습니다.",
    "add": [],
    "from": [
     0,
@@ -22,7 +22,7 @@
     "출력 후: 지지대 · 보조물을 떼고(출력 도면 탭 \"떼는 법\"), 400방 사포 → 인서트 압입 → 칠하기 순서.",
     "공구: 인두(인서트용), 육각렌치 1.5 · 2 · 2.5 mm, 펜치 · 니퍼, 순간접착제(CA), 양면테이프.",
     "서보 ID와 배선은 아직 실물로 확인 전입니다. 모터에 전원을 넣기 전에 ID 지도를 먼저 정하세요.",
-    "케이블은 서보에 딸려 오는 X3P 180 mm 4개, 꺾인 USB 케이블 1개, 업앵글 USB 어댑터 1개, 직접 만드는 리드 3개(5 V, 디스플레이, 배터리)입니다. 목록은 BOM_mech_M11_wiring.csv."
+    "케이블은 서보에 딸려 오는 X3P 180 mm 4개, 꺾인 USB 케이블 1개, 업앵글 USB 어댑터 1개, 직접 만드는 리드 3개(5 V, 디스플레이, 배터리)입니다. 목록은 PURCHASE_LIST_mech_M12.csv."
    ],
    "cover": true,
    "finale": false
@@ -437,13 +437,19 @@
    "n": 8,
    "title": "외피 씌우기",
    "kicker": "베이스",
-   "text": "위로 뺀 케이블을 외피의 케이블 구멍으로 통과시키며 외피를 위에서 씌웁니다. 바닥에서 나사 4개, 왼쪽 문 버튼, 앞 패널, 케이블 부싱.",
+   "text": "위로 뺀 케이블을 외피의 케이블 구멍으로 통과시키며 외피를 위에서 씌웁니다. 바닥에서 나사 4개, 왼쪽 문 버튼, 앞 패널, 케이블 부싱. 앞 패널은 외피 안쪽에서 M2 × 5 나사 + 와셔 4개로, 케이블 부싱은 M2 × 6 접시머리 2개로 고정합니다(접착제 없음).",
    "add": [
     "base_shell",
     "base_front_panel",
     "led_band",
     "door_latch",
-    "cable_bushing"
+    "cable_bushing",
+    "screw cable bushing -14,32",
+    "screw cable bushing -33,28",
+    "screw front panel +42,33",
+    "screw front panel +42,60",
+    "screw front panel -42,33",
+    "screw front panel -42,60"
    ],
    "from": [
     0,
@@ -506,25 +512,43 @@
      "head": "button"
     },
     {
-     "kind": "misc",
-     "label": "순간접착제 2점 (앞 패널)",
-     "qty": 1
+     "kind": "insert",
+     "label": "M2 × 3 인서트 (앞 패널 4 · 부싱 보스 2)",
+     "qty": 6,
+     "d": 2,
+     "len": 3
+    },
+    {
+     "kind": "screw",
+     "label": "M2 × 5 둥근머리 + 와셔 (앞 패널)",
+     "qty": 4,
+     "d": 2,
+     "len": 5,
+     "head": "button"
+    },
+    {
+     "kind": "screw",
+     "label": "M2 × 6 접시머리 (부싱)",
+     "qty": 2,
+     "d": 2,
+     "len": 6,
+     "head": "flat"
     }
    ],
    "notes": [
     "외피 보스의 M3 × 5.7 인서트 4개 · 문 버튼 보스 인서트 1개는 미리 넣어 둡니다.",
-    "문 버튼은 위로 돌리면 잠기고 옆으로 돌리면 열립니다."
+    "문 버튼은 위로 돌리면 잠기고 옆으로 돌리면 열립니다.",
+    "라이트 띠는 바닥 트레이 앞면 홈에 위에서 끼우고, 외피의 아래 끝이 덮어서 고정합니다."
    ],
    "cover": false,
    "finale": false
   },
   {
    "n": 9,
-   "title": "턴테이블 링 · 요크 1",
+   "title": "요크 1 (턴테이블 링 일체)",
    "kicker": "몸통",
-   "text": "요크 바닥판을 P1 위쪽 혼에 나사 4개로 고정하고, 턴테이블 링을 요크 바닥판 둘레에 끼웁니다.",
+   "text": "요크 1(턴테이블 링이 함께 출력됨)의 바닥판을 P1 위쪽 혼에 나사 4개로 고정합니다.",
    "add": [
-    "turntable_ring",
     "yoke0"
    ],
    "from": [
@@ -535,14 +559,7 @@
    "radial": {},
    "parts": [
     {
-     "label": "턴테이블 링",
-     "qty": 1,
-     "items": [
-      "turntable_ring"
-     ]
-    },
-    {
-     "label": "요크",
+     "label": "요크 1 + 턴테이블 링",
      "qty": 1,
      "items": [
       "yoke0"
@@ -567,7 +584,7 @@
    "n": 10,
    "title": "몸통 아래 서보 P2",
    "kicker": "몸통",
-   "text": "P2를 요크의 포크 홈으로 위에서 내려 끼우고, 다리 양쪽을 혼 · 아이들러에 나사 3개씩 고정한 뒤 피벗 캡 2개를 눌러 끼웁니다.",
+   "text": "P2를 요크의 포크 홈으로 위에서 내려 끼우고, 다리 양쪽을 혼 · 아이들러에 나사 3개씩 고정한 뒤 피벗 캡 2개를 나사로 고정합니다.",
    "add": [
     "P2.body",
     "P2.plugs",
@@ -577,7 +594,9 @@
     "plug dxl_p1_p2 b",
     "cable:dxl_p1_p2",
     "pivot_cap_turret_p",
-    "pivot_cap_turret_n"
+    "pivot_cap_turret_n",
+    "screw pivot cap turret_n",
+    "screw pivot cap turret_p"
    ],
    "from": [
     0,
@@ -620,15 +639,23 @@
     {
      "kind": "screw",
      "label": "M2 × 6",
-     "qty": 6,
+     "qty": 4,
      "d": 2,
      "len": 6,
      "head": "socket"
+    },
+    {
+     "kind": "screw",
+     "label": "M2 × 10 접시머리 (피벗 캡)",
+     "qty": 2,
+     "d": 2,
+     "len": 10,
+     "head": "flat"
     }
    ],
    "notes": [
-    "피벗 캡은 똑바로 눌러 넣습니다(리브가 깎이며 들어감).",
-    "P1의 커넥터 A에서 나온 X3P를 척추 구멍(부싱)으로 올려 P2에 꽂습니다 — 서보에 딸려 온 180 mm로 닿습니다."
+    "P1의 커넥터 A에서 나온 X3P를 척추 구멍(부싱)으로 올려 P2에 꽂습니다 — 서보에 딸려 온 180 mm로 닿습니다.",
+    "피벗 캡은 요크 다리 나사 하나(M2 × 10 접시머리)로 함께 고정합니다 — 끼워 맞춤 아님."
    ],
    "cover": false,
    "finale": false
@@ -685,7 +712,9 @@
     "plug dxl_p2_p3 b",
     "cable:dxl_p2_p3",
     "pivot_cap_mid_yoke_p",
-    "pivot_cap_mid_yoke_n"
+    "pivot_cap_mid_yoke_n",
+    "screw pivot cap mid_yoke_n",
+    "screw pivot cap mid_yoke_p"
    ],
    "from": [
     0,
@@ -728,13 +757,23 @@
     {
      "kind": "screw",
      "label": "M2 × 6",
-     "qty": 6,
+     "qty": 4,
      "d": 2,
      "len": 6,
      "head": "socket"
+    },
+    {
+     "kind": "screw",
+     "label": "M2 × 10 접시머리 (피벗 캡)",
+     "qty": 2,
+     "d": 2,
+     "len": 10,
+     "head": "flat"
     }
    ],
-   "notes": [],
+   "notes": [
+    "피벗 캡: 다리 나사 하나를 M2 × 10 접시머리로."
+   ],
    "cover": false,
    "finale": false
   },
@@ -785,7 +824,9 @@
     "P3.horn_A",
     "P3.idler_A",
     "pivot_cap_neck_yoke_p",
-    "pivot_cap_neck_yoke_n"
+    "pivot_cap_neck_yoke_n",
+    "screw pivot cap neck_yoke_n",
+    "screw pivot cap neck_yoke_p"
    ],
    "from": [
     0,
@@ -816,13 +857,23 @@
     {
      "kind": "screw",
      "label": "M2 × 6",
-     "qty": 6,
+     "qty": 4,
      "d": 2,
      "len": 6,
      "head": "socket"
+    },
+    {
+     "kind": "screw",
+     "label": "M2 × 10 접시머리 (피벗 캡)",
+     "qty": 2,
+     "d": 2,
+     "len": 10,
+     "head": "flat"
     }
    ],
-   "notes": [],
+   "notes": [
+    "피벗 캡: 다리 나사 하나를 M2 × 10 접시머리로."
+   ],
    "cover": false,
    "finale": false
   },
@@ -891,7 +942,7 @@
    "n": 16,
    "title": "카메라 · 디스플레이 받침",
    "kicker": "머리",
-   "text": "디스플레이를 받침 기둥 4개에, 카메라를 포켓에 밀어 넣고(렌즈 둘레 폼 링), 받침의 양쪽 패드를 P4 혼 · 아이들러에 나사로 고정합니다.",
+   "text": "디스플레이를 앞에서 M2 × 5 나사 4개로 받침 기둥(인서트)에 고정합니다. 카메라는 마운트판의 0.6 mm 홈에 넣고(뒷면 접착 테이프는 그대로 사용), M2 × 6 나사 + 와셔 2개로 받침 기둥에 고정합니다. 렌즈 둘레 폼 링을 올리고, 받침 양쪽 패드를 P4 혼 · 아이들러에 나사로 고정합니다.",
    "add": [
     "camera_cradle",
     "webcam",
@@ -901,7 +952,14 @@
     "lens_shield",
     "display board",
     "display glass",
-    "display parts"
+    "display parts",
+    "camera_mount",
+    "screw camera mount down",
+    "screw camera mount up",
+    "screw display 3,-3",
+    "screw display 3,29",
+    "screw display 55,-3",
+    "screw display 55,29"
    ],
    "from": [
     0,
@@ -935,24 +993,46 @@
       "webcam conn",
       "webcam lens"
      ]
+    },
+    {
+     "label": "카메라 마운트판",
+     "qty": 1,
+     "items": [
+      "camera_mount"
+     ]
     }
    ],
    "hw": [
     {
-     "kind": "screw",
-     "label": "M2 둥근머리 (패드)",
-     "qty": 8,
+     "kind": "insert",
+     "label": "M2 × 3 인서트 (디스플레이 기둥 4 · 카메라 기둥 2 · 귀 패드 4)",
+     "qty": 10,
      "d": 2,
-     "len": 6,
+     "len": 3
+    },
+    {
+     "kind": "screw",
+     "label": "M2 × 5 둥근머리 (디스플레이)",
+     "qty": 4,
+     "d": 2,
+     "len": 5,
      "head": "button"
     },
     {
      "kind": "screw",
-     "label": "M2.5 × 6 셀프태핑 (디스플레이)",
-     "qty": 4,
-     "d": 2.5,
+     "label": "M2 × 6 팬헤드 + 와셔 (카메라)",
+     "qty": 2,
+     "d": 2,
      "len": 6,
      "head": "pan"
+    },
+    {
+     "kind": "screw",
+     "label": "M2 × 6 둥근머리 (패드 → P4)",
+     "qty": 8,
+     "d": 2,
+     "len": 6,
+     "head": "button"
     },
     {
      "kind": "misc",
@@ -960,7 +1040,10 @@
      "qty": 1
     }
    ],
-   "notes": [],
+   "notes": [
+    "디스플레이 배선: 1 × 11 헤더 패드에 전선 8가닥(DC, RST, TCS, MOSI, SCK, GND, Vin, Lite)을 직접 납땜합니다. EYESPI 리본 케이블(100 / 200 mm)은 관절 6개를 지나 Pi까지 닿지 않습니다.",
+    "카메라는 납땜이 필요 없습니다 — 동봉 케이블을 1 mm 4핀 커넥터에 꽂습니다."
+   ],
    "cover": false,
    "finale": false
   },
@@ -968,14 +1051,18 @@
    "n": 17,
    "title": "얼굴 상자",
    "kicker": "머리",
-   "text": "스모크 아크릴과 검은 마스크를 얼굴 상자 안쪽에 테이프로 붙이고, 상자를 받침의 보스 4개에 나사로 고정한 뒤 얼굴 테를 붙입니다.",
+   "text": "스모크 아크릴과 검은 마스크를 얼굴 상자 앞벽 안쪽에 놓고(테이프 없음), 상자를 받침에 뒤에서 M2 × 6 나사 4개로 고정합니다. 받침의 손가락 6개가 EVA 패드로 마스크와 아크릴을 눌러 고정합니다. 얼굴 테는 상자와 한 번에 출력됩니다(칠할 때 가려서 흰색으로).",
    "add": [
     "head_face",
     "face_visor",
     "face_mask",
-    "head_ring",
     "display_picture",
-    "status_light"
+    "status_light",
+    "visor pads",
+    "screw face box +36,20",
+    "screw face box +36,47",
+    "screw face box -36,20",
+    "screw face box -36,47"
    ],
    "from": [
     0,
@@ -985,17 +1072,10 @@
    "radial": {},
    "parts": [
     {
-     "label": "얼굴 상자",
+     "label": "얼굴 상자 (테 일체)",
      "qty": 1,
      "items": [
       "head_face"
-     ]
-    },
-    {
-     "label": "얼굴 테 (칠 안 함)",
-     "qty": 1,
-     "items": [
-      "head_ring"
      ]
     },
     {
@@ -1011,20 +1091,34 @@
      "items": [
       "face_mask"
      ]
+    },
+    {
+     "label": "EVA 패드 Ø3 × 0.8",
+     "qty": 6,
+     "items": [
+      "visor pads"
+     ]
     }
    ],
    "hw": [
     {
-     "kind": "screw",
-     "label": "M2 나사 (얼굴 상자 보스)",
+     "kind": "insert",
+     "label": "M2 × 3 인서트 (얼굴 상자 보스)",
      "qty": 4,
      "d": 2,
-     "len": 8,
-     "head": "pan"
+     "len": 3
+    },
+    {
+     "kind": "screw",
+     "label": "M2 × 6 둥근머리 (받침 → 얼굴 상자)",
+     "qty": 4,
+     "d": 2,
+     "len": 6,
+     "head": "button"
     },
     {
      "kind": "misc",
-     "label": "양면테이프 · 순간접착제",
+     "label": "EVA 폼 테이프 1 mm",
      "qty": 1
     }
    ],
@@ -1036,12 +1130,17 @@
    "n": 18,
    "title": "머리 윗판 · 안테나 · 귀",
    "kicker": "머리",
-   "text": "윗판의 혀를 받침 홈에 끼우고 기둥 2개를 P4 위에 나사로 고정합니다. 안테나 막대를 윗판 구멍에, 잎을 막대 끝에 붙이고, 귀를 양쪽 허브 구멍에 끼웁니다.",
+   "text": "윗판 아래 보스에 M3 × 4 인서트를 넣고, 안테나 막대(M3 × 40 수-암 스탠드오프)를 얇은 너트와 함께 돌려 넣습니다. 막대 위에 무두볼트 M3 × 10과 얇은 너트를 끼우고, 배지(HGU · SIRLab)나 잎을 돌려 끼운 뒤 앞을 보게 너트로 잠급니다. 윗판을 P4 위에 나사 2개로 고정하고, 귀는 M2 × 5 접시머리 2개씩으로 패드에 고정합니다.",
    "add": [
     "head_strap",
     "antenna_rods",
     "antenna_tips",
-    "head_ears"
+    "head_ears",
+    "antenna hardware",
+    "screw ear L 225",
+    "screw ear L 45",
+    "screw ear R 225",
+    "screw ear R 45"
    ],
    "from": [
     0,
@@ -1060,14 +1159,14 @@
      ]
     },
     {
-     "label": "안테나 막대",
+     "label": "안테나 막대 (M3 × 40 스탠드오프)",
      "qty": 2,
      "items": [
       "antenna_rods"
      ]
     },
     {
-     "label": "안테나 잎",
+     "label": "안테나 끝 (HGU · SIRLab 배지)",
      "qty": 2,
      "items": [
       "antenna_tips"
@@ -1083,20 +1182,45 @@
    ],
    "hw": [
     {
+     "kind": "insert",
+     "label": "M3 × 4 인서트 (윗판 2 · 배지 2)",
+     "qty": 4,
+     "d": 3,
+     "len": 4
+    },
+    {
      "kind": "screw",
-     "label": "M2.5 × 6",
+     "label": "M3 × 10 무두볼트",
+     "qty": 2,
+     "d": 3,
+     "len": 10,
+     "head": "set"
+    },
+    {
+     "kind": "misc",
+     "label": "M3 얇은 너트 4",
+     "qty": 4
+    },
+    {
+     "kind": "screw",
+     "label": "M2.5 × 6 (윗판 기둥)",
      "qty": 2,
      "d": 2.5,
      "len": 6,
      "head": "socket"
     },
     {
-     "kind": "misc",
-     "label": "순간접착제 (막대 · 잎)",
-     "qty": 1
+     "kind": "screw",
+     "label": "M2 × 5 접시머리 (귀)",
+     "qty": 4,
+     "d": 2,
+     "len": 5,
+     "head": "flat"
     }
    ],
-   "notes": [],
+   "notes": [
+    "배지는 돌려서 바꿔 끼웁니다(잎 · HGU · SIRLab 여분 출력). 공식 로고 SVG가 있으면 글자 대신 넣을 수 있습니다."
+   ],
    "cover": false,
    "finale": false
   },

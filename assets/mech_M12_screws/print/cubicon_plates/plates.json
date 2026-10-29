@@ -1,0 +1,357 @@
+{
+ "pack": "03_Print/mech_M12_screws_20261029",
+ "printer": "Cubicon Single Plus (3DP-310F), bed 240 x 190 x 200 mm",
+ "slicer": "Cubicreator4 (only its .hfb prints)",
+ "note": "Plate layouts only. The .hfb files are made in Cubicreator4 (device 3DP-310F, PLA); estimates are PrusaSlicer analysis per part, summed - Cubicreator's own time / weight differ",
+ "plates": [
+  {
+   "plate": "P1_base_shell",
+   "why": "base shell alone - the longest print (about 9.5 h)",
+   "pieces": [
+    "base_shell"
+   ],
+   "stl": "cubicon_plates/P1_base_shell.stl",
+   "3mf": "cubicon_plates/P1_base_shell.3mf",
+   "hfb": "hfb/M12_P1_base_shell.hfb",
+   "footprint_mm": [
+    120.0,
+    110.0,
+    77.5
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "20 % (Medium)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 15,
+     "perimeters": 6,
+     "supports": false,
+     "brim_mm": 0
+    }
+   },
+   "prusaslicer_estimate_h": 9.5,
+   "prusaslicer_estimate_g": 117.2,
+   "colours": [
+    "cream"
+   ]
+  },
+  {
+   "plate": "P2_base_floor",
+   "why": "floor tray alone",
+   "pieces": [
+    "base_floor"
+   ],
+   "stl": "cubicon_plates/P2_base_floor.stl",
+   "3mf": "cubicon_plates/P2_base_floor.3mf",
+   "hfb": "hfb/M12_P2_base_floor.hfb",
+   "footprint_mm": [
+    117.6,
+    108.3,
+    46.0
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 30,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 0
+    }
+   },
+   "prusaslicer_estimate_h": 5.5,
+   "prusaslicer_estimate_g": 61.9,
+   "colours": [
+    "dark"
+   ]
+  },
+  {
+   "plate": "P3_servo_deck",
+   "why": "servo deck alone",
+   "pieces": [
+    "servo_deck"
+   ],
+   "stl": "cubicon_plates/P3_servo_deck.stl",
+   "3mf": "cubicon_plates/P3_servo_deck.3mf",
+   "hfb": "hfb/M12_P3_servo_deck.hfb",
+   "footprint_mm": [
+    114.2,
+    104.2,
+    40.5
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 40,
+     "perimeters": 5,
+     "supports": false,
+     "brim_mm": 0
+    }
+   },
+   "prusaslicer_estimate_h": 3.8,
+   "prusaslicer_estimate_g": 44.6,
+   "colours": [
+    "dark"
+   ]
+  },
+  {
+   "plate": "P4_head_face",
+   "why": "face box alone; the loose ring inside it is part of the file (lift it out after printing)",
+   "pieces": [
+    "head_face"
+   ],
+   "stl": "cubicon_plates/P4_head_face.stl",
+   "3mf": "cubicon_plates/P4_head_face.3mf",
+   "hfb": "hfb/M12_P4_head_face.hfb",
+   "footprint_mm": [
+    98.0,
+    79.0,
+    34.5
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "20 % (Medium)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 20,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 0
+    }
+   },
+   "prusaslicer_estimate_h": 2.5,
+   "prusaslicer_estimate_g": 31.6,
+   "colours": [
+    "cream"
+   ]
+  },
+  {
+   "plate": "P5_camera_cradle",
+   "why": "camera cradle alone - the ONE part that needs support",
+   "pieces": [
+    "camera_cradle"
+   ],
+   "stl": "cubicon_plates/P5_camera_cradle.stl",
+   "3mf": "cubicon_plates/P5_camera_cradle.3mf",
+   "hfb": "hfb/M12_P5_camera_cradle.hfb",
+   "footprint_mm": [
+    80.0,
+    68.6,
+    65.0
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "ON, angle 40-50, offset Normal",
+    "brim": "10 lines (Narrowly)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 60,
+     "perimeters": 5,
+     "supports": true,
+     "brim_mm": 3
+    }
+   },
+   "prusaslicer_estimate_h": 3.1,
+   "prusaslicer_estimate_g": 29.8,
+   "colours": [
+    "cream"
+   ]
+  },
+  {
+   "plate": "P6_yokes",
+   "why": "the three yokes (two plain + the one with the turntable ring): 5 walls, dense infill",
+   "pieces": [
+    "yoke0_ring",
+    "yoke_1",
+    "yoke_2"
+   ],
+   "stl": "cubicon_plates/P6_yokes.stl",
+   "3mf": "cubicon_plates/P6_yokes.3mf",
+   "hfb": "hfb/M12_P6_yokes.hfb",
+   "footprint_mm": [
+    170.4,
+    58.0,
+    39.0
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "10 lines (Narrowly)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 60,
+     "perimeters": 5,
+     "supports": false,
+     "brim_mm": 3
+    }
+   },
+   "prusaslicer_estimate_h": 4.0,
+   "prusaslicer_estimate_g": 39.3,
+   "colours": [
+    "cream"
+   ]
+  },
+  {
+   "plate": "P7_sled_strap",
+   "why": "battery sled + head strap",
+   "pieces": [
+    "battery_sled",
+    "head_strap"
+   ],
+   "stl": "cubicon_plates/P7_sled_strap.stl",
+   "3mf": "cubicon_plates/P7_sled_strap.3mf",
+   "hfb": "hfb/M12_P7_sled_strap.hfb",
+   "footprint_mm": [
+    178.9,
+    36.4,
+    37.0
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "10 lines (Narrowly)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 40,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 3
+    }
+   },
+   "prusaslicer_estimate_h": 2.0,
+   "prusaslicer_estimate_g": 21.6,
+   "colours": [
+    "cream"
+   ]
+  },
+  {
+   "plate": "P8_flat_parts",
+   "why": "flat parts, 100 % infill, 0.2 mm",
+   "pieces": [
+    "base_front_panel",
+    "shoulder_plate",
+    "head_ears_L",
+    "head_ears_R",
+    "led_band"
+   ],
+   "stl": "cubicon_plates/P8_flat_parts.stl",
+   "3mf": "cubicon_plates/P8_flat_parts.3mf",
+   "hfb": "hfb/M12_P8_flat_parts.hfb",
+   "footprint_mm": [
+    223.6,
+    46.0,
+    6.9
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 100,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 0
+    }
+   },
+   "prusaslicer_estimate_h": 1.4,
+   "prusaslicer_estimate_g": 15.1,
+   "colours": [
+    "black",
+    "cream",
+    "olive",
+    "unpainted"
+   ]
+  },
+  {
+   "plate": "P9_small_parts",
+   "why": "small dense parts at the finest layer: 6 pivot caps, latch, bushing, camera plate, 2 badges + 4 spare tips",
+   "pieces": [
+    "pivot_cap_1p0_frame_dark_1",
+    "pivot_cap_1p0_frame_dark_2",
+    "pivot_cap_1p0_frame_dark_3",
+    "pivot_cap_1p0_frame_dark_4",
+    "pivot_cap_1p0_frame_dark_5",
+    "pivot_cap_1p0_frame_dark_6",
+    "antenna_tips_R",
+    "antenna_tip_sirlab_L",
+    "antenna_tips_L",
+    "antenna_tip_hgu_R",
+    "camera_mount",
+    "cable_bushing",
+    "door_latch",
+    "antenna_tip_leaf_L",
+    "antenna_tip_leaf_R"
+   ],
+   "stl": "cubicon_plates/P9_small_parts.stl",
+   "3mf": "cubicon_plates/P9_small_parts.3mf",
+   "hfb": "hfb/M12_P9_small_parts.hfb",
+   "footprint_mm": [
+    216.0,
+    80.8,
+    22.7
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.15,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "10 lines (Narrowly)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.12,
+     "infill_pct": 100,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 3
+    }
+   },
+   "prusaslicer_estimate_h": 3.2,
+   "prusaslicer_estimate_g": 21.5,
+   "colours": [
+    "dark",
+    "olive"
+   ]
+  }
+ ]
+}
