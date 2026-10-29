@@ -498,7 +498,7 @@ const cleanMotion = () => ({ schema: 'notifyi.motion/1', name: S.motion.name, re
   ...(S.motion.faces?.length ? { faces: S.motion.faces } : {}),
   keyframes: S.motion.keyframes.map(k => ({ t: k.t, q: k.q, ease: k.ease })) });
 async function refreshPresets() {
-  const list = await (await fetch('motions.json')).json();
+  const list = await (await fetch('motions.json', { cache: 'no-cache' })).json();
   $('#presets').innerHTML = '<option value="">— presets —</option>' + list.map(f => `<option>${f}</option>`).join('');
 }
 
@@ -547,7 +547,7 @@ function tick(now) {
 
 // ------------------------------------------------------------------ boot + test API
 (async () => {
-  const revs = await (await fetch('revisions.json')).json();
+  const revs = await (await fetch('revisions.json', { cache: 'no-cache' })).json();
   $('#rev').innerHTML = revs.map(r => `<option>${r.name}</option>`).join('');
   const rev = params.get('rev') || revs[0].name; $('#rev').value = rev;
   await loadRevision(rev); await refreshPresets();
