@@ -32,6 +32,13 @@
      "perimeters": 6,
      "supports": false,
      "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 6,
+     "내부 채우기 밀도 (0~100)": 15,
+     "지지대 생성": "끔",
+     "바닥보조물": "스커트"
     }
    },
    "prusaslicer_estimate_h": 9.5,
@@ -68,6 +75,13 @@
      "perimeters": 4,
      "supports": false,
      "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 30,
+     "지지대 생성": "끔",
+     "바닥보조물": "스커트"
     }
    },
    "prusaslicer_estimate_h": 5.5,
@@ -104,6 +118,13 @@
      "perimeters": 5,
      "supports": false,
      "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 5,
+     "내부 채우기 밀도 (0~100)": 40,
+     "지지대 생성": "끔",
+     "바닥보조물": "스커트"
     }
    },
    "prusaslicer_estimate_h": 3.8,
@@ -140,6 +161,13 @@
      "perimeters": 4,
      "supports": false,
      "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 20,
+     "지지대 생성": "끔",
+     "바닥보조물": "스커트"
     }
    },
    "prusaslicer_estimate_h": 2.5,
@@ -176,6 +204,13 @@
      "perimeters": 5,
      "supports": true,
      "brim_mm": 3
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 5,
+     "내부 채우기 밀도 (0~100)": 60,
+     "지지대 생성": "켬",
+     "바닥보조물": "브림"
     }
    },
    "prusaslicer_estimate_h": 3.1,
@@ -214,6 +249,13 @@
      "perimeters": 5,
      "supports": false,
      "brim_mm": 3
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 5,
+     "내부 채우기 밀도 (0~100)": 60,
+     "지지대 생성": "끔",
+     "바닥보조물": "브림"
     }
    },
    "prusaslicer_estimate_h": 4.0,
@@ -251,6 +293,13 @@
      "perimeters": 4,
      "supports": false,
      "brim_mm": 3
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 40,
+     "지지대 생성": "끔",
+     "바닥보조물": "브림"
     }
    },
    "prusaslicer_estimate_h": 2.0,
@@ -291,6 +340,13 @@
      "perimeters": 4,
      "supports": false,
      "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 100,
+     "지지대 생성": "끔",
+     "바닥보조물": "스커트"
     }
    },
    "prusaslicer_estimate_h": 1.4,
@@ -344,6 +400,13 @@
      "perimeters": 4,
      "supports": false,
      "brim_mm": 3
+    },
+    "expert_ko": {
+     "레이어 높이": 0.12,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 100,
+     "지지대 생성": "끔",
+     "바닥보조물": "브림"
     }
    },
    "prusaslicer_estimate_h": 3.2,
