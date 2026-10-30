@@ -1,21 +1,22 @@
-// Print tab, mech_M13_solderless (2026-10-29; owner: "출력도면은 hfb 기준으로 보여주도록"): the page is built round the nine Cubicon
+// Print tab, mech_M11_face since 2026-10-30 (owner: "m12 m13 다 지우고 출력도면도 m11로"; built 2026-10-29 for M13 after "출력도면은
+// hfb 기준으로 보여주도록"): the page is built round the nine Cubicon
 // Single Plus plates whose .hfb files Cubicreator4 saved (the only files the printer prints). Each plate: its .hfb to download, the
 // settings read back from inside that file (hfb_check.json), Cubicreator's own time / weight, the pieces laid out on the 240 x 190
 // bed exactly as in the file (one STL per piece, in its paint colour), and per piece how it is oriented, what to take off and what
-// changed. The per-part STLs stay available below. Data: assets/mech_M13_solderless/print/{cubicon_plates/plates.json,
+// changed. The per-part STLs stay available below. Data: assets/mech_M11_face/print/{cubicon_plates/plates.json,
 // hfb/hfb_check.json, print_table.json, print_physics.json} (old part-by-part page: print_m12_20261029.js).
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
-const REV = 'mech_M13_solderless', ROOT = `assets/${REV}/print`;
+const REV = 'mech_M11_face', ROOT = `assets/${REV}/print`;
 const BED = [240, 190];
 // every part is printed in white PLA and painted afterwards in RC3's colours (owner, 2026-10-27); 'unpainted' parts stay white
 const HEX = { cream: 0xdcd2b4, dark: 0x4a5050, olive: 0x6f8452, black: 0x161616, unpainted: 0xf4f4f0 };
 const KO_COL = { cream: '크림', dark: '다크 그레이', olive: '올리브', black: '검정', unpainted: '칠하지 않음 (흰 PLA)' };
 const KO_PLATE = { P1_base_shell: '베이스 외피', P2_base_floor: '바닥 트레이', P3_servo_deck: '서보 데크', P4_head_face: '얼굴 상자',
   P5_camera_cradle: '카메라 · 디스플레이 받침', P6_yokes: '요크 3개', P7_sled_strap: '배터리 슬레드 + 머리 윗판',
-  P8_flat_parts: '앞 패널 · 어깨판 · 귀 · 라이트 띠', P9_small_parts: '피벗 캡 6 · 안테나 배지 · 작은 부품' };
+  P8_flat_parts: '얼굴 테 · 앞 패널 · 턴테이블 링 · 어깨판 · 귀 · 라이트 띠', P9_small_parts: '디스플레이 프레임 · 피벗 캡 6 · 안테나 · 작은 부품' };
 const swatch = c => `<i class="sw" style="background:#${(HEX[c] ?? 0xcccccc).toString(16).padStart(6, '0')}"></i>`;
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));

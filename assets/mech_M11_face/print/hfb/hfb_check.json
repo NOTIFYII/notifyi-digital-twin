@@ -4,10 +4,250 @@
  "note": "settings read from the text inside each .hfb that Cubicreator4 wrote; the file format itself is Cubicon's and is not checked beyond its header tags",
  "plates": [
   {
-   "plate": "F1_display_frame",
-   "file": "hfb/M11F_F1_display_frame.hfb",
-   "bytes": 4539545,
-   "sha256": "818d1e3d85af60b65f6124f13d7e9e940ff1b54564f94fee78881fb4b1c8accf",
+   "plate": "P1_base_shell",
+   "file": "hfb/M11_P1_base_shell.hfb",
+   "bytes": 13484353,
+   "sha256": "0faeb9001edc82811f6d3072e02bb65e56a68f667f21ceb2283d5c9230ddbf1c",
+   "header_tags": [
+    "HFE.02.02.00",
+    "HFH.04.02.00"
+   ],
+   "written_by": "Cubicreator4 v4.5.4",
+   "settings": {
+    "layer_height": "0.2",
+    "wall_line_count": "6",
+    "infill_sparse_density": "15",
+    "support_enable": "False",
+    "adhesion_type": "skirt",
+    "material_print_temperature": "210",
+    "material_bed_temperature": "65",
+    "machine_name": "Cubicon Single+"
+   },
+   "wanted": {
+    "layer_height": 0.2,
+    "wall_line_count": 6,
+    "infill_sparse_density": 15.0,
+    "support_enable": false,
+    "adhesion_type": "skirt"
+   },
+   "diffs": [],
+   "result": "PASS"
+  },
+  {
+   "plate": "P2_base_floor",
+   "file": "hfb/M11_P2_base_floor.hfb",
+   "bytes": 25592732,
+   "sha256": "a7567e7c228ed3b4b7d7b8604f82bb28b90887512c415238503aa7f014967af5",
+   "header_tags": [
+    "HFE.02.02.00",
+    "HFH.04.02.00"
+   ],
+   "written_by": "Cubicreator4 v4.5.4",
+   "settings": {
+    "layer_height": "0.2",
+    "wall_line_count": "4",
+    "infill_sparse_density": "30",
+    "support_enable": "False",
+    "adhesion_type": "skirt",
+    "material_print_temperature": "210",
+    "material_bed_temperature": "65",
+    "machine_name": "Cubicon Single+"
+   },
+   "wanted": {
+    "layer_height": 0.2,
+    "wall_line_count": 4,
+    "infill_sparse_density": 30.0,
+    "support_enable": false,
+    "adhesion_type": "skirt"
+   },
+   "diffs": [],
+   "result": "PASS"
+  },
+  {
+   "plate": "P3_servo_deck",
+   "file": "hfb/M11_P3_servo_deck.hfb",
+   "bytes": 8091446,
+   "sha256": "730cc72a3208b9d13a1c10634b0ab31a14ce38c6e90bab9c40409f1ee00c006a",
+   "header_tags": [
+    "HFE.02.02.00",
+    "HFH.04.02.00"
+   ],
+   "written_by": "Cubicreator4 v4.5.4",
+   "settings": {
+    "layer_height": "0.2",
+    "wall_line_count": "5",
+    "infill_sparse_density": "40",
+    "support_enable": "False",
+    "adhesion_type": "skirt",
+    "material_print_temperature": "210",
+    "material_bed_temperature": "65",
+    "machine_name": "Cubicon Single+"
+   },
+   "wanted": {
+    "layer_height": 0.2,
+    "wall_line_count": 5,
+    "infill_sparse_density": 40.0,
+    "support_enable": false,
+    "adhesion_type": "skirt"
+   },
+   "diffs": [],
+   "result": "PASS"
+  },
+  {
+   "plate": "P4_head_face",
+   "file": "hfb/M11_P4_head_face.hfb",
+   "bytes": 3707908,
+   "sha256": "b5da6643e0ac3a686b9a4c93057c5ae66422e5fcb65ece8a57494cd04ac3dec7",
+   "header_tags": [
+    "HFE.02.02.00",
+    "HFH.04.02.00"
+   ],
+   "written_by": "Cubicreator4 v4.5.4",
+   "settings": {
+    "layer_height": "0.2",
+    "wall_line_count": "4",
+    "infill_sparse_density": "20",
+    "support_enable": "False",
+    "adhesion_type": "skirt",
+    "material_print_temperature": "210",
+    "material_bed_temperature": "65",
+    "machine_name": "Cubicon Single+"
+   },
+   "wanted": {
+    "layer_height": 0.2,
+    "wall_line_count": 4,
+    "infill_sparse_density": 20.0,
+    "support_enable": false,
+    "adhesion_type": "skirt"
+   },
+   "diffs": [],
+   "result": "PASS"
+  },
+  {
+   "plate": "P5_camera_cradle",
+   "file": "hfb/M11_P5_camera_cradle.hfb",
+   "bytes": 4684335,
+   "sha256": "69a9549aa7ac6f695e70d9ce0550fc7941c1fd88aec4b63b9d6ab162852dc633",
+   "header_tags": [
+    "HFE.02.02.00",
+    "HFH.04.02.00"
+   ],
+   "written_by": "Cubicreator4 v4.5.4",
+   "settings": {
+    "layer_height": "0.2",
+    "wall_line_count": "5",
+    "infill_sparse_density": "60",
+    "support_enable": "True",
+    "adhesion_type": "brim",
+    "material_print_temperature": "210",
+    "material_bed_temperature": "65",
+    "machine_name": "Cubicon Single+"
+   },
+   "wanted": {
+    "layer_height": 0.2,
+    "wall_line_count": 5,
+    "infill_sparse_density": 60.0,
+    "support_enable": true,
+    "adhesion_type": "brim"
+   },
+   "diffs": [],
+   "result": "PASS"
+  },
+  {
+   "plate": "P6_yokes",
+   "file": "hfb/M11_P6_yokes.hfb",
+   "bytes": 8796306,
+   "sha256": "2d58725e722335c33243d37dd9cfe24af04c7ddf20291d95e77cf987b224ef70",
+   "header_tags": [
+    "HFE.02.02.00",
+    "HFH.04.02.00"
+   ],
+   "written_by": "Cubicreator4 v4.5.4",
+   "settings": {
+    "layer_height": "0.2",
+    "wall_line_count": "5",
+    "infill_sparse_density": "60",
+    "support_enable": "False",
+    "adhesion_type": "brim",
+    "material_print_temperature": "210",
+    "material_bed_temperature": "65",
+    "machine_name": "Cubicon Single+"
+   },
+   "wanted": {
+    "layer_height": 0.2,
+    "wall_line_count": 5,
+    "infill_sparse_density": 60.0,
+    "support_enable": false,
+    "adhesion_type": "brim"
+   },
+   "diffs": [],
+   "result": "PASS"
+  },
+  {
+   "plate": "P7_sled_strap",
+   "file": "hfb/M11_P7_sled_strap.hfb",
+   "bytes": 4962263,
+   "sha256": "4a44df55f84d98df54729a0ebd6e514ea96497abebfafd8534f457d3e5c2c8da",
+   "header_tags": [
+    "HFE.02.02.00",
+    "HFH.04.02.00"
+   ],
+   "written_by": "Cubicreator4 v4.5.4",
+   "settings": {
+    "layer_height": "0.2",
+    "wall_line_count": "4",
+    "infill_sparse_density": "40",
+    "support_enable": "False",
+    "adhesion_type": "brim",
+    "material_print_temperature": "210",
+    "material_bed_temperature": "65",
+    "machine_name": "Cubicon Single+"
+   },
+   "wanted": {
+    "layer_height": 0.2,
+    "wall_line_count": 4,
+    "infill_sparse_density": 40.0,
+    "support_enable": false,
+    "adhesion_type": "brim"
+   },
+   "diffs": [],
+   "result": "PASS"
+  },
+  {
+   "plate": "P8_flat_parts",
+   "file": "hfb/M11_P8_flat_parts.hfb",
+   "bytes": 6337316,
+   "sha256": "8ebb4de6f3936e6687c9ef96307363b8baf0d817c6aa22224da55eb57d89d0a4",
+   "header_tags": [
+    "HFE.02.02.00",
+    "HFH.04.02.00"
+   ],
+   "written_by": "Cubicreator4 v4.5.4",
+   "settings": {
+    "layer_height": "0.2",
+    "wall_line_count": "4",
+    "infill_sparse_density": "100",
+    "support_enable": "False",
+    "adhesion_type": "skirt",
+    "material_print_temperature": "210",
+    "material_bed_temperature": "65",
+    "machine_name": "Cubicon Single+"
+   },
+   "wanted": {
+    "layer_height": 0.2,
+    "wall_line_count": 4,
+    "infill_sparse_density": 100.0,
+    "support_enable": false,
+    "adhesion_type": "skirt"
+   },
+   "diffs": [],
+   "result": "PASS"
+  },
+  {
+   "plate": "P9_small_parts",
+   "file": "hfb/M11_P9_small_parts.hfb",
+   "bytes": 14546755,
+   "sha256": "8d865e368d97822f158451ebc6d7deaccbc37f3ca211e551ba505815302e55d2",
    "header_tags": [
     "HFE.02.02.00",
     "HFH.04.02.00"
@@ -18,7 +258,7 @@
     "wall_line_count": "4",
     "infill_sparse_density": "100",
     "support_enable": "False",
-    "adhesion_type": "skirt",
+    "adhesion_type": "brim",
     "material_print_temperature": "210",
     "material_bed_temperature": "65",
     "machine_name": "Cubicon Single+"
@@ -28,7 +268,7 @@
     "wall_line_count": 4,
     "infill_sparse_density": 100.0,
     "support_enable": false,
-    "adhesion_type": "skirt"
+    "adhesion_type": "brim"
    },
    "diffs": [],
    "result": "PASS"

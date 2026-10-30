@@ -1,0 +1,638 @@
+{
+ "pack": "03_Print/mech_M11_face_20261030",
+ "printer": "Cubicon Single Plus (3DP-310F), bed 240 x 190 x 200 mm",
+ "slicer": "Cubicreator4 (only its .hfb prints)",
+ "note": "Plate layouts only. The .hfb files are made in Cubicreator4 (device 3DP-310F, PLA); estimates are PrusaSlicer analysis per part, summed - Cubicreator's own time / weight differ",
+ "plates": [
+  {
+   "plate": "P1_base_shell",
+   "why": "base shell alone - the longest print",
+   "pieces": [
+    "base_shell"
+   ],
+   "stl": "cubicon_plates/P1_base_shell.stl",
+   "3mf": "cubicon_plates/P1_base_shell.3mf",
+   "hfb": "hfb/M11_P1_base_shell.hfb",
+   "footprint_mm": [
+    120.0,
+    110.0,
+    77.5
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "20 % (Medium)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 15,
+     "perimeters": 6,
+     "supports": false,
+     "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 6,
+     "내부 채우기 밀도 (0~100)": 15,
+     "지지대 생성": "끔",
+     "바닥보조물": "스커트"
+    }
+   },
+   "prusaslicer_estimate_h": 9.3,
+   "prusaslicer_estimate_g": 117.0,
+   "colours": [
+    "cream"
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "9:58",
+    "filament_g": 117.69,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11_face/cubicreator/)"
+   },
+   "piece_files": [
+    {
+     "name": "base_shell",
+     "part": "base_shell",
+     "file": "cubicon_plates/P1_base_shell_pieces/base_shell.stl"
+    }
+   ]
+  },
+  {
+   "plate": "P2_base_floor",
+   "why": "floor tray alone",
+   "pieces": [
+    "base_floor"
+   ],
+   "stl": "cubicon_plates/P2_base_floor.stl",
+   "3mf": "cubicon_plates/P2_base_floor.3mf",
+   "hfb": "hfb/M11_P2_base_floor.hfb",
+   "footprint_mm": [
+    117.6,
+    108.3,
+    46.0
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 30,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 30,
+     "지지대 생성": "끔",
+     "바닥보조물": "스커트"
+    }
+   },
+   "prusaslicer_estimate_h": 5.5,
+   "prusaslicer_estimate_g": 62.1,
+   "colours": [
+    "dark"
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "6:07",
+    "filament_g": 62.56,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11_face/cubicreator/)"
+   },
+   "piece_files": [
+    {
+     "name": "base_floor",
+     "part": "base_floor",
+     "file": "cubicon_plates/P2_base_floor_pieces/base_floor.stl"
+    }
+   ]
+  },
+  {
+   "plate": "P3_servo_deck",
+   "why": "servo deck alone",
+   "pieces": [
+    "servo_deck"
+   ],
+   "stl": "cubicon_plates/P3_servo_deck.stl",
+   "3mf": "cubicon_plates/P3_servo_deck.3mf",
+   "hfb": "hfb/M11_P3_servo_deck.hfb",
+   "footprint_mm": [
+    114.2,
+    104.2,
+    40.5
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 40,
+     "perimeters": 5,
+     "supports": false,
+     "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 5,
+     "내부 채우기 밀도 (0~100)": 40,
+     "지지대 생성": "끔",
+     "바닥보조물": "스커트"
+    }
+   },
+   "prusaslicer_estimate_h": 3.8,
+   "prusaslicer_estimate_g": 44.6,
+   "colours": [
+    "dark"
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "4:07",
+    "filament_g": 44.44,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11_face/cubicreator/)"
+   },
+   "piece_files": [
+    {
+     "name": "servo_deck",
+     "part": "servo_deck",
+     "file": "cubicon_plates/P3_servo_deck_pieces/servo_deck.stl"
+    }
+   ]
+  },
+  {
+   "plate": "P4_head_face",
+   "why": "face box alone; the loose ring inside it is part of the file (lift it out after printing)",
+   "pieces": [
+    "head_face"
+   ],
+   "stl": "cubicon_plates/P4_head_face.stl",
+   "3mf": "cubicon_plates/P4_head_face.3mf",
+   "hfb": "hfb/M11_P4_head_face.hfb",
+   "footprint_mm": [
+    94.4,
+    75.4,
+    31.9
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "20 % (Medium)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 20,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 20,
+     "지지대 생성": "끔",
+     "바닥보조물": "스커트"
+    }
+   },
+   "prusaslicer_estimate_h": 2.2,
+   "prusaslicer_estimate_g": 27.7,
+   "colours": [
+    "cream"
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "2:19",
+    "filament_g": 25.08,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11_face/cubicreator/)"
+   },
+   "piece_files": [
+    {
+     "name": "head_face",
+     "part": "head_face",
+     "file": "cubicon_plates/P4_head_face_pieces/head_face.stl"
+    }
+   ]
+  },
+  {
+   "plate": "P5_camera_cradle",
+   "why": "camera cradle alone - the ONE part that needs support",
+   "pieces": [
+    "camera_cradle"
+   ],
+   "stl": "cubicon_plates/P5_camera_cradle.stl",
+   "3mf": "cubicon_plates/P5_camera_cradle.3mf",
+   "hfb": "hfb/M11_P5_camera_cradle.hfb",
+   "footprint_mm": [
+    80.0,
+    66.6,
+    65.0
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "ON, angle 40-50, offset Normal",
+    "brim": "10 lines (Narrowly)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 60,
+     "perimeters": 5,
+     "supports": true,
+     "brim_mm": 3
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 5,
+     "내부 채우기 밀도 (0~100)": 60,
+     "지지대 생성": "켬",
+     "바닥보조물": "브림"
+    }
+   },
+   "prusaslicer_estimate_h": 2.8,
+   "prusaslicer_estimate_g": 28.5,
+   "colours": [
+    "cream"
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "3:54",
+    "filament_g": 32.77,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11_face/cubicreator/)"
+   },
+   "piece_files": [
+    {
+     "name": "camera_cradle",
+     "part": "camera_cradle",
+     "file": "cubicon_plates/P5_camera_cradle_pieces/camera_cradle.stl"
+    }
+   ]
+  },
+  {
+   "plate": "P6_yokes",
+   "why": "the three yokes: 5 walls, dense infill",
+   "pieces": [
+    "yoke_1",
+    "yoke_2",
+    "yoke_3"
+   ],
+   "stl": "cubicon_plates/P6_yokes.stl",
+   "3mf": "cubicon_plates/P6_yokes.3mf",
+   "hfb": "hfb/M11_P6_yokes.hfb",
+   "footprint_mm": [
+    158.6,
+    26.0,
+    39.0
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "10 lines (Narrowly)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 60,
+     "perimeters": 5,
+     "supports": false,
+     "brim_mm": 3
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 5,
+     "내부 채우기 밀도 (0~100)": 60,
+     "지지대 생성": "끔",
+     "바닥보조물": "브림"
+    }
+   },
+   "prusaslicer_estimate_h": 3.4,
+   "prusaslicer_estimate_g": 33.1,
+   "colours": [
+    "cream"
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "4:10",
+    "filament_g": 35.38,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11_face/cubicreator/)"
+   },
+   "piece_files": [
+    {
+     "name": "yoke_1",
+     "part": "yoke",
+     "file": "cubicon_plates/P6_yokes_pieces/yoke_1.stl"
+    },
+    {
+     "name": "yoke_2",
+     "part": "yoke",
+     "file": "cubicon_plates/P6_yokes_pieces/yoke_2.stl"
+    },
+    {
+     "name": "yoke_3",
+     "part": "yoke",
+     "file": "cubicon_plates/P6_yokes_pieces/yoke_3.stl"
+    }
+   ]
+  },
+  {
+   "plate": "P7_sled_strap",
+   "why": "battery sled + head strap",
+   "pieces": [
+    "battery_sled",
+    "head_strap"
+   ],
+   "stl": "cubicon_plates/P7_sled_strap.stl",
+   "3mf": "cubicon_plates/P7_sled_strap.3mf",
+   "hfb": "hfb/M11_P7_sled_strap.hfb",
+   "footprint_mm": [
+    178.9,
+    36.4,
+    37.0
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "10 lines (Narrowly)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 40,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 3
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 40,
+     "지지대 생성": "끔",
+     "바닥보조물": "브림"
+    }
+   },
+   "prusaslicer_estimate_h": 2.0,
+   "prusaslicer_estimate_g": 21.7,
+   "colours": [
+    "cream"
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "2:42",
+    "filament_g": 23.38,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11_face/cubicreator/)"
+   },
+   "piece_files": [
+    {
+     "name": "battery_sled",
+     "part": "battery_sled",
+     "file": "cubicon_plates/P7_sled_strap_pieces/battery_sled.stl"
+    },
+    {
+     "name": "head_strap",
+     "part": "head_strap",
+     "file": "cubicon_plates/P7_sled_strap_pieces/head_strap.stl"
+    }
+   ]
+  },
+  {
+   "plate": "P8_flat_parts",
+   "why": "flat parts, 100 % infill, 0.2 mm",
+   "pieces": [
+    "head_ring",
+    "base_front_panel",
+    "turntable_ring",
+    "shoulder_plate",
+    "head_ears_L",
+    "head_ears_R",
+    "led_band"
+   ],
+   "stl": "cubicon_plates/P8_flat_parts.stl",
+   "3mf": "cubicon_plates/P8_flat_parts.3mf",
+   "hfb": "hfb/M11_P8_flat_parts.hfb",
+   "footprint_mm": [
+    215.7,
+    147.0,
+    6.9
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 100,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 100,
+     "지지대 생성": "끔",
+     "바닥보조물": "스커트"
+    }
+   },
+   "prusaslicer_estimate_h": 1.7,
+   "prusaslicer_estimate_g": 20.6,
+   "colours": [
+    "black",
+    "cream",
+    "olive",
+    "unpainted"
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "2:02",
+    "filament_g": 21.28,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11_face/cubicreator/)"
+   },
+   "piece_files": [
+    {
+     "name": "head_ring",
+     "part": "head_ring",
+     "file": "cubicon_plates/P8_flat_parts_pieces/head_ring.stl"
+    },
+    {
+     "name": "base_front_panel",
+     "part": "base_front_panel",
+     "file": "cubicon_plates/P8_flat_parts_pieces/base_front_panel.stl"
+    },
+    {
+     "name": "turntable_ring",
+     "part": "turntable_ring",
+     "file": "cubicon_plates/P8_flat_parts_pieces/turntable_ring.stl"
+    },
+    {
+     "name": "shoulder_plate",
+     "part": "shoulder_plate",
+     "file": "cubicon_plates/P8_flat_parts_pieces/shoulder_plate.stl"
+    },
+    {
+     "name": "head_ears_L",
+     "part": "head_ears_L",
+     "file": "cubicon_plates/P8_flat_parts_pieces/head_ears_L.stl"
+    },
+    {
+     "name": "head_ears_R",
+     "part": "head_ears_R",
+     "file": "cubicon_plates/P8_flat_parts_pieces/head_ears_R.stl"
+    },
+    {
+     "name": "led_band",
+     "part": "led_band",
+     "file": "cubicon_plates/P8_flat_parts_pieces/led_band.stl"
+    }
+   ]
+  },
+  {
+   "plate": "P9_small_parts",
+   "why": "small dense parts at the finest layer: the display frame, 6 pivot caps, 2 antenna rods + tips, latch, bushing",
+   "pieces": [
+    "display_frame",
+    "pivot_cap_1p0_frame_dark_1",
+    "pivot_cap_1p0_frame_dark_2",
+    "pivot_cap_1p0_frame_dark_3",
+    "pivot_cap_1p0_frame_dark_4",
+    "pivot_cap_1p0_frame_dark_5",
+    "pivot_cap_1p0_frame_dark_6",
+    "cable_bushing",
+    "door_latch",
+    "antenna_rod_1",
+    "antenna_rod_2",
+    "antenna_tips_R",
+    "antenna_tips_L"
+   ],
+   "stl": "cubicon_plates/P9_small_parts.stl",
+   "3mf": "cubicon_plates/P9_small_parts.3mf",
+   "hfb": "hfb/M11_P9_small_parts.hfb",
+   "footprint_mm": [
+    212.0,
+    105.0,
+    18.5
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.15,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "10 lines (Narrowly)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.12,
+     "infill_pct": 100,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 3
+    },
+    "expert_ko": {
+     "레이어 높이": 0.12,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 100,
+     "지지대 생성": "끔",
+     "바닥보조물": "브림"
+    }
+   },
+   "prusaslicer_estimate_h": 1.8,
+   "prusaslicer_estimate_g": 12.8,
+   "colours": [
+    "dark",
+    "olive",
+    "unpainted"
+   ],
+   "cubicreator_estimate": {
+    "time_hm": "3:57",
+    "filament_g": 22.58,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11_face/cubicreator/)"
+   },
+   "piece_files": [
+    {
+     "name": "display_frame",
+     "part": "display_frame",
+     "file": "cubicon_plates/P9_small_parts_pieces/display_frame.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_1",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_1.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_2",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_2.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_3",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_3.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_4",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_4.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_5",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_5.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_6",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9_small_parts_pieces/pivot_cap_1p0_frame_dark_6.stl"
+    },
+    {
+     "name": "cable_bushing",
+     "part": "cable_bushing",
+     "file": "cubicon_plates/P9_small_parts_pieces/cable_bushing.stl"
+    },
+    {
+     "name": "door_latch",
+     "part": "door_latch",
+     "file": "cubicon_plates/P9_small_parts_pieces/door_latch.stl"
+    },
+    {
+     "name": "antenna_rod_1",
+     "part": "antenna_rod",
+     "file": "cubicon_plates/P9_small_parts_pieces/antenna_rod_1.stl"
+    },
+    {
+     "name": "antenna_rod_2",
+     "part": "antenna_rod",
+     "file": "cubicon_plates/P9_small_parts_pieces/antenna_rod_2.stl"
+    },
+    {
+     "name": "antenna_tips_R",
+     "part": "antenna_tips_R",
+     "file": "cubicon_plates/P9_small_parts_pieces/antenna_tips_R.stl"
+    },
+    {
+     "name": "antenna_tips_L",
+     "part": "antenna_tips_L",
+     "file": "cubicon_plates/P9_small_parts_pieces/antenna_tips_L.stl"
+    }
+   ]
+  }
+ ],
+ "cubicreator_total": {
+  "time_h": 39.3,
+  "filament_g": 385.2
+ }
+}
