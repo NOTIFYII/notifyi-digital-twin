@@ -1,5 +1,5 @@
 {
- "revision": "mech_M13_solderless",
+ "revision": "mech_M11_face",
  "skip": [
   "battery bay (largest pack)"
  ],
@@ -8,7 +8,7 @@
    "n": 0,
    "title": "시작하기 전에",
    "kicker": "준비",
-   "text": "흰 PLA로 뽑은 부품과 서보 4개, 보드 2개로 Notifyi를 만듭니다. 단계마다 새로 넣는 부품이 화살표를 따라 제자리로 들어갑니다. M12는 접착제 없이 모든 부품을 나사(인서트)로 조입니다. 왼쪽 상자에는 그 단계에서 쓰는 부품 · 나사 · 케이블이 개수와 함께 있습니다.",
+   "text": "흰 PLA로 뽑은 부품 30조각과 서보 4개, 보드 2개로 Notifyi를 만듭니다. 단계마다 새로 넣는 부품이 화살표를 따라 제자리로 들어갑니다. 왼쪽 상자에는 그 단계에서 쓰는 부품 · 나사 · 케이블이 개수와 함께 있습니다.",
    "add": [],
    "from": [
     0,
@@ -22,7 +22,8 @@
     "출력 후: 지지대 · 보조물을 떼고(출력 도면 탭 \"떼는 법\"), 400방 사포 → 인서트 압입 → 칠하기 순서.",
     "공구: 인두(인서트용), 육각렌치 1.5 · 2 · 2.5 mm, 펜치 · 니퍼, 순간접착제(CA), 양면테이프.",
     "서보 ID와 배선은 아직 실물로 확인 전입니다. 모터에 전원을 넣기 전에 ID 지도를 먼저 정하세요.",
-    "케이블은 서보에 딸려 오는 X3P 180 mm 4개, 꺾인 USB 케이블 1개, 업앵글 USB 어댑터 1개, 직접 만드는 리드 3개(5 V, 디스플레이, 배터리)입니다. 목록은 PURCHASE_LIST_mech_M12.csv."
+    "M11로 이미 출력한 부품은 그대로 씁니다. 새로 출력하는 것은 디스플레이 프레임 1개(6 g, 지지대 없음)뿐입니다.",
+    "케이블: 서보 동봉 X3P 180 mm 4개, 꺾인 USB 케이블 1개, 업앵글 USB 어댑터 1개, 직접 만드는 리드 2개(5 V, 배터리), Waveshare 디스플레이 동봉 케이블(20 cm) + 수-암 점퍼 8개(30 cm), 카메라 동봉 케이블. 디스플레이와 카메라 모두 납땜이 없습니다."
    ],
    "cover": true,
    "finale": false
@@ -192,7 +193,7 @@
    "n": 4,
    "title": "Pi에 먼저 꽂기 (책상 위에서)",
    "kicker": "베이스",
-   "text": "Pi를 책상 위에서 준비합니다. 앞쪽 USB 아래 칸에 USB 케이블의 USB-A(90°, 케이블이 앞으로), 뒤쪽 USB 아래 칸에 업앵글 어댑터, GPIO 2 · 4 · 6번 핀에 5 V 리드, microSD 카드.",
+   "text": "Pi를 책상 위에서 준비합니다. 앞쪽 USB 아래 칸에 USB 케이블의 USB-A(90°, 케이블이 앞으로), 뒤쪽 USB 아래 칸에 업앵글 어댑터, GPIO 2 · 4 · 6번 핀에 5 V 리드, microSD 카드. 디스플레이 백라이트(BL)용 수-암 점퍼 1개의 암 끝을 12번 핀(GPIO18)에 꽂습니다.",
    "add": [
     "Raspberry Pi 3 B+ (pcb)",
     "Raspberry Pi 3 B+ (parts)",
@@ -241,7 +242,7 @@
      ]
     },
     {
-     "label": "수-암 점퍼 1가닥 (디스플레이 백라이트, 12번 핀)",
+     "label": "수-암 점퍼 30 cm (BL → 12번 핀)",
      "qty": 1,
      "items": [
       "plug pi_gpio_12_backlight"
@@ -257,7 +258,7 @@
    ],
    "notes": [
     "Pi의 micro-USB 전원 소켓은 비워 둡니다(GPIO 5 V로 급전, Pi의 입력 퓨즈를 거치지 않음).",
-    "디스플레이 백라이트용 수-암 점퍼 1가닥을 12번 핀(GPIO18)에 지금 꽂고, 수 끝을 5 V 리드와 함께 데크의 뒤쪽 구멍으로 위로 빼 둡니다(데크를 얹은 뒤에는 위에서 닿지 않음)."
+    "12번 핀은 데크를 얹은 뒤에는 위에서 손이 닿지 않습니다. 점퍼의 수 끝은 5 V 리드와 함께 데크 뒤쪽 구멍으로 위로 빼 둡니다."
    ],
    "cover": false,
    "finale": false
@@ -387,6 +388,58 @@
   },
   {
    "n": 7,
+   "title": "머리로 가는 케이블 먼저 꽂기",
+   "kicker": "베이스",
+   "text": "외피를 씌우기 전에 위에서 꽂습니다: 카메라 케이블의 USB-A를 오른쪽 데크 구멍의 업앵글 어댑터에, 수-암 점퍼 7개의 암 끝을 데크 뒤 구멍으로 GPIO 17–24번 핀에(21번 비움). 반대쪽 끝(카메라 쪽 작은 4핀 커넥터, 점퍼 수 끝 8개 — 12번 BL 포함)은 한데 묶어 척추 구멍 자리로 위로 빼 두고, 몸통을 쌓을 때마다 위로 넘깁니다.",
+   "add": [
+    "plug webcam_usb_in_adapter",
+    "plug pi_gpio_17_24_display"
+   ],
+   "from": [
+    0,
+    0,
+    30
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "카메라 동봉 케이블 (USB-A 쪽)",
+     "qty": 1,
+     "items": [
+      "plug webcam_usb_in_adapter"
+     ]
+    },
+    {
+     "label": "수-암 점퍼 30 cm (17–24번)",
+     "qty": 7,
+     "items": [
+      "plug pi_gpio_17_24_display"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "misc",
+     "label": "수-암 점퍼 30 cm",
+     "qty": 7
+    },
+    {
+     "kind": "misc",
+     "label": "마스킹 테이프 (케이블 끝 묶기)",
+     "qty": 1
+    }
+   ],
+   "notes": [
+    "점퍼 연결표 (모듈 케이블 → Pi 핀): VCC → 17 (3.3 V), GND → 20, DIN → 19 (MOSI), CLK → 23 (SCLK), CS → 24 (CE0), DC → 22 (GPIO25), RST → 18 (GPIO24), BL → 12 (GPIO18). 21번은 비웁니다.",
+    "먼저 카메라 케이블 길이를 재세요(작은 커넥터 ~ USB-A 부트). Adafruit는 길이를 공개하지 않았고, 제품 사진으로 잰 값은 약 43 cm (40–46)입니다. 이 경로는 관절 전체 범위에서 44–52 cm가 필요합니다(CAD 추정).",
+    "52 cm 이상: 그대로. 44–52 cm: USB 2.0 연장 케이블(A수-A암, 20 cm)을 업앵글 어댑터에 꽂고, 이음부를 2층 뒤쪽 통로(척추 옆에서 오른쪽으로)에 눕혀 케이블 타이로 묶습니다. 44 cm 미만: 더 긴 카메라 케이블(1.0 mm 4핀 → USB-A, 핀 순서 VCC · D− · D+ · GND)이 필요합니다.",
+    "USB-A 플러그는 13 mm 척추 구멍을 지나지 못합니다 — 카메라 케이블은 작은 커넥터 쪽을 위로 올립니다."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 8,
    "title": "배터리 슬레드",
    "kicker": "베이스",
    "text": "3S 배터리를 벨크로로 슬레드에 묶고, 데크 구멍으로 올라온 배터리 리드의 XT60에 연결한 뒤 왼쪽 문으로 밀어 넣습니다.",
@@ -443,22 +496,16 @@
    "finale": false
   },
   {
-   "n": 8,
+   "n": 9,
    "title": "외피 씌우기",
    "kicker": "베이스",
-   "text": "위로 뺀 케이블을 외피의 케이블 구멍으로 통과시키며 외피를 위에서 씌웁니다. 바닥에서 나사 4개, 왼쪽 문 버튼, 앞 패널, 케이블 부싱. 앞 패널은 외피 안쪽에서 M2 × 5 나사 + 와셔 4개로, 케이블 부싱은 M2 × 6 접시머리 2개로 고정합니다(접착제 없음).",
+   "text": "위로 뺀 케이블을 외피의 케이블 구멍으로 통과시키며 외피를 위에서 씌웁니다. 바닥에서 나사 4개, 왼쪽 문 버튼, 앞 패널, 케이블 부싱.",
    "add": [
     "base_shell",
     "base_front_panel",
     "led_band",
     "door_latch",
-    "cable_bushing",
-    "screw cable bushing -14,32",
-    "screw cable bushing -33,28",
-    "screw front panel +42,33",
-    "screw front panel +42,60",
-    "screw front panel -42,33",
-    "screw front panel -42,60"
+    "cable_bushing"
    ],
    "from": [
     0,
@@ -521,43 +568,25 @@
      "head": "button"
     },
     {
-     "kind": "insert",
-     "label": "M2 × 3 인서트 (앞 패널 4 · 부싱 보스 2)",
-     "qty": 6,
-     "d": 2,
-     "len": 3
-    },
-    {
-     "kind": "screw",
-     "label": "M2 × 5 둥근머리 + 와셔 (앞 패널)",
-     "qty": 4,
-     "d": 2,
-     "len": 5,
-     "head": "button"
-    },
-    {
-     "kind": "screw",
-     "label": "M2 × 6 접시머리 (부싱)",
-     "qty": 2,
-     "d": 2,
-     "len": 6,
-     "head": "flat"
+     "kind": "misc",
+     "label": "순간접착제 2점 (앞 패널)",
+     "qty": 1
     }
    ],
    "notes": [
     "외피 보스의 M3 × 5.7 인서트 4개 · 문 버튼 보스 인서트 1개는 미리 넣어 둡니다.",
-    "문 버튼은 위로 돌리면 잠기고 옆으로 돌리면 열립니다.",
-    "라이트 띠는 바닥 트레이 앞면 홈에 위에서 끼우고, 외피의 아래 끝이 덮어서 고정합니다."
+    "문 버튼은 위로 돌리면 잠기고 옆으로 돌리면 열립니다."
    ],
    "cover": false,
    "finale": false
   },
   {
-   "n": 9,
-   "title": "요크 1 (턴테이블 링 일체)",
+   "n": 10,
+   "title": "턴테이블 링 · 요크 1",
    "kicker": "몸통",
-   "text": "요크 1(턴테이블 링이 함께 출력됨)의 바닥판을 P1 위쪽 혼에 나사 4개로 고정합니다.",
+   "text": "요크 바닥판을 P1 위쪽 혼에 나사 4개로 고정하고, 턴테이블 링을 요크 바닥판 둘레에 끼웁니다.",
    "add": [
+    "turntable_ring",
     "yoke0"
    ],
    "from": [
@@ -568,7 +597,14 @@
    "radial": {},
    "parts": [
     {
-     "label": "요크 1 + 턴테이블 링",
+     "label": "턴테이블 링",
+     "qty": 1,
+     "items": [
+      "turntable_ring"
+     ]
+    },
+    {
+     "label": "요크",
      "qty": 1,
      "items": [
       "yoke0"
@@ -590,10 +626,10 @@
    "finale": false
   },
   {
-   "n": 10,
+   "n": 11,
    "title": "몸통 아래 서보 P2",
    "kicker": "몸통",
-   "text": "P2를 요크의 포크 홈으로 위에서 내려 끼우고, 다리 양쪽을 혼 · 아이들러에 나사 3개씩 고정한 뒤 피벗 캡 2개를 나사로 고정합니다.",
+   "text": "P2를 요크의 포크 홈으로 위에서 내려 끼우고, 다리 양쪽을 혼 · 아이들러에 나사 3개씩 고정한 뒤 피벗 캡 2개를 눌러 끼웁니다.",
    "add": [
     "P2.body",
     "P2.plugs",
@@ -603,9 +639,7 @@
     "plug dxl_p1_p2 b",
     "cable:dxl_p1_p2",
     "pivot_cap_turret_p",
-    "pivot_cap_turret_n",
-    "screw pivot cap turret_n",
-    "screw pivot cap turret_p"
+    "pivot_cap_turret_n"
    ],
    "from": [
     0,
@@ -648,29 +682,21 @@
     {
      "kind": "screw",
      "label": "M2 × 6",
-     "qty": 4,
+     "qty": 6,
      "d": 2,
      "len": 6,
      "head": "socket"
-    },
-    {
-     "kind": "screw",
-     "label": "M2 × 10 접시머리 (피벗 캡)",
-     "qty": 2,
-     "d": 2,
-     "len": 10,
-     "head": "flat"
     }
    ],
    "notes": [
-    "P1의 커넥터 A에서 나온 X3P를 척추 구멍(부싱)으로 올려 P2에 꽂습니다 — 서보에 딸려 온 180 mm로 닿습니다.",
-    "피벗 캡은 요크 다리 나사 하나(M2 × 10 접시머리)로 함께 고정합니다 — 끼워 맞춤 아님."
+    "피벗 캡은 똑바로 눌러 넣습니다(리브가 깎이며 들어감).",
+    "P1의 커넥터 A에서 나온 X3P를 척추 구멍(부싱)으로 올려 P2에 꽂습니다 — 서보에 딸려 온 180 mm로 닿습니다."
    ],
    "cover": false,
    "finale": false
   },
   {
-   "n": 11,
+   "n": 12,
    "title": "요크 2",
    "kicker": "몸통",
    "text": "두 번째 요크의 바닥판을 P2 위쪽 혼에 나사 4개로 고정합니다.",
@@ -708,7 +734,7 @@
    "finale": false
   },
   {
-   "n": 12,
+   "n": 13,
    "title": "몸통 위 서보 P3",
    "kicker": "몸통",
    "text": "P3를 요크에 내려 끼우고 다리 양쪽을 나사 3개씩, 피벗 캡 2개, P2 → P3 케이블.",
@@ -721,9 +747,7 @@
     "plug dxl_p2_p3 b",
     "cable:dxl_p2_p3",
     "pivot_cap_mid_yoke_p",
-    "pivot_cap_mid_yoke_n",
-    "screw pivot cap mid_yoke_n",
-    "screw pivot cap mid_yoke_p"
+    "pivot_cap_mid_yoke_n"
    ],
    "from": [
     0,
@@ -766,28 +790,18 @@
     {
      "kind": "screw",
      "label": "M2 × 6",
-     "qty": 4,
+     "qty": 6,
      "d": 2,
      "len": 6,
      "head": "socket"
-    },
-    {
-     "kind": "screw",
-     "label": "M2 × 10 접시머리 (피벗 캡)",
-     "qty": 2,
-     "d": 2,
-     "len": 10,
-     "head": "flat"
     }
    ],
-   "notes": [
-    "피벗 캡: 다리 나사 하나를 M2 × 10 접시머리로."
-   ],
+   "notes": [],
    "cover": false,
    "finale": false
   },
   {
-   "n": 13,
+   "n": 14,
    "title": "어깨판",
    "kicker": "몸통",
    "text": "어깨판을 P3 뒷면에 대고 프레임 구멍에 둥근머리 나사 2개. 클립에는 나중에 웹캠 · 디스플레이 케이블이 지나갑니다.",
@@ -824,7 +838,7 @@
    "finale": false
   },
   {
-   "n": 14,
+   "n": 15,
    "title": "목 요크 3",
    "kicker": "몸통",
    "text": "세 번째 요크를 거꾸로 해서 P3 위쪽(A축) 혼 · 아이들러에 나사 3개씩, 피벗 캡 2개.",
@@ -833,9 +847,7 @@
     "P3.horn_A",
     "P3.idler_A",
     "pivot_cap_neck_yoke_p",
-    "pivot_cap_neck_yoke_n",
-    "screw pivot cap neck_yoke_n",
-    "screw pivot cap neck_yoke_p"
+    "pivot_cap_neck_yoke_n"
    ],
    "from": [
     0,
@@ -866,28 +878,18 @@
     {
      "kind": "screw",
      "label": "M2 × 6",
-     "qty": 4,
+     "qty": 6,
      "d": 2,
      "len": 6,
      "head": "socket"
-    },
-    {
-     "kind": "screw",
-     "label": "M2 × 10 접시머리 (피벗 캡)",
-     "qty": 2,
-     "d": 2,
-     "len": 10,
-     "head": "flat"
     }
    ],
-   "notes": [
-    "피벗 캡: 다리 나사 하나를 M2 × 10 접시머리로."
-   ],
+   "notes": [],
    "cover": false,
    "finale": false
   },
   {
-   "n": 15,
+   "n": 16,
    "title": "머리 서보 P4",
    "kicker": "머리",
    "text": "P4의 B축 혼을 목 요크 바닥판에 나사 4개로 고정하고 P3 → P4 케이블을 꽂습니다.",
@@ -948,30 +950,17 @@
    "finale": false
   },
   {
-   "n": 16,
-   "title": "카메라 · 디스플레이 받침",
+   "n": 17,
+   "title": "카메라 받침",
    "kicker": "머리",
-   "text": "받침판의 기둥 4개 앞에 Waveshare 디스플레이를 대고, 받침판 뒤에서 M2 × 18 렌치볼트 4개를 넣어 모듈 뒷면의 황동 스터드에 조입니다(2 mm만 물리면 됨 — 세게 조이지 않기). 모듈 뒤 8핀 커넥터에 동봉 케이블을 꽂고 받침판 구멍으로 뺍니다. 카메라는 마운트판의 0.6 mm 홈에 넣고 M2 × 6 나사 + 와셔 2개로, 렌즈 둘레 폼 링을 올린 뒤 받침 양쪽 패드를 P4 혼 · 아이들러에 고정합니다.",
+   "text": "카메라를 받침 포켓에 밀어 넣고(렌즈 둘레 폼 링), 받침의 양쪽 패드를 P4 혼 · 아이들러에 나사로 고정합니다. 받침의 디스플레이 기둥 4개는 다음 단계의 프레임이 끼워지는 자리입니다(나사는 넣지 않음).",
    "add": [
     "camera_cradle",
     "webcam",
     "webcam pcb",
     "webcam conn",
     "webcam lens",
-    "lens_shield",
-    "camera_mount",
-    "screw camera mount down",
-    "screw camera mount up",
-    "screw display stud 3,24",
-    "screw display stud 3,3",
-    "screw display stud 48,24",
-    "screw display stud 48,3",
-    "display board",
-    "display lcd",
-    "display studs",
-    "display conn",
-    "display parts",
-    "plug display_mx125"
+    "lens_shield"
    ],
    "from": [
     0,
@@ -981,23 +970,14 @@
    "radial": {},
    "parts": [
     {
-     "label": "카메라 · 디스플레이 받침",
+     "label": "카메라 · 디스플레이 받침 (M11 출력 그대로)",
      "qty": 1,
      "items": [
       "camera_cradle"
      ]
     },
     {
-     "label": "Waveshare 1.9인치 LCD 모듈 (170 × 320, 뒷면 황동 스터드 4개)",
-     "qty": 1,
-     "items": [
-      "display board",
-      "display lcd",
-      "display studs"
-     ]
-    },
-    {
-     "label": "USB 초소형 카메라",
+     "label": "USB 초소형 카메라 (Adafruit 5733)",
      "qty": 1,
      "items": [
       "webcam",
@@ -1005,49 +985,12 @@
       "webcam conn",
       "webcam lens"
      ]
-    },
-    {
-     "label": "카메라 마운트판",
-     "qty": 1,
-     "items": [
-      "camera_mount"
-     ]
-    },
-    {
-     "label": "모듈 동봉 케이블 MX1.25 8핀 (20 cm, 암 점퍼)",
-     "qty": 1,
-     "items": [
-      "plug display_mx125"
-     ]
     }
    ],
    "hw": [
     {
-     "kind": "insert",
-     "label": "M2 × 3 인서트 (카메라 기둥 2 · 귀 패드 4)",
-     "qty": 6,
-     "d": 2,
-     "len": 3
-    },
-    {
      "kind": "screw",
-     "label": "M2 × 18 렌치볼트 (디스플레이, 뒤에서)",
-     "qty": 4,
-     "d": 2,
-     "len": 18,
-     "head": "socket"
-    },
-    {
-     "kind": "screw",
-     "label": "M2 × 6 팬헤드 + 와셔 (카메라)",
-     "qty": 2,
-     "d": 2,
-     "len": 6,
-     "head": "pan"
-    },
-    {
-     "kind": "screw",
-     "label": "M2 × 6 둥근머리 (패드 → P4)",
+     "label": "M2 둥근머리 (패드)",
      "qty": 8,
      "d": 2,
      "len": 6,
@@ -1060,106 +1003,88 @@
     }
    ],
    "notes": [
-    "납땜이 없습니다 — 디스플레이는 동봉 케이블을 커넥터에 꽂기만 하고, 케이블 끝의 암 점퍼에 수-암 점퍼 30 cm 8가닥을 이어 Pi까지 갑니다(이음부는 어깨판 클립에 둡니다).",
-    "카메라도 납땜이 없습니다 — 동봉 케이블을 1 mm 4핀 커넥터에 꽂습니다."
+    "카메라 케이블은 받침 오른쪽 구멍으로 빼지 않습니다 — 받침판 뒤 0.35 mm에 P4 앞면이 있어 막혀 있습니다. 왼쪽 디스플레이 창으로 뺍니다(배선 단계)."
    ],
-   "cover": false,
-   "finale": false
-  },
-  {
-   "n": 17,
-   "title": "얼굴 상자",
-   "kicker": "머리",
-   "text": "스모크 아크릴과 검은 마스크를 얼굴 상자 앞벽 안쪽에 놓고(테이프 없음), 상자를 받침에 뒤에서 M2 × 6 나사 4개로 고정합니다. 받침의 손가락 6개가 EVA 패드로 마스크와 아크릴을 눌러 고정합니다. 얼굴 테는 상자와 한 번에 출력됩니다(칠할 때 가려서 흰색으로).",
-   "add": [
-    "head_face",
-    "face_visor",
-    "face_mask",
-    "display_picture",
-    "status_light",
-    "visor pads",
-    "screw face box +36,20",
-    "screw face box +36,47",
-    "screw face box -36,20",
-    "screw face box -36,47"
-   ],
-   "from": [
-    0,
-    -60,
-    0
-   ],
-   "radial": {},
-   "parts": [
-    {
-     "label": "얼굴 상자 (테 일체)",
-     "qty": 1,
-     "items": [
-      "head_face"
-     ]
-    },
-    {
-     "label": "스모크 아크릴 76 × 57",
-     "qty": 1,
-     "items": [
-      "face_visor"
-     ]
-    },
-    {
-     "label": "PVC 마스크 0.2 mm",
-     "qty": 1,
-     "items": [
-      "face_mask"
-     ]
-    },
-    {
-     "label": "EVA 패드 Ø3 × 0.8",
-     "qty": 6,
-     "items": [
-      "visor pads"
-     ]
-    }
-   ],
-   "hw": [
-    {
-     "kind": "insert",
-     "label": "M2 × 3 인서트 (얼굴 상자 보스)",
-     "qty": 4,
-     "d": 2,
-     "len": 3
-    },
-    {
-     "kind": "screw",
-     "label": "M2 × 6 둥근머리 (받침 → 얼굴 상자)",
-     "qty": 4,
-     "d": 2,
-     "len": 6,
-     "head": "button"
-    },
-    {
-     "kind": "misc",
-     "label": "EVA 폼 테이프 1 mm",
-     "qty": 1
-    }
-   ],
-   "notes": [],
    "cover": false,
    "finale": false
   },
   {
    "n": 18,
+   "title": "디스플레이 + 프레임",
+   "kicker": "머리",
+   "text": "책상 위에서: 모듈을 화면이 아래로 가게 놓고 프레임을 뒷면 황동 스터드 4개에 끼운 뒤, M2 × 3 렌치볼트 4개를 '살짝'만 조입니다. 프레임 창 안의 8핀 커넥터에 동봉 케이블을 꽂습니다. 그다음 프레임을 받침 기둥 4개에 앞에서 밀어 끼우고(아래 반원 홈은 아래 기둥 위에, 위 반원 홈은 위 기둥 아래에), 케이블을 받침 왼쪽 창(9 × 11 mm)으로 뒤로 뺍니다.",
+   "add": [
+    "display board",
+    "display lcd",
+    "display studs",
+    "display conn",
+    "display parts",
+    "display_frame",
+    "screw display stud 3,24",
+    "screw display stud 3,3",
+    "screw display stud 48,24",
+    "screw display stud 48,3",
+    "plug display_mx125"
+   ],
+   "from": [
+    0,
+    -55,
+    0
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "Waveshare 1.9인치 LCD 모듈 (170 × 320, 뒷면 황동 스터드 4개)",
+     "qty": 1,
+     "items": [
+      "display board",
+      "display lcd",
+      "display studs"
+     ]
+    },
+    {
+     "label": "디스플레이 프레임 (새로 출력, PLA)",
+     "qty": 1,
+     "items": [
+      "display_frame"
+     ]
+    },
+    {
+     "label": "모듈 동봉 케이블 MX1.25 8핀 (20 cm, 암 점퍼)",
+     "qty": 1,
+     "items": [
+      "plug display_mx125"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2 × 3 렌치볼트 (스터드)",
+     "qty": 4,
+     "d": 2,
+     "len": 3,
+     "head": "socket"
+    }
+   ],
+   "notes": [
+    "세게 조이지 않습니다: 나사 머리 밑 프레임 바닥은 1.1 mm입니다(황동 스터드에 1.9 mm 물림).",
+    "반원 홈 끝이 받침판에 닿으면 깊이가 맞습니다. 앞은 얼굴 상자의 마스크가 막습니다(0.2 mm).",
+    "M11 받침의 기둥 구멍(셀프태핑용)은 쓰지 않습니다. 받침은 다시 출력하지 않습니다."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 19,
    "title": "머리 윗판 · 안테나 · 귀",
    "kicker": "머리",
-   "text": "윗판 아래 보스에 M3 × 4 인서트를 넣고, 안테나 막대(M3 × 40 수-암 스탠드오프)를 얇은 너트와 함께 돌려 넣습니다. 막대 위에 무두볼트 M3 × 10과 얇은 너트를 끼우고, 배지(HGU · SIRLab)나 잎을 돌려 끼운 뒤 앞을 보게 너트로 잠급니다. 윗판을 P4 위에 나사 2개로 고정하고, 귀는 M2 × 5 접시머리 2개씩으로 패드에 고정합니다.",
+   "text": "윗판의 혀를 받침 홈에 끼우고 기둥 2개를 P4 위에 나사로 고정합니다. 안테나 막대를 윗판 구멍에, 잎을 막대 끝에 붙이고, 귀를 양쪽 허브 구멍에 끼웁니다.",
    "add": [
     "head_strap",
     "antenna_rods",
     "antenna_tips",
-    "head_ears",
-    "antenna hardware",
-    "screw ear L 225",
-    "screw ear L 45",
-    "screw ear R 225",
-    "screw ear R 45"
+    "head_ears"
    ],
    "from": [
     0,
@@ -1178,14 +1103,14 @@
      ]
     },
     {
-     "label": "안테나 막대 (M3 × 40 스탠드오프)",
+     "label": "안테나 막대",
      "qty": 2,
      "items": [
       "antenna_rods"
      ]
     },
     {
-     "label": "안테나 끝 (HGU · SIRLab 배지)",
+     "label": "안테나 잎",
      "qty": 2,
      "items": [
       "antenna_tips"
@@ -1201,56 +1126,29 @@
    ],
    "hw": [
     {
-     "kind": "insert",
-     "label": "M3 × 4 인서트 (윗판 2 · 배지 2)",
-     "qty": 4,
-     "d": 3,
-     "len": 4
-    },
-    {
      "kind": "screw",
-     "label": "M3 × 10 무두볼트",
-     "qty": 2,
-     "d": 3,
-     "len": 10,
-     "head": "set"
-    },
-    {
-     "kind": "misc",
-     "label": "M3 얇은 너트 4",
-     "qty": 4
-    },
-    {
-     "kind": "screw",
-     "label": "M2.5 × 6 (윗판 기둥)",
+     "label": "M2.5 × 6",
      "qty": 2,
      "d": 2.5,
      "len": 6,
      "head": "socket"
     },
     {
-     "kind": "screw",
-     "label": "M2 × 5 접시머리 (귀)",
-     "qty": 4,
-     "d": 2,
-     "len": 5,
-     "head": "flat"
+     "kind": "misc",
+     "label": "순간접착제 (막대 · 잎)",
+     "qty": 1
     }
    ],
-   "notes": [
-    "HGU와 SIRLab 배지는 같은 32 × 14 둥근 판입니다. 돌려서 바꿔 끼웁니다(잎 · HGU · SIRLab 여분 출력)."
-   ],
+   "notes": [],
    "cover": false,
    "finale": false
   },
   {
-   "n": 19,
-   "title": "머리 배선 · 완성",
-   "kicker": "완성",
-   "text": "웹캠 케이블(카메라 쪽 작은 커넥터를 위로)과 디스플레이 점퍼 묶음을 베이스에서 척추 구멍 → 턴테이블 → 어깨판 클립으로 올립니다. 웹캠의 USB-A는 업앵글 어댑터에, 디스플레이 점퍼는 Pi 핀에 하나씩 꽂습니다: VCC 17번(3.3 V), GND 20번, DIN 19번, CLK 23번, CS 24번, DC 22번(GPIO25), RST 18번(GPIO24); BL은 이미 12번(GPIO18)에 꽂혀 있는 점퍼에. 완성!",
+   "n": 20,
+   "title": "머리 배선",
+   "kicker": "머리",
+   "text": "베이스에서 올라온 끝을 머리에 잇습니다. 카메라: 작은 커넥터를 머리 왼쪽(받침 팔과 P4 사이 3.4 mm 틈)으로 올려 받침 왼쪽 창으로 얼굴 안에 넣고, 카메라 홀더 위를 지나 카메라 오른쪽 끝 커넥터에 꽂습니다. 디스플레이: 점퍼 8개의 수 끝을 모듈 케이블의 암 끝에 표대로 잇고, 이음부를 왼쪽 어깨 클립 옆에 케이블 타이로 묶습니다. 모듈 케이블의 남는 약 5 cm는 얼굴 안 프레임 뒤에 접어 둡니다.",
    "add": [
-    "plug webcam_usb_in_adapter",
-    "plug pi_gpio_17_24_display",
     "cable:usb_webcam",
     "cable:uart_display"
    ],
@@ -1262,18 +1160,16 @@
    "radial": {},
    "parts": [
     {
-     "label": "웹캠 케이블 (Adafruit 5733 동봉)",
+     "label": "카메라 동봉 케이블 (작은 4핀 쪽)",
      "qty": 1,
      "items": [
-      "plug webcam_usb_in_adapter",
       "cable:usb_webcam"
      ]
     },
     {
-     "label": "디스플레이 점퍼 7가닥 (17–24번)",
+     "label": "모듈 케이블 20 cm + 수-암 점퍼 8개 30 cm",
      "qty": 1,
      "items": [
-      "plug pi_gpio_17_24_display",
       "cable:uart_display"
      ]
     }
@@ -1281,14 +1177,88 @@
    "hw": [
     {
      "kind": "misc",
-     "label": "수-암 점퍼 30 cm",
-     "qty": 7
+     "label": "케이블 타이 2.5 mm (어깨 클립 옆)",
+     "qty": 2
+    },
+    {
+     "kind": "misc",
+     "label": "전기 테이프 또는 열수축 (점퍼 이음부)",
+     "qty": 1
     }
    ],
    "notes": [
-    "12번 핀(백라이트) 점퍼는 Pi 단계에서 이미 꽂혀 있습니다 — 그 수 끝을 디스플레이 케이블의 BL 암 점퍼에 꽂습니다.",
-    "웹캠 케이블 길이(약 45 cm 필요)와 USB-A 플러그 길이(부트 포함 33 mm 이하)는 실물로 재 주세요.",
-    "USB-A 플러그는 13 mm 척추 구멍을 지나지 못합니다 — 카메라 쪽 작은 커넥터를 먼저 위로 통과시킵니다.",
+    "점퍼 연결표 (모듈 케이블 → Pi 핀): VCC → 17 (3.3 V), GND → 20, DIN → 19 (MOSI), CLK → 23 (SCLK), CS → 24 (CE0), DC → 22 (GPIO25), RST → 18 (GPIO24), BL → 12 (GPIO18). 21번은 비웁니다.",
+    "어깨판 클립의 홈에는 어깨판 나사(M2.5) 머리가 들어 있어 케이블이 지나가지 못합니다 — 케이블은 클립 바깥에 케이블 타이로 묶습니다.",
+    "이음부(점퍼 8쌍)는 P3에 붙은 어깨판에 묶여 관절과 함께 휘지 않습니다. 점퍼의 남는 약 4 cm는 베이스 2층에서 묶습니다."
+   ],
+   "cover": false,
+   "finale": false
+  },
+  {
+   "n": 21,
+   "title": "얼굴 상자 · 완성",
+   "kicker": "완성",
+   "text": "스모크 아크릴과 검은 마스크를 얼굴 상자 안쪽에 테이프로 붙이고, 상자를 받침의 보스 4개에 나사로 고정한 뒤 얼굴 테를 붙입니다. 완성!",
+   "add": [
+    "head_face",
+    "face_visor",
+    "face_mask",
+    "head_ring",
+    "display_picture",
+    "status_light"
+   ],
+   "from": [
+    0,
+    -60,
+    0
+   ],
+   "radial": {},
+   "parts": [
+    {
+     "label": "얼굴 상자",
+     "qty": 1,
+     "items": [
+      "head_face"
+     ]
+    },
+    {
+     "label": "얼굴 테 (칠 안 함)",
+     "qty": 1,
+     "items": [
+      "head_ring"
+     ]
+    },
+    {
+     "label": "스모크 아크릴 76 × 57",
+     "qty": 1,
+     "items": [
+      "face_visor"
+     ]
+    },
+    {
+     "label": "PVC 마스크 0.2 mm",
+     "qty": 1,
+     "items": [
+      "face_mask"
+     ]
+    }
+   ],
+   "hw": [
+    {
+     "kind": "screw",
+     "label": "M2 나사 (얼굴 상자 보스)",
+     "qty": 4,
+     "d": 2,
+     "len": 8,
+     "head": "pan"
+    },
+    {
+     "kind": "misc",
+     "label": "양면테이프 · 순간접착제",
+     "qty": 1
+    }
+   ],
+   "notes": [
     "처음 켤 때: 배터리 전압(12.6 V 이하)과 서보 ID 지도를 확인하고, 관절을 손으로 소프트 리밋 안에 둔 뒤 켭니다.",
     "이 설명서는 CAD에서 만든 순서입니다 — 실물로 조립해 본 적은 아직 없습니다."
    ],

@@ -1,0 +1,37 @@
+{
+ "pack": "03_Print/mech_M11_face_20261030",
+ "all_pass": true,
+ "note": "settings read from the text inside each .hfb that Cubicreator4 wrote; the file format itself is Cubicon's and is not checked beyond its header tags",
+ "plates": [
+  {
+   "plate": "F1_display_frame",
+   "file": "hfb/M11F_F1_display_frame.hfb",
+   "bytes": 4539545,
+   "sha256": "818d1e3d85af60b65f6124f13d7e9e940ff1b54564f94fee78881fb4b1c8accf",
+   "header_tags": [
+    "HFE.02.02.00",
+    "HFH.04.02.00"
+   ],
+   "written_by": "Cubicreator4 v4.5.4",
+   "settings": {
+    "layer_height": "0.12",
+    "wall_line_count": "4",
+    "infill_sparse_density": "100",
+    "support_enable": "False",
+    "adhesion_type": "skirt",
+    "material_print_temperature": "210",
+    "material_bed_temperature": "65",
+    "machine_name": "Cubicon Single+"
+   },
+   "wanted": {
+    "layer_height": 0.12,
+    "wall_line_count": 4,
+    "infill_sparse_density": 100.0,
+    "support_enable": false,
+    "adhesion_type": "skirt"
+   },
+   "diffs": [],
+   "result": "PASS"
+  }
+ ]
+}

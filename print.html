@@ -163,6 +163,11 @@
 #printSide ul.plist-dl { padding-left: 16px; font-size: 12px; }
 #printSide .ok { color: #57c785; }
 
+/* 2026-10-30: M11 (being printed) + its one new part, at the top of the print tab */
+#printSide .m11box { border: 2px solid #57c785; border-radius: 10px; padding: 8px 10px; margin: 8px 0 12px; background: rgba(87,199,133,.08); }
+#printSide .m11box .kick { margin: 0 0 4px; font-weight: 700; color: #57c785; letter-spacing: .02em; }
+#printSide .m11box p { margin: 6px 0; }
+
 </style>
 <script type="importmap">
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/" } }
@@ -172,8 +177,9 @@
 <div class="nfy-topbar"><a class="nfy-brand" href="index.html">Notifyi</a><nav class="tabs"><a class="tab" href="index.html">3D 모델</a><a class="tab on" href="print.html">출력 도면</a><a class="tab" href="assembly.html">조립 설명서</a><a class="tab" href="research.html">연구 · 논문</a><button type="button" class="tab info" data-open="infoOverlay">기준 부품 · 전원 안내</button></nav><div class="nfy-right"></div></div>
 <div id="printPage">
   <aside class="panel" id="printSide">
-    <h1>M13 · Cubicon 출력 (.hfb)</h1>
-    <p class="note">학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)는 <b>Cubicreator로 슬라이스한 .hfb</b>만 출력합니다. 아래 9판의 .hfb는 Cubicreator4(장비 3DP-310F · PLA)로 저장한 파일입니다 — <b>USB 메모리(FAT32)에 넣고 프린터에서 고르면 바로 출력</b>됩니다(영문 파일명만 보임). <b>흰 PLA</b>로 뽑은 뒤 RC3 색으로 칠합니다. 판을 누르면 그 판이 베드 위에 놓인 그대로 보입니다(색 = 칠할 색).</p>
+    <h1>Cubicon 출력 (.hfb)</h1>
+    <div class="m11box"><p class="kick">지금 출력 중: M11</p><p>메인 3D와 조립 설명서는 <b>M11</b> 기준입니다. 이미 뽑은 M11 부품은 그대로 씁니다(다시 만든 부품을 비교해 모두 같음). <b>새로 뽑을 부품은 디스플레이 프레임 1개</b>뿐입니다 — 납땜 없는 Waveshare 1.9인치 모듈을 M11 받침 기둥에 끼우는 부품.</p><p class="btns"><a class="btn main" href="assets/mech_M11_face/print/hfb/M11F_F1_display_frame.hfb" download>디스플레이 프레임 .hfb</a> <a class="btn" href="assets/mech_M11_face/print/cubicon_plates/F1_display_frame.stl" download>STL</a> <a class="btn" href="assets/mech_M11_face/print/cubicon_plates/F1_display_frame.3mf" download>3MF</a> <a class="btn" href="assets/mech_M11_face/print/step/display_frame.step" download>STEP</a></p><p class="sub">Cubicreator 1:17 · 6 g · 레이어 0.12 mm · 벽 4줄 · 채움 100 % · 지지대 끔 · 스커트 · 앞면(모듈이 닿는 면)을 베드에. 나사 M2 × 3 렌치볼트 4개(살짝만 조이기).</p><p class="btns"><a class="btn" href="assets/mech_M11_face/print/mech_M11_wiring_stl_all.zip" download>M11 부품 STL 전체 (zip, 21종)</a></p><p class="sub">아래 9판(.hfb)은 M13용입니다 — 받침 · 얼굴 상자 등 M11과 다른 부품이 있으니 M11 부품과 섞지 마세요.</p></div>
+    <p class="note">학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)는 <b>Cubicreator로 슬라이스한 .hfb</b>만 출력합니다. 아래 9판은 <b>M13</b>용이고, 그 .hfb는 Cubicreator4(장비 3DP-310F · PLA)로 저장한 파일입니다 — <b>USB 메모리(FAT32)에 넣고 프린터에서 고르면 바로 출력</b>됩니다(영문 파일명만 보임). <b>흰 PLA</b>로 뽑은 뒤 RC3 색으로 칠합니다. 판을 누르면 그 판이 베드 위에 놓인 그대로 보입니다(색 = 칠할 색).</p>
     <p class="sub" id="summary">불러오는 중…</p>
     <ul id="plates"></ul>
     <h2 id="pname">–</h2>
@@ -250,6 +256,15 @@
 <div id="infoOverlay" class="overlay" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
     <div class="sheet-hd"><h2 id="infoTitle">기준 부품 · 전원 안내</h2><button type="button" class="close" data-close="infoOverlay" aria-label="닫기">✕</button></div>
+    <h3>M11 + 납땜 없는 얼굴 (2026-10-30) — 지금 출력 중인 M11 부품 그대로</h3>
+    <ul>
+      <li><b>출력한 M11 부품은 그대로</b>: 이 리비전(mech_M11_face)으로 다시 만든 부품을 M11과 비교했더니 모두 같습니다(받침은 파일까지 같음). <b>새로 뽑을 부품은 디스플레이 프레임 1개</b>(5.9 g, Cubicreator 1시간 17분, 지지대 없음) — 출력 도면 탭 맨 위에 .hfb가 있습니다.</li>
+      <li><b>디스플레이</b>: Adafruit 5394는 1 × 11 핀을 납땜해야 하고, 납땜 없는 EYESPI 플렉스 케이블은 50 / 100 / 200 mm(판매처에 따라 250 mm)뿐이라 관절 4개를 지나는 37–41 cm에 못 미칩니다. 그래서 <b>Waveshare 1.9인치 모듈</b>(같은 170 × 320 IPS): 뒷면 황동 스터드 4개에 프레임을 <b>M2 × 3</b>으로 조이고, 프레임을 M11 받침의 기둥 4개에 밀어 끼웁니다.</li>
+      <li><b>디스플레이 케이블</b>: 동봉 20 cm(필요 15.3 cm, 왼쪽 어깨 클립 옆 이음부까지) + 수-암 점퍼 30 cm 8개(필요 26.1 cm). 핀: VCC 17, GND 20, DIN 19, CLK 23, CS 24, DC 22, RST 18, BL 12.</li>
+      <li><b>카메라 케이블 길이</b>: Adafruit는 동봉 케이블 길이를 공개하지 않습니다. 제품 사진(USB-A 12 mm · 기판 25 mm로 축척)으로 잰 값은 <b>약 43 cm(40–46)</b>. M11에서는 <b>44–52 cm</b>가 필요합니다(관절 전체 범위, CAD 추정) → <b>먼저 재 보세요</b>. 52 cm 이상이면 그대로, 44–52 cm이면 USB 연장 20 cm를 베이스 2층에 추가, 그보다 짧으면 더 긴 케이블이 필요합니다.</li>
+      <li><b>M11에서 찾은 문제 (출력 부품은 그대로 두고 배선으로 해결)</b>: 받침의 카메라 케이블 구멍 뒤 0.35 mm에 P4 앞면이 있어 케이블이 나가지 못합니다 → 카메라 케이블도 <b>왼쪽 디스플레이 창</b>으로 뺍니다. 어깨판 클립 홈은 어깨판 나사 머리로 차 있습니다 → 케이블은 클립 <b>옆에 케이블 타이</b>로 묶습니다.</li>
+      <li>CAD 검사: 간섭 없음, 프레임 나사 4/4(1.9 mm 물림), 3,502자세 충돌 0, 최대 토크 0.196 N·m(70 %), 넘어짐 여유 39.7 / 29.2 mm, 1,033 g. 카메라 · 디스플레이 케이블 중심선은 부품과 겹치지 않음(M11은 최대 11.5 mm 관통). <b>아직 FAIL</b>: 남는 길이를 휘게 그린 케이블이 최대 1.5 mm 겹침 — 실물에서는 묶는 위치로 정리. 실물 조립 · 배선은 아직 안 해 봤습니다.</li>
+    </ul>
     <h3>M13 (2026-10-29) — 납땜 없이 연결, 같은 모양 배지, 실물처럼 그린 부품</h3>
     <ul>
       <li><b>납땜 없음</b>: 디스플레이를 <b>Waveshare 1.9인치 LCD 모듈</b>(170 × 320 IPS, ST7789V2)로 바꿨습니다. 뒷면 8핀 커넥터에 동봉 케이블(20 cm, 끝은 암 점퍼)을 꽂고, 수-암 점퍼 30 cm로 이어 Pi 핀에 꽂습니다 — VCC 17번, GND 20번, DIN 19번, CLK 23번, CS 24번, DC 22번, RST 18번, BL 12번. 5 V · 배터리 리드도 미리 압착 · 납땜된 리드와 레버식 커넥터(WAGO 221)로 잇습니다.</li>
@@ -334,6 +349,6 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
 </script>
-<script type="module" src="./src/print.js?v=m13-hfb-20261029"></script>
+<script type="module" src="./src/print.js?v=m11face-20261030"></script>
 </body>
 </html>
