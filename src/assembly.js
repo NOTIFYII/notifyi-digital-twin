@@ -216,7 +216,7 @@ function totals() {                                     // every screw / insert 
 }
 function renderSide(st, k) {
   $('#snum').textContent = st.cover ? '★' : k;
-  $('#skick').textContent = st.cover ? 'Notifyi M11 · 조립 설명서' : `${st.kicker} · ${k} / ${STEPS.length - 1}단계`;
+  $('#skick').textContent = st.cover ? 'Notifyi M11b · 조립 설명서' : `${st.kicker} · ${k} / ${STEPS.length - 1}단계`;
   $('#stitle').textContent = st.title;
   $('#stext').textContent = st.text;
   const parts = st.cover ? [] : st.parts;

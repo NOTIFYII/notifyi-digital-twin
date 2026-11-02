@@ -177,7 +177,7 @@
 <div class="nfy-topbar"><a class="nfy-brand" href="index.html">Notifyi</a><nav class="tabs"><a class="tab" href="index.html">3D 모델</a><a class="tab on" href="print.html">출력 도면</a><a class="tab" href="assembly.html">조립 설명서</a><a class="tab" href="research.html">연구 · 논문</a><button type="button" class="tab info" data-open="infoOverlay">기준 부품 · 전원 안내</button></nav><div class="nfy-right"></div></div>
 <div id="printPage">
   <aside class="panel" id="printSide">
-    <h1>M11 · Cubicon 출력 (.hfb)</h1>
+    <h1>M11b · Cubicon 출력 (.hfb)</h1>
     <p class="note">학교 <b>Cubicon Single Plus</b>(베드 240 × 190 × 200 mm)는 <b>Cubicreator로 슬라이스한 .hfb</b>만 출력합니다. 아래 9판의 .hfb는 Cubicreator4(장비 3DP-310F · PLA)로 저장한 파일입니다 — <b>USB 메모리(FAT32)에 넣고 프린터에서 고르면 바로 출력</b>됩니다(영문 파일명만 보임). <b>흰 PLA</b>로 뽑은 뒤 RC3 색으로 칠합니다. 판을 누르면 그 판이 베드 위에 놓인 그대로 보입니다(색 = 칠할 색).</p>
     <p class="sub" id="summary">불러오는 중…</p>
     <ul id="plates"></ul>
@@ -187,7 +187,7 @@
     <div class="facts" id="facts"></div>
     <h3>이 판에 들어간 조각</h3>
     <ul id="pieces" class="pieces"></ul>
-    <p class="note"><b>M11 (지금 출력 중)</b>: M11 부품 29조각 + <b>새 디스플레이 프레임 1개</b>(P9 판). 이미 뽑은 M11 부품은 그대로 씁니다 — 이 리비전으로 다시 만든 부품이 M11과 같습니다. 디스플레이는 납땜 없는 Waveshare 1.9인치 모듈: 뒷면 황동 스터드에 프레임을 M2 × 3 렌치볼트 4개로 조이고, 프레임째 받침의 디스플레이 기둥 4개에 밀어 끼웁니다(동봉 케이블 + 수-암 점퍼로 Pi에).</p>
+    <p class="note"><b>M11b (2026-11-02)</b>: 조립하다 찾은 문제를 고쳤습니다. <b>① P3 서보 데크</b> 가장자리에 홈 5개 — 외피 안쪽 보스에 걸리지 않습니다. <b>② 나사 구멍을 나사 규격에 맞춤</b> — 인서트 없이 M3 · M2 나사가 직접 물립니다(M3 Ø 2.7, M2 Ø 1.7). <b>다시 뽑을 판: P1 · P2 · P3 · P4</b>. P5–P9는 M11과 같은 파일이라 이미 뽑았으면 그대로 씁니다. 디스플레이 프레임은 P9, 디스플레이는 납땜 없는 Waveshare 1.9인치 모듈입니다.</p>
     <details>
       <summary>부품별 STL (다른 슬라이서 · 수정용)</summary>
       <p class="btns"><a id="zip" class="btn" href="#">전체 STL (zip)</a> <a class="btn" id="tablejson" href="#" target="_blank" rel="noopener">판 표 JSON</a></p>
@@ -221,7 +221,7 @@
       <ul>
         <li><b>지지대는 형상으로 없앰</b> — 오버행 45° 이내(보강 · 코벨 · 모따기), 긴 가로 슬롯 대신 세로 슬롯, 브리지 25 mm 이하. 꼭 필요하면 부품보다 약한 목을 가진 보조물로.</li>
         <li><b>휘는 부품 없음</b> — 스냅핏 · 걸쇠 · TPU 부품을 나사 · 돌리는 버튼 · 단단한 부싱으로 바꿈 (PLA는 휘면 부러짐).</li>
-        <li><b>나사는 황동 인서트</b>(M3 · M2.5, 인두로 압입) — PLA에 직접 나사를 반복해서 감으면 나사산이 뭉개짐. 인서트 둘레 벽 1.2 mm 이상.</li>
+        <li><b>나사 구멍은 나사 규격대로</b> — 나사가 물리는 구멍: M3 Ø 2.7, M2 Ø 1.7(인서트 없음, 나사가 직접 나사산을 냄). 나사가 지나가는 구멍: M2 Ø 2.4, M2.5 Ø 2.8, M3 Ø 3.4(머리 받침 포함). 머리가 닿으면 멈추세요 — 세게 조이면 PLA 나사산이 뭉개집니다.</li>
         <li><b>압입은 크러시 리브로</b> — 0.15 mm 리브가 깎이며 들어가 링이 쪼개지지 않음 (피벗 캡).</li>
         <li><b>층 방향</b> — 하중이 큰 곳은 층을 따라가게(안테나 막대는 눕혀서, 카메라 받침 팔은 층 방향), 층을 가로지르는 곳은 응력을 계산해 확인(요크 다리).</li>
         <li><b>열</b> — PLA는 55–60 °C에서 물러짐. 서보 · Pi 주변은 큰 힘을 받지 않게 했고 통풍구를 둠. 차 안 · 직사광선 보관 금지. 30분 연속 동작 후 온도 확인은 <b>아직 안 함</b>.</li>
@@ -232,8 +232,8 @@
       <ul>
         <li><b>색</b>: 크림 — 베이스 외피 · 배터리 문 · 얼굴 상자 · 머리 윗판 · 카메라 받침 · 요크 · 어깨판 / 다크 그레이 — 바닥 트레이 · 서보 데크 · Pi 레일 · 피벗 캡 · 안테나 막대 · 문 버튼 / 올리브 — 안테나 잎 · 귀 · 턴테이블 링 · 케이블 부싱 / 검정 — 앞 패널.</li>
         <li><b>칠하지 않음</b>: 얼굴 테 · 라이트 띠 · 디스플레이 프레임(디스플레이 뒤라 보이지 않음) — 흰 PLA가 빛을 퍼뜨립니다(밝기는 실물에서 확인).</li>
-        <li><b>순서</b>: 지지대 · 보조물 떼기 → 400방 사포 → <b>인서트를 먼저 압입</b>(인두 열에 도막이 녹으므로) → 플라스틱용 프라이머 → 아크릴 스프레이를 얇게 2–3번 → 무광 클리어.</li>
-        <li><b>칠하지 말고 가릴 곳</b>(도막 0.05–0.1 mm만큼 빡빡해짐): 인서트 · 나사 구멍, 요크 허브 구멍과 피벗 캡 축 · 크러시 리브, 배터리 슬레드가 미끄러지는 면과 문 테두리, 안테나 소켓 · 막대 끝, 어깨판이 서보에 닿는 면, 외피와 바닥 트레이가 맞닿는 테두리.</li>
+        <li><b>순서</b>: 지지대 · 보조물 떼기 → 400방 사포 → 플라스틱용 프라이머 → 아크릴 스프레이를 얇게 2–3번 → 무광 클리어.</li>
+        <li><b>칠하지 말고 가릴 곳</b>(도막 0.05–0.1 mm만큼 빡빡해짐): 나사 구멍, 요크 허브 구멍과 피벗 캡 축 · 크러시 리브, 배터리 슬레드가 미끄러지는 면과 문 테두리, 안테나 소켓 · 막대 끝, 어깨판이 서보에 닿는 면, 외피와 바닥 트레이가 맞닿는 테두리.</li>
         <li>안쪽 부품(서보 데크 · Pi 레일)은 보이지 않으니 칠하지 않아도 됩니다. 12V · POWER · SD 각인은 두껍게 칠하면 메워지니, 칠한 뒤 검은 먹선으로 채우면 잘 보입니다.</li>
       </ul>
     </details>
@@ -245,7 +245,7 @@
         <li>카메라 케이블은 받침 오른쪽 구멍이 아니라 <b>왼쪽 디스플레이 창</b>으로 뺍니다(오른쪽 구멍 뒤 0.35 mm에 P4가 있음). 어깨판 클립 홈에는 나사 머리가 있어 케이블은 클립 <b>옆에 케이블 타이</b>로.</li>
       </ul>
     </details>
-    <p class="sub">판마다의 예상 시간 · 무게는 Cubicreator4가 슬라이스한 뒤 보여 준 값입니다(9판 합계 약 39.3시간 · 385 g). 부품별 값은 PrusaSlicer 해석값(참고용)입니다. 미리보기 색은 칠한 뒤의 RC3 색입니다. 실물 출력 · 칠 · 조립 · 결선 · 발열은 <b>검증 전</b>입니다.</p>
+    <p class="sub">판마다의 예상 시간 · 무게는 Cubicreator4가 슬라이스한 뒤 보여 준 값입니다(9판 합계 약 39.4시간 · 385 g). 부품별 값은 PrusaSlicer 해석값(참고용)입니다. 미리보기 색은 칠한 뒤의 RC3 색입니다. 실물 출력 · 칠 · 조립 · 결선 · 발열은 <b>검증 전</b>입니다.</p>
     <p class="sub">드래그: 회전 · 휠: 확대 · 우클릭: 이동 · 흰 사각형 = Cubicon 베드 240 × 190 mm</p>
   </aside>
   <div id="view"><div id="status" role="status">STL을 불러오는 중…</div></div>
@@ -254,6 +254,13 @@
 <div id="infoOverlay" class="overlay" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
     <div class="sheet-hd"><h2 id="infoTitle">기준 부품 · 전원 안내</h2><button type="button" class="close" data-close="infoOverlay" aria-label="닫기">✕</button></div>
+    <h3>M11b (2026-11-02) — P3가 외피에 걸리는 문제, 나사 구멍 규격</h3>
+    <ul>
+      <li><b>P3 서보 데크</b>: 외피 안쪽 나사 보스 4개가 벽에서 4.6 mm, 문 버튼 보스가 6 mm 튀어나와 있었는데 데크는 벽에서 0.5 mm만 떨어져 있어 서로 지나갈 수 없었습니다. 데크 가장자리에 홈 5개(보스에서 0.6 mm 여유)를 냈습니다. 외피를 내리는 시뮬레이션으로 확인했습니다.</li>
+      <li><b>나사 구멍</b>: 예전 Ø 4.0 구멍은 인서트 없이는 M3가 그냥 빠지고, 얼굴 상자의 Ø 1.9는 M2에 거의 물리지 않았습니다. 이제 인서트 없이 나사가 직접 물립니다: <b>M3 Ø 2.7</b>(OpenCR 받침 4 · 기둥 6 · 외피 보스 4 · 문 버튼 1), <b>M2 Ø 1.7</b>(얼굴 상자 보스 4). 머리가 닿으면 멈추세요.</li>
+      <li><b>다시 뽑을 판</b>: P1 외피 · P2 바닥 트레이 · P3 서보 데크 · P4 얼굴 상자. P5–P9는 그대로. 실물 끼워 맞춤은 아직 확인 전이니 <b>P3 먼저</b> 뽑아 보세요.</li>
+      <li><b>아직 남은 문제</b>: 지지대가 막는 작은 구멍, 조립 순서(배터리 · microSD · 5 V 리드 등)는 하나씩 고치는 중입니다.</li>
+    </ul>
     <h3>M11 + 납땜 없는 얼굴 (2026-10-30) — 지금 출력 중인 M11 부품 그대로</h3>
     <ul>
       <li><b>출력한 M11 부품은 그대로</b>: 이 리비전(mech_M11_face)으로 다시 만든 부품을 M11과 비교했더니 모두 같습니다(받침은 파일까지 같음). <b>새로 뽑을 부품은 디스플레이 프레임 1개</b>(5.9 g, Cubicreator 1시간 17분, 지지대 없음) — 출력 도면 탭 P9 판(.hfb)에 들어 있습니다.</li>
@@ -330,6 +337,6 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
 </script>
-<script type="module" src="./src/print.js?v=m11plates-20261030"></script>
+<script type="module" src="./src/print.js?v=m11b-20261102"></script>
 </body>
 </html>

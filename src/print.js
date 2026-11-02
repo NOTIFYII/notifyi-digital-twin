@@ -3,13 +3,13 @@
 // Single Plus plates whose .hfb files Cubicreator4 saved (the only files the printer prints). Each plate: its .hfb to download, the
 // settings read back from inside that file (hfb_check.json), Cubicreator's own time / weight, the pieces laid out on the 240 x 190
 // bed exactly as in the file (one STL per piece, in its paint colour), and per piece how it is oriented, what to take off and what
-// changed. The per-part STLs stay available below. Data: assets/mech_M11_face/print/{cubicon_plates/plates.json,
+// changed. The per-part STLs stay available below. Data: assets/mech_M11b_fit/print/{cubicon_plates/plates.json,
 // hfb/hfb_check.json, print_table.json, print_physics.json} (old part-by-part page: print_m12_20261029.js).
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
-const REV = 'mech_M11_face', ROOT = `assets/${REV}/print`;
+const REV = 'mech_M11b_fit', ROOT = `assets/${REV}/print`;
 const BED = [240, 190];
 // every part is printed in white PLA and painted afterwards in RC3's colours (owner, 2026-10-27); 'unpainted' parts stay white
 const HEX = { cream: 0xdcd2b4, dark: 0x4a5050, olive: 0x6f8452, black: 0x161616, unpainted: 0xf4f4f0 };
