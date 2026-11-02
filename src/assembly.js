@@ -1,4 +1,4 @@
-// 조립 설명서 (assembly guide), LEGO-book style, on the site's newest CAD assembly (mech_M11_face since 2026-10-30: the M11 parts as printed + the solderless face) (the same meshes and joint frames as the 3D
+// 조립 설명서 (assembly guide), LEGO-book style, on the site's newest CAD assembly (mech_M11d_wired since 2026-11-02: M11c's parts with every screw and cable drawn where it goes) (the same meshes and joint frames as the 3D
 // tab, home pose). Each step adds the visuals scripts/make_assembly_steps.py lists: they fly in along an arrow from where they
 // come from, the callout shows the parts (rendered from the same meshes) and the screws / inserts with their counts.
 import * as THREE from 'three';
@@ -35,7 +35,7 @@ floor.rotation.x = -Math.PI / 2; floor.position.y = -0.0005; scene.add(floor);
 const cad = new THREE.Group(); cad.rotation.x = -Math.PI / 2; cad.scale.setScalar(0.001); scene.add(cad);
 const toWorld = v => cad.localToWorld(v.clone());
 
-let STEPS = [], items = {}, stepOf = {}, cur = -1, anim = null, arrows = [], tween = null, fe = null, faceTex = null, faceMesh = null;
+let STEPS = [], items = {}, stepOf = {}, hideAt = {}, xray = false, cur = -1, anim = null, arrows = [], tween = null, fe = null, faceTex = null, faceMesh = null;
 const edgeMat = new THREE.LineBasicMaterial({ color: 0x2b3038, transparent: true, opacity: 0.38 });
 const edgeCache = new Map();
 
@@ -99,6 +99,7 @@ function thumb(names) {
 
 // screws / inserts drawn to scale against each other (not 1:1 on screen)
 function hwIcon(h) {
+  if (h.items && h.items.length && items[h.items[0]]) return `<img class="real" alt="" src="${thumb(h.items)}">`;     // the real screw's mesh
   const k = 4.2, L = (h.len || 6) * k, D = (h.d || 3) * k;
   if (h.kind === 'screw') {
     const hh = h.head === 'button' ? 0.55 * D : 0.95 * D, hw = 1.8 * D, w = Math.max(hw, 34), H = hh + L + 6, x0 = (w - D) / 2;
@@ -129,7 +130,7 @@ function framing(names, all, off, whole) {
   for (const n of all) if (items[n]) ctx.union(items[n].box);
   if (b.isEmpty()) b.copy(ctx);
   const c = b.getCenter(new THREE.Vector3()), r = b.getSize(new THREE.Vector3()).length() / 2, rc = ctx.getSize(new THREE.Vector3()).length() / 2;
-  return { c, r: whole ? r * 1.12 : Math.max(r * 1.55, rc * 0.42, 55) };
+  return { c, r: whole ? r * 1.12 : Math.max(r * 1.3, rc * 0.34, 42) };
 }
 function aim(st, names, all, instant, off) {
   const { c, r } = framing(names, all, off, st.cover || st.finale);
@@ -142,13 +143,18 @@ function aim(st, names, all, instant, off) {
   tween = { t0: performance.now(), p0: camera.position.clone(), q0: controls.target.clone(), p1: pos, q1: tgt };
 }
 function clearArrows() { for (const a of arrows) cad.remove(a); arrows = []; }
+const isScrew = n => n.startsWith('screw ');
 function offsets(st) {
   const names = st.add.filter(n => items[n]);
   const ctr = new THREE.Vector3(); let k = 0;
-  for (const n of names) { ctr.add(items[n].box.getCenter(new THREE.Vector3())); k++; }
+  for (const n of names) if (!isScrew(n)) { ctr.add(items[n].box.getCenter(new THREE.Vector3())); k++; }
   if (k) ctr.multiplyScalar(1 / k);
   const out = {};
   for (const n of names) {
+    if (isScrew(n)) {                                    // backs out along its own axis: the frame's x is the thread's direction
+      out[n] = new THREE.Vector3().setFromMatrixColumn(items[n].base[0], 0).normalize().multiplyScalar(-26);
+      continue;
+    }
     const d = st.radial && st.radial[n];
     if (d) {                                             // straight out sideways from the step's centre
       const c = items[n].box.getCenter(new THREE.Vector3()).sub(ctr); c.z = 0; c.y = 0;
@@ -161,6 +167,7 @@ function drawArrows(off) {
   clearArrows();
   const groups = new Map();
   for (const [n, o] of Object.entries(off)) {
+    if (isScrew(n)) continue;
     const key = o.toArray().map(v => v.toFixed(0)).join(',');
     if (!groups.has(key)) groups.set(key, { o, box: new THREE.Box3() });
     groups.get(key).box.union(items[n].box);
@@ -175,8 +182,37 @@ function drawArrows(off) {
 }
 function setVisible(k) {
   for (const [n, it] of Object.entries(items)) {
-    const s = stepOf[n] ?? 999, on = STEPS[k].cover || STEPS[k].finale ? true : s <= k;
-    it.objs.forEach((o, i) => { o.visible = on; o.matrix.copy(it.base[i]); if (o.isMesh && o.userData.mat0) o.material = o.userData.mat0; });
+    const s = stepOf[n] ?? 999, gone = hideAt[n] !== undefined && (k >= hideAt[n] || STEPS[k].cover || STEPS[k].finale);
+    const on = !gone && (STEPS[k].cover || STEPS[k].finale ? true : s <= k);
+    const see = xray ? !(isScrew(n) || n.startsWith('plug ') || n.startsWith('cable:')) : (STEPS[k].ghost || []).some(p => n.startsWith(p));
+    it.objs.forEach((o, i) => {
+      o.visible = on && !(see && !o.isMesh); o.matrix.copy(it.base[i]);
+      if (!o.isMesh) return;
+      if (o.userData.mat0) o.material = o.userData.mat0;
+      if (see && !o.material.transparent) {              // see-through: the deck over the plugs, or the whole robot with the x-ray button
+        o.userData.mat0 ||= o.material;
+        o.material = o.userData.glass ||= Object.assign(o.userData.mat0.clone(), { transparent: true, opacity: 0.16, depthWrite: false });
+      }
+    });
+  }
+}
+// labels on the plugs: where the plug really is, projected every frame
+const lbWrap = document.createElement('div'); lbWrap.id = 'plabels'; view.append(lbWrap);
+let lbNow = [];
+function setLabels(st) {
+  lbWrap.innerHTML = ''; lbNow = [];
+  for (const [n, text] of st.labels || []) {
+    if (!items[n]) continue;
+    const el = document.createElement('div'); el.className = 'plabel'; el.innerHTML = `<i></i><span>${text}</span>`;
+    lbWrap.append(el); lbNow.push({ el, at: items[n].box.getCenter(new THREE.Vector3()) });
+  }
+}
+const lbV = new THREE.Vector3();
+function placeLabels() {
+  const w = view.clientWidth, h = view.clientHeight;
+  for (const l of lbNow) {
+    lbV.copy(toWorld(l.at)).project(camera);
+    l.el.style.transform = `translate(${(lbV.x + 1) / 2 * w}px, ${(1 - lbV.y) / 2 * h}px)`;
   }
 }
 function show(k, replay = false) {
@@ -184,7 +220,7 @@ function show(k, replay = false) {
   if (k === cur && !replay) return;
   cur = k;
   const st = STEPS[k], all = Object.keys(items).filter(n => (stepOf[n] ?? 999) <= k);
-  setVisible(k); clearArrows();
+  setVisible(k); clearArrows(); setLabels(st);
   controls.autoRotate = !!(st.cover || st.finale); controls.autoRotateSpeed = 1.2;
   if (fe) fe.set(st.finale ? 'happy' : null);
   if (!st.cover && !st.finale) {
@@ -195,8 +231,8 @@ function show(k, replay = false) {
       const m = o.userData.mat0.clone(); if (m.emissive) { m.emissive.setHex(0xff8a1c); m.emissiveIntensity = 0.0; }
       o.material = m;
     }
-    anim = { t0: performance.now(), off };
-    aim(st, st.add, all, false, off);
+    anim = { t0: performance.now(), off, dur: Object.keys(off).some(isScrew) ? DUR * 1.7 : DUR };
+    aim(st, st.add.filter(n => !n.startsWith('cable:') || st.add.every(m => m.startsWith('cable:') || isScrew(m)) || st.frame_cables), all, false, off);
   } else { anim = null; aim(st, Object.keys(items), Object.keys(items), false); }
   renderSide(st, k);
   document.querySelectorAll('#strip button').forEach(b => b.classList.toggle('on', +b.dataset.k === k));
@@ -216,16 +252,19 @@ function totals() {                                     // every screw / insert 
 }
 function renderSide(st, k) {
   $('#snum').textContent = st.cover ? '★' : k;
-  $('#skick').textContent = st.cover ? 'Notifyi M11c · 조립 설명서' : `${st.kicker} · ${k} / ${STEPS.length - 1}단계`;
+  $('#skick').textContent = st.cover ? 'Notifyi M11d · 조립 설명서' : `${st.kicker} · ${k} / ${STEPS.length - 1}단계`;
   $('#stitle').textContent = st.title;
   $('#stext').textContent = st.text;
+  const cn = st.cover ? [] : st.conn || [];
+  $('#cconn').hidden = !cn.length;
+  $('#sconn').innerHTML = cn.map(c => `<div class="cr"><i style="background:${c.color}"></i><div><b>${c.what}</b><p>${c.a} <span>→</span> ${c.b}</p>${c.how ? `<small>${c.how}</small>` : ''}</div></div>`).join('');
   const parts = st.cover ? [] : st.parts;
   $('#cparts').hidden = !parts.length;
   $('#sparts').innerHTML = parts.map(p => `<figure class="pc"><img alt="" src="${thumb(p.items)}"><figcaption><b>× ${p.qty}</b><span>${p.label}</span></figcaption></figure>`).join('');
   const hw = st.cover ? totals() : st.hw;
   $('#chw').hidden = !hw.length;
   $('#chw .cap').textContent = st.cover ? '전체 나사 · 인서트 (단계별 합계)' : '나사 · 인서트 · 소모품';
-  $('#shw').innerHTML = hw.map(h => `<figure class="hw ${h.kind}">${hwIcon(h)}<figcaption><b>× ${h.qty}</b><span>${h.label}</span></figcaption></figure>`).join('');
+  $('#shw').innerHTML = hw.map(h => `<figure class="hw ${h.kind}">${hwIcon(h)}<figcaption><b>× ${h.qty}</b><span>${h.label}</span>${h.tool ? `<em>${h.tool}</em>` : ''}</figcaption></figure>`).join('');
   $('#snotes').innerHTML = st.notes.map(n => `<li>${n}</li>`).join('');
 }
 
@@ -240,9 +279,11 @@ const ease = t => 1 - Math.pow(1 - t, 3);
 const tmp = new THREE.Matrix4();
 (function tick(now) {
   if (anim) {
-    const t = Math.min(1, (now - anim.t0) / DUR), e = ease(t);
+    const t = Math.min(1, (now - anim.t0) / anim.dur);
+    const two = anim.dur !== DUR;                       // parts land first, then their screws go in
     for (const [n, o] of Object.entries(anim.off)) {
       const it = items[n];
+      const e = two ? (isScrew(n) ? ease(Math.max(0, (t - 0.5) / 0.5)) : ease(Math.min(1, t / 0.55))) : ease(t);
       tmp.makeTranslation(o.x * (1 - e), o.y * (1 - e), o.z * (1 - e));
       it.objs.forEach((ob, i) => {
         ob.matrix.multiplyMatrices(tmp, it.base[i]);
@@ -252,6 +293,7 @@ const tmp = new THREE.Matrix4();
     if (t >= 1) {
       for (const n of Object.keys(anim.off)) for (const ob of items[n].objs) if (ob.isMesh && ob.userData.mat0) ob.material = ob.userData.mat0;
       anim = null;
+      if (xray) setVisible(cur);
     }
   }
   if (tween) {
@@ -261,6 +303,7 @@ const tmp = new THREE.Matrix4();
   }
   if (fe && faceTex && faceMesh && faceMesh.visible && fe.update(now)) faceTex.needsUpdate = true;
   controls.update();
+  placeLabels();
   renderer.render(scene, camera);
   requestAnimationFrame(tick);
 })(performance.now());
@@ -270,7 +313,7 @@ const tmp = new THREE.Matrix4();
   const data = await (await fetch('assets/assembly/assembly_steps.json', { cache: 'no-cache' })).json();
   const rev = data.revision, skip = new Set(data.skip);
   STEPS = data.steps;
-  STEPS.forEach((s, k) => s.add.forEach(n => { stepOf[n] = k; }));
+  STEPS.forEach((s, k) => { s.add.forEach(n => { stepOf[n] = k; }); (s.hide || []).forEach(n => { hideAt[n] = k; }); });
   status.textContent = 'CAD 조립체 불러오는 중…';
   const cfg = await (await fetch(`assets/${rev}/joint_config.json`)).json();
   const gltf = await loadParts(rev);
@@ -291,12 +334,12 @@ const tmp = new THREE.Matrix4();
       m.renderOrder = 5; faceMesh = m;
     }
     cad.add(m); register(v.name, m, M);
-    if (v.kind !== 'cable' && !src.material.transparent && m !== faceMesh) addEdges(v.name, m, M);
+    if (v.kind !== 'cable' && !src.material.transparent && m !== faceMesh && !v.name.startsWith('screw ')) addEdges(v.name, m, M);
   }
   if (cfg.cable_defs) {
     const links = {};
     for (const l of cfg.links) { const g = new THREE.Group(); g.matrixAutoUpdate = false; g.matrix.copy(T[l.name]); links[l.name] = g; }
-    const cab = new Cables(cfg.cable_defs, cad, links); cab.update();
+    const cab = new Cables(cfg.cable_defs.concat(cfg.cable_stub_defs || []), cad, links); cab.update();
     for (const it of cab.items) { it.mesh.geometry.computeBoundingBox(); register('cable:' + it.c.name, it.mesh, new THREE.Matrix4()); }
   }
   scene.updateMatrixWorld(true);
@@ -306,6 +349,7 @@ const tmp = new THREE.Matrix4();
   $('#prev').onclick = () => show(cur - 1);
   $('#next').onclick = () => show(cur + 1);
   $('#replay').onclick = () => show(cur, true);
+  $('#xray').onclick = () => { xray = !xray; $('#xray').classList.toggle('on', xray); setVisible(cur); };
   addEventListener('keydown', e => {
     if (e.target.closest && e.target.closest('input, select, textarea')) return;
     if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); show(cur + 1); }
