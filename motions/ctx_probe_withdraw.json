@@ -1,0 +1,133 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "ctx_probe_withdraw",
+ "revision": "mech_M11d_wired",
+ "loop": false,
+ "meta": {
+  "intent": "asked, no answer in 2.5 s: yields where it can be seen (turns past rest, a small bow), settles; asks again later",
+  "state": "PROBE -> YIELD",
+  "set": "ctx_v2",
+  "status": "research direction v2 (2026-11-10); checked in the twin only (limits, speed, collisions); NOT run on hardware; pilot values",
+  "source": "08_Docs/RESEARCH_DIRECTION_V2_KO_20261110.md"
+ },
+ "keyframes": [
+  {
+   "t": 0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 0.7,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 6.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 3.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 6.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 4.3,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 25.0,
+    "J6": 26.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 5.1,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 25.0,
+    "J6": 26.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 6.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 7.5,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "hold"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0,
+   "face": "neutral"
+  },
+  {
+   "t": 0.15,
+   "face": "look_left"
+  },
+  {
+   "t": 0.7,
+   "face": "curious"
+  },
+  {
+   "t": 2.0,
+   "face": "blink"
+  },
+  {
+   "t": 2.15,
+   "face": "curious"
+  },
+  {
+   "t": 3.2,
+   "face": "neutral"
+  },
+  {
+   "t": 3.3,
+   "face": "look_right"
+  },
+  {
+   "t": 5.1,
+   "face": "neutral"
+  }
+ ]
+}

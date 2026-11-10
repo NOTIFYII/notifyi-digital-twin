@@ -1,0 +1,129 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "ctx_ack_nod",
+ "revision": "mech_M11d_wired",
+ "loop": false,
+ "meta": {
+  "intent": "the person sat up: turns, a small rise and one nod, back to rest - closes the loop once, no more cues for a while",
+  "state": "ACK",
+  "set": "ctx_v2",
+  "status": "research direction v2 (2026-11-10); checked in the twin only (limits, speed, collisions); NOT run on hardware; pilot values",
+  "source": "08_Docs/RESEARCH_DIRECTION_V2_KO_20261110.md"
+ },
+ "keyframes": [
+  {
+   "t": 0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 0.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -17.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.25,
+   "q": {
+    "J1": 0.0,
+    "J2": -17.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 21.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.7,
+   "q": {
+    "J1": 0.0,
+    "J2": -17.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -17.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 3.9,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 5.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "hold"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0,
+   "face": "neutral"
+  },
+  {
+   "t": 0.5,
+   "face": "happy"
+  },
+  {
+   "t": 2.6,
+   "face": "blink"
+  },
+  {
+   "t": 2.75,
+   "face": "happy"
+  },
+  {
+   "t": 3.3,
+   "face": "neutral"
+  },
+  {
+   "t": 3.4,
+   "face": "look_right"
+  },
+  {
+   "t": 3.9,
+   "face": "neutral"
+  }
+ ]
+}

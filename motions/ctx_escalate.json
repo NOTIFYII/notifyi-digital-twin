@@ -1,0 +1,257 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "ctx_escalate",
+ "revision": "mech_M11d_wired",
+ "loop": false,
+ "meta": {
+  "intent": "asked twice without an answer and the slouch has lasted: one step up (lean in, a small shake, a tilt), then the cue",
+  "state": "ESCALATE (capped)",
+  "set": "ctx_v2",
+  "status": "research direction v2 (2026-11-10); checked in the twin only (limits, speed, collisions); NOT run on hardware; pilot values",
+  "source": "08_Docs/RESEARCH_DIRECTION_V2_KO_20261110.md"
+ },
+ "keyframes": [
+  {
+   "t": 0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 0.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -26.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 1.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -26.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 1.65,
+   "q": {
+    "J1": 0.0,
+    "J2": -26.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": -9.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.1,
+   "q": {
+    "J1": 0.0,
+    "J2": -26.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 9.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 2.55,
+   "q": {
+    "J1": 0.0,
+    "J2": -26.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 3.4,
+   "q": {
+    "J1": 0.0,
+    "J2": -26.0,
+    "J3": 0.0,
+    "J4": 8.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 4.4,
+   "q": {
+    "J1": 0.0,
+    "J2": -26.0,
+    "J3": 0.0,
+    "J4": 8.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 7.9,
+   "q": {
+    "J1": 0.0,
+    "J2": -30.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 8.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 9.9,
+   "q": {
+    "J1": 0.0,
+    "J2": -30.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 8.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 10.7,
+   "q": {
+    "J1": 0.0,
+    "J2": -30.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 16.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 12.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -30.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 16.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 14.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -18.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 15.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -18.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 16.4,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 17.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "hold"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0,
+   "face": "neutral"
+  },
+  {
+   "t": 0.3,
+   "face": "surprised"
+  },
+  {
+   "t": 1.2,
+   "face": "curious"
+  },
+  {
+   "t": 3.4,
+   "face": "curious"
+  },
+  {
+   "t": 4.8,
+   "face": "concerned"
+  },
+  {
+   "t": 9.9,
+   "face": "blink"
+  },
+  {
+   "t": 10.05,
+   "face": "concerned"
+  },
+  {
+   "t": 10.7,
+   "face": "curious"
+  },
+  {
+   "t": 13.2,
+   "face": "happy"
+  },
+  {
+   "t": 15.0,
+   "face": "neutral"
+  },
+  {
+   "t": 15.2,
+   "face": "look_right"
+  },
+  {
+   "t": 16.4,
+   "face": "neutral"
+  }
+ ]
+}

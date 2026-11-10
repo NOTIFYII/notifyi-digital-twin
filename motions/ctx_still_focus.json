@@ -1,0 +1,53 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "ctx_still_focus",
+ "revision": "mech_M11d_wired",
+ "loop": true,
+ "meta": {
+  "intent": "remain still: deep focus, a call, nobody there, or just after a cue - no joint moves, the face only blinks",
+  "state": "STILL",
+  "set": "ctx_v2",
+  "status": "research direction v2 (2026-11-10); checked in the twin only (limits, speed, collisions); NOT run on hardware; pilot values",
+  "source": "08_Docs/RESEARCH_DIRECTION_V2_KO_20261110.md"
+ },
+ "keyframes": [
+  {
+   "t": 0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 10.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "hold"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0,
+   "face": "neutral"
+  },
+  {
+   "t": 4.2,
+   "face": "blink"
+  },
+  {
+   "t": 4.35,
+   "face": "neutral"
+  }
+ ]
+}

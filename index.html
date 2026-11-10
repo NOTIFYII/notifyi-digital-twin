@@ -288,8 +288,21 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') document.que
       if (lp && !lp.checked) lp.click();
       setTimeout(() => document.querySelector('#play').click(), 400);
     }
+    if (parent !== window) parent.postMessage({ nfy: 'ready' }, location.origin);
   };
   addEventListener('load', () => go());
+  // research tab (2026-11-10): the page that embeds the twin asks for another motion or view without reloading the model (same origin only)
+  addEventListener('message', async e => {
+    const d = e.data || {};
+    if (e.origin !== location.origin || !window.NFY) return;
+    if (d.nfy === 'view' && typeof d.view === 'string') { try { window.NFY.setView(d.view); } catch (err) {} return; }
+    if (d.nfy !== 'motion' || !/^[A-Za-z0-9_-]+[.]json$/.test(d.file || '')) return;
+    const m = await (await fetch('motions/' + d.file)).json();
+    window.NFY.loadMotion(m);
+    const lp = document.querySelector('#loop');
+    if (lp && lp.checked !== !!d.loop) lp.click();
+    setTimeout(() => document.querySelector('#play').click(), 60);
+  });
 })();
 </script>
 </body>

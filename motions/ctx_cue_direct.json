@@ -1,0 +1,161 @@
+{
+ "schema": "notifyi.motion/1",
+ "name": "ctx_cue_direct",
+ "revision": "mech_M11d_wired",
+ "loop": false,
+ "meta": {
+  "intent": "baseline: the same posture cue with no question first",
+  "state": "CUE (open loop)",
+  "set": "ctx_v2",
+  "status": "research direction v2 (2026-11-10); checked in the twin only (limits, speed, collisions); NOT run on hardware; pilot values",
+  "source": "08_Docs/RESEARCH_DIRECTION_V2_KO_20261110.md"
+ },
+ "keyframes": [
+  {
+   "t": 0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 3.5,
+   "q": {
+    "J1": 0.0,
+    "J2": -30.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 8.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 5.5,
+   "q": {
+    "J1": 0.0,
+    "J2": -30.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 8.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 6.3,
+   "q": {
+    "J1": 0.0,
+    "J2": -30.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 16.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 7.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -30.0,
+    "J3": 0.0,
+    "J4": 3.0,
+    "J5": 16.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 9.8,
+   "q": {
+    "J1": 0.0,
+    "J2": -18.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 10.6,
+   "q": {
+    "J1": 0.0,
+    "J2": -18.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 0.0
+   },
+   "ease": "hold"
+  },
+  {
+   "t": 12.0,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "minjerk"
+  },
+  {
+   "t": 13.2,
+   "q": {
+    "J1": 0.0,
+    "J2": -20.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "J5": 30.0,
+    "J6": 20.0
+   },
+   "ease": "hold"
+  }
+ ],
+ "faces": [
+  {
+   "t": 0,
+   "face": "neutral"
+  },
+  {
+   "t": 0.4,
+   "face": "concerned"
+  },
+  {
+   "t": 5.5,
+   "face": "blink"
+  },
+  {
+   "t": 5.65,
+   "face": "concerned"
+  },
+  {
+   "t": 6.3,
+   "face": "curious"
+  },
+  {
+   "t": 8.8,
+   "face": "happy"
+  },
+  {
+   "t": 10.6,
+   "face": "neutral"
+  },
+  {
+   "t": 10.8,
+   "face": "look_right"
+  },
+  {
+   "t": 12.0,
+   "face": "neutral"
+  }
+ ]
+}
