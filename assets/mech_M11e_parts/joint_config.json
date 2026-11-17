@@ -1,7 +1,7 @@
 {
  "schema": "notifyi.joint_config/1",
  "revision": "mech_M11e_parts",
- "generated": "2026-11-18T03:16:12",
+ "generated": "2026-11-18T05:03:34",
  "units": {
   "length": "mm",
   "angle": "deg",
@@ -492,14 +492,39 @@
       "mount": "m11_frame",
       "frame": {
        "t": 3.8,
-       "screw_L": 3.0
-      }
+       "screw_L": 3.0,
+       "side_room": 12.5
+      },
+      "plug_side": true
      },
      "face_boss_pilot_d": 1.7,
      "cradle_teardrops": 2.2,
      "camera_plug": false,
      "ring_in_face": true,
-     "ear_screws": true,
+     "ear_screws": false,
+     "ear_bayonet": {
+      "groove_x": [
+       21.6,
+       22.4
+      ],
+      "groove_r": 6.3,
+      "slots_deg": [
+       45.0,
+       225.0
+      ],
+      "slot_w": 3.2,
+      "peg_tip_x": 21.7,
+      "lug_x": [
+       21.7,
+       22.3
+      ],
+      "lug_r": 6.0,
+      "lug_w": 2.6,
+      "lock_deg": [
+       135.0,
+       315.0
+      ]
+     },
      "cradle_split": {
       "flange": [
        30.4,
@@ -512,7 +537,8 @@
        16.0
       ],
       "screw_x": 27.4,
-      "screw_L": 6.0
+      "screw_L": 6.0,
+      "teardrop_r": 6.4
      },
      "camera_ov9726": {
       "lens": [
@@ -523,7 +549,10 @@
       "aperture_d": 8.0,
       "post_r": 2.2,
       "pilot_d": 1.7,
-      "screw_L": 8.0,
+      "screw_L": 3.0,
+      "screw_head": "pan",
+      "washer": false,
+      "bear_min": 0.3,
       "screw_shift": 0.5,
       "cable_slot": [
        -29.6,
@@ -636,7 +665,7 @@
    },
    "base_wall": 2.4,
    "yoke_fill": 1.0,
-   "pivot_caps": true,
+   "pivot_caps": false,
    "cradle": true,
    "chassis": null,
    "envelope_v2": true,
@@ -3504,121 +3533,145 @@
        [
         "head",
         [
-         -12.98,
-         -19.7,
-         44.5
+         -23.08,
+         -28.75,
+         50.1
         ]
        ],
        [
         "head",
         [
-         -15.22,
-         -16.47,
-         41.18
+         -23.59,
+         -23.43,
+         49.73
         ]
        ],
        [
         "head",
         [
-         -17.45,
-         -13.24,
-         37.85
+         -24.09,
+         -18.12,
+         49.37
         ]
        ],
        [
         "head",
         [
-         -19.69,
-         -10.01,
-         34.53
+         -24.6,
+         -12.8,
+         49.0
         ]
        ],
        [
         "head",
         [
-         -20.02,
-         -6.78,
-         31.21
+         -23.73,
+         -10.2,
+         45.99
         ]
        ],
        [
         "head",
         [
-         -19.75,
-         -3.55,
-         27.88
+         -22.87,
+         -8.47,
+         42.11
         ]
        ],
        [
         "head",
         [
-         -19.28,
-         -1.44,
-         23.32
+         -22.0,
+         -6.73,
+         38.23
         ]
        ],
        [
         "head",
         [
-         -19.87,
-         0.67,
-         18.74
+         -21.13,
+         -5.0,
+         34.34
         ]
        ],
        [
         "head",
         [
-         -19.88,
-         2.78,
-         14.24
+         -20.27,
+         -3.26,
+         30.46
         ]
        ],
        [
         "head",
         [
-         -20.03,
-         5.82,
-         9.74
+         -19.4,
+         -1.52,
+         26.57
         ]
        ],
        [
         "head",
         [
-         -20.11,
-         8.86,
-         6.46
+         -19.26,
+         0.23,
+         22.38
         ]
        ],
        [
         "head",
         [
-         -20.05,
-         11.91,
-         3.18
+         -19.97,
+         1.99,
+         17.19
+        ]
+       ],
+       [
+        "head",
+        [
+         -19.84,
+         3.78,
+         12.62
+        ]
+       ],
+       [
+        "head",
+        [
+         -20.26,
+         7.15,
+         8.05
+        ]
+       ],
+       [
+        "head",
+        [
+         -20.09,
+         10.54,
+         4.4
         ]
        ],
        [
         "upper",
         [
-         -19.86,
-         23.13,
-         43.84
+         -19.95,
+         22.58,
+         45.31
         ]
        ],
        [
         "upper",
         [
-         -19.68,
-         24.76,
-         39.39
+         -19.73,
+         24.38,
+         40.38
         ]
        ],
        [
         "upper",
         [
-         -19.49,
-         26.38,
-         34.95
+         -19.52,
+         26.19,
+         35.44
         ]
        ],
        [
@@ -4763,7 +4816,7 @@
     },
     "latch_boss_in": 3.2,
     "deck_hole_slots": true,
-    "dc_plug_drawn": true
+    "dc_plug_drawn": false
    },
    "pivot_cap_ribs": 0,
    "press_fits": [],
@@ -4933,10 +4986,7 @@
      "screw_head": "pan"
     }
    },
-   "pivot_cap_screw": [
-    0.0,
-    -8.0
-   ]
+   "pivot_cap_screw": null
   }
  },
  "root_link": "base",
@@ -8665,74 +8715,6 @@
   },
   {
    "link": "base",
-   "mesh": "part/plug_dc_barrel_5521_tip",
-   "T": [
-    [
-     -1.0,
-     0.0,
-     0.0,
-     -59.5
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     -32.8
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     15.6
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "electronics",
-   "name": "plug dc_adapter_plug",
-   "module": null,
-   "no_collide": true
-  },
-  {
-   "link": "base",
-   "mesh": "part/plug_dc_barrel_5521_overmold",
-   "T": [
-    [
-     -1.0,
-     0.0,
-     0.0,
-     -59.5
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     -32.8
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     15.6
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "electronics",
-   "name": "plug dc_adapter_plug",
-   "module": null,
-   "no_collide": true
-  },
-  {
-   "link": "base",
    "mesh": "part/plug_microsd_card_card",
    "T": [
     [
@@ -8831,408 +8813,6 @@
    "kind": "enclosure",
    "name": "shoulder_plate",
    "module": null
-  },
-  {
-   "link": "turret",
-   "mesh": "part/pivot_cap_1p0_frame_dark",
-   "T": [
-    [
-     1.0,
-     0.0,
-     0.0,
-     23.1
-    ],
-    [
-     0.0,
-     1.0,
-     0.0,
-     0.0
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     27.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "pivot_cap_turret_p",
-   "module": null
-  },
-  {
-   "link": "turret",
-   "mesh": "part/hw_flat_m2x10_d",
-   "T": [
-    [
-     -1.0,
-     0.0,
-     0.0,
-     26.7
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     0.0
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     19.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "screw pivot cap turret_p",
-   "module": null,
-   "no_collide": true
-  },
-  {
-   "link": "turret",
-   "mesh": "part/pivot_cap_1p0_frame_dark",
-   "T": [
-    [
-     -1.0,
-     -0.0,
-     0.0,
-     -23.1
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     0.0
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     27.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "pivot_cap_turret_n",
-   "module": null
-  },
-  {
-   "link": "turret",
-   "mesh": "part/hw_flat_m2x10_d",
-   "T": [
-    [
-     1.0,
-     0.0,
-     0.0,
-     -26.7
-    ],
-    [
-     -0.0,
-     1.0,
-     0.0,
-     0.0
-    ],
-    [
-     0.0,
-     -0.0,
-     1.0,
-     19.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "screw pivot cap turret_n",
-   "module": null,
-   "no_collide": true
-  },
-  {
-   "link": "mid_yoke",
-   "mesh": "part/pivot_cap_1p0_frame_dark",
-   "T": [
-    [
-     0.0,
-     -1.0,
-     0.0,
-     0.0
-    ],
-    [
-     1.0,
-     0.0,
-     0.0,
-     23.1
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     27.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "pivot_cap_mid_yoke_p",
-   "module": null
-  },
-  {
-   "link": "mid_yoke",
-   "mesh": "part/hw_flat_m2x10_d",
-   "T": [
-    [
-     -0.0,
-     1.0,
-     0.0,
-     0.0
-    ],
-    [
-     -1.0,
-     -0.0,
-     0.0,
-     26.7
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     19.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "screw pivot cap mid_yoke_p",
-   "module": null,
-   "no_collide": true
-  },
-  {
-   "link": "mid_yoke",
-   "mesh": "part/pivot_cap_1p0_frame_dark",
-   "T": [
-    [
-     -0.0,
-     1.0,
-     0.0,
-     -0.0
-    ],
-    [
-     -1.0,
-     -0.0,
-     0.0,
-     -23.1
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     27.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "pivot_cap_mid_yoke_n",
-   "module": null
-  },
-  {
-   "link": "mid_yoke",
-   "mesh": "part/hw_flat_m2x10_d",
-   "T": [
-    [
-     0.0,
-     -1.0,
-     0.0,
-     -0.0
-    ],
-    [
-     1.0,
-     0.0,
-     -0.0,
-     -26.7
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     19.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "screw pivot cap mid_yoke_n",
-   "module": null,
-   "no_collide": true
-  },
-  {
-   "link": "neck_yoke",
-   "mesh": "part/pivot_cap_1p0_frame_dark",
-   "T": [
-    [
-     1.0,
-     0.0,
-     0.0,
-     23.1
-    ],
-    [
-     0.0,
-     -1.0,
-     -0.0,
-     0.0
-    ],
-    [
-     0.0,
-     0.0,
-     -1.0,
-     0.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "pivot_cap_neck_yoke_p",
-   "module": null
-  },
-  {
-   "link": "neck_yoke",
-   "mesh": "part/hw_flat_m2x10_d",
-   "T": [
-    [
-     -1.0,
-     0.0,
-     0.0,
-     26.7
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     0.0
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     8.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "screw pivot cap neck_yoke_p",
-   "module": null,
-   "no_collide": true
-  },
-  {
-   "link": "neck_yoke",
-   "mesh": "part/pivot_cap_1p0_frame_dark",
-   "T": [
-    [
-     -1.0,
-     -0.0,
-     0.0,
-     -23.1
-    ],
-    [
-     -0.0,
-     1.0,
-     -0.0,
-     0.0
-    ],
-    [
-     0.0,
-     -0.0,
-     -1.0,
-     0.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "pivot_cap_neck_yoke_n",
-   "module": null
-  },
-  {
-   "link": "neck_yoke",
-   "mesh": "part/hw_flat_m2x10_d",
-   "T": [
-    [
-     1.0,
-     -0.0,
-     0.0,
-     -26.7
-    ],
-    [
-     0.0,
-     1.0,
-     0.0,
-     0.0
-    ],
-    [
-     -0.0,
-     0.0,
-     1.0,
-     8.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "screw pivot cap neck_yoke_n",
-   "module": null,
-   "no_collide": true
   },
   {
    "link": "head",
@@ -9504,16 +9084,16 @@
    "mesh": "part/plug_mx125_8_housing",
    "T": [
     [
+     -1.0,
      0.0,
      0.0,
-     1.0,
-     -12.98
+     -15.08
     ],
     [
+     0.0,
+     0.0,
      1.0,
-     0.0,
-     0.0,
-     -27.0
+     -28.75
     ],
     [
      0.0,
@@ -9538,16 +9118,16 @@
    "mesh": "part/plug_mx125_8_wire0",
    "T": [
     [
+     -1.0,
      0.0,
      0.0,
-     1.0,
-     -12.98
+     -15.08
     ],
     [
+     0.0,
+     0.0,
      1.0,
-     0.0,
-     0.0,
-     -27.0
+     -28.75
     ],
     [
      0.0,
@@ -9572,16 +9152,16 @@
    "mesh": "part/plug_mx125_8_wire1",
    "T": [
     [
+     -1.0,
      0.0,
      0.0,
-     1.0,
-     -12.98
+     -15.08
     ],
     [
+     0.0,
+     0.0,
      1.0,
-     0.0,
-     0.0,
-     -27.0
+     -28.75
     ],
     [
      0.0,
@@ -9606,16 +9186,16 @@
    "mesh": "part/plug_mx125_8_wire2",
    "T": [
     [
+     -1.0,
      0.0,
      0.0,
-     1.0,
-     -12.98
+     -15.08
     ],
     [
+     0.0,
+     0.0,
      1.0,
-     0.0,
-     0.0,
-     -27.0
+     -28.75
     ],
     [
      0.0,
@@ -9640,16 +9220,16 @@
    "mesh": "part/plug_mx125_8_wire3",
    "T": [
     [
+     -1.0,
      0.0,
      0.0,
-     1.0,
-     -12.98
+     -15.08
     ],
     [
+     0.0,
+     0.0,
      1.0,
-     0.0,
-     0.0,
-     -27.0
+     -28.75
     ],
     [
      0.0,
@@ -9674,16 +9254,16 @@
    "mesh": "part/plug_mx125_8_wire4",
    "T": [
     [
+     -1.0,
      0.0,
      0.0,
-     1.0,
-     -12.98
+     -15.08
     ],
     [
+     0.0,
+     0.0,
      1.0,
-     0.0,
-     0.0,
-     -27.0
+     -28.75
     ],
     [
      0.0,
@@ -9708,16 +9288,16 @@
    "mesh": "part/plug_mx125_8_wire5",
    "T": [
     [
+     -1.0,
      0.0,
      0.0,
-     1.0,
-     -12.98
+     -15.08
     ],
     [
+     0.0,
+     0.0,
      1.0,
-     0.0,
-     0.0,
-     -27.0
+     -28.75
     ],
     [
      0.0,
@@ -9742,16 +9322,16 @@
    "mesh": "part/plug_mx125_8_wire6",
    "T": [
     [
+     -1.0,
      0.0,
      0.0,
-     1.0,
-     -12.98
+     -15.08
     ],
     [
+     0.0,
+     0.0,
      1.0,
-     0.0,
-     0.0,
-     -27.0
+     -28.75
     ],
     [
      0.0,
@@ -9776,16 +9356,16 @@
    "mesh": "part/plug_mx125_8_wire7",
    "T": [
     [
+     -1.0,
      0.0,
      0.0,
-     1.0,
-     -12.98
+     -15.08
     ],
     [
+     0.0,
+     0.0,
      1.0,
-     0.0,
-     0.0,
-     -27.0
+     -28.75
     ],
     [
      0.0,
@@ -10447,7 +10027,7 @@
   },
   {
    "link": "head",
-   "mesh": "part/hw_pan_m2x8_w_d",
+   "mesh": "part/hw_pan_m2x3_d",
    "T": [
     [
      0.0,
@@ -10481,7 +10061,7 @@
   },
   {
    "link": "head",
-   "mesh": "part/hw_pan_m2x8_w_d",
+   "mesh": "part/hw_pan_m2x3_d",
    "T": [
     [
      0.0,
@@ -10515,7 +10095,7 @@
   },
   {
    "link": "head",
-   "mesh": "part/hw_pan_m2x8_w_d",
+   "mesh": "part/hw_pan_m2x3_d",
    "T": [
     [
      0.0,
@@ -10549,7 +10129,7 @@
   },
   {
    "link": "head",
-   "mesh": "part/hw_pan_m2x8_w_d",
+   "mesh": "part/hw_pan_m2x3_d",
    "T": [
     [
      0.0,
@@ -10914,142 +10494,6 @@
    "kind": "enclosure",
    "name": "antenna_tips",
    "module": null
-  },
-  {
-   "link": "head",
-   "mesh": "part/hw_flat_m2x5_d",
-   "T": [
-    [
-     1.0,
-     0.0,
-     0.0,
-     -26.85
-    ],
-    [
-     0.0,
-     1.0,
-     0.0,
-     29.656854
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     24.656854
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "screw ear L 45",
-   "module": null,
-   "no_collide": true
-  },
-  {
-   "link": "head",
-   "mesh": "part/hw_flat_m2x5_d",
-   "T": [
-    [
-     1.0,
-     0.0,
-     0.0,
-     -26.85
-    ],
-    [
-     0.0,
-     1.0,
-     0.0,
-     18.343146
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     13.343146
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "screw ear L 225",
-   "module": null,
-   "no_collide": true
-  },
-  {
-   "link": "head",
-   "mesh": "part/hw_flat_m2x5_d",
-   "T": [
-    [
-     -1.0,
-     0.0,
-     0.0,
-     26.85
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     29.656854
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     24.656854
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "screw ear R 45",
-   "module": null,
-   "no_collide": true
-  },
-  {
-   "link": "head",
-   "mesh": "part/hw_flat_m2x5_d",
-   "T": [
-    [
-     -1.0,
-     0.0,
-     0.0,
-     26.85
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     18.343146
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     13.343146
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "kind": "enclosure",
-   "name": "screw ear R 225",
-   "module": null,
-   "no_collide": true
   },
   {
    "link": "head",
@@ -15403,6 +14847,210 @@
    "no_collide": true
   },
   {
+   "link": "turret",
+   "mesh": "part/hw_socket_m2x6_d",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -22.1
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "screw yoke0leg 2",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "turret",
+   "mesh": "part/hw_socket_m2x6_d",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     22.1
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "screw yoke0leg 5",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "part/hw_socket_m2x6_d",
+   "T": [
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0,
+     -0.0,
+     -22.1
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "screw yoke1leg 3",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "mid_yoke",
+   "mesh": "part/hw_socket_m2x6_d",
+   "T": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     -1.0,
+     0.0,
+     0.0,
+     22.1
+    ],
+    [
+     0.0,
+     -0.0,
+     1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "screw yoke1leg 4",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/hw_socket_m2x6_d",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -22.1
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     8.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "screw yoke2leg 2",
+   "module": null,
+   "no_collide": true
+  },
+  {
+   "link": "neck_yoke",
+   "mesh": "part/hw_socket_m2x6_d",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     22.1
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     8.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kind": "frame",
+   "name": "screw yoke2leg 5",
+   "module": null,
+   "no_collide": true
+  },
+  {
    "link": "upper",
    "mesh": "part/display_joint_housings",
    "T": [
@@ -17785,28 +17433,6 @@
   },
   {
    "link": "base",
-   "name": "plug dc_adapter_plug",
-   "mass_g": 0.5,
-   "p": [
-    -54.75,
-    -32.8,
-    15.6
-   ],
-   "source": "5.5 x 2.1 mm DC barrel plug of a 12 V adapter (optional, from outside); size: barrel 9.5 mm; overmold typical d 9.5 x 22 + boot"
-  },
-  {
-   "link": "base",
-   "name": "plug dc_adapter_plug",
-   "mass_g": 0.05,
-   "p": [
-    -71.082,
-    -32.8,
-    15.6
-   ],
-   "source": "5.5 x 2.1 mm DC barrel plug of a 12 V adapter (optional, from outside); size: barrel 9.5 mm; overmold typical d 9.5 x 22 + boot"
-  },
-  {
-   "link": "base",
    "name": "plug pi_microsd_card",
    "mass_g": 0.5,
    "p": [
@@ -17837,138 +17463,6 @@
     30.102
    ],
    "source": "M9 shoulder_plate (37.7 x 6.9 x 18.6 mm, PLA): flat on P3's rear face, two M2.5 x 6 button heads into P3's frame holes (x +-11, z 32), two cable clips; print flat on its back, 100 %"
-  },
-  {
-   "link": "turret",
-   "name": "pivot_cap_turret_p",
-   "mass_g": 1.52,
-   "p": [
-    25.036,
-    0.0,
-    26.661
-   ],
-   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
-  },
-  {
-   "link": "turret",
-   "name": "screw pivot cap turret_p",
-   "mass_g": 0.3,
-   "p": [
-    22.089,
-    -0.0,
-    19.0
-   ],
-   "source": "M2 x 10 flat head (bought)"
-  },
-  {
-   "link": "turret",
-   "name": "pivot_cap_turret_n",
-   "mass_g": 1.52,
-   "p": [
-    -25.036,
-    0.0,
-    26.661
-   ],
-   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
-  },
-  {
-   "link": "turret",
-   "name": "screw pivot cap turret_n",
-   "mass_g": 0.3,
-   "p": [
-    -22.089,
-    -0.0,
-    19.0
-   ],
-   "source": "M2 x 10 flat head (bought)"
-  },
-  {
-   "link": "mid_yoke",
-   "name": "pivot_cap_mid_yoke_p",
-   "mass_g": 1.52,
-   "p": [
-    0.0,
-    25.036,
-    26.661
-   ],
-   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
-  },
-  {
-   "link": "mid_yoke",
-   "name": "screw pivot cap mid_yoke_p",
-   "mass_g": 0.3,
-   "p": [
-    0.0,
-    22.089,
-    19.0
-   ],
-   "source": "M2 x 10 flat head (bought)"
-  },
-  {
-   "link": "mid_yoke",
-   "name": "pivot_cap_mid_yoke_n",
-   "mass_g": 1.52,
-   "p": [
-    -0.0,
-    -25.036,
-    26.661
-   ],
-   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
-  },
-  {
-   "link": "mid_yoke",
-   "name": "screw pivot cap mid_yoke_n",
-   "mass_g": 0.3,
-   "p": [
-    -0.0,
-    -22.089,
-    19.0
-   ],
-   "source": "M2 x 10 flat head (bought)"
-  },
-  {
-   "link": "neck_yoke",
-   "name": "pivot_cap_neck_yoke_p",
-   "mass_g": 1.52,
-   "p": [
-    25.036,
-    -0.0,
-    0.339
-   ],
-   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
-  },
-  {
-   "link": "neck_yoke",
-   "name": "screw pivot cap neck_yoke_p",
-   "mass_g": 0.3,
-   "p": [
-    22.089,
-    0.0,
-    8.0
-   ],
-   "source": "M2 x 10 flat head (bought)"
-  },
-  {
-   "link": "neck_yoke",
-   "name": "pivot_cap_neck_yoke_n",
-   "mass_g": 1.52,
-   "p": [
-    -25.036,
-    0.0,
-    0.339
-   ],
-   "source": "pivot cap: hides the hinge screws; the shell lobe turns on its skirt"
-  },
-  {
-   "link": "neck_yoke",
-   "name": "screw pivot cap neck_yoke_n",
-   "mass_g": 0.3,
-   "p": [
-    -22.089,
-    0.0,
-    8.0
-   ],
-   "source": "M2 x 10 flat head (bought)"
   },
   {
    "link": "head",
@@ -18063,8 +17557,8 @@
    "name": "plug display_mx125",
    "mass_g": 0.3,
    "p": [
-    -12.98,
-    -24.771,
+    -17.38,
+    -28.75,
     50.1
    ],
    "source": "MX1.25 8-pin plug of the Waveshare cable (supplied, 20 cm, female 2.54 jumpers at the far end)"
@@ -18074,8 +17568,8 @@
    "name": "plug display_mx125",
    "mass_g": 0.05,
    "p": [
-    -12.98,
-    -21.2,
+    -21.33,
+    -28.75,
     45.725
    ],
    "source": "MX1.25 8-pin plug of the Waveshare cable (supplied, 20 cm, female 2.54 jumpers at the far end)"
@@ -18085,8 +17579,8 @@
    "name": "plug display_mx125",
    "mass_g": 0.05,
    "p": [
-    -12.98,
-    -21.2,
+    -21.33,
+    -28.75,
     46.975
    ],
    "source": "MX1.25 8-pin plug of the Waveshare cable (supplied, 20 cm, female 2.54 jumpers at the far end)"
@@ -18096,8 +17590,8 @@
    "name": "plug display_mx125",
    "mass_g": 0.05,
    "p": [
-    -12.98,
-    -21.2,
+    -21.33,
+    -28.75,
     48.225
    ],
    "source": "MX1.25 8-pin plug of the Waveshare cable (supplied, 20 cm, female 2.54 jumpers at the far end)"
@@ -18107,8 +17601,8 @@
    "name": "plug display_mx125",
    "mass_g": 0.05,
    "p": [
-    -12.98,
-    -21.2,
+    -21.33,
+    -28.75,
     49.475
    ],
    "source": "MX1.25 8-pin plug of the Waveshare cable (supplied, 20 cm, female 2.54 jumpers at the far end)"
@@ -18118,8 +17612,8 @@
    "name": "plug display_mx125",
    "mass_g": 0.05,
    "p": [
-    -12.98,
-    -21.2,
+    -21.33,
+    -28.75,
     50.725
    ],
    "source": "MX1.25 8-pin plug of the Waveshare cable (supplied, 20 cm, female 2.54 jumpers at the far end)"
@@ -18129,8 +17623,8 @@
    "name": "plug display_mx125",
    "mass_g": 0.05,
    "p": [
-    -12.98,
-    -21.2,
+    -21.33,
+    -28.75,
     51.975
    ],
    "source": "MX1.25 8-pin plug of the Waveshare cable (supplied, 20 cm, female 2.54 jumpers at the far end)"
@@ -18140,8 +17634,8 @@
    "name": "plug display_mx125",
    "mass_g": 0.05,
    "p": [
-    -12.98,
-    -21.2,
+    -21.33,
+    -28.75,
     53.225
    ],
    "source": "MX1.25 8-pin plug of the Waveshare cable (supplied, 20 cm, female 2.54 jumpers at the far end)"
@@ -18151,8 +17645,8 @@
    "name": "plug display_mx125",
    "mass_g": 0.05,
    "p": [
-    -12.98,
-    -21.2,
+    -21.33,
+    -28.75,
     54.475
    ],
    "source": "MX1.25 8-pin plug of the Waveshare cable (supplied, 20 cm, female 2.54 jumpers at the far end)"
@@ -18358,11 +17852,11 @@
   {
    "link": "head",
    "name": "display_frame",
-   "mass_g": 6.04,
+   "mass_g": 5.55,
    "p": [
-    1.033,
-    -27.557,
-    49.754
+    3.214,
+    -27.466,
+    49.723
    ],
    "source": "mech_M11_face display frame: the Waveshare 1.9inch LCD Module screwed on from behind (4 x M2 x 3 socket into its brass studs), slid over the M11 cradle's four display standoffs. PLA, front face down on the bed, 100 %"
   },
@@ -18372,10 +17866,10 @@
    "mass_g": 0.3,
    "p": [
     -20.5,
-    -19.305,
+    -20.848,
     31.1
    ],
-   "source": "M2 x 8 pan head + washer (bought)"
+   "source": "M2 x 3 pan head (bought)"
   },
   {
    "link": "head",
@@ -18383,10 +17877,10 @@
    "mass_g": 0.3,
    "p": [
     -20.5,
-    -19.305,
+    -20.848,
     7.1
    ],
-   "source": "M2 x 8 pan head + washer (bought)"
+   "source": "M2 x 3 pan head (bought)"
   },
   {
    "link": "head",
@@ -18394,10 +17888,10 @@
    "mass_g": 0.3,
    "p": [
     4.5,
-    -19.305,
+    -20.848,
     31.1
    ],
-   "source": "M2 x 8 pan head + washer (bought)"
+   "source": "M2 x 3 pan head (bought)"
   },
   {
    "link": "head",
@@ -18405,10 +17899,10 @@
    "mass_g": 0.3,
    "p": [
     4.5,
-    -19.305,
+    -20.848,
     7.1
    ],
-   "source": "M2 x 8 pan head + washer (bought)"
+   "source": "M2 x 3 pan head (bought)"
   },
   {
    "link": "head",
@@ -18435,11 +17929,11 @@
   {
    "link": "head",
    "name": "cradle_arm_L",
-   "mass_g": 3.99,
+   "mass_g": 3.97,
    "p": [
-    -22.873,
-    9.599,
-    17.699
+    -22.876,
+    9.522,
+    17.693
    ],
    "source": "mech_M11e cradle arm (L): pad on P4's horn axis + flange screwed to the cradle plate. PLA, flange face down, no support"
   },
@@ -18468,11 +17962,11 @@
   {
    "link": "head",
    "name": "cradle_arm_R",
-   "mass_g": 3.99,
+   "mass_g": 3.97,
    "p": [
-    22.873,
-    9.599,
-    17.699
+    22.876,
+    9.522,
+    17.693
    ],
    "source": "mech_M11e cradle arm (R): pad on P4's horn axis + flange screwed to the cradle plate. PLA, flange face down, no support"
   },
@@ -18522,52 +18016,8 @@
   },
   {
    "link": "head",
-   "name": "screw ear L 45",
-   "mass_g": 0.3,
-   "p": [
-    -24.684,
-    29.657,
-    24.657
-   ],
-   "source": "M2 x 5 flat head (bought)"
-  },
-  {
-   "link": "head",
-   "name": "screw ear L 225",
-   "mass_g": 0.3,
-   "p": [
-    -24.684,
-    18.343,
-    13.343
-   ],
-   "source": "M2 x 5 flat head (bought)"
-  },
-  {
-   "link": "head",
-   "name": "screw ear R 45",
-   "mass_g": 0.3,
-   "p": [
-    24.684,
-    29.657,
-    24.657
-   ],
-   "source": "M2 x 5 flat head (bought)"
-  },
-  {
-   "link": "head",
-   "name": "screw ear R 225",
-   "mass_g": 0.3,
-   "p": [
-    24.684,
-    18.343,
-    13.343
-   ],
-   "source": "M2 x 5 flat head (bought)"
-  },
-  {
-   "link": "head",
    "name": "head_ears",
-   "mass_g": 1.12,
+   "mass_g": 1.2,
    "p": [
     0.0,
     24.0,
@@ -19161,22 +18611,22 @@
   {
    "link": "head",
    "name": "cable display_lead (head)",
-   "mass_g": 2.48,
+   "mass_g": 2.45,
    "p": [
-    -21.677,
-    7.223,
-    16.399
+    -22.187,
+    0.647,
+    24.682
    ],
    "source": "Display's supplied cable: its plug on the module's back, out of the cradle's left opening, to the joint beside the left shoulder clip - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; "
   },
   {
    "link": "upper",
    "name": "cable display_lead (upper)",
-   "mass_g": 0.37,
+   "mass_g": 0.4,
    "p": [
-    -19.444,
-    25.51,
-    36.751
+    -19.524,
+    25.335,
+    37.396
    ],
    "source": "Display's supplied cable: its plug on the module's back, out of the cradle's left opening, to the joint beside the left shoulder clip - the stretch on this link, at the pose {'J2': -20.0, 'J5': 20.0}; the cable is flexible; "
   },
@@ -19973,6 +19423,72 @@
    "source": "M2.5 x 6 socket head (bought)"
   },
   {
+   "link": "turret",
+   "name": "screw yoke0leg 2",
+   "mass_g": 0.3,
+   "p": [
+    -21.191,
+    0.0,
+    19.0
+   ],
+   "source": "M2 x 6 socket head (bought)"
+  },
+  {
+   "link": "turret",
+   "name": "screw yoke0leg 5",
+   "mass_g": 0.3,
+   "p": [
+    21.191,
+    -0.0,
+    19.0
+   ],
+   "source": "M2 x 6 socket head (bought)"
+  },
+  {
+   "link": "mid_yoke",
+   "name": "screw yoke1leg 3",
+   "mass_g": 0.3,
+   "p": [
+    -0.0,
+    -21.191,
+    19.0
+   ],
+   "source": "M2 x 6 socket head (bought)"
+  },
+  {
+   "link": "mid_yoke",
+   "name": "screw yoke1leg 4",
+   "mass_g": 0.3,
+   "p": [
+    0.0,
+    21.191,
+    19.0
+   ],
+   "source": "M2 x 6 socket head (bought)"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "screw yoke2leg 2",
+   "mass_g": 0.3,
+   "p": [
+    -21.191,
+    0.0,
+    8.0
+   ],
+   "source": "M2 x 6 socket head (bought)"
+  },
+  {
+   "link": "neck_yoke",
+   "name": "screw yoke2leg 5",
+   "mass_g": 0.3,
+   "p": [
+    21.191,
+    -0.0,
+    8.0
+   ],
+   "source": "M2 x 6 socket head (bought)"
+  },
+  {
    "link": "upper",
    "name": "plug display_joint",
    "mass_g": 4.0,
@@ -20391,276 +19907,6 @@
    "tapped_max": 25.0
   },
   {
-   "name": "pivot cap turret_p",
-   "link": "turret",
-   "T": [
-    [
-     -1.0,
-     0.0,
-     0.0,
-     26.700000000000003
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     0.0
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     19.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "d": 2.0,
-   "L": 10.0,
-   "head": "flat",
-   "washer": false,
-   "insert": null,
-   "into": "the module's tapped horn / idler (replaces that leg's M2 x 6)",
-   "clamps": [
-    "pivot_cap_turret_p",
-    "yoke"
-   ],
-   "step": "B",
-   "tool_mm": 40.0,
-   "note": "",
-   "tapped": null,
-   "tapped_max": 1.0
-  },
-  {
-   "name": "pivot cap turret_n",
-   "link": "turret",
-   "T": [
-    [
-     1.0,
-     1.2246467991473532e-16,
-     0.0,
-     -26.700000000000003
-    ],
-    [
-     -1.2246467991473532e-16,
-     1.0,
-     0.0,
-     4.408728476930472e-16
-    ],
-    [
-     0.0,
-     -0.0,
-     1.0,
-     19.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "d": 2.0,
-   "L": 10.0,
-   "head": "flat",
-   "washer": false,
-   "insert": null,
-   "into": "the module's tapped horn / idler (replaces that leg's M2 x 6)",
-   "clamps": [
-    "pivot_cap_turret_n",
-    "yoke"
-   ],
-   "step": "B",
-   "tool_mm": 40.0,
-   "note": "",
-   "tapped": null,
-   "tapped_max": 1.0
-  },
-  {
-   "name": "pivot cap mid_yoke_p",
-   "link": "mid_yoke",
-   "T": [
-    [
-     -6.123233995736766e-17,
-     1.0,
-     0.0,
-     1.6349034768617166e-15
-    ],
-    [
-     -1.0,
-     -6.123233995736766e-17,
-     0.0,
-     26.700000000000003
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     19.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "d": 2.0,
-   "L": 10.0,
-   "head": "flat",
-   "washer": false,
-   "insert": null,
-   "into": "the module's tapped horn / idler (replaces that leg's M2 x 6)",
-   "clamps": [
-    "pivot_cap_mid_yoke_p",
-    "yoke"
-   ],
-   "step": "B",
-   "tool_mm": 40.0,
-   "note": "",
-   "tapped": null,
-   "tapped_max": 1.0
-  },
-  {
-   "name": "pivot cap mid_yoke_n",
-   "link": "mid_yoke",
-   "T": [
-    [
-     1.8369701987210297e-16,
-     -1.0,
-     0.0,
-     -2.0757763245547636e-15
-    ],
-    [
-     1.0,
-     1.8369701987210297e-16,
-     -0.0,
-     -26.700000000000003
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     19.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "d": 2.0,
-   "L": 10.0,
-   "head": "flat",
-   "washer": false,
-   "insert": null,
-   "into": "the module's tapped horn / idler (replaces that leg's M2 x 6)",
-   "clamps": [
-    "pivot_cap_mid_yoke_n",
-    "yoke"
-   ],
-   "step": "B",
-   "tool_mm": 40.0,
-   "note": "",
-   "tapped": null,
-   "tapped_max": 1.0
-  },
-  {
-   "name": "pivot cap neck_yoke_p",
-   "link": "neck_yoke",
-   "T": [
-    [
-     -1.0,
-     0.0,
-     0.0,
-     26.700000000000003
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     9.797174393178826e-16
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     8.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "d": 2.0,
-   "L": 10.0,
-   "head": "flat",
-   "washer": false,
-   "insert": null,
-   "into": "the module's tapped horn / idler (replaces that leg's M2 x 6)",
-   "clamps": [
-    "pivot_cap_neck_yoke_p",
-    "yoke"
-   ],
-   "step": "B",
-   "tool_mm": 40.0,
-   "note": "",
-   "tapped": null,
-   "tapped_max": 1.0
-  },
-  {
-   "name": "pivot cap neck_yoke_n",
-   "link": "neck_yoke",
-   "T": [
-    [
-     1.0,
-     -1.2246467991473532e-16,
-     1.4997597826618576e-32,
-     -26.700000000000003
-    ],
-    [
-     1.2246467991473532e-16,
-     1.0,
-     1.836676017326774e-48,
-     5.388445916248354e-16
-    ],
-    [
-     -1.4997597826618576e-32,
-     0.0,
-     1.0,
-     8.0
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "d": 2.0,
-   "L": 10.0,
-   "head": "flat",
-   "washer": false,
-   "insert": null,
-   "into": "the module's tapped horn / idler (replaces that leg's M2 x 6)",
-   "clamps": [
-    "pivot_cap_neck_yoke_n",
-    "yoke"
-   ],
-   "step": "B",
-   "tool_mm": 40.0,
-   "note": "",
-   "tapped": null,
-   "tapped_max": 1.0
-  },
-  {
    "name": "display stud 3,3",
    "link": "head",
    "T": [
@@ -20866,9 +20112,9 @@
     ]
    ],
    "d": 2.0,
-   "L": 8.0,
+   "L": 3.0,
    "head": "pan",
-   "washer": true,
+   "washer": false,
    "insert": null,
    "into": "pilot d 1.7 in the cradle's post",
    "clamps": [
@@ -20879,7 +20125,7 @@
    "note": "through the board's edge notch (d 3.0), the washer's rim on the PCB's front: the screw stands on the board's edge, so about 40 % of the washer presses on the PCB (rule lowered to 35 % for these four)",
    "tapped": "camera_cradle",
    "tapped_max": 15.0,
-   "bear_min": 0.35
+   "bear_min": 0.3
   },
   {
    "name": "camera Ldn",
@@ -20911,9 +20157,9 @@
     ]
    ],
    "d": 2.0,
-   "L": 8.0,
+   "L": 3.0,
    "head": "pan",
-   "washer": true,
+   "washer": false,
    "insert": null,
    "into": "pilot d 1.7 in the cradle's post",
    "clamps": [
@@ -20924,7 +20170,7 @@
    "note": "through the board's edge notch (d 3.0), the washer's rim on the PCB's front: the screw stands on the board's edge, so about 40 % of the washer presses on the PCB (rule lowered to 35 % for these four)",
    "tapped": "camera_cradle",
    "tapped_max": 15.0,
-   "bear_min": 0.35
+   "bear_min": 0.3
   },
   {
    "name": "camera Rup",
@@ -20956,9 +20202,9 @@
     ]
    ],
    "d": 2.0,
-   "L": 8.0,
+   "L": 3.0,
    "head": "pan",
-   "washer": true,
+   "washer": false,
    "insert": null,
    "into": "pilot d 1.7 in the cradle's post",
    "clamps": [
@@ -20969,7 +20215,7 @@
    "note": "through the board's edge notch (d 3.0), the washer's rim on the PCB's front: the screw stands on the board's edge, so about 40 % of the washer presses on the PCB (rule lowered to 35 % for these four)",
    "tapped": "camera_cradle",
    "tapped_max": 15.0,
-   "bear_min": 0.35
+   "bear_min": 0.3
   },
   {
    "name": "camera Rdn",
@@ -21001,9 +20247,9 @@
     ]
    ],
    "d": 2.0,
-   "L": 8.0,
+   "L": 3.0,
    "head": "pan",
-   "washer": true,
+   "washer": false,
    "insert": null,
    "into": "pilot d 1.7 in the cradle's post",
    "clamps": [
@@ -21014,7 +20260,7 @@
    "note": "through the board's edge notch (d 3.0), the washer's rim on the PCB's front: the screw stands on the board's edge, so about 40 % of the washer presses on the PCB (rule lowered to 35 % for these four)",
    "tapped": "camera_cradle",
    "tapped_max": 15.0,
-   "bear_min": 0.35
+   "bear_min": 0.3
   },
   {
    "name": "cradle arm L 6",
@@ -21189,182 +20435,6 @@
    "step": "arm",
    "tool_mm": 40.0,
    "note": "through the plate (2.4) into the arm's flange",
-   "tapped": "cradle_arm",
-   "tapped_max": 15.0
-  },
-  {
-   "name": "ear L 45",
-   "link": "head",
-   "T": [
-    [
-     1.0,
-     0.0,
-     0.0,
-     -26.849999999999998
-    ],
-    [
-     0.0,
-     1.0,
-     0.0,
-     29.65685424949238
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     24.65685424949238
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "d": 2.0,
-   "L": 5.0,
-   "head": "flat",
-   "washer": false,
-   "insert": null,
-   "into": "pilot d 1.7 in the cradle arm's pad",
-   "clamps": [
-    "head_ears"
-   ],
-   "step": "H4",
-   "tool_mm": 40.0,
-   "note": "",
-   "tapped": "cradle_arm",
-   "tapped_max": 15.0
-  },
-  {
-   "name": "ear L 225",
-   "link": "head",
-   "T": [
-    [
-     1.0,
-     0.0,
-     0.0,
-     -26.849999999999998
-    ],
-    [
-     0.0,
-     1.0,
-     0.0,
-     18.343145750507617
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     13.34314575050762
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "d": 2.0,
-   "L": 5.0,
-   "head": "flat",
-   "washer": false,
-   "insert": null,
-   "into": "pilot d 1.7 in the cradle arm's pad",
-   "clamps": [
-    "head_ears"
-   ],
-   "step": "H4",
-   "tool_mm": 40.0,
-   "note": "",
-   "tapped": "cradle_arm",
-   "tapped_max": 15.0
-  },
-  {
-   "name": "ear R 45",
-   "link": "head",
-   "T": [
-    [
-     -1.0,
-     0.0,
-     0.0,
-     26.849999999999998
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     29.65685424949238
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     24.65685424949238
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "d": 2.0,
-   "L": 5.0,
-   "head": "flat",
-   "washer": false,
-   "insert": null,
-   "into": "pilot d 1.7 in the cradle arm's pad",
-   "clamps": [
-    "head_ears"
-   ],
-   "step": "H4",
-   "tool_mm": 40.0,
-   "note": "",
-   "tapped": "cradle_arm",
-   "tapped_max": 15.0
-  },
-  {
-   "name": "ear R 225",
-   "link": "head",
-   "T": [
-    [
-     -1.0,
-     0.0,
-     0.0,
-     26.849999999999998
-    ],
-    [
-     0.0,
-     -1.0,
-     0.0,
-     18.343145750507617
-    ],
-    [
-     0.0,
-     0.0,
-     1.0,
-     13.34314575050762
-    ],
-    [
-     0.0,
-     0.0,
-     0.0,
-     1.0
-    ]
-   ],
-   "d": 2.0,
-   "L": 5.0,
-   "head": "flat",
-   "washer": false,
-   "insert": null,
-   "into": "pilot d 1.7 in the cradle arm's pad",
-   "clamps": [
-    "head_ears"
-   ],
-   "step": "H4",
-   "tool_mm": 40.0,
-   "note": "",
    "tapped": "cradle_arm",
    "tapped_max": 15.0
   },
@@ -24491,6 +23561,270 @@
    "note": "",
    "tapped": "shoulder_plate",
    "tapped_max": 25.0
+  },
+  {
+   "name": "yoke0leg 2",
+   "link": "turret",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -22.1
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "d": 2.0,
+   "L": 6.0,
+   "head": "socket",
+   "washer": false,
+   "insert": null,
+   "into": "the servo's M2 thread (horn / idler)",
+   "clamps": [
+    "yoke0"
+   ],
+   "step": "yoke0leg",
+   "tool_mm": 40.0,
+   "note": "",
+   "tapped": "P",
+   "tapped_max": 8.0
+  },
+  {
+   "name": "yoke0leg 5",
+   "link": "turret",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     22.1
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "d": 2.0,
+   "L": 6.0,
+   "head": "socket",
+   "washer": false,
+   "insert": null,
+   "into": "the servo's M2 thread (horn / idler)",
+   "clamps": [
+    "yoke0"
+   ],
+   "step": "yoke0leg",
+   "tool_mm": 40.0,
+   "note": "",
+   "tapped": "P",
+   "tapped_max": 8.0
+  },
+  {
+   "name": "yoke1leg 3",
+   "link": "mid_yoke",
+   "T": [
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0,
+     -0.0,
+     -22.1
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "d": 2.0,
+   "L": 6.0,
+   "head": "socket",
+   "washer": false,
+   "insert": null,
+   "into": "the servo's M2 thread (horn / idler)",
+   "clamps": [
+    "yoke1"
+   ],
+   "step": "yoke1leg",
+   "tool_mm": 40.0,
+   "note": "",
+   "tapped": "P",
+   "tapped_max": 8.0
+  },
+  {
+   "name": "yoke1leg 4",
+   "link": "mid_yoke",
+   "T": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     -1.0,
+     0.0,
+     0.0,
+     22.1
+    ],
+    [
+     0.0,
+     -0.0,
+     1.0,
+     19.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "d": 2.0,
+   "L": 6.0,
+   "head": "socket",
+   "washer": false,
+   "insert": null,
+   "into": "the servo's M2 thread (horn / idler)",
+   "clamps": [
+    "yoke1"
+   ],
+   "step": "yoke1leg",
+   "tool_mm": 40.0,
+   "note": "",
+   "tapped": "P",
+   "tapped_max": 8.0
+  },
+  {
+   "name": "yoke2leg 2",
+   "link": "neck_yoke",
+   "T": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -22.1
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     8.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "d": 2.0,
+   "L": 6.0,
+   "head": "socket",
+   "washer": false,
+   "insert": null,
+   "into": "the servo's M2 thread (horn / idler)",
+   "clamps": [
+    "yoke2"
+   ],
+   "step": "yoke2leg",
+   "tool_mm": 40.0,
+   "note": "",
+   "tapped": "P",
+   "tapped_max": 8.0
+  },
+  {
+   "name": "yoke2leg 5",
+   "link": "neck_yoke",
+   "T": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     22.1
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     8.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "d": 2.0,
+   "L": 6.0,
+   "head": "socket",
+   "washer": false,
+   "insert": null,
+   "into": "the servo's M2 thread (horn / idler)",
+   "clamps": [
+    "yoke2"
+   ],
+   "step": "yoke2leg",
+   "tool_mm": 40.0,
+   "note": "",
+   "tapped": "P",
+   "tapped_max": 8.0
   }
  ],
  "m12_bushing_lugs": [],
@@ -24984,7 +24318,7 @@
    ],
    "step": "S4",
    "cable": null,
-   "draw": true,
+   "draw": false,
    "T": [
     [
      -1.0,
@@ -25110,8 +24444,8 @@
   ]
  },
  "ws19_plug_wires_end": [
-  -12.98,
-  -19.7,
+  -23.08,
+  -28.75,
   50.1
  ],
  "face_display": {
@@ -25765,9 +25099,9 @@
     null
    ],
    "d_mm": 3.2,
-   "drawn_route_mm": 73.0,
-   "longest_in_joint_box_mm": 132.0,
-   "needed_with_plugs_mm": 148.0,
+   "drawn_route_mm": 88.0,
+   "longest_in_joint_box_mm": 148.0,
+   "needed_with_plugs_mm": 164.0,
    "stock_mm": 200.0,
    "ok": true,
    "stowed_mm": 70.0,
@@ -25777,7 +25111,7 @@
    ],
    "assumed": "",
    "free_length_mm": 114.0,
-   "slack_at_drawn_pose_mm": 41.0,
+   "slack_at_drawn_pose_mm": 26.0,
    "taut_at_drawn_pose": false
   },
   {
@@ -27249,121 +26583,145 @@
     [
      "head",
      [
-      -12.98,
-      -19.7,
-      44.5
+      -23.08,
+      -28.75,
+      50.1
      ]
     ],
     [
      "head",
      [
-      -15.22,
-      -16.47,
-      41.18
+      -23.59,
+      -23.43,
+      49.73
      ]
     ],
     [
      "head",
      [
-      -17.45,
-      -13.24,
-      37.85
+      -24.09,
+      -18.12,
+      49.37
      ]
     ],
     [
      "head",
      [
-      -19.69,
-      -10.01,
-      34.53
+      -24.6,
+      -12.8,
+      49.0
      ]
     ],
     [
      "head",
      [
-      -20.02,
-      -6.78,
-      31.21
+      -23.73,
+      -10.2,
+      45.99
      ]
     ],
     [
      "head",
      [
-      -19.75,
-      -3.55,
-      27.88
+      -22.87,
+      -8.47,
+      42.11
      ]
     ],
     [
      "head",
      [
-      -19.28,
-      -1.44,
-      23.32
+      -22.0,
+      -6.73,
+      38.23
      ]
     ],
     [
      "head",
      [
-      -19.87,
-      0.67,
-      18.74
+      -21.13,
+      -5.0,
+      34.34
      ]
     ],
     [
      "head",
      [
-      -19.88,
-      2.78,
-      14.24
+      -20.27,
+      -3.26,
+      30.46
      ]
     ],
     [
      "head",
      [
-      -20.03,
-      5.82,
-      9.74
+      -19.4,
+      -1.52,
+      26.57
      ]
     ],
     [
      "head",
      [
-      -20.11,
-      8.86,
-      6.46
+      -19.26,
+      0.23,
+      22.38
      ]
     ],
     [
      "head",
      [
-      -20.05,
-      11.91,
-      3.18
+      -19.97,
+      1.99,
+      17.19
+     ]
+    ],
+    [
+     "head",
+     [
+      -19.84,
+      3.78,
+      12.62
+     ]
+    ],
+    [
+     "head",
+     [
+      -20.26,
+      7.15,
+      8.05
+     ]
+    ],
+    [
+     "head",
+     [
+      -20.09,
+      10.54,
+      4.4
      ]
     ],
     [
      "upper",
      [
-      -19.86,
-      23.13,
-      43.84
+      -19.95,
+      22.58,
+      45.31
      ]
     ],
     [
      "upper",
      [
-      -19.68,
-      24.76,
-      39.39
+      -19.73,
+      24.38,
+      40.38
      ]
     ],
     [
      "upper",
      [
-      -19.49,
-      26.38,
-      34.95
+      -19.52,
+      26.19,
+      35.44
      ]
     ],
     [
@@ -27449,7 +26807,7 @@
  ],
  "fastener_check": {
   "all_clear": false,
-  "n": 97
+  "n": 93
  },
  "named_poses": {
   "home": {},
