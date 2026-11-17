@@ -1,4 +1,4 @@
-// 조립 설명서 (assembly guide), LEGO-book style, on the site's newest CAD assembly (mech_M11d_wired since 2026-11-02: M11c's parts with every screw and cable drawn where it goes) (the same meshes and joint frames as the 3D
+// 조립 설명서 (assembly guide), LEGO-book style, on the site's newest CAD assembly (mech_M11e_parts since 2026-11-17: the Devicemart camera, the display joint's keeper, the LB-012 straight into the OpenCR; before it mech_M11d_wired) (the same meshes and joint frames as the 3D
 // tab, home pose). Each step adds the visuals scripts/make_assembly_steps.py lists: they fly in along an arrow from where they
 // come from, the callout shows the parts (rendered from the same meshes) and the screws / inserts with their counts.
 import * as THREE from 'three';
@@ -252,7 +252,7 @@ function totals() {                                     // every screw / insert 
 }
 function renderSide(st, k) {
   $('#snum').textContent = st.cover ? '★' : k;
-  $('#skick').textContent = st.cover ? 'Notifyi M11d · 조립 설명서' : `${st.kicker} · ${k} / ${STEPS.length - 1}단계`;
+  $('#skick').textContent = st.cover ? 'Notifyi M11e · 조립 설명서' : `${st.kicker} · ${k} / ${STEPS.length - 1}단계`;
   $('#stitle').textContent = st.title;
   $('#stext').textContent = st.text;
   const cn = st.cover ? [] : st.conn || [];

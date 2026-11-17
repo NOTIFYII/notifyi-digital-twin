@@ -1,0 +1,298 @@
+{
+ "pack": "mech_M11e_parts_20261117",
+ "printer": "Cubicon Single Plus (3DP-310F)",
+ "plates": [
+  {
+   "plate": "P4e_head_face",
+   "why": "얼굴 상자: 새 카메라 보드가 디스플레이 아래에 서도록 위로 5.4 mm 커졌고(디스플레이 5.6 mm 위로), 얼굴 테가 함께 출력됩니다(따로 붙이지 않음).",
+   "pieces": [
+    "head_face"
+   ],
+   "stl": "cubicon_plates/P4e_head_face.stl",
+   "3mf": "cubicon_plates/P4e_head_face.3mf",
+   "hfb": "hfb/M11e_P4e_head_face.hfb",
+   "footprint_mm": [
+    98.0,
+    84.4,
+    34.5
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "20 % (Medium)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 20,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 20,
+     "지지대 생성": "아니오",
+     "바닥보조물": "스커트"
+    }
+   },
+   "colours": [
+    "cream"
+   ],
+   "piece_files": [
+    {
+     "name": "head_face",
+     "part": "head_face",
+     "file": "cubicon_plates/P4e_head_face_pieces/head_face.stl"
+    }
+   ],
+   "replaces": "P4_head_face",
+   "cubicreator_estimate": {
+    "time_hm": "2:40",
+    "filament_g": 29.23,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11e_parts/cubicreator/)"
+   }
+  },
+  {
+   "plate": "P5e_cradle",
+   "why": "카메라 받침: 판 + 팔 두 개로 나눠 셋 다 지지대 없이 출력됩니다. 판에는 OV9726 보드 기둥 4개와 케이블 홈, 팔은 판 뒤에 M2 × 6 두 개씩.",
+   "pieces": [
+    "camera_cradle",
+    "cradle_arm_L",
+    "cradle_arm_R"
+   ],
+   "stl": "cubicon_plates/P5e_cradle.stl",
+   "3mf": "cubicon_plates/P5e_cradle.3mf",
+   "hfb": "hfb/M11e_P5e_cradle.hfb",
+   "footprint_mm": [
+    146.4,
+    70.4,
+    46.8
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "10 lines (Narrowly)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 60,
+     "perimeters": 5,
+     "supports": false,
+     "brim_mm": 3
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 5,
+     "내부 채우기 밀도 (0~100)": 60,
+     "지지대 생성": "아니오",
+     "바닥보조물": "브림"
+    }
+   },
+   "colours": [
+    "cream"
+   ],
+   "piece_files": [
+    {
+     "name": "camera_cradle",
+     "part": "camera_cradle",
+     "file": "cubicon_plates/P5e_cradle_pieces/camera_cradle.stl"
+    },
+    {
+     "name": "cradle_arm_L",
+     "part": "cradle_arm_L",
+     "file": "cubicon_plates/P5e_cradle_pieces/cradle_arm_L.stl"
+    },
+    {
+     "name": "cradle_arm_R",
+     "part": "cradle_arm_R",
+     "file": "cubicon_plates/P5e_cradle_pieces/cradle_arm_R.stl"
+    }
+   ],
+   "replaces": "P5_camera_cradle",
+   "cubicreator_estimate": {
+    "time_hm": "3:09",
+    "filament_g": 25.66,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11e_parts/cubicreator/)"
+   }
+  },
+  {
+   "plate": "P8e_front_panel",
+   "why": "앞 패널: 붙이지 않고 M2.5 × 6 네 개로 외피의 공기 구멍에 나사 고정. 그 네 구멍만 Ø 2.8로 넓어졌습니다(있는 패널은 그 4곳을 2.8 mm로 뚫어도 됨).",
+   "pieces": [
+    "base_front_panel"
+   ],
+   "stl": "cubicon_plates/P8e_front_panel.stl",
+   "3mf": "cubicon_plates/P8e_front_panel.3mf",
+   "hfb": "hfb/M11e_P8e_front_panel.hfb",
+   "footprint_mm": [
+    92.0,
+    46.0,
+    1.2
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.2,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "none (skirt)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.2,
+     "infill_pct": 100,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 0
+    },
+    "expert_ko": {
+     "레이어 높이": 0.2,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 100,
+     "지지대 생성": "아니오",
+     "바닥보조물": "스커트"
+    }
+   },
+   "colours": [
+    "black",
+    "cream",
+    "olive",
+    "unpainted"
+   ],
+   "piece_files": [
+    {
+     "name": "base_front_panel",
+     "part": "base_front_panel",
+     "file": "cubicon_plates/P8e_front_panel_pieces/base_front_panel.stl"
+    }
+   ],
+   "replaces": "P8_flat_parts",
+   "cubicreator_estimate": {
+    "time_hm": "0:42",
+    "filament_g": 6.67,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11e_parts/cubicreator/)"
+   }
+  },
+  {
+   "plate": "P9e_small_parts",
+   "why": "작은 부품: 피벗 캡 6개(이제 나사 하나로 고정), 귀 2개(나사 2개씩), 디스플레이 이음부 보관대 2개(1개 여분).",
+   "pieces": [
+    "pivot_cap_1p0_frame_dark_1",
+    "pivot_cap_1p0_frame_dark_2",
+    "pivot_cap_1p0_frame_dark_3",
+    "pivot_cap_1p0_frame_dark_4",
+    "pivot_cap_1p0_frame_dark_5",
+    "pivot_cap_1p0_frame_dark_6",
+    "head_ears_L",
+    "head_ears_R",
+    "joint_keeper_1",
+    "joint_keeper_2"
+   ],
+   "stl": "cubicon_plates/P9e_small_parts.stl",
+   "3mf": "cubicon_plates/P9e_small_parts.3mf",
+   "hfb": "hfb/M11e_P9e_small_parts.hfb",
+   "footprint_mm": [
+    189.6,
+    56.6,
+    6.4
+   ],
+   "fits_bed": true,
+   "cubicreator_basic": {
+    "layer_mm": 0.15,
+    "infill": "40 % (High)",
+    "speed": "60 (High quality)",
+    "supports": "OFF",
+    "brim": "10 lines (Narrowly)",
+    "material": "PLA (210 / 65 C)",
+    "target": {
+     "layer_mm": 0.12,
+     "infill_pct": 100,
+     "perimeters": 4,
+     "supports": false,
+     "brim_mm": 3
+    },
+    "expert_ko": {
+     "레이어 높이": 0.12,
+     "벽 라인 갯수": 4,
+     "내부 채우기 밀도 (0~100)": 100,
+     "지지대 생성": "아니오",
+     "바닥보조물": "브림"
+    }
+   },
+   "colours": [
+    "dark",
+    "olive",
+    "unpainted"
+   ],
+   "piece_files": [
+    {
+     "name": "pivot_cap_1p0_frame_dark_1",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9e_small_parts_pieces/pivot_cap_1p0_frame_dark_1.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_2",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9e_small_parts_pieces/pivot_cap_1p0_frame_dark_2.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_3",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9e_small_parts_pieces/pivot_cap_1p0_frame_dark_3.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_4",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9e_small_parts_pieces/pivot_cap_1p0_frame_dark_4.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_5",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9e_small_parts_pieces/pivot_cap_1p0_frame_dark_5.stl"
+    },
+    {
+     "name": "pivot_cap_1p0_frame_dark_6",
+     "part": "pivot_cap_1p0_frame_dark",
+     "file": "cubicon_plates/P9e_small_parts_pieces/pivot_cap_1p0_frame_dark_6.stl"
+    },
+    {
+     "name": "head_ears_L",
+     "part": "head_ears",
+     "file": "cubicon_plates/P9e_small_parts_pieces/head_ears_L.stl"
+    },
+    {
+     "name": "head_ears_R",
+     "part": "head_ears",
+     "file": "cubicon_plates/P9e_small_parts_pieces/head_ears_R.stl"
+    },
+    {
+     "name": "joint_keeper_1",
+     "part": "joint_keeper",
+     "file": "cubicon_plates/P9e_small_parts_pieces/joint_keeper_1.stl"
+    },
+    {
+     "name": "joint_keeper_2",
+     "part": "joint_keeper",
+     "file": "cubicon_plates/P9e_small_parts_pieces/joint_keeper_2.stl"
+    }
+   ],
+   "replaces": "P9_small_parts",
+   "cubicreator_estimate": {
+    "time_hm": "3:20",
+    "filament_g": 17.59,
+    "source": "Cubicreator4 4.5.4 model information after slicing (07_Verification/mech_M11e_parts/cubicreator/)"
+   }
+  }
+ ],
+ "note": "Only the parts that change against the M11c prints; supports OFF on every plate. .hfb: saved from Cubicreator4.",
+ "cubicreator_total": {
+  "time_h": 9.8,
+  "filament_g": 79.2
+ }
+}
